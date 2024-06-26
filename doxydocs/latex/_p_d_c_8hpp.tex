@@ -1,0 +1,99 @@
+\doxysection{include/\+PDC.hpp File Reference}
+\hypertarget{_p_d_c_8hpp}{}\label{_p_d_c_8hpp}\index{include/PDC.hpp@{include/PDC.hpp}}
+
+
+Header file for the \doxylink{class_p_d_c}{PDC} library for Dartmouth\textquotesingle{}s 317 Lab.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Vector.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_p_d_c}{PDC}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}}~0x400\+E0800
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_a543370a73b7340ed8bbf3da915ec2931}{UART\+\_\+\+PERIPH\+\_\+\+TPR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x108)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_ab75f977616485811d7bcf0e16965c1cb}{UART\+\_\+\+PERIPH\+\_\+\+TCR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x10C)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_a5cd2e74bafd4385c2e6c533dcc1040c0}{UART\+\_\+\+PERIPH\+\_\+\+TNPR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x118)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_a922d9e9f827fb63034c4976ead461134}{UART\+\_\+\+PERIPH\+\_\+\+TNCR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x11C)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_ab485cfd9dbef733a8a87a7509b9f3ab5}{UART\+\_\+\+PERIPH\+\_\+\+PTCR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x120)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_acb8ee5ada8dac05acfb8b239c3fc0ee3}{UART\+\_\+\+PERIPH\+\_\+\+PTSR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x124)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_a81849a92758c2c114eebf90bf3a38d03}{TXTEN\+\_\+\+MASK}}~(1$<$$<$8)
+\item 
+\#define \mbox{\hyperlink{_p_d_c_8hpp_a1de69c73f829a03f46f5e7690da7e79a}{UART\+\_\+\+ID}}~8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{class_p_d_c}{PDC} library for Dartmouth\textquotesingle{}s 317 Lab. 
+
+This library is used to manage UART communication on the Arduino Due using the Peripheral DMA Controller (\doxylink{class_p_d_c}{PDC}). This allows for non-\/blocking communication, so that we can run other processes while sending out data.
+
+Author\+: Sean Wallace Date\+: 2024-\/06-\/20 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_p_d_c_8hpp_a81849a92758c2c114eebf90bf3a38d03}\index{PDC.hpp@{PDC.hpp}!TXTEN\_MASK@{TXTEN\_MASK}}
+\index{TXTEN\_MASK@{TXTEN\_MASK}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{TXTEN\_MASK}{TXTEN\_MASK}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_a81849a92758c2c114eebf90bf3a38d03} 
+\#define TXTEN\+\_\+\+MASK~(1$<$$<$8)}
+
+\Hypertarget{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}\index{PDC.hpp@{PDC.hpp}!UART\_BASE@{UART\_BASE}}
+\index{UART\_BASE@{UART\_BASE}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_BASE}{UART\_BASE}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92} 
+\#define UART\+\_\+\+BASE~0x400\+E0800}
+
+\Hypertarget{_p_d_c_8hpp_a1de69c73f829a03f46f5e7690da7e79a}\index{PDC.hpp@{PDC.hpp}!UART\_ID@{UART\_ID}}
+\index{UART\_ID@{UART\_ID}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_ID}{UART\_ID}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_a1de69c73f829a03f46f5e7690da7e79a} 
+\#define UART\+\_\+\+ID~8}
+
+\Hypertarget{_p_d_c_8hpp_ab485cfd9dbef733a8a87a7509b9f3ab5}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_PTCR\_ADDR@{UART\_PERIPH\_PTCR\_ADDR}}
+\index{UART\_PERIPH\_PTCR\_ADDR@{UART\_PERIPH\_PTCR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_PTCR\_ADDR}{UART\_PERIPH\_PTCR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_ab485cfd9dbef733a8a87a7509b9f3ab5} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+PTCR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x120)}
+
+\Hypertarget{_p_d_c_8hpp_acb8ee5ada8dac05acfb8b239c3fc0ee3}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_PTSR\_ADDR@{UART\_PERIPH\_PTSR\_ADDR}}
+\index{UART\_PERIPH\_PTSR\_ADDR@{UART\_PERIPH\_PTSR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_PTSR\_ADDR}{UART\_PERIPH\_PTSR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_acb8ee5ada8dac05acfb8b239c3fc0ee3} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+PTSR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x124)}
+
+\Hypertarget{_p_d_c_8hpp_ab75f977616485811d7bcf0e16965c1cb}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_TCR\_ADDR@{UART\_PERIPH\_TCR\_ADDR}}
+\index{UART\_PERIPH\_TCR\_ADDR@{UART\_PERIPH\_TCR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_TCR\_ADDR}{UART\_PERIPH\_TCR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_ab75f977616485811d7bcf0e16965c1cb} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+TCR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x10C)}
+
+\Hypertarget{_p_d_c_8hpp_a922d9e9f827fb63034c4976ead461134}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_TNCR\_ADDR@{UART\_PERIPH\_TNCR\_ADDR}}
+\index{UART\_PERIPH\_TNCR\_ADDR@{UART\_PERIPH\_TNCR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_TNCR\_ADDR}{UART\_PERIPH\_TNCR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_a922d9e9f827fb63034c4976ead461134} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+TNCR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x11C)}
+
+\Hypertarget{_p_d_c_8hpp_a5cd2e74bafd4385c2e6c533dcc1040c0}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_TNPR\_ADDR@{UART\_PERIPH\_TNPR\_ADDR}}
+\index{UART\_PERIPH\_TNPR\_ADDR@{UART\_PERIPH\_TNPR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_TNPR\_ADDR}{UART\_PERIPH\_TNPR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_a5cd2e74bafd4385c2e6c533dcc1040c0} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+TNPR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x118)}
+
+\Hypertarget{_p_d_c_8hpp_a543370a73b7340ed8bbf3da915ec2931}\index{PDC.hpp@{PDC.hpp}!UART\_PERIPH\_TPR\_ADDR@{UART\_PERIPH\_TPR\_ADDR}}
+\index{UART\_PERIPH\_TPR\_ADDR@{UART\_PERIPH\_TPR\_ADDR}!PDC.hpp@{PDC.hpp}}
+\doxysubsubsection{\texorpdfstring{UART\_PERIPH\_TPR\_ADDR}{UART\_PERIPH\_TPR\_ADDR}}
+{\footnotesize\ttfamily \label{_p_d_c_8hpp_a543370a73b7340ed8bbf3da915ec2931} 
+\#define UART\+\_\+\+PERIPH\+\_\+\+TPR\+\_\+\+ADDR~(\mbox{\hyperlink{_p_d_c_8hpp_aa501d94aad5260161a3f0b89ec827e92}{UART\+\_\+\+BASE}} + 0x108)}
+

@@ -1,0 +1,98 @@
+\doxysection{include/\+Pip.hpp File Reference}
+\hypertarget{_pip_8hpp}{}\label{_pip_8hpp}\index{include/Pip.hpp@{include/Pip.hpp}}
+
+
+Header file for the \doxylink{class_pip}{Pip} library for Dartmouth\textquotesingle{}s 317 Lab.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Max1148.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pip}{Pip}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_ab7b25ff5a5b48ceabe9cce54360f6a05}{SWEEP\+\_\+\+DEFAULT\+\_\+\+DELAY}}~1000
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_af2a469b68c53040e2c86120ebac7c90f}{SWEEP\+\_\+\+DEFAULT\+\_\+\+AVG\+\_\+\+NUM}}~25
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a5eb133677a0d9f2adf91df2f10120096}{SWEEP\+\_\+\+DEFAULT\+\_\+\+SAMPLES}}~28
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a0d32c907e39b8b69605f45c20705477d}{SWEEP\+\_\+\+DEFAULT\+\_\+\+MIN}}~0
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a4d0be542389989b5ec2d031a025a9b2f}{SWEEP\+\_\+\+DEFAULT\+\_\+\+MAX}}~4095
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a86714fc5cbb4efd38dab6b0e47c21723}{SWEEP\+\_\+\+MAX\+\_\+\+SAMPLES}}~256
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a2726c836aed3a6f06f94ab3cb5bcd737}{DEFAULT\+\_\+\+ADC\+\_\+\+CHANNEL}}~0;
+\item 
+\#define \mbox{\hyperlink{_pip_8hpp_a3df6766829d4e2a23ad7afffcd8999d1}{DAC\+\_\+\+PIN}}~DAC0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{class_pip}{Pip} library for Dartmouth\textquotesingle{}s 317 Lab. 
+
+This library manages the voltage sweep on the PIP sensors using the Arduino Due\textquotesingle{}s onboard DAC. It is basically a vastly simplified version of the \doxylink{class_pip}{Pip}, DAC, and Max1147 libraries in the Isinglass/\+Apophis shield code. Written by Max Roberts in 2015. We are able to use this simplified version because of how nice the Due is \+:)
+
+\begin{DoxyAuthor}{Author}
+Sean Wallace 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/06-\/20 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_pip_8hpp_a3df6766829d4e2a23ad7afffcd8999d1}\index{Pip.hpp@{Pip.hpp}!DAC\_PIN@{DAC\_PIN}}
+\index{DAC\_PIN@{DAC\_PIN}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{DAC\_PIN}{DAC\_PIN}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a3df6766829d4e2a23ad7afffcd8999d1} 
+\#define DAC\+\_\+\+PIN~DAC0}
+
+\Hypertarget{_pip_8hpp_a2726c836aed3a6f06f94ab3cb5bcd737}\index{Pip.hpp@{Pip.hpp}!DEFAULT\_ADC\_CHANNEL@{DEFAULT\_ADC\_CHANNEL}}
+\index{DEFAULT\_ADC\_CHANNEL@{DEFAULT\_ADC\_CHANNEL}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_ADC\_CHANNEL}{DEFAULT\_ADC\_CHANNEL}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a2726c836aed3a6f06f94ab3cb5bcd737} 
+\#define DEFAULT\+\_\+\+ADC\+\_\+\+CHANNEL~0;}
+
+\Hypertarget{_pip_8hpp_af2a469b68c53040e2c86120ebac7c90f}\index{Pip.hpp@{Pip.hpp}!SWEEP\_DEFAULT\_AVG\_NUM@{SWEEP\_DEFAULT\_AVG\_NUM}}
+\index{SWEEP\_DEFAULT\_AVG\_NUM@{SWEEP\_DEFAULT\_AVG\_NUM}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_DEFAULT\_AVG\_NUM}{SWEEP\_DEFAULT\_AVG\_NUM}}
+{\footnotesize\ttfamily \label{_pip_8hpp_af2a469b68c53040e2c86120ebac7c90f} 
+\#define SWEEP\+\_\+\+DEFAULT\+\_\+\+AVG\+\_\+\+NUM~25}
+
+\Hypertarget{_pip_8hpp_ab7b25ff5a5b48ceabe9cce54360f6a05}\index{Pip.hpp@{Pip.hpp}!SWEEP\_DEFAULT\_DELAY@{SWEEP\_DEFAULT\_DELAY}}
+\index{SWEEP\_DEFAULT\_DELAY@{SWEEP\_DEFAULT\_DELAY}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_DEFAULT\_DELAY}{SWEEP\_DEFAULT\_DELAY}}
+{\footnotesize\ttfamily \label{_pip_8hpp_ab7b25ff5a5b48ceabe9cce54360f6a05} 
+\#define SWEEP\+\_\+\+DEFAULT\+\_\+\+DELAY~1000}
+
+\Hypertarget{_pip_8hpp_a4d0be542389989b5ec2d031a025a9b2f}\index{Pip.hpp@{Pip.hpp}!SWEEP\_DEFAULT\_MAX@{SWEEP\_DEFAULT\_MAX}}
+\index{SWEEP\_DEFAULT\_MAX@{SWEEP\_DEFAULT\_MAX}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_DEFAULT\_MAX}{SWEEP\_DEFAULT\_MAX}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a4d0be542389989b5ec2d031a025a9b2f} 
+\#define SWEEP\+\_\+\+DEFAULT\+\_\+\+MAX~4095}
+
+\Hypertarget{_pip_8hpp_a0d32c907e39b8b69605f45c20705477d}\index{Pip.hpp@{Pip.hpp}!SWEEP\_DEFAULT\_MIN@{SWEEP\_DEFAULT\_MIN}}
+\index{SWEEP\_DEFAULT\_MIN@{SWEEP\_DEFAULT\_MIN}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_DEFAULT\_MIN}{SWEEP\_DEFAULT\_MIN}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a0d32c907e39b8b69605f45c20705477d} 
+\#define SWEEP\+\_\+\+DEFAULT\+\_\+\+MIN~0}
+
+\Hypertarget{_pip_8hpp_a5eb133677a0d9f2adf91df2f10120096}\index{Pip.hpp@{Pip.hpp}!SWEEP\_DEFAULT\_SAMPLES@{SWEEP\_DEFAULT\_SAMPLES}}
+\index{SWEEP\_DEFAULT\_SAMPLES@{SWEEP\_DEFAULT\_SAMPLES}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_DEFAULT\_SAMPLES}{SWEEP\_DEFAULT\_SAMPLES}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a5eb133677a0d9f2adf91df2f10120096} 
+\#define SWEEP\+\_\+\+DEFAULT\+\_\+\+SAMPLES~28}
+
+\Hypertarget{_pip_8hpp_a86714fc5cbb4efd38dab6b0e47c21723}\index{Pip.hpp@{Pip.hpp}!SWEEP\_MAX\_SAMPLES@{SWEEP\_MAX\_SAMPLES}}
+\index{SWEEP\_MAX\_SAMPLES@{SWEEP\_MAX\_SAMPLES}!Pip.hpp@{Pip.hpp}}
+\doxysubsubsection{\texorpdfstring{SWEEP\_MAX\_SAMPLES}{SWEEP\_MAX\_SAMPLES}}
+{\footnotesize\ttfamily \label{_pip_8hpp_a86714fc5cbb4efd38dab6b0e47c21723} 
+\#define SWEEP\+\_\+\+MAX\+\_\+\+SAMPLES~256}
+

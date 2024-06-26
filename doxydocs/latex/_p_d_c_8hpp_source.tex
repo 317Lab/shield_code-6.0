@@ -1,0 +1,83 @@
+\doxysection{PDC.\+hpp}
+\hypertarget{_p_d_c_8hpp_source}{}\label{_p_d_c_8hpp_source}\index{include/PDC.hpp@{include/PDC.hpp}}
+\mbox{\hyperlink{_p_d_c_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ PDC\_HPP}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ PDC\_HPP}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <Vector.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Defining\ relevant\ UART\ registers}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ UART\_BASE\ 0x400E0800}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_TPR\_ADDR\ (UART\_BASE\ +\ 0x108)\ }\textcolor{comment}{//\ Transmit\ pointer\ register}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_TCR\_ADDR\ (UART\_BASE\ +\ 0x10C)\ }\textcolor{comment}{//\ Transmit\ counter\ register}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_TNPR\_ADDR\ (UART\_BASE\ +\ 0x118)\ }\textcolor{comment}{//\ Transmit\ next\ pointer\ register}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_TNCR\_ADDR\ (UART\_BASE\ +\ 0x11C)\ }\textcolor{comment}{//\ Transmit\ next\ counter\ register}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_PTCR\_ADDR\ (UART\_BASE\ +\ 0x120)\ }\textcolor{comment}{//\ Peripheral\ transfer\ control\ register}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ UART\_PERIPH\_PTSR\_ADDR\ (UART\_BASE\ +\ 0x124)\ }\textcolor{comment}{//\ Peripheral\ transfer\ status\ register}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ TXTEN\_MASK\ (1<<8)\ }\textcolor{comment}{//mask\ used\ to\ enable\ UART\ transmitter}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ UART\_ID\ \ \ \ 8\ }\textcolor{comment}{//\ UART\ Peripheral\ ID}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_d_c}{PDC}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ pointers\ to\ UART\ registers}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ p\_UART\_TPR;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \textcolor{keyword}{const}\ p\_UART\_TCR;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \textcolor{keyword}{const}\ p\_UART\_TNPR;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \textcolor{keyword}{const}\ p\_UART\_TNCR;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \textcolor{keyword}{const}\ p\_UART\_PTCR;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \textcolor{keyword}{const}\ p\_UART\_PTSR;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ RingBuffer\ *\_rx\_buffer;}
+\DoxyCodeLine{00046\ \ \ \ \ RingBuffer\ *\_tx\_buffer;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_data(uint16\_t\ imu\_data,\ uint32\_t\ imu\_timestamp,\ uint16\_t*\ sweep\_data,\ \textcolor{keywordtype}{int}\ sweep\_size,\ uint32\_t\ sweep\_timestamp,\ }
+\DoxyCodeLine{00057\ \ \ \ \ uint8\_t\ buffer\_data,\ uint32\_t\ buffer\_timestamp);}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ \ \ \ \ uint8\_t\ convert\_data(\textcolor{keyword}{const}\ T\&\ value);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ uint8\_t\ convert\_array(uint16\_t*\ arr,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ uint8\_t\ serialized\_storage[100];}
+\DoxyCodeLine{00084\ \ \ \ \ Vector<uint8\_t>\ serialized\_data;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_p_d_c_a86fb2cf94ee035a688d3fd36633bb8ab}{PDC}}()}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ :\ p\_UART\_TPR((void*)\mbox{\hyperlink{_p_d_c_8hpp_a543370a73b7340ed8bbf3da915ec2931}{UART\_PERIPH\_TPR\_ADDR}}),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_ab75f977616485811d7bcf0e16965c1cb}{UART\_PERIPH\_TCR\_ADDR}}),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TNPR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_a5cd2e74bafd4385c2e6c533dcc1040c0}{UART\_PERIPH\_TNPR\_ADDR}}),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TNCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_a922d9e9f827fb63034c4976ead461134}{UART\_PERIPH\_TNCR\_ADDR}}),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ p\_UART\_PTCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_ab485cfd9dbef733a8a87a7509b9f3ab5}{UART\_PERIPH\_PTCR\_ADDR}}),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ p\_UART\_PTSR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_acb8ee5ada8dac05acfb8b239c3fc0ee3}{UART\_PERIPH\_PTSR\_ADDR}})}
+\DoxyCodeLine{00099\ \ \ \ \ \{\}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_p_d_c_a8589ebf34fe8c9cd17ee4aa89004559c}{PDC}}(RingBuffer\ *pRx\_buffer,\ RingBuffer\ *pTx\_buffer)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ :\ p\_UART\_TPR((void*)\mbox{\hyperlink{_p_d_c_8hpp_a543370a73b7340ed8bbf3da915ec2931}{UART\_PERIPH\_TPR\_ADDR}}),}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_ab75f977616485811d7bcf0e16965c1cb}{UART\_PERIPH\_TCR\_ADDR}}),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TNPR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_a5cd2e74bafd4385c2e6c533dcc1040c0}{UART\_PERIPH\_TNPR\_ADDR}}),}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ p\_UART\_TNCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_a922d9e9f827fb63034c4976ead461134}{UART\_PERIPH\_TNCR\_ADDR}}),}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ p\_UART\_PTCR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_ab485cfd9dbef733a8a87a7509b9f3ab5}{UART\_PERIPH\_PTCR\_ADDR}}),}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ p\_UART\_PTSR((uint32\_t*)\mbox{\hyperlink{_p_d_c_8hpp_acb8ee5ada8dac05acfb8b239c3fc0ee3}{UART\_PERIPH\_PTSR\_ADDR}})}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \_rx\_buffer\ =\ pRx\_buffer;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \_tx\_buffer\ =\ pTx\_buffer;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_d_c_a2ed66e7deaedfa858740aa502139c491}{init}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_d_c_ae8307554c7a0cae9ac420d7e89a4833f}{send}}(uint16\_t\ imu\_data,\ uint32\_t\ imu\_timestamp,\ uint16\_t*\ sweep\_data,\ \textcolor{keywordtype}{int}\ sweep\_size,\ uint32\_t\ sweep\_timestamp,\ uint8\_t\ buffer\_data,\ }
+\DoxyCodeLine{00132\ \ \ \ \ uint32\_t\ buffer\_timestamp);}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_p_d_c_acec9fb8f80d104ae57ebc05cfee3ae0a}{write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ uc\_data);}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_p_d_c_a6e419bc8cbf73e8762e339173d605b92}{write\_array}}(uint8\_t\ \textcolor{keyword}{const}\ *uc\_data,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_d_c_a6624ba6e301780bca8fe769676d8fb3c}{flush}}();}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_d_c_ae50cf8f5ad20fe024847b54b4dc4e0f2}{write\_vec}}(Vector<uint8\_t>\ data);}
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

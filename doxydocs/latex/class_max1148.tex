@@ -1,0 +1,63 @@
+\doxysection{Max1148 Class Reference}
+\hypertarget{class_max1148}{}\label{class_max1148}\index{Max1148@{Max1148}}
+
+
+{\ttfamily \#include $<$Max1148.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_max1148_a98e6efa8f8cd99711799b5ec73c73423}{Max1148}} ()
+\begin{DoxyCompactList}\small\item\em ADC constructor. Sets cs\+\_\+pin as per ADC\+\_\+\+CS\+\_\+\+PIN macro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_max1148_a732421655c5d75deb85ee7ca31b5ee87}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the ADC. Initializes SPI bus and CS pin. This is only a separate function because you can\textquotesingle{}t initialize the SPI bus in a constructor (for some reason). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_max1148_af77241432e77ddae9a8e8a11a6c2f8e6}{Pip}}
+\begin{DoxyCompactList}\small\item\em ADC functions should really only be used in relation to \doxylink{class_pip}{Pip} measurements, so everything is private and \doxylink{class_pip}{Pip} is a friend. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_max1148_a98e6efa8f8cd99711799b5ec73c73423}\index{Max1148@{Max1148}!Max1148@{Max1148}}
+\index{Max1148@{Max1148}!Max1148@{Max1148}}
+\doxysubsubsection{\texorpdfstring{Max1148()}{Max1148()}}
+{\footnotesize\ttfamily \label{class_max1148_a98e6efa8f8cd99711799b5ec73c73423} 
+Max1148\+::\+Max1148 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ADC constructor. Sets cs\+\_\+pin as per ADC\+\_\+\+CS\+\_\+\+PIN macro. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_max1148_a732421655c5d75deb85ee7ca31b5ee87}\index{Max1148@{Max1148}!init@{init}}
+\index{init@{init}!Max1148@{Max1148}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_max1148_a732421655c5d75deb85ee7ca31b5ee87} 
+void Max1148\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the ADC. Initializes SPI bus and CS pin. This is only a separate function because you can\textquotesingle{}t initialize the SPI bus in a constructor (for some reason). 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_max1148_af77241432e77ddae9a8e8a11a6c2f8e6}\index{Max1148@{Max1148}!Pip@{Pip}}
+\index{Pip@{Pip}!Max1148@{Max1148}}
+\doxysubsubsection{\texorpdfstring{Pip}{Pip}}
+{\footnotesize\ttfamily \label{class_max1148_af77241432e77ddae9a8e8a11a6c2f8e6} 
+friend class \mbox{\hyperlink{class_pip}{Pip}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ADC functions should really only be used in relation to \doxylink{class_pip}{Pip} measurements, so everything is private and \doxylink{class_pip}{Pip} is a friend. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_max1148_8hpp}{Max1148.\+hpp}}\item 
+src/\mbox{\hyperlink{_max1148_8cpp}{Max1148.\+cpp}}\end{DoxyCompactItemize}

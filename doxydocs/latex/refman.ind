@@ -1,0 +1,38 @@
+\begin{theindex}
+
+  \item {flush}
+    \subitem {PDC}, \hyperpage{6}
+
+  \indexspace
+
+  \item {imu.hpp}
+    \subitem {initIMU}, \hyperpage{9}
+  \item {include/imu.hpp}, \hyperpage{9, 10}
+  \item {include/PDC.hpp}, \hyperpage{10, 11}
+  \item {include/Pip.hpp}, \hyperpage{11, 12}
+  \item {init}
+    \subitem {PDC}, \hyperpage{6}
+  \item {initIMU}
+    \subitem {imu.hpp}, \hyperpage{9}
+
+  \indexspace
+
+  \item {PDC}, \hyperpage{5}
+    \subitem {flush}, \hyperpage{6}
+    \subitem {init}, \hyperpage{6}
+    \subitem {PDC}, \hyperpage{5}
+    \subitem {write}, \hyperpage{6}
+    \subitem {write\_array}, \hyperpage{6}
+    \subitem {write\_vec}, \hyperpage{6}
+  \item {Pip}, \hyperpage{7}
+
+  \indexspace
+
+  \item {write}
+    \subitem {PDC}, \hyperpage{6}
+  \item {write\_array}
+    \subitem {PDC}, \hyperpage{6}
+  \item {write\_vec}
+    \subitem {PDC}, \hyperpage{6}
+
+\end{theindex}

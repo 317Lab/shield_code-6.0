@@ -1,0 +1,52 @@
+\doxysection{src/\+IMU.cpp File Reference}
+\hypertarget{_i_m_u_8cpp}{}\label{_i_m_u_8cpp}\index{src/IMU.cpp@{src/IMU.cpp}}
+
+
+Source file for the IMU library for Dartmouth\textquotesingle{}s 317 Lab.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$LIS3\+MDL.\+h$>$}\newline
+{\ttfamily \#include $<$LSM6.\+h$>$}\newline
+{\ttfamily \#include $<$IMU.\+hpp$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_m_u_8cpp_a895e7810df8321351c3b83bb9a81cac1}{init\+IMU}} (LIS3\+MDL \texorpdfstring{$\ast$}{*}mag, LSM6 \texorpdfstring{$\ast$}{*}gyro\+\_\+acc)
+\begin{DoxyCompactList}\small\item\em Initializes the IMU. Sets settings for all used axes.    \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i_m_u_8cpp_a5cb50b65553b7e898955d2e28239c25e}{get\+IMU}} (LIS3\+MDL \texorpdfstring{$\ast$}{*}mag, LSM6 \texorpdfstring{$\ast$}{*}imu, int \texorpdfstring{$\ast$}{*}data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source file for the IMU library for Dartmouth\textquotesingle{}s 317 Lab. 
+
+There is extensive sensor and register information commented in this file. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_m_u_8cpp_a5cb50b65553b7e898955d2e28239c25e}\index{IMU.cpp@{IMU.cpp}!getIMU@{getIMU}}
+\index{getIMU@{getIMU}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{getIMU()}{getIMU()}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_a5cb50b65553b7e898955d2e28239c25e} 
+void get\+IMU (\begin{DoxyParamCaption}\item[{LIS3\+MDL \texorpdfstring{$\ast$}{*}}]{mag}{, }\item[{LSM6 \texorpdfstring{$\ast$}{*}}]{imu}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+
+
+\Hypertarget{_i_m_u_8cpp_a895e7810df8321351c3b83bb9a81cac1}\index{IMU.cpp@{IMU.cpp}!initIMU@{initIMU}}
+\index{initIMU@{initIMU}!IMU.cpp@{IMU.cpp}}
+\doxysubsubsection{\texorpdfstring{initIMU()}{initIMU()}}
+{\footnotesize\ttfamily \label{_i_m_u_8cpp_a895e7810df8321351c3b83bb9a81cac1} 
+void init\+IMU (\begin{DoxyParamCaption}\item[{LIS3\+MDL \texorpdfstring{$\ast$}{*}}]{mag}{, }\item[{LSM6 \texorpdfstring{$\ast$}{*}}]{gyro\+\_\+acc}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the IMU. Sets settings for all used axes.    
+
+Initializes the IMU. Sets settings for all used axes.
+
+Info about registers and settings can be found commented in \doxylink{_i_m_u_8cpp}{imu.\+cpp}.
+
+Initializes the IMU. Sets settings for all used axes.

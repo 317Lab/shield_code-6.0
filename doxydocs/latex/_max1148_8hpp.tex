@@ -1,0 +1,140 @@
+\doxysection{include/\+Max1148.hpp File Reference}
+\hypertarget{_max1148_8hpp}{}\label{_max1148_8hpp}\index{include/Max1148.hpp@{include/Max1148.hpp}}
+
+
+Header file for the \doxylink{class_max1148}{Max1148} library for Dartmouth\textquotesingle{}s 317 Lab. Manages ADC communication through SPI.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_max1148}{Max1148}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_max1148_8hpp_a0056b7fdd0f81fad9cd38e9fd389a4b6}{SPI\+\_\+\+SPEED}}~14000000
+\item 
+\#define \mbox{\hyperlink{_max1148_8hpp_ab1dcc9464e3fcb94922386e8a7f53f21}{SPI\+\_\+\+MODE}}~SPI\+\_\+\+MODE0
+\item 
+\#define \mbox{\hyperlink{_max1148_8hpp_a7fb9fde533f9b9bc8e4ae31524c9ea51}{ADC\+\_\+\+CHANNEL}}~0
+\item 
+\#define \mbox{\hyperlink{_max1148_8hpp_af458889265f213625129e2dd0707a69b}{ADC\+\_\+\+PIN}}~10
+\item 
+\#define \mbox{\hyperlink{_max1148_8hpp_a5218409ffc6cf938fa4edce83ad05ff9}{ADC\+\_\+\+CS\+\_\+\+PIN}}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153}{Command}} \{ \newline
+\mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ab9aa4cb55d5dee10b3293ebd11419af3}{CHAN0}} = 0x8E
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a91552ca98efbca3d68412e14345b1f62}{CHAN1}} = 0x\+CE
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ae39037f79d6d11f5dac119e6e655ac26}{CHAN2}} = 0x9E
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a7db0ae73b85440008b26dcf4f3621a91}{CHAN3}} = 0x\+DE
+, \newline
+\mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a8449a1a07d970f1901dd53cbdb9af50c}{CHAN4}} = 0x\+AE
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153adfcac84e23776488605f600f193da18a}{CHAN5}} = 0x\+EE
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a680716442ad62da705eef2a198cc986d}{CHAN6}} = 0x\+BE
+, \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ab0a07d3948bc15c22bb1e81f99fdc387}{CHAN7}} = 0x\+FE
+, \newline
+\mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153acb9be765f361bb7efb9073730aac92c6}{READ}} = 0x00
+ \}
+\begin{DoxyCompactList}\small\item\em The commands for the \doxylink{class_max1148}{Max1148} ADC. READ is a dummy byte used to read the ADC. CHAN0-\/7 are config commands to set the ADC channel. As default, the ADC is set to single ended, unipolar conversion, and internal clock mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{class_max1148}{Max1148} library for Dartmouth\textquotesingle{}s 317 Lab. Manages ADC communication through SPI. 
+
+Basically just the Max1147 library from the Isinglass/\+Apophis shield code rewritten for the Arduino Due. Written by Jacob at some point unknown to me.
+
+See the data sheet for more information -\/ \href{https://www.analog.com/media/en/technical-documentation/data-sheets/MAX1146-MAX1149.pdf}{\texttt{ https\+://www.\+analog.\+com/media/en/technical-\/documentation/data-\/sheets/\+MAX1146-\/\+MAX1149.\+pdf}}
+
+\begin{DoxyAuthor}{Author}
+Sean Wallace 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_max1148_8hpp_a7fb9fde533f9b9bc8e4ae31524c9ea51}\index{Max1148.hpp@{Max1148.hpp}!ADC\_CHANNEL@{ADC\_CHANNEL}}
+\index{ADC\_CHANNEL@{ADC\_CHANNEL}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_CHANNEL}{ADC\_CHANNEL}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_a7fb9fde533f9b9bc8e4ae31524c9ea51} 
+\#define ADC\+\_\+\+CHANNEL~0}
+
+\Hypertarget{_max1148_8hpp_a5218409ffc6cf938fa4edce83ad05ff9}\index{Max1148.hpp@{Max1148.hpp}!ADC\_CS\_PIN@{ADC\_CS\_PIN}}
+\index{ADC\_CS\_PIN@{ADC\_CS\_PIN}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_CS\_PIN}{ADC\_CS\_PIN}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_a5218409ffc6cf938fa4edce83ad05ff9} 
+\#define ADC\+\_\+\+CS\+\_\+\+PIN~10}
+
+\Hypertarget{_max1148_8hpp_af458889265f213625129e2dd0707a69b}\index{Max1148.hpp@{Max1148.hpp}!ADC\_PIN@{ADC\_PIN}}
+\index{ADC\_PIN@{ADC\_PIN}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_PIN}{ADC\_PIN}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_af458889265f213625129e2dd0707a69b} 
+\#define ADC\+\_\+\+PIN~10}
+
+\Hypertarget{_max1148_8hpp_ab1dcc9464e3fcb94922386e8a7f53f21}\index{Max1148.hpp@{Max1148.hpp}!SPI\_MODE@{SPI\_MODE}}
+\index{SPI\_MODE@{SPI\_MODE}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{SPI\_MODE}{SPI\_MODE}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_ab1dcc9464e3fcb94922386e8a7f53f21} 
+\#define SPI\+\_\+\+MODE~SPI\+\_\+\+MODE0}
+
+\Hypertarget{_max1148_8hpp_a0056b7fdd0f81fad9cd38e9fd389a4b6}\index{Max1148.hpp@{Max1148.hpp}!SPI\_SPEED@{SPI\_SPEED}}
+\index{SPI\_SPEED@{SPI\_SPEED}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{SPI\_SPEED}{SPI\_SPEED}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_a0056b7fdd0f81fad9cd38e9fd389a4b6} 
+\#define SPI\+\_\+\+SPEED~14000000}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153}\index{Max1148.hpp@{Max1148.hpp}!Command@{Command}}
+\index{Command@{Command}!Max1148.hpp@{Max1148.hpp}}
+\doxysubsubsection{\texorpdfstring{Command}{Command}}
+{\footnotesize\ttfamily \label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+enum \mbox{\hyperlink{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153}{Command}}}
+
+
+
+The commands for the \doxylink{class_max1148}{Max1148} ADC. READ is a dummy byte used to read the ADC. CHAN0-\/7 are config commands to set the ADC channel. As default, the ADC is set to single ended, unipolar conversion, and internal clock mode. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN0@{CHAN0}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN0@{CHAN0}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ab9aa4cb55d5dee10b3293ebd11419af3}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN1@{CHAN1}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN1@{CHAN1}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a91552ca98efbca3d68412e14345b1f62}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN2@{CHAN2}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN2@{CHAN2}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ae39037f79d6d11f5dac119e6e655ac26}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN3@{CHAN3}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN3@{CHAN3}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a7db0ae73b85440008b26dcf4f3621a91}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN4@{CHAN4}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN4@{CHAN4}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a8449a1a07d970f1901dd53cbdb9af50c}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN5@{CHAN5}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN5@{CHAN5}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153adfcac84e23776488605f600f193da18a}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN6@{CHAN6}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN6@{CHAN6}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153a680716442ad62da705eef2a198cc986d}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAN7@{CHAN7}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!CHAN7@{CHAN7}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153ab0a07d3948bc15c22bb1e81f99fdc387}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+CHAN7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{READ@{READ}!Max1148.hpp@{Max1148.hpp}}\index{Max1148.hpp@{Max1148.hpp}!READ@{READ}}}\Hypertarget{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153acb9be765f361bb7efb9073730aac92c6}\label{_max1148_8hpp_a2afce0a47a93eee73a314d53e4890153} 
+READ&\\
+\hline
+
+\end{DoxyEnumFields}
