@@ -13,7 +13,7 @@ This is the 317 Lab repository for the Arduino Due version of the shield code. T
 3. [Documentation](#documentation)
 
 ## Overview
-The project structure is basically identical to the old version, albeit simpler, as deprecated and unnecessary code and files were removed. The core functionality can be found in [main.cpp](src/main.cpp). This (will) use the same ["state machine"](https://en.wikipedia.org/wiki/Finite-state_machine) as the old code. A detailed explanation of this can be found in [Ruthie's thesis](https://drive.google.com/file/d/1XH5SRRh2m84pu7f2B1RSFuYGV1u3EBdw/view?usp=sharing). Note that the hardware section of that thesis is now outdated.  
+The project structure is basically identical to the old version, albeit simpler, as deprecated and unnecessary code and files were removed. The core functionality can be found in [main.cpp](src/main.cpp). This (will) use the same ["state machine"](https://en.wikipedia.org/wiki/Finite-state_machine) as the old code. A detailed explanation of this can be found in [Ruth Nordhoff's thesis](https://drive.google.com/file/d/1XH5SRRh2m84pu7f2B1RSFuYGV1u3EBdw/view?usp=sharing). Note that the hardware section of that thesis is now outdated.  
   
 All source (.cpp) files are housed in the [src](src) directory. The header (.hpp) files for custom libraries are housed in the [include](include) directory. All other project libraries are included through the `lib_deps` flag in [platformio.ini](platformio.ini), which is explained [below](#platformio) and will be automatically included when the project is built.
 
