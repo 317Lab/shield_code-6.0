@@ -1,4 +1,4 @@
-# shield_code-2.0
+# Shield Code 2.0
 This is the 317 Lab repository for the Arduino Due version of the shield code. Things that are new:
 * There is no longer a "coprocessor" - everything is run from the Arduino Due. The Due uses a 32-bit sam3x8e processor, far more powerful and advanced than the old Arduino Uno. Information about the board can be found [here](https://docs.arduino.cc/hardware/due/). The processor's datasheet can be found [here](https://ww1.microchip.com/downloads/en/devicedoc/atmel-11057-32-bit-cortex-m3-microcontroller-sam3x-sam3a_datasheet.pdf).
 * This is now a Platformio project. This means we no longer have to use the arduous and painful Arduino IDE. Instructions for using and installing Platformio can be found [here](#platformio). This also means that the project is now entirely in C++.
