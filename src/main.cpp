@@ -12,13 +12,10 @@
 
 /*TODO - IN ORDER OF PRIORITY:
   - ADC TASKS:
-      - Clean up code, write documentation
-      - Confirm expected data output. It doesn't seem right that it's oscillating.
+    - gotta figure out what's up with our data. will have to wait until I get back to Wilder.
   - transfer old EEPROM library, test it
-  - Set up gh repo, remember to change project name
   - test IMU with proper initialization
   - Set up state machine!!
-  - figure out what's up with Joseph - maybe email Kristina?
   - At some point, IMU should turn into a class with LIS3MDL and LSM6 as members
   - Maybe figure out a good way to calculate what the maximum serialized data buffer size needs to be and initialize in the pdc constructor.
     That only matters if we end up running out of memory on the board (which we might).
