@@ -57,21 +57,23 @@ void Pip::clear_data(uint16_t data[], uint16_t size){
 }
 
 void Pip::tester(Max1148& adc){
-    for (int i = 0; i < 4096; i += 256) {
-    analogWrite(DAC_PIN, i);
-    delay(100); // Small delay to ensure the DAC has settled
 
-    // Read the value from the ADC
-    int adcValue = adc.adc_read_avg(8); // Replace with your library's method
+    //Getting timing data
+    //take an average ADC value for a series of DAC readings, send DAC and average ADC
+    //Sean has a python script that puts this into Excel
+    for(int i = 0; i < 4096; i += 128){
+        analogWrite(DAC_PIN, i);
+        delay(200);
+        int adcValue = adc.adc_read();
+        delay(200);
+        int adcAvgValue = adc.adc_read_avg(8);
+        Serial.print("DAC Value: ");
+        Serial.print(i);
+        Serial.print(" | ADC Value: ");
+        Serial.print(adcValue);
+        Serial.print(" | ADC Average (8): ");
+        Serial.println(adcAvgValue);
 
-    // Print the DAC and ADC values
-    Serial.print("DAC Value: ");
-    Serial.print(i);
-    Serial.print(" | ADC Value: ");
-    Serial.println(adcValue);
-
-    delay(500); // Delay before the next iteration
-  }
-
+    }
     
 }
