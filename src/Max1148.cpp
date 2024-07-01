@@ -22,9 +22,9 @@ uint16_t Max1148::adc_read(){
     SPI.transfer(channel);
     //delayMicroseconds(50);
     //send dummy byte to get first byte of data
-    data = SPI.transfer(READ) << 8;
+    data = SPI.transfer(ADC_READ) << 8;
     //Max1148 is a 14 bit ADC - so we have to do two SPI transfers to get all the data.
-    data |= SPI.transfer(READ);
+    data |= SPI.transfer(ADC_READ);
     //add data to total. Shifted right because result is left justified - Jacob
     csh();
     SPI.endTransaction();

@@ -34,7 +34,7 @@ There are two SPI boxes. Use one for the memory and one for the ADC. Arduino sho
 #define ADC_CHANNEL 0
 #define ADC_PIN 10
 #define ADC_CS_PIN 10
-#define READ 0x00
+#define ADC_READ 0x00
 
 /**
  * @brief Control bytes for the Max1148 ADC.
