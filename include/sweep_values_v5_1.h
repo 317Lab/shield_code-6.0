@@ -1,0 +1,138 @@
+// These are the values determined, by hand, to set each DAC
+// channel on Bob Shield V5.1 to 0-5 V.
+// Ruthie Nordhoff, 4/3/2019
+
+#if(SHIELD_NUMBER == 3)  
+#define PIP_0_SWEEP_MAX 2576  
+#define PIP_0_SWEEP_MIN 1814  
+#define PIP_1_SWEEP_MAX 2580  
+#define PIP_1_SWEEP_MIN 1825
+#define SAMPLE_PERIOD 22222
+
+#elif(SHIELD_NUMBER == 2)  
+#define PIP_0_SWEEP_MAX 2551  
+#define PIP_0_SWEEP_MIN 1774  
+#define PIP_1_SWEEP_MAX 2547  
+#define PIP_1_SWEEP_MIN 1785
+#define SAMPLE_PERIOD 22222
+
+#elif(SHIELD_NUMBER == 5)  
+#define PIP_0_SWEEP_MAX 2608  
+#define PIP_0_SWEEP_MIN 1845  
+#define PIP_1_SWEEP_MAX 2610  
+#define PIP_1_SWEEP_MIN 1858
+#define SAMPLE_PERIOD 22222
+
+#elif(SHIELD_NUMBER == 7)  
+#define PIP_0_SWEEP_MAX 2584  
+#define PIP_0_SWEEP_MIN 1796  
+#define PIP_1_SWEEP_MAX 2548  
+#define PIP_1_SWEEP_MIN 1784
+#define SAMPLE_PERIOD 22222
+
+#elif(SHIELD_NUMBER == 13)  
+#define PIP_0_SWEEP_MAX 2540  
+#define PIP_0_SWEEP_MIN 1781  
+#define PIP_1_SWEEP_MAX 2520  
+#define PIP_1_SWEEP_MIN 1780
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 14)  
+#define PIP_0_SWEEP_MAX 2552  
+#define PIP_0_SWEEP_MIN 1798  
+#define PIP_1_SWEEP_MAX 2530  
+#define PIP_1_SWEEP_MIN 1775
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 15)  
+#define PIP_0_SWEEP_MAX 2538  
+#define PIP_0_SWEEP_MIN 1781  
+#define PIP_1_SWEEP_MAX 2498  
+#define PIP_1_SWEEP_MIN 1767
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 16)  
+#define PIP_0_SWEEP_MAX 2602  
+#define PIP_0_SWEEP_MIN 1833 
+#define PIP_1_SWEEP_MAX 2571  
+#define PIP_1_SWEEP_MIN 1824
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 17)  
+#define PIP_0_SWEEP_MAX 2586  
+#define PIP_0_SWEEP_MIN 1817  
+#define PIP_1_SWEEP_MAX 2543  
+#define PIP_1_SWEEP_MIN 1800
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 18)  
+#define PIP_0_SWEEP_MAX 2570  
+#define PIP_0_SWEEP_MIN 1794  
+#define PIP_1_SWEEP_MAX 2546  
+#define PIP_1_SWEEP_MIN 1783
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 19)
+#define PIP_0_SWEEP_MAX 2566
+#define PIP_0_SWEEP_MIN 1800
+#define PIP_1_SWEEP_MAX 2540
+#define PIP_1_SWEEP_MIN 1785
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 20)
+#define PIP_0_SWEEP_MAX 2595
+#define PIP_0_SWEEP_MIN 1836
+#define PIP_1_SWEEP_MAX 2565
+#define PIP_1_SWEEP_MIN 1810
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 21)
+#define PIP_0_SWEEP_MAX 2598
+#define PIP_0_SWEEP_MIN 1842
+#define PIP_1_SWEEP_MAX 2585
+#define PIP_1_SWEEP_MIN 1835
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 22)
+#define PIP_0_SWEEP_MAX 2575
+#define PIP_0_SWEEP_MIN 1825
+#define PIP_1_SWEEP_MAX 2571
+#define PIP_1_SWEEP_MIN 1817
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 23)  
+#define PIP_0_SWEEP_MAX 2594  
+#define PIP_0_SWEEP_MIN 1838
+#define PIP_1_SWEEP_MAX 2611  
+#define PIP_1_SWEEP_MIN 1841
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 24)  
+#define PIP_0_SWEEP_MAX 2596  
+#define PIP_0_SWEEP_MIN 1821  
+#define PIP_1_SWEEP_MAX 2582  
+#define PIP_1_SWEEP_MIN 1822
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 25)  
+#define PIP_0_SWEEP_MAX 2536  
+#define PIP_0_SWEEP_MIN 1794  
+#define PIP_1_SWEEP_MAX 2583  
+#define PIP_1_SWEEP_MIN 1820
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 26)  
+#define PIP_0_SWEEP_MAX 2587  
+#define PIP_0_SWEEP_MIN 1840  
+#define PIP_1_SWEEP_MAX 2590  
+#define PIP_1_SWEEP_MIN 1834
+#define SAMPLE_PERIOD 22100
+
+#elif(SHIELD_NUMBER == 27)  
+#define PIP_0_SWEEP_MAX 2555  
+#define PIP_0_SWEEP_MIN 1806  
+#define PIP_1_SWEEP_MAX 2553  
+#define PIP_1_SWEEP_MIN 1804
+#define SAMPLE_PERIOD 22100
+
+#endif
