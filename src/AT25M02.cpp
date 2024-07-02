@@ -5,6 +5,8 @@
  * This treats it as a circular queue, and will not overwrite existing data.
  * 
  * I (Sean) had to move initialization code out of the constructor because the compiler does not like initializing SPI in the constructor
+ * It seems like most of this is written for the old version of the Arduino SPI library - probably a good idea too go through and fix that
+ * at some point.
  */
 
 #include <Arduino.h>
@@ -35,21 +37,17 @@ AT25M02::AT25M02()
  * @brief Initialize the AT25M02 EEPROM device.
  */
 void AT25M02::init(){
-	Serial.println("beginning SPI");
 	SPI.begin();
 	// Set up SPI device settings
-	Serial.println("setting up SPI settings");
 	spi_settings = SPISettings(SPI_DATA_RATE, MSBFIRST, SPI_MODE0);
 	// Set pin out information. Could be passed in via constructor params.
-	Serial.println("setting up chip select pin");
 	chip_select_pin = CHIP_SELECT_PIN;
-	Serial.println("setting up chip select pin mode");
 	pinMode(chip_select_pin, OUTPUT);
 	mem_start = 0;
 	mem_end = 0;
 	ram_full = false;
 	wb_end = 0;
-	Serial.println("setting write status register");
+	//pretty sure this is deprecated. it breaks everything.	
 	//setWRSR(0x00);
 }
 
