@@ -13,35 +13,22 @@ Note - step time is 565 us.
 
 */
 #include <Pip.hpp>
-/**
- * @copydoc Pip::Pip()
- 
- */
-Pip::Pip(){
-    delay_us = SWEEP_DEFAULT_DELAY;
-    avg_num = SWEEP_DEFAULT_AVG_NUM;
-    num_samples = SWEEP_DEFAULT_SAMPLES;
-    min = SWEEP_DEFAULT_MIN;
-    max = SWEEP_DEFAULT_MAX;
-}
-/** @copydoc Pip:Pip(int delay, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_channel) */
-Pip::Pip(int delay, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max){
-    this->delay_us = delay;
-    this->avg_num = avg_num;
-    this->num_samples = num_samples;
-    this->min = min;
-    this->max = max;
-    pinMode(DAC_PIN, OUTPUT);
+/** @copydoc Pip:Pip(int delay, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, Max1148& adc) */
+Pip::Pip(int delay, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, Max1148& adc)
+    : delay_us(delay), avg_num(avg_num), num_samples(num_samples), sweep_min(min), sweep_max(max), dac_pin(dac_pin), adc(adc){
+    pinMode(dac_pin, OUTPUT);
     analogWriteResolution(12);
 }
+
+
 /** @copydoc Pip::sweep() */
-void Pip::sweep(Max1148& adc){
+void Pip::sweep(){
     //clear data from last sweep. Shouldn't cause issues with sending since sweep won't begin until data is cleaned and loaded into PDC buffer.
     //Leaving commented because it shouldn't actually be necessary and impacts performance.
     //clear_data(data, sizeof(data) / sizeof(data[0]));
 
-    double value = min;
-	double step = (double)(max - min) / (double)(num_samples - 1);
+    double value = sweep_min;
+	double step = (double)(sweep_max - sweep_min) / (double)(num_samples - 1);
     for (int i = 0; i < num_samples; i++){
         analogWrite(DAC_PIN, (int)value);
         value += step;
@@ -56,7 +43,7 @@ void Pip::clear_data(uint16_t data[], uint16_t size){
     }
 }
 
-void Pip::tester(Max1148& adc){
+void Pip::tester(){
 
     //Getting timing data
     //take an average ADC value for a series of DAC readings, send DAC and average ADC
@@ -76,4 +63,8 @@ void Pip::tester(Max1148& adc){
 
     }
     
+}
+
+uint16_t Pip::read_adc(){
+    return adc.adc_read_avg(avg_num);
 }

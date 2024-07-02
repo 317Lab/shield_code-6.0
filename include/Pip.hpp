@@ -29,11 +29,21 @@
 
 
 class Pip{
+    friend class PipController;
     private:
+        /**
+         * @brief The pin for the DAC output.
+         */
+        uint8_t dac_pin;
         /**
          * @brief The delay between steps in the sweep. Measured in microseconds.
          */
         int delay_us;
+        /**
+         * @brief The ADC object for the Pip to use.
+         * Assuming each pip will use a different ADC channel.
+         */
+        Max1148 &adc;
         /**
          * @brief The number of samples to average when querying the ADC.
          */
@@ -45,8 +55,8 @@ class Pip{
         /**
          * @brief The minimum and maximum values for the sweep.
          */
-        uint16_t min;
-        uint16_t max;
+        uint16_t sweep_min;
+        uint16_t sweep_max;
         /**
          * @brief The data array for the sweep.
          */
@@ -59,26 +69,24 @@ class Pip{
          * @param size The size of the data array.
          */
         void clear_data(uint16_t data[], uint16_t size);
+
+        uint16_t read_adc();
     public:
-    /**
-     * @brief Default constructor for the Pip class.
-     */
-        Pip();
         /**
          * @brief Constructor for the Pip class. All parameters modifiable.
          */
-        Pip(int delay_us, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max);
+        Pip(int delay_us, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, Max1148& adc);
         
         /**
          * @brief Sweeps the DAC output from min to max.
          * Step length, delay, and number of samples are all set by the constructor.
          */
-        void sweep(Max1148& adc);
+        void sweep();
         /**
          * @brief Checks DAC and ADC readings. 
          * Modify for whatever is needed to test ADC functionality without compromising ADC class security.
          */
-        void tester(Max1148& adc);
+        void tester();
 
 
 };
