@@ -117,6 +117,7 @@ volatile uint32_t timer;
 volatile bool syncPulse;
 volatile bool newCycle;
 void configureTimerInterrupt();
+void syncHandler();
 
 //========== Finite State Machine States ==========//
 enum BobState {
@@ -135,9 +136,8 @@ enum BobState {
 BobState currentState = idle;
 
 void setup() {
-  // Configure serial, 230.4 kb/s BAUD
-  //temporarily at 9600 for testing over USB
-	Serial.begin(9600); 
+  // Configure serial, 250 kb/s baud rate
+	Serial.begin(250000); 
 	Serial.print("PIP_0_SWEEP_MIN = ");
 	Serial.println(PIP_0_SWEEP_MIN);
 	Serial.print("PIP_0_SWEEP_MAX = ");
@@ -161,6 +161,8 @@ void setup() {
 
   // Configure the timer interrupt
   configureTimerInterrupt();
+  //configure the external interrupt
+  attachInterrupt(digitalPinToInterrupt(SYNC_PIN), syncHandler, RISING);
 
 }
 
@@ -188,6 +190,11 @@ void TC0_Handler(){
 		newCycle = true;
 		timer = micros();
 	}
+}
+
+void syncHandler(){
+  timer = micros();
+	syncPulse = true;
 }
 
 /**
