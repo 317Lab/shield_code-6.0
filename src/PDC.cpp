@@ -4,7 +4,6 @@
  */
 #include <Arduino.h>
 #include <PDC.hpp>
-#include <Vector.h>
 #include <type_traits>
 /** @copydoc PDC::init() */
 void PDC::init(){
@@ -13,10 +12,7 @@ void PDC::init(){
     *p_UART_PTCR |= TXTEN_MASK;
     //initialize ring bffer
     _rx_buffer->_iHead = _rx_buffer->_iTail = 0;
-    _tx_buffer->_iHead = _tx_buffer->_iTail = 0;
-    //initialize bob data buffer
-    serialized_data.setStorage(serialized_storage, sizeof(serialized_storage));
-    
+    _tx_buffer->_iHead = _tx_buffer->_iTail = 0;    
 
 }
 
@@ -95,7 +91,30 @@ void PDC::flush(){
 
 }
 
-/** @copydoc PDC::convert_data() */
+
+
+void PDC::tester(int16_t* arr, int size){
+}
+
+//DEPRECATED FUNCTIONS
+
+/* size_t PDC::write_array(uint8_t const *uc_data, int size){
+    for(int i=0; i<size; i++){
+        write(uc_data[i]);
+    }
+    flush();
+    return 1;
+}
+
+void PDC::send(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* sweep_data, int sweep_size, uint32_t sweep_timestamp, uint8_t buffer_data, 
+uint32_t buffer_timestamp){
+    //put all the data into the buffer
+    process_data(imu_data, imu_timestamp, sweep_data, sweep_size, sweep_timestamp, buffer_data, buffer_timestamp);
+    //write the buffer to the PDC
+    write_vec(serialized_data);
+
+}
+
 template <typename T>
 uint8_t PDC::convert_data(const T& value) {
     //check if the template parameter is an integer type
@@ -115,8 +134,6 @@ uint8_t PDC::convert_data(const T& value) {
 }
 
 uint8_t PDC::convert_array(uint16_t* arr, int size) {
-    //check if the template parameter is an integer type
-    //static_assert(std::is_integral<T>::value, "Template parameter must be an integer type");
     //counter mainly for debugging
     uint8_t count=0;
     for (int j = 0; j<size; j++){
@@ -132,7 +149,22 @@ uint8_t PDC::convert_array(uint16_t* arr, int size) {
     return count;
 }
 
-/** @copydoc PDC::process_data() */
+uint8_t PDC::convert_imu_array(int16_t* arr, int size) {
+    //counter mainly for debugging
+    uint8_t count=0;
+    for (int j = 0; j<size; j++){
+        const uint8_t* bytePtr = reinterpret_cast<const uint8_t*>(&arr[j]);
+
+        for(size_t i=0; i<sizeof(arr[j]); i++){
+            if(bytePtr[i] != 0){
+                serialized_data.push_back(bytePtr[i]);
+            }
+        }
+
+    }
+    return count;
+}
+
 void PDC::process_data(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* sweep_data, int sweep_size, uint32_t sweep_timestamp, uint8_t buffer_data, uint32_t buffer_timestamp){
     //clear old buffer
     serialized_data.clear();
@@ -145,31 +177,11 @@ void PDC::process_data(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* swee
     convert_data(buffer_timestamp);
 }
 
-/** @copydoc PDC::write_vec() */
-void PDC::write_vec(Vector<uint8_t> data){
+void PDC::write_vec(Vector<int8_t> data){
     //write all the data in the vector
     for(int i=0; i<data.size(); i++){
         write(data[i]);
     }
     flush();
 }
-
-/** @copydoc PDC::send() */
-void PDC::send(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* sweep_data, int sweep_size, uint32_t sweep_timestamp, uint8_t buffer_data, 
-uint32_t buffer_timestamp){
-    //put all the data into the buffer
-    process_data(imu_data, imu_timestamp, sweep_data, sweep_size, sweep_timestamp, buffer_data, buffer_timestamp);
-    //write the buffer to the PDC
-    write_vec(serialized_data);
-
-}
-
-//DEPRECATED FUNCTIONS
-/*
-size_t PDC::write_array(uint8_t const *uc_data, int size){
-    for(int i=0; i<size; i++){
-        write(uc_data[i]);
-    }
-    flush();
-    return 1;
-}*/
+ */
