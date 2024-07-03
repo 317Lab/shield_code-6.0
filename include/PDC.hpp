@@ -105,18 +105,32 @@ public:
     void flush();
 
     
-
+    /**
+     * @brief Public function for testing anything needed. Should remove on release.
+     */
     void tester(int16_t* arr, int size);
 
+
+    /**
+     * @brief Writes any integer or integer array data to UART through PDC.
+     * @param data The data to send. Make sure to create pointer to integer, then pass pointer as parameter.
+     * @param size The size of the data. For array, use sizeof(data)/sizeof(data[0]).
+     */
     template <typename T>
-    void send(T const *arr, int size){
+    void send(T const *data, int size){
         for(int i=0; i<size; i++){
-        const uint8_t* bytePtr = reinterpret_cast<const uint8_t*>(&arr[i]);
-            for(size_t j=0; j<sizeof(arr[i]); j++){
+        const uint8_t* bytePtr = reinterpret_cast<const uint8_t*>(&data[i]);
+            for(size_t j=0; j<sizeof(data[i]); j++){
                 write(bytePtr[j]);
             }
         }
         flush();
+    }
+
+    template <typename T>
+    void send_direct(T* arr, int size){
+        *(volatile uint32_t*)p_UART_TPR = (uint32_t)arr;
+        *p_UART_TCR = size;
     }
 };
 
