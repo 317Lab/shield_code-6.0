@@ -26,5 +26,5 @@ void initIMU(LIS3MDL* compass, LSM6* gyro);
 /**
  * @brief Gets the IMU data.
  */
-void sampleIMU(LIS3MDL* compass, LSM6* gyro, int* data);
+void sampleIMU(LIS3MDL* compass, LSM6* gyro, int16_t* data);
 #endif
