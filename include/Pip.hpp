@@ -87,7 +87,12 @@ class Pip{
          * Modify for whatever is needed to test ADC functionality without compromising ADC class security.
          */
         void tester();
-
+        uint16_t* get_data(){
+            return data;
+        }
+        int get_data_size(){
+            return sizeof(data) / sizeof(data[0]);
+        }
 
 };
 #endif
