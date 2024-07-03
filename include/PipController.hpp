@@ -28,8 +28,6 @@ class PipController{
 				delayMicroseconds(delay);
 				pip1.data[i] = pip1.read_adc();
 				pip2.data[i] = pip2.read_adc();
-				Serial.print((int)value1);
-				Serial.println(pip1.data[i]);
 			}
 		}
 };
