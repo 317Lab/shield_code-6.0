@@ -40,8 +40,3 @@ void Max1148::csl(){
 void Max1148::csh(){
     digitalWrite(cs_pin, HIGH);
 }
-
-void Max1148::init(){
-    SPI.begin();
-    pinMode(cs_pin, OUTPUT);
-}

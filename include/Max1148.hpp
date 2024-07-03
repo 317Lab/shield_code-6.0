@@ -91,14 +91,8 @@ class Max1148{
          */
         Max1148(Channel channel): cs_pin(ADC_CS_PIN) {
             this->channel = static_cast<uint8_t>(channel);
-        }
-
-        /**
-         * @brief Initializes the ADC. Initializes SPI bus and CS pin.
-         * This is only a separate function because you can't initialize the SPI bus in a constructor (for some reason).
-         */
-        void init();
-        
+            pinMode(cs_pin, OUTPUT);
+        }        
 };        
 
 
