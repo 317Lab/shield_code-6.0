@@ -36,13 +36,11 @@ OR
 
 If you get a "no device found on [PORT]" error, just unplug from your machine and plug it back in. Platformio should correctly autodetect the correct port, but if you're having problems, double check in your device manager and set the correct port using `upload_port` in [platformio.ini](platformio.ini).
 ### Serial Monitor
-Platformio comes with a built in serial monitor that can display serial communication from the Arduino. Using it is important for debugging and testing, so here's a quick guide:  
+I highly recommend using HTerm, not the built in Platformio serial monitor. It is far more flexible and user friendly. You can download it [here](https://www.der-hammer.info/pages/terminal.html)  
 
-**If you are using Arduino's Serial library**:  
-This is what you should use for most debugging. Just click the plug icon in the top right. `Serial.print()` automatically converts characters to ASCII, so the default monitor works fine. Alternatively, run `pio device monitor` in terminal.  
+Remember that the data the state machine is sending is not ASCII readable. If you need to quickly output readable data for debugging, use Serial.print(). It does not conflict with our PDC library.  
 
-**Anything else (ie, our PDC library)**:  
-In terminal, run `pio device monitor --filter hexlify`. This will display the hex version of data the machine receives, which is the default format when communicating normally with the Arduino. The downside of this is that it's basically impossible to read text, but this is what you have to use when debugging/testing our data streams.
+If you do want to use the Platformio serial monitor, either click the plug icon in the top right or run `pio device monitor` in terminal.
 
 ### Debugging with GDB + Black Magic
 Our lab now has a JTAG probe that allows you to debug the Arduino code line-by-line using breakpoints. It is absolutely life changing. I will write a more complete guide on using it at some point, but for now I recommend:
