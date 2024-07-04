@@ -36,7 +36,7 @@ OR
 
 If you get a "no device found on [PORT]" error, just unplug from your machine and plug it back in. Platformio should correctly autodetect the correct port, but if you're having problems, double check in your device manager and set the correct port using `upload_port` in [platformio.ini](platformio.ini).
 ### Serial Monitor
-I highly recommend using HTerm, not the built in Platformio serial monitor. It is far more flexible and user friendly. You can download it [here](https://www.der-hammer.info/pages/terminal.html)  
+I highly recommend using HTerm, not the built in Platformio serial monitor. It is far more flexible and user friendly. You can download it [here](https://www.der-hammer.info/pages/terminal.html).  
 
 Remember that the data the state machine is sending is not ASCII readable. If you need to quickly output readable data for debugging, use Serial.print(). It does not conflict with our PDC library.  
 
