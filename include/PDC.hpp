@@ -4,7 +4,8 @@
  * 
  * This library is used to manage UART communication on the Arduino Due using the Peripheral DMA Controller (PDC).
  * This allows for non-blocking communication, so that we can run other processes while sending out data.
- *
+ * Note for future developers - any data array sent through this library must be a global variable. If the variable goes out of scope before the transfer is 
+ * complete, the data will be lost.
  * Author: Sean Wallace
  * Date: 2024-06-20
  */
@@ -22,11 +23,10 @@
 #define UART_PERIPH_TNCR_ADDR (UART_BASE + 0x11C) // Transmit next counter register
 #define UART_PERIPH_PTCR_ADDR (UART_BASE + 0x120) // Peripheral transfer control register
 #define UART_PERIPH_PTSR_ADDR (UART_BASE + 0x124) // Peripheral transfer status register
+#define UART_SR (UART_BASE + 0x0014) // Status register
 
 #define TXTEN_MASK (1<<8) //mask used to enable UART transmitter
-
-#define UART_ID    8 // UART Peripheral ID
-
+#define TXBUFE (1<<11) //check if UART is ready
 class PDC {
 private:
     // pointers to UART registers
@@ -36,21 +36,15 @@ private:
     volatile uint32_t* const p_UART_TNCR;
     volatile uint32_t* const p_UART_PTCR;
     volatile uint32_t* const p_UART_PTSR;
+    volatile uint32_t* const p_UART_SR;
+    
 
-    /**
-     * @brief Arduino's RingBuffer object, used for buffering data into the PDC
-     * 
-    */
-    RingBuffer *_rx_buffer;
-    RingBuffer *_tx_buffer;
 
     
 
 public:
     /**
-     * @brief Default constructor for the PDC class.
-     * 
-     * Shouldn't ever be used, but is here for completeness.
+     * @brief Default constructor for the PDC class. Initializes all relevant register pointers
      */
     PDC()
         : p_UART_TPR((void*)UART_PERIPH_TPR_ADDR),
@@ -58,111 +52,82 @@ public:
           p_UART_TNPR((uint32_t*)UART_PERIPH_TNPR_ADDR),
           p_UART_TNCR((uint32_t*)UART_PERIPH_TNCR_ADDR),
           p_UART_PTCR((uint32_t*)UART_PERIPH_PTCR_ADDR),
-          p_UART_PTSR((uint32_t*)UART_PERIPH_PTSR_ADDR)
+          p_UART_PTSR((uint32_t*)UART_PERIPH_PTSR_ADDR),
+          p_UART_SR((uint32_t*)UART_SR)
     {}
 
+
     /**
-     * @brief Constructor for the PDC class.
-     * 
-     * @param *pRx_buffer Pointer to the RingBuffer object for receiving data.
-     * @param *pTx_buffer Pointer to the RingBuffer object for transmitting data.
+     * @brief Turns on PDC, waits until ready.
      */
-    PDC(RingBuffer *pRx_buffer, RingBuffer *pTx_buffer)
-        : p_UART_TPR((void*)UART_PERIPH_TPR_ADDR),
-          p_UART_TCR((uint32_t*)UART_PERIPH_TCR_ADDR),
-          p_UART_TNPR((uint32_t*)UART_PERIPH_TNPR_ADDR),
-          p_UART_TNCR((uint32_t*)UART_PERIPH_TNCR_ADDR),
-          p_UART_PTCR((uint32_t*)UART_PERIPH_PTCR_ADDR),
-          p_UART_PTSR((uint32_t*)UART_PERIPH_PTSR_ADDR)
-    {
-        _rx_buffer = pRx_buffer;
-        _tx_buffer = pTx_buffer;
+    void init(){
+        //note - UART initialization happens through Serial.begin() in the main.cpp file. Line 55 in UARTClass.cpp MUST be commented out.
+    //enable pdc transmitter
+    *p_UART_PTCR |= TXTEN_MASK;
+    //wait until ready
+    while(! PDC::is_on()){
+        ;
     }
 
+    }
     /**
-     * @brief Initializes the PDC.
+     * @brief Adds data to the PDC buffer to be sent out through UART.
      * 
-     * Sets up the PDC for UART communication. Enables transmit register, sets up ring buffer, and initializes data buffer.
-     */
-    void init();
-
-     
-    
-    /**
-     * @brief Writes a single byte to the PDC buffer.
-     * @param uc_data Byte to write to the buffer. 
-     */
-
-    size_t write(const int uc_data);
-    
-    /**
-     * @brief Flushes the PDC buffer.
      * 
-     * Used to send any remaining data in the buffer.
-     * When sending larger array, most data usually goes to buffer before PDC is available to send it. So, have to flush before moving on.
-     */
-
-    void flush();
-
-    
-    /**
-     * @brief Public function for testing anything needed. Should remove on release.
-     */
-    void tester(int16_t* arr, int size);
-
-
-    /**
-     * @brief Writes any integer or integer array data to UART through PDC.
-     * @param data The data to send. Make sure to create pointer to integer, then pass pointer as parameter.
-     * @param size The size of the data. For array, use sizeof(data)/sizeof(data[0]).
+     * @tparam T - data type of buffer - either char pointer or integer array
+     * @param buffer - pointer to data buffer. Note that it doesn't like pointer casts, so global pointers to sentinels must be used.
+     * That's not an issue with Arduino's Serial library because it's blocking - avoiding that is the whole point of this.
+     * @param size - size of buffer
+     * 
+     * This can also handle text in an ASCII readable format by using a char pointer:
+     * @code
+     * String message = "Hello World!";
+     * uint8_t* p_message = (uint8_t*)message.c_str();
+     * pdc.send(p_message, sizeof(message));
+     * @endcode
+     * But, Serial.print() is recommended for any debugging application to avoid global declarations.
+     * 
+     * Note for later - negative numbers are sent as two's complement. make sure Jules' parser is reading that correctly.
      */
     template <typename T>
-    void send(T const *data, int size){
-        for(int i=0; i<size; i++){
-        const uint8_t* bytePtr = reinterpret_cast<const uint8_t*>(&data[i]);
-            for(size_t j=0; j<sizeof(data[i]); j++){
-                write(bytePtr[j]);
+    void send(T* buffer, int size){
+        //check if UART is ready for transmit
+        if(*p_UART_SR & TXBUFE){
+            //check if first buffer is full
+            if(*p_UART_TCR == 0){
+                //set buffer and size
+                *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
+                *p_UART_TCR = size;
+            } else {
+                //set next buffer and size
+                *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
+                *p_UART_TNCR = size;
+            }
+           
+        } else{
+            //wait until ready
+            while(!(*p_UART_SR & TXBUFE)){
+                ;
+            }
+            //same as above
+            if(*p_UART_TCR != 0){
+                *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
+                *p_UART_TCR = size;
+            } else {
+                *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
+                *p_UART_TNCR = size;
             }
         }
-        flush();
+        
+    }
+    /**
+     * @brief Checks if the PDC and UART are on.
+     */
+    bool is_on(){
+        return (*p_UART_PTSR & (1<<8));
     }
 
-    template <typename T>
-    void send_direct(T* arr, int size){
-        *(volatile uint32_t*)p_UART_TPR = (uint32_t)arr;
-        *p_UART_TCR = size;
-    }
+
 };
 
-#endif
-
-/* ARCHIVED CODE:
-    //tried to send all the data through the vector thing
-    void send(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* sweep_data, int sweep_size, uint32_t sweep_timestamp, uint8_t buffer_data, 
-    uint32_t buffer_timestamp);
-
-
-
-    void process_data(uint16_t imu_data, uint32_t imu_timestamp, uint16_t* sweep_data, int sweep_size, uint32_t sweep_timestamp, 
-    uint8_t buffer_data, uint32_t buffer_timestamp);
-    
-
-    template <typename T>
-    uint8_t convert_data(const T& value);
-
-
-    uint8_t convert_array(uint16_t* arr, int size);
-
-    uint8_t convert_imu_array(int16_t* arr, int size);
-
-
-    int8_t serialized_storage[100];
-
-
-    Vector<int8_t> serialized_data;
-        size_t write_array(uint8_t const *uc_data, int size);
-
-    void write_vec(Vector<int8_t> data);
-
-    
-*/
+#endif PDC_HPP

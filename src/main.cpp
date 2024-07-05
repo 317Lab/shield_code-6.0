@@ -5,8 +5,12 @@
  * When complete, will set sweep parameters and run the state machine.
  */
 /*TODO - IN ORDER OF PRIORITY:
-  - Set up state machine!!
-      - Fix for baud rate issue is probably USB. Try to figure out 422 adapter.
+  - PDC tasks:
+      - Should set massive buffer as member variable of PDC class and just run all data transfer through that. That also solves the global declaration issue.
+        Data parser would have to change, because everything would get cast into 4 bytes. Would also have to check if we have enough memory to do this.s
+      - Alternative is to interrupt when buffer is empty and reload. interrupting sweep is probably bad. ask jeff.
+  - State machine questions:
+      - figure out what to do with extra zeroes in data
       - Timing parameters will all need to change. Talk to Jeff about how to figure these out.
       - SWEEP_DELAY is currently set up with clock cycles. Should change to microseconds. Setting to 200 us for now.
       - Should move interrupt code to separate file at some point.
@@ -35,6 +39,7 @@ Can still use a buffer to end up at 45 sweeps per second.
 #include <Pip.hpp> //note, Max1148 isn't included because it's included in Pip
 #include <PDC.hpp>
 #include <AT25M02.hpp>
+#include <PipController.hpp>
 //========== For IMU ==========//
 #include <IMU.hpp> // Library to initialize and sample IMU
 #include <Wire.h>  // I2C communications
@@ -46,8 +51,11 @@ Can still use a buffer to end up at 45 sweeps per second.
 #define BUFFER  1000  // buffer to wait period of missed measurement
 #define SWEEP_OFFSET 500 // is this used?
 #define RAM_BUFFER_DELAY 10  // Delay in seconds until the chip starts sending saved data.
+
 //========== Debugging ==========//
 void blink();
+bool debug = true;
+
 //========== Sweep Parameters ==========//
 #define SWEEP_STEPS        28               // Number of steps in sweep
 // Sweep range set with SHIELD_NUMBER in sweep_values_v5_1.h
@@ -64,15 +72,14 @@ void blink();
 #define SWEEP_AVERAGES         8           // each sample ~20-21 us
 
 //========== Class Declarations ==========//
-//Ring buffer for PDC
-RingBuffer rxBuffer;
-RingBuffer txBuffer;
-PDC pdc(&rxBuffer, &txBuffer);
+PDC pdc;
 
-Max1148 adc(Channel::CHAN0);
+Max1148 adc0(Channel::CHAN0);
+Max1148 adc1(Channel::CHAN1);
 
-Pip pip0(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, PIP_0_SWEEP_MIN, PIP_0_SWEEP_MAX);
-Pip pip1(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, PIP_1_SWEEP_MIN, PIP_1_SWEEP_MAX);
+Pip pip0(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, PIP_0_SWEEP_MIN, PIP_0_SWEEP_MAX, DAC0, adc0);
+Pip pip1(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, PIP_1_SWEEP_MIN, PIP_1_SWEEP_MAX, DAC1, adc1);
+PipController pipController(pip0, pip1);
 
 LIS3MDL compass;
 LSM6 gyro;
@@ -86,12 +93,18 @@ uint8_t imuSentinel = 'I';
 uint8_t sweepSentinel = 'S';
 uint8_t interruptSentinel = 'B';
 uint8_t messageSentinel = '#';
+uint8_t* p_imuSentinel = &imuSentinel;
+uint8_t* p_sweepSentinel = &sweepSentinel;
+uint8_t* p_interruptSentinel = &interruptSentinel;
+uint8_t* p_messageSentinel = &messageSentinel;
+
 bool savedSweep = false;		// If we have a saved sweep to send
 bool sendFromRam = false;		// When to send from ram
 bool storeToRam = true;			// Save data to the ram chip
 
 //========== Sweep Variable ==========//
 uint8_t shieldID = 0;
+uint8_t* p_shieldID = &shieldID;
 uint16_t sweep0[SWEEP_STEPS];
 uint16_t sweep1[SWEEP_STEPS];
 
@@ -135,43 +148,239 @@ enum BobState {
 };
 BobState currentState = idle;
 
+//FSM function prototypes
+void FSMUpdate();
+void FSMAction();
+void startSweepOnShield();
+void sendIMUData();
+void sendSweepData();
+void takeIMUData();
+void sendStoredData();
+void sendInterruptTimeStamps();
+void getSweepData();
+
 void setup() {
-  // Configure serial, 250 kb/s baud rate
-	Serial.begin(250000); 
-	Serial.print("PIP_0_SWEEP_MIN = ");
-	Serial.println(PIP_0_SWEEP_MIN);
-	Serial.print("PIP_0_SWEEP_MAX = ");
-	Serial.println(PIP_0_SWEEP_MAX);
-	Serial.print("PIP_1_SWEEP_MIN = ");
-	Serial.println(PIP_1_SWEEP_MIN);
-	Serial.print("PIP_1_SWEEP_MAX = ");
-	Serial.println(PIP_1_SWEEP_MAX);  
+	if(debug){
+        Serial.begin(230400);
+        pdc.init();
+        /* SPI.begin();
+        startTime=micros();
+        startSweepOnShield();
+        sendSweepData();  */
+/*         SPI.begin();
+        initIMU(&compass, &gyro);
+        pdc.init();
+        sampleIMU(&compass, &gyro, IMUData);
+        pdc.send(IMUData, sizeof(IMUData)/sizeof(IMUData[0]));
+ */	}
+	else{
+		// Configure serial, 230.4 kb/s baud rate
+		Serial.begin(230400); 
+		Serial.print("PIP_0_SWEEP_MIN = ");
+		Serial.println(PIP_0_SWEEP_MIN);
+		Serial.print("PIP_0_SWEEP_MAX = ");
+		Serial.println(PIP_0_SWEEP_MAX);
+		Serial.print("PIP_1_SWEEP_MIN = ");
+		Serial.println(PIP_1_SWEEP_MIN);
+		Serial.print("PIP_1_SWEEP_MAX = ");
+		Serial.println(PIP_1_SWEEP_MAX);  
 
-  // Setup IMU
-  initIMU(&compass, &gyro);
+		// Setup IMU
+		initIMU(&compass, &gyro);
 
-  // Setup RAM
-  ram.init();
+		// Setup RAM
+		ram.init();
 
-  // Setup PDC
-  pdc.init();
+		// Setup PDC
+		pdc.init();
 
-  // Initialize time
-  startTime = micros(); 
+        //setup SPI
+        SPI.begin();
 
-  // Configure the timer interrupt
-  configureTimerInterrupt();
-  //configure the external interrupt
-  attachInterrupt(digitalPinToInterrupt(SYNC_PIN), syncHandler, RISING);
+		// Initialize time
+		startTime = micros(); 
 
+		// Configure the timer interrupt
+		configureTimerInterrupt();
+		//configure the external interrupt
+		attachInterrupt(digitalPinToInterrupt(SYNC_PIN), syncHandler, RISING);
+	}
 }
 
 void loop() {
+	if(debug){
+        /* sampleIMU(&compass, &gyro, IMUData);
+        for(int i = 0; i < 10; i++){
+            Serial.print(IMUData[i]);
+            Serial.print(" ");
+        }
+        Serial.println();
+        delay(2000); */
+	}
+	else{
+		FSMUpdate();
+  		FSMAction();
+	}
+}
+
+/**
+ * @brief Finite State Machine update function.
+ * 
+ * This function updates the state machine based on the current state.
+
+ */
+void FSMUpdate(){
+  switch(currentState){
+    case idle: {
+        if (syncPulse) {
+            syncPulse = false;
+            return;
+        }
+        volatile uint32_t irq_state = __get_PRIMASK();  
+        __disable_irq();                       
+        if (micros() - timer > SWEEP_OFFSET) {
+            currentState = startSweep;
+        }
+        __set_PRIMASK(irq_state);  
+        break;
+    }
+    case startSweep: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = sendSweep;
+        }
+        break;
+    }
+    case sendSweep: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = takeIMU;
+        }
+        break;
+    }
+    case takeIMU: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = sendIMU;
+        }
+        break;
+    }
+    case sendIMU: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = sendStored;
+        }
+        break;
+    }
+    case sendStored: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = sendTimeStamps;
+        }
+        break;
+    }
+    case sendTimeStamps: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = waitForSweep;
+        }
+        break;
+    }
+    case waitForSweep: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = getSweep;
+        }
+        break;
+    }
+    case getSweep: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = waitForNewCycle;
+        }
+        break;
+    }
+    case waitForNewCycle: {
+        if (newCycle || syncPulse) {
+            currentState = idle;
+            newCycle = false;
+            syncPulse = false;
+        }
+        break;
+    }
+    case interrupted: {
+        currentState = waitForNewCycle;
+        break;
+    }
+    default: {
+        currentState = idle;
+        break;
+    }
+}
+
 
 }
 
 /**
- * @brief Blinks the onboard LED. Formerly used for debugging.
+ * @brief Finite State Machine action function.
+ * 
+ * This function performs the action associated with the current state.
+ */
+void FSMAction(){
+	switch(currentState){
+		case idle:
+			break;
+		case startSweep:
+			startSweepOnShield();
+			break;
+		case sendSweep:
+			sendSweepData();
+			break;
+		case takeIMU:
+			takeIMUData();
+			break;
+		case sendIMU:
+			sendIMUData();
+			break;
+		case sendStored:
+			sendStoredData();
+			break;
+		case sendTimeStamps:
+			sendInterruptTimeStamps();
+			break;
+		case waitForSweep:
+			break;
+		case getSweep:
+			getSweepData();
+			break;
+		case waitForNewCycle:
+			break;
+		case interrupted:
+			savedSweep = false;
+			break;
+		default:
+			break;
+	}
+}
+
+/**
+ * @brief Blinks the onboard LED. Used for debugging.
  */
 void blink(){
   digitalWrite(LED_BUILTIN, HIGH);
@@ -215,7 +424,7 @@ void configureTimerInterrupt(){
     - The third parameter sets the clock source to MCK/128. MCK is at 84 MHz, so this sets the clock to 656.25 kHz.
   */
   TC_Configure(TC0, 0, TC_CMR_WAVE | TC_CMR_WAVSEL_UP_RC | TC_CMR_TCCLKS_TIMER_CLOCK4);
-  //This sets the value that the counter reaches before triggering the interrupt
+  //RC sets the value that the counter reaches before triggering the interrupt
   //This sets it to 10kHz
   TC_SetRC(TC0, 0, 64.625); // 
 
@@ -226,4 +435,56 @@ void configureTimerInterrupt(){
   NVIC_EnableIRQ(TC0_IRQn);
 
   TC_Start(TC0, 0);
+}
+
+/**
+ * @brief Starts the sweep.
+ * Note that we no longer have to get the sweep data separately
+ */
+void startSweepOnShield(){
+	sweepStartTime = micros();
+	sweepTimeStamp = sweepStartTime - startTime;
+	pipController.sweep();
+}
+
+
+void takeIMUData(){
+    IMUTimeStamp = micros() - startTime;
+    sampleIMU(&compass, &gyro, IMUData);
+}
+void sendSweepData(){
+    if(!savedSweep){
+        return;
+    }
+    pdc.send(p_messageSentinel, sizeof(messageSentinel));
+    pdc.send(p_messageSentinel, sizeof(messageSentinel));
+    pdc.send(p_sweepSentinel, sizeof(sweepSentinel));
+/*     uint32_t* p_sweepTimeStamp = &sweepTimeStamp;
+    pdc.send(p_sweepTimeStamp, sizeof(sweepTimeStamp));
+    pdc.send(p_shieldID, sizeof(shieldID));
+ */    
+    uint16_t* p_sweep0 = pip0.get_data();
+    uint16_t* p_sweep1 = pip1.get_data();
+    int size0 = pip0.get_data_size();
+    int size1 = pip1.get_data_size();
+    pdc.send(p_sweep0, size0);
+    pdc.send(p_sweep1, size1);
+    savedSweep = false;
+
+}
+
+void sendIMUData(){
+
+}
+
+void sendStoredData(){
+
+}
+
+void sendInterruptTimeStamps(){
+
+}
+
+void getSweepData(){
+
 }
