@@ -27,6 +27,9 @@
 
 #define TXTEN_MASK (1<<8) //mask used to enable UART transmitter
 #define TXBUFE (1<<11) //check if UART is ready
+/**
+ * @brief Manages UART transmits through peripheral DMA controller (PDC).
+ */
 class PDC {
 private:
     // pointers to UART registers

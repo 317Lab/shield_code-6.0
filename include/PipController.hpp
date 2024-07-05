@@ -3,7 +3,10 @@
 
 #include <Arduino.h>
 #include <Pip.hpp>
-
+/**
+ * @brief Manages simultaneous sweep for two Pip sensors.
+ * A bit hacky, but allows easily storing separate sweep data in each Pip object without compromising data privacy.
+ */
 class PipController{
 	private:
 		Pip& pip1;

@@ -27,7 +27,9 @@
 
 #define DAC_PIN DAC0
 
-
+/**
+ * @brief Manages the Pip sensor sweep and associated data.
+ */
 class Pip{
     friend class PipController;
     private:

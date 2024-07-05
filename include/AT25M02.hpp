@@ -25,7 +25,9 @@ enum Command
 	WRITE_BYTE = 0x02,
 	WRITE_PAGE = 0x02
 };
-
+/**
+ * @brief Interfaces with the AT25M02 EEPROM chip.
+ */
 class AT25M02
 {
 	public:

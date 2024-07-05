@@ -51,7 +51,9 @@ enum class Channel : uint8_t{
     CHAN6 = 0xBF,
     CHAN7 = 0xFF
     };
-
+/**
+ * @brief Manages interfacing with Max1148 ADC.
+ */
 class Max1148{
     /**
      * @brief ADC functions should really only be used in relation to Pip measurements, so everything is private and Pip is a friend.
