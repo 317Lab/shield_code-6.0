@@ -7,7 +7,7 @@
  * Note for future developers - any data array sent through this library must be a global variable. If the variable goes out of scope before the transfer is 
  * complete, the data will be lost.
  * Author: Sean Wallace
- * Date: 2024-06-20
+ * Date: 2024-07-08
  */
 
 
@@ -25,7 +25,7 @@
 #define UART_PERIPH_PTSR_ADDR (UART_BASE + 0x124) // Peripheral transfer status register
 #define UART_SR (UART_BASE + 0x0014) // Status register
 
-#define TXTEN_MASK (1<<8) //mask used to enable UART transmitter
+#define TXTEN (1<<8) //mask used to enable UART transmitter
 #define TXBUFE (1<<11) //check if UART is ready
 /**
  * @brief Manages UART transmits through peripheral DMA controller (PDC).
@@ -61,12 +61,11 @@ public:
 
 
     /**
-     * @brief Turns on PDC, waits until ready.
+     * @brief Turns on PDC, waits until ready. Must be called AFTER Serial.begin() in setup().
      */
     void init(){
-        //note - UART initialization happens through Serial.begin() in the main.cpp file. Line 55 in UARTClass.cpp MUST be commented out.
     //enable pdc transmitter
-    *p_UART_PTCR |= TXTEN_MASK;
+    *p_UART_PTCR |= TXTEN;
     //wait until ready
     while(! PDC::is_on()){
         ;
@@ -96,16 +95,9 @@ public:
     void send(T* buffer, int size){
         //check if UART is ready for transmit
         if(*p_UART_SR & TXBUFE){
-            //check if first buffer is full
-            if(*p_UART_TCR == 0){
                 //set buffer and size
                 *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
                 *p_UART_TCR = size;
-            } else {
-                //set next buffer and size
-                *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
-                *p_UART_TNCR = size;
-            }
            
         } else{
             //wait until ready
@@ -113,14 +105,30 @@ public:
                 ;
             }
             //same as above
-            if(*p_UART_TCR != 0){
                 *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
                 *p_UART_TCR = size;
-            } else {
+        }
+        
+    }
+    /**
+     * @brief Adds data to the backup PDC buffer. Identical to send().
+     */
+    template <typename T>
+    void send_next(T* buffer, int size){
+                //set buffer and size
+                if(*p_UART_SR & TXBUFE){
+                    *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
+                    *p_UART_TNCR = size;
+                }
+           
+            //same as above
+            else{
+                while(!(*p_UART_SR & TXBUFE)){
+                    ;
+                }
                 *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
                 *p_UART_TNCR = size;
             }
-        }
         
     }
     /**
@@ -133,4 +141,4 @@ public:
 
 };
 
-#endif PDC_HPP
+#endif
