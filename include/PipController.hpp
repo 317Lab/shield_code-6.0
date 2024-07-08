@@ -13,7 +13,10 @@ class PipController{
 		Pip& pip2;
 	public:
 		PipController(Pip& pip1, Pip& pip2) : pip1(pip1), pip2(pip2) {}
-
+		/**
+		 * @brief Sweeps both DACs simultaneously, reads both ADC channels. 
+		 * Functionally identical to the version committed by Max Roberts in 2015.
+		 */
 		void sweep(){
 			double value1 = pip1.sweep_min;
 			double value2 = pip2.sweep_min;
