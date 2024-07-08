@@ -29,7 +29,7 @@ Once you have PIO installed, whenever you open the project in vscode it should a
 ### Programming the board
 (For current development, not on final board)  
   
-Very simple. Connect your computer to the Due's programming port using micro-USB (it's the one next to the round jack, farther from the reset button). Then, either:
+Very simple. Connect your computer to the Due's native USB port using micro-USB (it's the one closer to the reset button). Note, we are *not* using the programming port - it doesn't support the project baud rate. Then, either:
 1. Click the small right arrow in the bottom left of the window  
 OR
 2. Type `pio run --target upload` in terminal.  
