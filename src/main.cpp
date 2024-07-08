@@ -5,20 +5,12 @@
  * When complete, will set sweep parameters and run the state machine.
  */
 /*TODO - IN ORDER OF PRIORITY:
-  - PDC tasks:
-      - Should set massive buffer as member variable of PDC class and just run all data transfer through that. That also solves the global declaration issue.
-        Data parser would have to change, because everything would get cast into 4 bytes. Would also have to check if we have enough memory to do this.s
-      - Alternative is to interrupt when buffer is empty and reload. interrupting sweep is probably bad. ask jeff.
   - State machine questions:
-      - figure out what to do with extra zeroes in data
-      - Timing parameters will all need to change. Talk to Jeff about how to figure these out.
+      - Figure out new timing parameters
       - SWEEP_DELAY is currently set up with clock cycles. Should change to microseconds. Setting to 200 us for now.
       - Should move interrupt code to separate file at some point.
   - Convert AT25M02 documentation to doxygen
-  - test IMU with proper initialization (I do not remember what I meant by this)
-      - At some point, IMU should turn into a class with LIS3MDL and LSM6 as members
-  - Maybe figure out a good way to calculate what the maximum serialized data buffer size needs to be and initialize in the pdc constructor.
-    That only matters if we end up running out of memory on the board (which we might).-
+  - At some point, IMU should turn into a class with LIS3MDL and LSM6 as members
   - Look into if the non-blocking I2C library would be helpful for making timing work out.
   
 */
@@ -49,12 +41,11 @@ Can still use a buffer to end up at 45 sweeps per second.
 //========== Timing ==========//
 // SAMPLE_PERIOD defined in sweep_values_v5.1h
 #define BUFFER  1000  // buffer to wait period of missed measurement
-#define SWEEP_OFFSET 500 // is this used?
 #define RAM_BUFFER_DELAY 10  // Delay in seconds until the chip starts sending saved data.
 
 //========== Debugging ==========//
 void blink();
-bool debug = true;
+bool debug = false;
 
 //========== Sweep Parameters ==========//
 #define SWEEP_STEPS        28               // Number of steps in sweep
@@ -85,6 +76,9 @@ LIS3MDL compass;
 LSM6 gyro;
 AT25M02 ram;
 
+//========== Sweep Variable ==========//
+uint8_t shieldID = 0;
+
 //========== Buffers and Messaging ==========//
 int16_t IMUData[10];
 uint32_t IMUTimeStamp;
@@ -93,22 +87,18 @@ uint8_t imuSentinel = 'I';
 uint8_t sweepSentinel = 'S';
 uint8_t interruptSentinel = 'B';
 uint8_t messageSentinel = '#';
-uint8_t* p_imuSentinel = &imuSentinel;
-uint8_t* p_sweepSentinel = &sweepSentinel;
-uint8_t* p_interruptSentinel = &interruptSentinel;
-uint8_t* p_messageSentinel = &messageSentinel;
+uint8_t sweepSentinelBuf[4] = {messageSentinel, messageSentinel, sweepSentinel, shieldID};
+uint8_t imuSentinelBuf[3] = {messageSentinel, messageSentinel, imuSentinel};
+uint8_t interruptSentinelBuf[3] = {messageSentinel, messageSentinel, interruptSentinel};
 
 bool savedSweep = false;		// If we have a saved sweep to send
 bool sendFromRam = false;		// When to send from ram
 bool storeToRam = true;			// Save data to the ram chip
 
-//========== Sweep Variable ==========//
-uint8_t shieldID = 0;
-uint8_t* p_shieldID = &shieldID;
-uint16_t sweep0[SWEEP_STEPS];
-uint16_t sweep1[SWEEP_STEPS];
+//buffer for combined sweep data
+uint16_t sweep_buffer[2*SWEEP_STEPS];
 
-//removed deprecated communication booleans
+
 
 //========== Main Loop Timing ==========//
 uint32_t startTime = 0;
@@ -120,7 +110,7 @@ uint32_t sweepTimeStamp = 0;
 #define IMU_DATA_OFFSET     (sizeof(IMUTimeStamp) + IMU_TIMESTAMP_OFFSET)
 #define SWEEP_TIMESTAMP_OFFSET (sizeof(IMUData) + IMU_DATA_OFFSET)
 #define SWEEP_DATA_OFFSET (sizeof(sweepTimeStamp) + SWEEP_TIMESTAMP_OFFSET)
-#define RAM_BUF_LEN  (sizeof(IMUTimeStamp) + sizeof(IMUData) + sizeof(sweepTimeStamp) + sizeof(sweep0) + sizeof(sweep1))
+#define RAM_BUF_LEN  (sizeof(IMUTimeStamp) + sizeof(IMUData) + sizeof(sweepTimeStamp) + sizeof(sweep_buffer))
 // Stores the IMU data then the Sweep data
 uint8_t ramBuf[RAM_BUF_LEN];
 
@@ -141,8 +131,6 @@ enum BobState {
 	sendIMU,
 	sendStored,
 	sendTimeStamps,
-	waitForSweep,
-	getSweep,
 	waitForNewCycle,
 	interrupted
 };
@@ -156,14 +144,25 @@ void sendIMUData();
 void sendSweepData();
 void takeIMUData();
 void sendStoredData();
-void sendInterruptTimeStamps();
-void getSweepData();
+void sendSweepTimestamp();
+
+
 
 void setup() {
 	if(debug){
         Serial.begin(230400);
+        SPI.begin();
         pdc.init();
-        /* SPI.begin();
+        startSweepOnShield();
+        delay(100);
+        sendSweepData();
+
+/*         pdc.init();         
+        SPI.begin();
+        startSweepOnShield();
+        delay(100);
+        sendSweepData();
+ */          /* SPI.begin();
         startTime=micros();
         startSweepOnShield();
         sendSweepData();  */
@@ -176,7 +175,8 @@ void setup() {
 	else{
 		// Configure serial, 230.4 kb/s baud rate
 		Serial.begin(230400); 
-		Serial.print("PIP_0_SWEEP_MIN = ");
+        //Not sure why these would need to get printed every time
+/* 		Serial.print("PIP_0_SWEEP_MIN = ");
 		Serial.println(PIP_0_SWEEP_MIN);
 		Serial.print("PIP_0_SWEEP_MAX = ");
 		Serial.println(PIP_0_SWEEP_MAX);
@@ -184,7 +184,7 @@ void setup() {
 		Serial.println(PIP_1_SWEEP_MIN);
 		Serial.print("PIP_1_SWEEP_MAX = ");
 		Serial.println(PIP_1_SWEEP_MAX);  
-
+ */
 		// Setup IMU
 		initIMU(&compass, &gyro);
 
@@ -239,21 +239,21 @@ void FSMUpdate(){
         volatile uint32_t irq_state = __get_PRIMASK();  
         __disable_irq();                       
         if (micros() - timer > SWEEP_OFFSET) {
-            currentState = startSweep;
+            currentState = sendSweep;
         }
         __set_PRIMASK(irq_state);  
         break;
     }
-    case startSweep: {
+        case sendSweep: {
         if (syncPulse) {
             currentState = interrupted;
             syncPulse = false;
         } else {
-            currentState = sendSweep;
+            currentState = startSweep;
         }
         break;
     }
-    case sendSweep: {
+    case startSweep: {
         if (syncPulse) {
             currentState = interrupted;
             syncPulse = false;
@@ -290,24 +290,6 @@ void FSMUpdate(){
         break;
     }
     case sendTimeStamps: {
-        if (syncPulse) {
-            currentState = interrupted;
-            syncPulse = false;
-        } else {
-            currentState = waitForSweep;
-        }
-        break;
-    }
-    case waitForSweep: {
-        if (syncPulse) {
-            currentState = interrupted;
-            syncPulse = false;
-        } else {
-            currentState = getSweep;
-        }
-        break;
-    }
-    case getSweep: {
         if (syncPulse) {
             currentState = interrupted;
             syncPulse = false;
@@ -362,12 +344,7 @@ void FSMAction(){
 			sendStoredData();
 			break;
 		case sendTimeStamps:
-			sendInterruptTimeStamps();
-			break;
-		case waitForSweep:
-			break;
-		case getSweep:
-			getSweepData();
+			sendSweepTimestamp();
 			break;
 		case waitForNewCycle:
 			break;
@@ -445,6 +422,7 @@ void startSweepOnShield(){
 	sweepStartTime = micros();
 	sweepTimeStamp = sweepStartTime - startTime;
 	pipController.sweep();
+    savedSweep=true;
 }
 
 
@@ -456,35 +434,48 @@ void sendSweepData(){
     if(!savedSweep){
         return;
     }
-    pdc.send(p_messageSentinel, sizeof(messageSentinel));
-    pdc.send(p_messageSentinel, sizeof(messageSentinel));
-    pdc.send(p_sweepSentinel, sizeof(sweepSentinel));
-/*     uint32_t* p_sweepTimeStamp = &sweepTimeStamp;
-    pdc.send(p_sweepTimeStamp, sizeof(sweepTimeStamp));
-    pdc.send(p_shieldID, sizeof(shieldID));
- */    
-    uint16_t* p_sweep0 = pip0.get_data();
-    uint16_t* p_sweep1 = pip1.get_data();
-    int size0 = pip0.get_data_size();
-    int size1 = pip1.get_data_size();
-    pdc.send(p_sweep0, size0);
-    pdc.send(p_sweep1, size1);
+    
+    memcpy(sweep_buffer, pip0.data, SWEEP_STEPS*sizeof(uint16_t));
+    memcpy(sweep_buffer + SWEEP_STEPS, pip1.data, SWEEP_STEPS*sizeof(uint16_t));
+    pdc.send(sweepSentinelBuf, sizeof(sweepSentinelBuf));
+    pdc.send_next(sweep_buffer, sizeof(sweep_buffer));
     savedSweep = false;
 
 }
 
 void sendIMUData(){
-
+    pdc.send(imuSentinelBuf, sizeof(imuSentinelBuf));
+    pdc.send_next(IMUData, sizeof(IMUData));
 }
 
 void sendStoredData(){
+    /* Might move this somewhere else, but this initiates a delay of 10s
+	 when sending memory from the ram*/
+    if (!sendFromRam && micros() - startTime > RAM_BUFFER_DELAY * 1000000) {
+		sendFromRam = true;
+	}
+    // Send from ram when ready & have data
+    if (sendFromRam && ram.usedBytes()>=RAM_BUF_LEN) {
+        ram.readData(ramBuf, RAM_BUF_LEN);
+        pdc.send(imuSentinelBuf, sizeof(imuSentinelBuf));
+        pdc.send(ramBuf, sizeof(IMUTimeStamp));
+        pdc.send(ramBuf + IMU_DATA_OFFSET, sizeof(IMUData));
+        pdc.send(sweepSentinelBuf, sizeof(sweepSentinelBuf));
+        pdc.send(ramBuf + SWEEP_TIMESTAMP_OFFSET, sizeof(sweepTimeStamp));
+        pdc.send(ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
+    }
+    // Write IMU then sweep data to the ram at once.
+    if (storeToRam){
+        ram.writeData((uint8_t *)&IMUTimeStamp, sizeof(IMUTimeStamp));
+		ram.writeData((uint8_t *)IMUData, sizeof(IMUData));
+
+		ram.writeData((uint8_t *)&sweepTimeStamp, sizeof(sweepTimeStamp));
+		ram.writeData((uint8_t *)pip0.data, sizeof(pip0.data));
+		ram.writeData((uint8_t *)pip1.data, sizeof(pip1.data));
+    }
 
 }
 
-void sendInterruptTimeStamps(){
-
-}
-
-void getSweepData(){
-
+void sendSweepTimestamp(){
+    pdc.send(&sweepTimeStamp, sizeof(sweepTimeStamp));
 }
