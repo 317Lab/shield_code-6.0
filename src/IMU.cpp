@@ -65,7 +65,7 @@ void initIMU(LIS3MDL* mag, LSM6* gyro_acc){
 
 }
 /** @copydoc getIMU */
-void getIMU(LIS3MDL* mag, LSM6* imu, int*data){
+void sampleIMU(LIS3MDL* mag, LSM6* imu, int16_t* data){
   mag->read();
   imu->read();
   data[0]=mag->m.x;
