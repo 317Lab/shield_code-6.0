@@ -41,6 +41,7 @@ Can still use a buffer to end up at 45 sweeps per second.
 //========== Timing ==========//
 // SAMPLE_PERIOD defined in sweep_values_v5.1h
 #define BUFFER  1000  // buffer to wait period of missed measurement
+#define SWEEP_OFFSET           500
 #define RAM_BUFFER_DELAY 10  // Delay in seconds until the chip starts sending saved data.
 
 //========== Debugging ==========//
