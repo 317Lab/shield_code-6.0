@@ -33,7 +33,7 @@
 class PDC {
 private:
     // pointers to UART registers
-    volatile void* const p_UART_TPR;
+    volatile uint32_t* const p_UART_TPR;
     volatile uint32_t* const p_UART_TCR;
     volatile uint32_t* const p_UART_TNPR;
     volatile uint32_t* const p_UART_TNCR;
@@ -50,7 +50,7 @@ public:
      * @brief Default constructor for the PDC class. Initializes all relevant register pointers
      */
     PDC()
-        : p_UART_TPR((void*)UART_PERIPH_TPR_ADDR),
+        : p_UART_TPR((uint32_t*)UART_PERIPH_TPR_ADDR),
           p_UART_TCR((uint32_t*)UART_PERIPH_TCR_ADDR),
           p_UART_TNPR((uint32_t*)UART_PERIPH_TNPR_ADDR),
           p_UART_TNCR((uint32_t*)UART_PERIPH_TNCR_ADDR),
@@ -137,7 +137,7 @@ public:
     bool is_on(){
         return (*p_UART_PTSR & (1<<8));
     }
-
+    
 
 };
 
