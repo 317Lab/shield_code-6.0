@@ -40,7 +40,6 @@ private:
     volatile uint32_t* const p_UART_PTCR;
     volatile uint32_t* const p_UART_PTSR;
     volatile uint32_t* const p_UART_SR;
-    
 
 
     
@@ -116,18 +115,21 @@ public:
     template <typename T>
     void send_next(T* buffer, int size){
                 //set buffer and size
-                if(*p_UART_SR & TXBUFE){
-                    *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
-                    *p_UART_TNCR = size;
-                }
+            if(*p_UART_SR & TXBUFE){
+                send(buffer, size);
+            } else if (*p_UART_TNCR==0){
+                *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
+                *p_UART_TNCR = size;
+            }
            
-            //same as above
-            else{
-                while(!(*p_UART_SR & TXBUFE)){
+            else if (!(*p_UART_SR & TXBUFE)&&(*p_UART_TNCR!=1)){
+                while(*p_UART_TNCR!=0){
                     ;
                 }
                 *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
                 *p_UART_TNCR = size;
+            } else{
+                send(buffer, size);
             }
         
     }
@@ -137,8 +139,5 @@ public:
     bool is_on(){
         return (*p_UART_PTSR & (1<<8));
     }
-    
-
 };
-
 #endif
