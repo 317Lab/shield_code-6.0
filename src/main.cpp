@@ -4,18 +4,37 @@
  * 
  * Contains shield initialization, state machine implementation and functions, and interrupt handling.
  * 
- * This version uses a custom version of the Arduino Due framework core. It can be found at https://github.com/swallace23/framework-arduino-sam
  */
 
 /*TODO - IN ORDER OF PRIORITY:
-  - flip sweep high to low
-  - look at the imu registers - see what the gain choices are and what they are presently set to. 
-    - thinks she wants imu to have a range of +- 100 thousand nano teslas. jules' parser seems like it's not set to that.
-  - Figure out how much faster we can get it while remaining integer number of sweeps per second.
-    - Communication is only half the sweep. we can throw the IMU query in there using that nonblocking I2C library.
-  - State machine questions:
+- Turn on GPS pulse generator
+- Make debugging setup picture/guide
+
+- Timestamp issue:
+    - I2C clock turns off 
+    - sweeps get super far apart - like 1 second
+    - CPP has undefined behavior if you try to store too large of an integer into 4 bytes. figure out why this wasn't an issue before?
+
+- Update platformio.ini for Jeff to upload - port, debug flags, etc.
+
+- DAC settling:
       - Figure out new timing parameters
-      - SWEEP_DELAY is currently set up with clock cycles. Should change to microseconds. Setting to 200 us for now. Convert based on coprocessor clock speed.
+      - SWEEP_DELAY is currently set up with clock cycles. Should change to microseconds.
+      - Need to add preamp settling time to DAC internal delay. Jeff will tell me what that should be.
+
+- Speeding it up:
+    - Communication is only half the sweep. we can throw the IMU query in there using that nonblocking I2C library.
+    - ask Jeff how much we can cut down sweep time.
+    - Very rough test indicates that the interrupts add about 500 us to the sweep time.
+
+- IMU:
+      - Accelerometer and gyro readings are maxing out. Note that we can increase range.
+      - Should stop sending a zero at end of IMU
+*/
+/*
+General notes:
+SWEEP NEEDS TO BE FIRST. imu and sweep cadence most important. that worked. don't change.
+
 */
 //========== Libraries ==========//
 #include <Arduino.h>
@@ -43,7 +62,7 @@ int cycle_counter = 0;
 //========== Sweep Parameters ==========//
 #define SWEEP_STEPS        28               // Number of steps in sweep
 // Sweep range set with SHIELD_NUMBER in sweep_values_v5_1.h
-#define SHIELD_NUMBER 15
+#define SHIELD_NUMBER 5
 #include "sweep_values_v5_1.h"
 
 // These two set the step duration, which sets the sweep duration (11.23 ms).
@@ -76,11 +95,6 @@ int16_t IMUData[10];
 uint32_t IMUTimeStamp;
 uint32_t *p_IMUTimeStamp = &IMUTimeStamp;
 // Use J & T for buffered messages (sentinel + 1)
-/* uint8_t imuSentinel = 'I';
-uint8_t sweepSentinel = 'S';
-uint8_t interruptSentinel = 'B';
-uint8_t ramSentinel = 'R';
-uint8_t messageSentinel = '#'; */
 uint8_t sweepSentinel[4] = {'#', '#', 'S', shieldID};
 uint8_t sweepSentinelBuf[4] = {'#', '#', 'T', shieldID};
 uint8_t imuSentinel[3] = {'#', '#', 'I'};
@@ -110,6 +124,9 @@ uint32_t *p_sweepTimeStamp = &sweepTimeStamp;
 // Stores the IMU data then the Sweep data
 uint8_t ramBuf[RAM_BUF_LEN];
 
+const size_t totalSize = 294;
+uint8_t memory_block[totalSize];
+uint8_t* p_memory_block = memory_block;
 //========== Interrupt Timing ==========//
 #define SYNC_PIN 53
 volatile uint32_t timer;
@@ -129,21 +146,10 @@ enum BobState {
 	sendTimeStamps,
 	waitForNewCycle,
 	interrupted,
-    store
+    store,
+    read
 };
 BobState currentState = idle;
-
-enum Sends {
-    NONE,
-    SWEEP1,
-    SWEEP2,
-    IMU1,
-    IMU2,
-    RAM1,
-    RAM2,
-    RAM3
-};
-Sends send = NONE;
 
 //FSM function prototypes
 void FSMUpdate();
@@ -153,9 +159,9 @@ void sendIMUData();
 void sendSweepData();
 void takeIMUData();
 void sendStoredData();
-void sendSweepTimestamp();
-void enableUARTInterrupt();
 void storeData();
+void readData();
+void sendData();
 
 void setup() {
 	if(debug){
@@ -183,7 +189,7 @@ void setup() {
 		// Setup RAM
 		ram.init();
 
-		// Setup PDC
+		// Setup PDC - must be called after Serial.begin()
 		pdc.init();
 
 		// Initialize time
@@ -202,7 +208,7 @@ void setup() {
 void loop() {
 	if(debug){
         takeIMUData();
-        sendIMUData();
+        //sendIMUData();
         delay(500);
  	}
 	else{
@@ -227,21 +233,12 @@ void FSMUpdate(){
         volatile uint32_t irq_state = __get_PRIMASK();  
         __disable_irq();                       
         if (micros() - timer > SWEEP_OFFSET) {
-            //currentState = sendSweep;
             currentState = startSweep;
         }
         __set_PRIMASK(irq_state);  
         break;
     }
-        case sendSweep: {
-        if (syncPulse) {
-            currentState = interrupted;
-            syncPulse = false;
-        } else {
-            currentState = startSweep;
-        }
-        break;
-    }
+
     case startSweep: {
         if (syncPulse) {
             currentState = interrupted;
@@ -251,13 +248,60 @@ void FSMUpdate(){
         }
         break;
     }
+
     case takeIMU: {
         if (syncPulse) {
             currentState = interrupted;
             syncPulse = false;
         } else {
-            //currentState = sendIMU;
+            currentState = read;
+        }
+        break;
+    }
+        case read:
+            if (syncPulse) {
+                currentState = interrupted;
+                syncPulse = false;
+            } else {
+                currentState = store;
+            }
+            break;
+        case store: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
             currentState = waitForNewCycle;
+        }
+        break;
+    }
+        
+    case waitForNewCycle: {
+        if (newCycle || syncPulse) {
+            cycle_counter++;
+            currentState = idle;
+            newCycle = false;
+            syncPulse = false;
+        }
+        break;
+    }
+    case interrupted: {
+        currentState = waitForNewCycle;
+        break;
+    }
+    default: {
+        currentState = idle;
+        break;
+    }
+}
+    
+/*
+    case sendSweep: {
+        if (syncPulse) {
+            currentState = interrupted;
+            syncPulse = false;
+        } else {
+            currentState = startSweep;
         }
         break;
     }
@@ -279,34 +323,12 @@ void FSMUpdate(){
         }
         break;
     }
-    case store: {
-        if (syncPulse) {
-            currentState = interrupted;
-            syncPulse = false;
-        } else {
-            currentState = waitForNewCycle;
-        }
-        break;
-    }
     
-    case waitForNewCycle: {
-        if (newCycle || syncPulse) {
-            cycle_counter++;
-            currentState = idle;
-            newCycle = false;
-            syncPulse = false;
-        }
-        break;
-    }
-    case interrupted: {
-        currentState = waitForNewCycle;
-        break;
-    }
-    default: {
-        currentState = idle;
-        break;
-    }
-}
+    */
+    
+    
+    
+    
 
 
 }
@@ -324,13 +346,13 @@ void FSMAction(){
 			startSweepOnShield();
 			break;
 		case sendSweep:
-			sendSweepData();
+			//sendSweepData();
 			break;
 		case takeIMU:
 			takeIMUData();
 			break;
 		case sendIMU:
-			sendIMUData();
+			//sendIMUData();
 			break;
 		case sendStored:
 			//sendStoredData();
@@ -339,6 +361,9 @@ void FSMAction(){
 			break;
         case store:
             storeData();
+            break;
+        case read:
+            readData();
             break;
 		case interrupted:
 			savedSweep = false;
@@ -377,7 +402,7 @@ void syncHandler(){
 
 /**
  * @brief Configures timer counter for interrupt
- * Documentation for internal functions - see tc.c (.platformio/packages/framework-arduino-sam/system/libsam/source/tc.c)
+ * Documentation for internal functions - see tc.c (system/libsam/source/tc.c at https://github.com/swallace23/framework-arduino-sam)
  * The processor has 3 clocks, each have 3 channels and 3 registers (RA, RB, RC).
  * This is set up to use TC0 and channel 0. RC is used to store the compare value.
  * The interrupt is triggered when the counter reaches the compare value. Calculate interrupt frequency with:
@@ -407,99 +432,19 @@ void configureTimerInterrupt(){
   TC_Start(TC0, 0);
 }
 
-void enableUARTInterrupt(){
-    UART->UART_IER = UART_IER_TXBUFE;
-    NVIC_EnableIRQ(UART_IRQn);
-    NVIC_SetPriority(UART_IRQn, 1);
-}
-void UART_Handler(){
-    switch(send){
-        case SWEEP1:
-            if(!savedSweep){
-                send=IMU1;
-                break;
-            }
-            pdc.send(sweepSentinel, sizeof(sweepSentinel));
-            pdc.send_next(p_sweepTimeStamp, sizeof(sweepTimeStamp));
-            send = SWEEP2;
-            return;
-        case SWEEP2:
-            pdc.send(sweep_buffer, sizeof(sweep_buffer));
-            savedSweep = false;
-            send = IMU1;
-            return;
-        case IMU1:
-            pdc.send(imuSentinel, sizeof(imuSentinel));
-            pdc.send_next(p_IMUTimeStamp, sizeof(IMUTimeStamp));
-            send = IMU2;
-            return;
-        case IMU2:
-            pdc.send(IMUData, sizeof(IMUData));
-            send = RAM1;
-            return;
-        case RAM1:
-            if (!sendFromRam && micros() - startTime > RAM_BUFFER_DELAY * 1000000) {
-		        sendFromRam = true;
-	        }
-            if (sendFromRam && ram.usedBytes()>=RAM_BUF_LEN){
-                pdc.send(imuSentinelBuf, sizeof(imuSentinelBuf));
-                pdc.send_next(ramBuf, sizeof(IMUTimeStamp));
-                send = RAM2;
-                return;
-            } else{
-                send = NONE;
-                return;
-            }
-           
-        case RAM2:
-            if (sendFromRam && ram.usedBytes()>=RAM_BUF_LEN){
-                pdc.send(ramBuf + IMU_DATA_OFFSET, sizeof(IMUData));
-                pdc.send_next(sweepSentinelBuf, sizeof(sweepSentinelBuf));
-                send = RAM3;
-                return;
-            } else{
-                send = NONE;
-                return;
-            }
-           
-        case RAM3:
-            if (sendFromRam && ram.usedBytes()>=RAM_BUF_LEN){
-                pdc.send(ramBuf + SWEEP_TIMESTAMP_OFFSET, sizeof(sweepTimeStamp));
-                pdc.send_next(ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
-                send = NONE;
-                return;
-            } else{
-                send = NONE;
-                return;
-            }
-           
-        case NONE:
-            NVIC_DisableIRQ(UART_IRQn);
-            return;
-        default:
-            NVIC_DisableIRQ(UART_IRQn);
-            return;
-    }
-}
+
  
 /**
- * @brief Starts the sweep.
- * Note that we no longer have to get the sweep data separately
+ * @brief Attaches last data buffer to UART PDC, runs DAC sweep, and saves pip data into a combined buffer.
  */
-String messageString = "hello";
-String* p_messageString = &messageString;
 void startSweepOnShield(){
-	//sweepStartTime = micros();
-	//sweepTimeStamp = sweepStartTime - startTime;
-    //pdc.send(p_messageString, sizeof(messageString));
-    //Serial.println("timestamps acquired");
-    send = SWEEP1;
-    enableUARTInterrupt();
-    //Serial.println("interrupt enabled");
-    //Serial.println("beginning sweep");
+    //take timestamp
+	sweepStartTime = micros();
+	sweepTimeStamp = sweepStartTime - startTime;
+    sendData();
 	pipController.sweep();
-    NVIC_DisableIRQ(UART_IRQn);
     memcpy(sweep_buffer, pip0.data, SWEEP_STEPS*sizeof(uint16_t));
+    //copy pip data into combined buffer
     memcpy(sweep_buffer + SWEEP_STEPS, pip1.data, SWEEP_STEPS*sizeof(uint16_t));
     savedSweep=true;
 }
@@ -509,7 +454,61 @@ void takeIMUData(){
     IMUTimeStamp = micros() - startTime;
     sampleIMU(&compass, &gyro, IMUData);
 }
-void sendSweepData(){
+
+void storeData(){
+    if (storeToRam){
+        ram.writeData((uint8_t *)&IMUTimeStamp, sizeof(IMUTimeStamp));
+        ram.writeData((uint8_t *)IMUData, sizeof(IMUData));
+        ram.writeData((uint8_t *)&sweepTimeStamp, sizeof(sweepTimeStamp));
+        ram.writeData((uint8_t *)sweep_buffer, sizeof(sweep_buffer));
+    }
+}
+
+void readData(){
+    if(sendFromRam){
+        ram.readData(ramBuf, RAM_BUF_LEN);
+    }
+}
+
+void sendData(){
+    if(!savedSweep){
+        return;
+    } 
+    if (!sendFromRam && micros() - startTime > RAM_BUFFER_DELAY * 1000000) {
+		sendFromRam = true;
+	}
+    p_memory_block = memory_block;
+    if(sendFromRam && ram.usedBytes()>=RAM_BUF_LEN){
+        memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
+        p_memory_block += sizeof(sweepSentinel);
+        memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
+        p_memory_block += sizeof(sweepTimeStamp);
+        memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
+        p_memory_block += sizeof(sweep_buffer);
+        memcpy(p_memory_block, imuSentinel, sizeof(imuSentinel));
+        p_memory_block += sizeof(imuSentinel);
+        memcpy(p_memory_block, p_IMUTimeStamp, sizeof(IMUTimeStamp));
+        p_memory_block += sizeof(IMUTimeStamp);
+        memcpy(p_memory_block, IMUData, sizeof(IMUData));
+        p_memory_block += sizeof(IMUData);
+        memcpy(p_memory_block, imuSentinelBuf, sizeof(imuSentinelBuf));
+        p_memory_block += sizeof(imuSentinelBuf);
+        memcpy(p_memory_block, ramBuf + IMU_TIMESTAMP_OFFSET, sizeof(IMUTimeStamp));
+        p_memory_block += sizeof(IMUTimeStamp);
+        memcpy(p_memory_block, ramBuf + IMU_DATA_OFFSET, sizeof(IMUData));
+        p_memory_block += sizeof(IMUData);
+        memcpy(p_memory_block, sweepSentinelBuf, sizeof(sweepSentinelBuf));
+        p_memory_block += sizeof(sweepSentinelBuf);
+        memcpy(p_memory_block, ramBuf + SWEEP_TIMESTAMP_OFFSET, sizeof(sweepTimeStamp));
+        p_memory_block += sizeof(sweepTimeStamp);
+        memcpy(p_memory_block, ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
+        p_memory_block = memory_block;
+        pdc.send(memory_block, totalSize);
+    } 
+    
+}
+
+/* void sendSweepData(){
     if(!savedSweep){
         return;
     }
@@ -526,16 +525,7 @@ void sendIMUData(){
     pdc.send(imuSentinel, sizeof(imuSentinel));
     pdc.send_next(p_IMUTimeStamp, sizeof(IMUTimeStamp));
     pdc.send(IMUData, sizeof(IMUData));
-}
-
-void storeData(){
-    if (storeToRam){
-        ram.writeData((uint8_t *)&IMUTimeStamp, sizeof(IMUTimeStamp));
-        ram.writeData((uint8_t *)IMUData, sizeof(IMUData));
-        ram.writeData((uint8_t *)&sweepTimeStamp, sizeof(sweepTimeStamp));
-        ram.writeData((uint8_t *)sweep_buffer, sizeof(sweep_buffer));
-    }
-}
+} */
 /* void sendStoredData(){
      if (!sendFromRam && micros() - startTime > RAM_BUFFER_DELAY * 1000000) {
 		sendFromRam = true;
