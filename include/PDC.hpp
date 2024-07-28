@@ -41,6 +41,8 @@ private:
     volatile uint32_t* const p_UART_PTSR;
     volatile uint32_t* const p_UART_SR;
 
+    uint8_t backup_buffer[294];
+
 
     
 
@@ -99,13 +101,17 @@ public:
                 *p_UART_TCR = size;
            
         } else{
-            //wait until ready
+            memcpy(backup_buffer, buffer, size);
+            enableUARTInterrupt();
+            /* //wait until ready
+            //digitalWrite(7, HIGH);
             while(!(*p_UART_SR & TXBUFE)){
                 ;
             }
+            //digitalWrite(7, LOW);
             //same as above
                 *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
-                *p_UART_TCR = size;
+                *p_UART_TCR = size; */
         }
         
     }
@@ -138,6 +144,19 @@ public:
      */
     bool is_on(){
         return (*p_UART_PTSR & (1<<8));
+    }
+
+    void enableUARTInterrupt(){
+        //enable UART interrupt
+        NVIC_EnableIRQ(UART_IRQn);
+        //interrupt on TXBUFE
+        UART->UART_IER = UART_IER_TXBUFE;
+        UART->UART_IDR = ~UART_IER_TXBUFE;
+    }
+
+    void UART_Handler(){
+        send(backup_buffer, sizeof(backup_buffer));
+        NVIC_DisableIRQ(UART_IRQn);
     }
 };
 #endif
