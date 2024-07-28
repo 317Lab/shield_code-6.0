@@ -10,12 +10,12 @@
 - Turn on GPS pulse generator
 - Make debugging setup picture/guide
 
+need to figure out how many bytes we are sending. sit down with pen and paper.
+
 - Timestamp issue:
     - I2C clock turns off 
     - sweeps get super far apart - like 1 second
     - CPP has undefined behavior if you try to store too large of an integer into 4 bytes. figure out why this wasn't an issue before?
-
-- Update platformio.ini for Jeff to upload - port, debug flags, etc.
 
 - DAC settling:
       - Figure out new timing parameters
@@ -33,8 +33,38 @@
 */
 /*
 General notes:
+
 SWEEP NEEDS TO BE FIRST. imu and sweep cadence most important. that worked. don't change.
 
+still jittering. roughly every 400 sweeps, gets slower for 12 sweeps. then back to normal.
+when you increase the sweep time, it gets better. when you narrow it, it gets worse.
+figure out - at 45 Hz, is the issue waiting or not waiting.
+
+when not shortened, there's ~2.5 ms of wiggle room. when shortened, seems like about 600 us - 
+but that's roughly the length of a step so it seems like there's no break
+sweep time drops to about 20 ms.
+
+full shortened period lasts 268 ms. 
+n sweeps:
+- 13
+- 13
+- 13
+
+cycle time in shortened period oscillates between ~20.56 ms and ~19.96 ms - 600 us difference that perfectly matches the SPI write time that 
+happens every other cycle 
+
+happens consistently and exactly every 404 cycles - based on data set of 3210 cycles (about 70 seconds)
+
+issue goes away when you don't send data - includes copying into memory block
+
+on the first error, the timer triggers sweep time twice in a row - wait cycle is ignored and next sweep time is set true immediately
+
+could be related to the usb to serial converter - unplugging the converter then plugging the board back in, then unplugging the board and plugging the 
+converter back in caused the issue to happen.
+
+Delay between when sweeps start and when UART communication starts.
+
+first 13 cycles are short
 */
 //========== Libraries ==========//
 #include <Arduino.h>
@@ -105,7 +135,7 @@ bool sendFromRam = false;		// When to send from ram
 bool storeToRam = true;			// Save data to the ram chip
 
 //buffer for combined sweep data
-uint16_t sweep_buffer[2*SWEEP_STEPS];
+uint16_t sweep_buffer[2*SWEEP_STEPS]; //112 bytes
 
 
 
@@ -120,7 +150,7 @@ uint32_t *p_sweepTimeStamp = &sweepTimeStamp;
 #define IMU_DATA_OFFSET     (sizeof(IMUTimeStamp) + IMU_TIMESTAMP_OFFSET)
 #define SWEEP_TIMESTAMP_OFFSET (sizeof(IMUData) + IMU_DATA_OFFSET)
 #define SWEEP_DATA_OFFSET (sizeof(sweepTimeStamp) + SWEEP_TIMESTAMP_OFFSET)
-#define RAM_BUF_LEN  (sizeof(IMUTimeStamp) + sizeof(IMUData) + sizeof(sweepTimeStamp) + sizeof(sweep_buffer))
+#define RAM_BUF_LEN  (sizeof(IMUTimeStamp) + sizeof(IMUData) + sizeof(sweepTimeStamp) + sizeof(sweep_buffer)) //140 bytes, plus 7 bytes for sentinels/id
 // Stores the IMU data then the Sweep data
 uint8_t ramBuf[RAM_BUF_LEN];
 
@@ -163,9 +193,12 @@ void storeData();
 void readData();
 void sendData();
 
+bool isFirst = true;
+
 void setup() {
 	if(debug){
       	// Configure serial, 230.4 kb/s baud rate
+        //12.4 ms per message
 		Serial.begin(230400); 
 		// Setup IMU
 		initIMU(&compass, &gyro);
@@ -200,7 +233,6 @@ void setup() {
 		//configure the external interrupt
         pinMode(SYNC_PIN, INPUT_PULLUP);
 		attachInterrupt(digitalPinToInterrupt(SYNC_PIN), syncHandler, FALLING);
-
         
 	}
 }
@@ -233,6 +265,11 @@ void FSMUpdate(){
         volatile uint32_t irq_state = __get_PRIMASK();  
         __disable_irq();                       
         if (micros() - timer > SWEEP_OFFSET) {
+            if (isFirst){
+                isFirst = false;
+                timer = micros();
+                newCycle = false;
+            }  
             currentState = startSweep;
         }
         __set_PRIMASK(irq_state);  
@@ -386,10 +423,16 @@ void blink(){
 /**
  * @brief Interrupt handler for the TC0 timer.
  */
+bool goLow = true;
 void TC0_Handler(){
+     if (goLow){
+        goLow=false;
+    } 
   // Clear the status register. This is necessary to prevent the interrupt from being called repeatedly.
   TC_GetStatus(TC0, 0);
+  
   if (micros() - timer >= SAMPLE_PERIOD) {
+        goLow=true; 
 		newCycle = true;
 		timer = micros();
 	}
@@ -439,8 +482,16 @@ void configureTimerInterrupt(){
  */
 void startSweepOnShield(){
     //take timestamp
+    int lastTime = sweepTimeStamp;
 	sweepStartTime = micros();
 	sweepTimeStamp = sweepStartTime - startTime;
+    //this was here for debugging state machine timing discontinuities
+     if(sweepTimeStamp-lastTime<22000){
+        pinMode(6, OUTPUT);
+    }
+    else{
+        pinMode(6, OUTPUT);
+    } 
     sendData();
 	pipController.sweep();
     memcpy(sweep_buffer, pip0.data, SWEEP_STEPS*sizeof(uint16_t));
@@ -469,6 +520,8 @@ void readData(){
         ram.readData(ramBuf, RAM_BUF_LEN);
     }
 }
+
+int shortSize = sizeof(sweepSentinel)+sizeof(sweepTimeStamp)+sizeof(sweep_buffer)+sizeof(imuSentinel)+sizeof(IMUTimeStamp)+sizeof(IMUData);
 
 void sendData(){
     if(!savedSweep){
@@ -504,6 +557,20 @@ void sendData(){
         memcpy(p_memory_block, ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
         p_memory_block = memory_block;
         pdc.send(memory_block, totalSize);
+    } else {
+        memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
+        p_memory_block += sizeof(sweepSentinel);
+        memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
+        p_memory_block += sizeof(sweepTimeStamp);
+        memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
+        p_memory_block += sizeof(sweep_buffer);
+        memcpy(p_memory_block, imuSentinel, sizeof(imuSentinel));
+        p_memory_block += sizeof(imuSentinel);
+        memcpy(p_memory_block, p_IMUTimeStamp, sizeof(IMUTimeStamp));
+        p_memory_block += sizeof(IMUTimeStamp);
+        memcpy(p_memory_block, IMUData, sizeof(IMUData));
+        p_memory_block += sizeof(IMUData);
+        pdc.send(memory_block, shortSize);
     } 
     
 }
