@@ -33,14 +33,15 @@
 class PDC {
 private:
     // pointers to UART registers
-    volatile void* const p_UART_TPR;
+    volatile uint32_t* const p_UART_TPR;
     volatile uint32_t* const p_UART_TCR;
     volatile uint32_t* const p_UART_TNPR;
     volatile uint32_t* const p_UART_TNCR;
     volatile uint32_t* const p_UART_PTCR;
     volatile uint32_t* const p_UART_PTSR;
     volatile uint32_t* const p_UART_SR;
-    
+
+    uint8_t backup_buffer[294];
 
 
     
@@ -50,7 +51,7 @@ public:
      * @brief Default constructor for the PDC class. Initializes all relevant register pointers
      */
     PDC()
-        : p_UART_TPR((void*)UART_PERIPH_TPR_ADDR),
+        : p_UART_TPR((uint32_t*)UART_PERIPH_TPR_ADDR),
           p_UART_TCR((uint32_t*)UART_PERIPH_TCR_ADDR),
           p_UART_TNPR((uint32_t*)UART_PERIPH_TNPR_ADDR),
           p_UART_TNCR((uint32_t*)UART_PERIPH_TNCR_ADDR),
@@ -100,13 +101,17 @@ public:
                 *p_UART_TCR = size;
            
         } else{
-            //wait until ready
+            memcpy(backup_buffer, buffer, size);
+            enableUARTInterrupt();
+            /* //wait until ready
+            //digitalWrite(7, HIGH);
             while(!(*p_UART_SR & TXBUFE)){
                 ;
             }
+            //digitalWrite(7, LOW);
             //same as above
                 *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
-                *p_UART_TCR = size;
+                *p_UART_TCR = size; */
         }
         
     }
@@ -116,18 +121,21 @@ public:
     template <typename T>
     void send_next(T* buffer, int size){
                 //set buffer and size
-                if(*p_UART_SR & TXBUFE){
-                    *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
-                    *p_UART_TNCR = size;
-                }
+            if(*p_UART_SR & TXBUFE){
+                send(buffer, size);
+            } else if (*p_UART_TNCR==0){
+                *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
+                *p_UART_TNCR = size;
+            }
            
-            //same as above
-            else{
-                while(!(*p_UART_SR & TXBUFE)){
+            else if (!(*p_UART_SR & TXBUFE)&&(*p_UART_TNCR!=1)){
+                while(*p_UART_TNCR!=0){
                     ;
                 }
                 *(volatile uint32_t*)p_UART_TNPR = (uint32_t)buffer;
                 *p_UART_TNCR = size;
+            } else{
+                send(buffer, size);
             }
         
     }
@@ -138,7 +146,17 @@ public:
         return (*p_UART_PTSR & (1<<8));
     }
 
+    void enableUARTInterrupt(){
+        //enable UART interrupt
+        NVIC_EnableIRQ(UART_IRQn);
+        //interrupt on TXBUFE
+        UART->UART_IER = UART_IER_TXBUFE;
+        UART->UART_IDR = ~UART_IER_TXBUFE;
+    }
 
+    void UART_Handler(){
+        send(backup_buffer, sizeof(backup_buffer));
+        NVIC_DisableIRQ(UART_IRQn);
+    }
 };
-
 #endif

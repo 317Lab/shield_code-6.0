@@ -62,7 +62,19 @@ void initIMU(LIS3MDL* mag, LSM6* gyro_acc){
     // Leah, 05.09.19
     gyro_acc->writeReg(gyro_acc->CTRL9_XL, 0x38);
     // CTRL5_C controls self-test, but the default values for both acc. and gyro are 00, which disables self-test.
-
+    /////////// Gyroscope NEW ///////////
+    // ODR_G = 0100 (104 Hz)
+    // +/- 1000 dps full scale (FS_G = 10). If payloads are at 2.3 Hz ~ 828 dps, then +/- 1000 is ideal.
+    // FS_125 = 0 (disabled gyro full-scale at 125 dps)
+    // 0x48 = 0b01001000
+    // Leah, 05.09.19
+    gyro_acc->writeReg(gyro_acc->CTRL2_G, 0x48);
+    // For safety:
+    // Zen = Yen = Xen = 1 (all axes enabled)
+    // Everything else in register disabled
+    // 0x38 = 0b00111000
+    // Leah, 05.09.19
+    gyro_acc->writeReg(gyro_acc->CTRL10_C, 0x38);
 }
 /** @copydoc getIMU */
 void sampleIMU(LIS3MDL* mag, LSM6* imu, int16_t* data){

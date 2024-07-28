@@ -14,7 +14,7 @@
 #include <AT25M02.hpp>
 
 // Define chip select. MO,MI,SLK all are default values.
-#define CHIP_SELECT_PIN 8
+#define CHIP_SELECT_PIN 4
 
 // Arduino to RAM data rate. In Hz.
 #define SPI_DATA_RATE 5000000
@@ -37,7 +37,6 @@ AT25M02::AT25M02()
  * @brief Initialize the AT25M02 EEPROM device.
  */
 void AT25M02::init(){
-	SPI.begin();
 	// Set up SPI device settings
 	spi_settings = SPISettings(SPI_DATA_RATE, MSBFIRST, SPI_MODE0);
 	// Set pin out information. Could be passed in via constructor params.
@@ -47,8 +46,7 @@ void AT25M02::init(){
 	mem_end = 0;
 	ram_full = false;
 	wb_end = 0;
-	//pretty sure this is deprecated. it breaks everything.	
-	//setWRSR(0x00);
+	setWRSR(0x00);
 }
 
 /*
@@ -111,6 +109,8 @@ bool AT25M02::writeData(byte* bytes, uint32_t length)
 	for(;;) {
 		// Move to bytes to write buffer.
 		buf_len = min(length, freeBufferBytes());
+		//copies given buffer into write buffer
+		//write buffer is 256 byte array
 		memcpy(write_buffer + wb_end, bytes, buf_len);
 		wb_end += buf_len;
 		bytes  += buf_len;
@@ -277,6 +277,8 @@ void AT25M02::setWRSR(byte val)
 	csl();
 	SPI.transfer(0x01);
 	SPI.transfer(val);
+	SPI.transfer(READ_STATUS);
+	volatile byte status = SPI.transfer(0);
 	csh();
 	SPI.endTransaction();
 }

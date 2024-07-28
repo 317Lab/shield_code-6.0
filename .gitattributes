@@ -1,1 +1,2 @@
 *.tex text eol=lf
+platformio.ini merge=foo
