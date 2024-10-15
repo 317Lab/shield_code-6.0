@@ -233,6 +233,7 @@ void setup() {
 		//configure the external interrupt
         pinMode(SYNC_PIN, INPUT_PULLUP);
 		attachInterrupt(digitalPinToInterrupt(SYNC_PIN), syncHandler, FALLING);
+        pinMode(7, OUTPUT);
         
 	}
 }
@@ -315,7 +316,6 @@ void FSMUpdate(){
         
     case waitForNewCycle: {
         if (newCycle || syncPulse) {
-            cycle_counter++;
             currentState = idle;
             newCycle = false;
             syncPulse = false;
@@ -488,9 +488,11 @@ void startSweepOnShield(){
     //this was here for debugging state machine timing discontinuities
      if(sweepTimeStamp-lastTime<22000){
         pinMode(6, OUTPUT);
+        digitalWrite(6, HIGH);
     }
     else{
         pinMode(6, OUTPUT);
+        digitalWrite(6, LOW);
     } 
     sendData();
 	pipController.sweep();
