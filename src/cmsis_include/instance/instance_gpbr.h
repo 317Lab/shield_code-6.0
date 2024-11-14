@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
  *         SAM Software Package License
  * ----------------------------------------------------------------------------
- * Copyright (c) 2015, Atmel Corporation
+ * Copyright (c) 2012, Atmel Corporation
  *
  * All rights reserved.
  *
@@ -27,24 +27,14 @@
  * ----------------------------------------------------------------------------
  */
 
-#ifndef _SAM3XA_
-#define _SAM3XA_
-/* #if defined (__SAM3A4C__)
-#include "sam3a4c.h"
-#elif defined (__SAM3A8C__)
-#include "sam3a8c.h"
-#elif defined (__SAM3X4C__)
-#include "sam3x4c.h"
-#elif defined (__SAM3X4E__)
-#include "sam3x4e.h"
-#elif defined (__SAM3X8C__)
-#include "sam3x8c.h"
-#elif defined (__SAM3X8E__)
-#include "sam3x8e.h"
-#elif defined (__SAM3X8H__)
-#include "sam3x8h.h"
+#ifndef _SAM3XA_GPBR_INSTANCE_
+#define _SAM3XA_GPBR_INSTANCE_
+
+/* ========== Register definition for GPBR peripheral ========== */
+#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
+#define REG_GPBR_GPBR            (0x400E1A90U) /**< \brief (GPBR) General Purpose Backup Register */
 #else
-  #error Library does not support the specified device.
-#endif */
-#include "sam3x8c.h"
-#endif /* _SAM3XA_ */
+#define REG_GPBR_GPBR   (*(RwReg*)0x400E1A90U) /**< \brief (GPBR) General Purpose Backup Register */
+#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#endif /* _SAM3XA_GPBR_INSTANCE_ */

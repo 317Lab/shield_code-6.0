@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
  *         SAM Software Package License
  * ----------------------------------------------------------------------------
- * Copyright (c) 2015, Atmel Corporation
+ * Copyright (c) 2012, Atmel Corporation
  *
  * All rights reserved.
  *
@@ -27,24 +27,24 @@
  * ----------------------------------------------------------------------------
  */
 
-#ifndef _SAM3XA_
-#define _SAM3XA_
-/* #if defined (__SAM3A4C__)
-#include "sam3a4c.h"
-#elif defined (__SAM3A8C__)
-#include "sam3a8c.h"
-#elif defined (__SAM3X4C__)
-#include "sam3x4c.h"
-#elif defined (__SAM3X4E__)
-#include "sam3x4e.h"
-#elif defined (__SAM3X8C__)
-#include "sam3x8c.h"
-#elif defined (__SAM3X8E__)
-#include "sam3x8e.h"
-#elif defined (__SAM3X8H__)
-#include "sam3x8h.h"
+#ifndef _SAM3XA_TRNG_INSTANCE_
+#define _SAM3XA_TRNG_INSTANCE_
+
+/* ========== Register definition for TRNG peripheral ========== */
+#if (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
+#define REG_TRNG_CR             (0x400BC000U) /**< \brief (TRNG) Control Register */
+#define REG_TRNG_IER            (0x400BC010U) /**< \brief (TRNG) Interrupt Enable Register */
+#define REG_TRNG_IDR            (0x400BC014U) /**< \brief (TRNG) Interrupt Disable Register */
+#define REG_TRNG_IMR            (0x400BC018U) /**< \brief (TRNG) Interrupt Mask Register */
+#define REG_TRNG_ISR            (0x400BC01CU) /**< \brief (TRNG) Interrupt Status Register */
+#define REG_TRNG_ODATA          (0x400BC050U) /**< \brief (TRNG) Output Data Register */
 #else
-  #error Library does not support the specified device.
-#endif */
-#include "sam3x8c.h"
-#endif /* _SAM3XA_ */
+#define REG_TRNG_CR    (*(WoReg*)0x400BC000U) /**< \brief (TRNG) Control Register */
+#define REG_TRNG_IER   (*(WoReg*)0x400BC010U) /**< \brief (TRNG) Interrupt Enable Register */
+#define REG_TRNG_IDR   (*(WoReg*)0x400BC014U) /**< \brief (TRNG) Interrupt Disable Register */
+#define REG_TRNG_IMR   (*(RoReg*)0x400BC018U) /**< \brief (TRNG) Interrupt Mask Register */
+#define REG_TRNG_ISR   (*(RoReg*)0x400BC01CU) /**< \brief (TRNG) Interrupt Status Register */
+#define REG_TRNG_ODATA (*(RoReg*)0x400BC050U) /**< \brief (TRNG) Output Data Register */
+#endif /* (defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#endif /* _SAM3XA_TRNG_INSTANCE_ */
