@@ -29,7 +29,8 @@
 
 #ifndef _SAM3XA_
 #define _SAM3XA_
-/* #if defined (__SAM3A4C__)
+
+#if defined (__SAM3A4C__)
 #include "sam3a4c.h"
 #elif defined (__SAM3A8C__)
 #include "sam3a8c.h"
@@ -45,6 +46,6 @@
 #include "sam3x8h.h"
 #else
   #error Library does not support the specified device.
-#endif */
-#include "sam3x8c.h"
+#endif
+
 #endif /* _SAM3XA_ */
