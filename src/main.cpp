@@ -213,6 +213,10 @@ void setup() {
     }    
 	else{
 		// Configure serial, 230.4 kb/s baud rate
+        delay(200);
+        pinMode(LED_BUILTIN, OUTPUT);
+        digitalWrite(LED_BUILTIN, LOW);
+
 		Serial.begin(230400); 
 		// Setup IMU
 		initIMU(&compass, &gyro);
