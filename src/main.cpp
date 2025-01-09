@@ -106,11 +106,11 @@ int cycle_counter = 0;
 //========== Class Declarations ==========//
 PDC pdc;
 
-Max1148 adc0(Channel::CHAN0);
+Max1148 adc0(Channel::CHAN2);
 Max1148 adc1(Channel::CHAN1);
 
-Pip pip0(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 0, 4095, DAC0, adc0);
-Pip pip1(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 0, 4095, DAC1, adc1);
+Pip pip0(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 339, 3752, DAC0, adc0);
+Pip pip1(SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 339, 3752, DAC1, adc1);
 PipController pipController(pip0, pip1);
 
 LIS3MDL compass;
