@@ -118,7 +118,7 @@ LSM6 gyro;
 AT25M02 ram;
 
 //========== Sweep Variable ==========//
-uint8_t shieldID = 0;
+uint8_t shieldID = 60;
 
 //========== Buffers and Messaging ==========//
 int16_t IMUData[10];
@@ -542,13 +542,15 @@ void sendData(){
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
 
-        // 2. Copy sweep timestamp from ramBuf (4 bytes).
+        // 2. Copy payload ID (1 byte) using shieldID.
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
+
+        // 3. Copy sweep timestamp from ramBuf (4 bytes).
         memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
 
-        // 3. Copy payload ID (1 byte) using shieldID.
-        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
-        p_memory_block += sizeof(shieldID);
+        
         // 4. Copy sweep ADC data (sweep_buffer).
         memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
         p_memory_block += sizeof(sweep_buffer);
@@ -579,13 +581,14 @@ void sendData(){
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
 
-        // 2. Copy sweep timestamp from p_sweepTimeStamp (4 bytes).
+        // 2. Copy payload ID (1 byte) as shieldID.
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
+
+        // 3. Copy sweep timestamp from p_sweepTimeStamp (4 bytes).
         memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
 
-        // 3. Copy payload ID (1 byte) as shieldID.
-        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
-        p_memory_block += sizeof(shieldID);
 
         // 4. Copy sweep ADC data.
         memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
