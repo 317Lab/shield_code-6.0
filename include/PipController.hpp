@@ -29,8 +29,8 @@ class PipController{
 			for (int i = 0; i < pip1.num_samples; i++){
 				analogWrite(pip1.dac_pin, (int)value1);
 				analogWrite(pip2.dac_pin, (int)value2);
-				value1 -= step1;
-				value2 -= step2;
+				value1 += step1;
+				value2 += step2;
 				delayMicroseconds(delay);
 				pip1.data[i] = pip1.read_adc();
 				pip2.data[i] = pip2.read_adc();
