@@ -18,8 +18,8 @@ class PipController{
 		 * Functionally identical to the version committed by Max Roberts in 2015.
 		 */
 		void sweep(){
-			double value1 = pip1.sweep_max;
-			double value2 = pip2.sweep_max;
+			double value1 = pip1.sweep_min;
+			double value2 = pip2.sweep_min;
 			double step1 = (double)(pip1.sweep_max - pip1.sweep_min) / (double)(pip1.num_samples - 1);
 			double step2 = (double)(pip2.sweep_max - pip2.sweep_min) / (double)(pip2.num_samples - 1);
 
