@@ -2,17 +2,20 @@
 /** @copydoc adc_read_avg(int avg_num) */
 uint16_t Max1148::adc_read_avg(int avg_num){
     int total_data = 0;
+    //SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE));
     for(int i = 0; i < avg_num; i++){
         //separate variable for debugging
         uint16_t data = adc_read();
         total_data += data;
     }
+    //SPI.endTransaction();
     return (uint16_t)(total_data / avg_num);
 }
 
+//probe left side of R3 for data in
 uint16_t Max1148::adc_read(){
     //set up SPI, macros in Max1148.hpp
-    SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE));
+    //SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE));
     //data from each sample
     uint16_t data = 0;
     //total data from all samples
@@ -27,7 +30,7 @@ uint16_t Max1148::adc_read(){
     data |= SPI.transfer(ADC_READ);
     //add data to total. Shifted right because result is left justified - Jacob
     csh();
-    SPI.endTransaction();
+    //SPI.endTransaction();
     return data;
 }
 

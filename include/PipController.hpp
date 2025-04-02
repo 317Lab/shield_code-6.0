@@ -26,17 +26,25 @@ class PipController{
 			//set delay to max delay between the pips - should always be the same since
 			//both pips are configured the same
 			uint16_t delay = (pip1.delay_us < pip2.delay_us) ? pip1.delay_us : pip2.delay_us;
+			SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE));
 			for (int i = 0; i < pip1.num_samples; i++){
 				analogWrite(pip1.dac_pin, (int)value1);
 				analogWrite(pip2.dac_pin, (int)value2);
 				value1 += step1;
 				value2 += step2;
 				delayMicroseconds(delay);
-				pip1.data[i] = pip1.read_adc();
-				pip2.data[i] = pip2.read_adc();
+				int total_data1 = 0;
+				int total_data2 = 0;
+				for (int i=0; i < pip1.avg_num; i++){
+					total_data1 += pip1.read_adc();
+					total_data2 += pip2.read_adc();
+				}
+				pip1.data[i] = (uint16_t)(total_data1 / pip1.avg_num);
+				pip2.data[i] = (uint16_t)(total_data2 / pip2.avg_num);
 			}
-			analogWrite(pip1.dac_pin, pip1.sweep_max);
-			analogWrite(pip2.dac_pin, pip2.sweep_max);
+			analogWrite(pip1.dac_pin, pip1.sweep_min);
+			analogWrite(pip2.dac_pin, pip2.sweep_min);
+			SPI.endTransaction();
 		}
 };
 #endif
