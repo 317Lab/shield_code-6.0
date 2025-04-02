@@ -100,7 +100,7 @@ int cycle_counter = 0;
 // Natural delay of ~76 us after setting DAC. 
 // Adding 124 us delay to make it 200 us between DAC and ADC.
 
-#define SWEEP_DELAY            200          // Delay between DAC and ADC in us -Sean
+#define SWEEP_DELAY            46.875          // Old version was 1500 clock cycles on a 32 MHz processor. comes out to this in us
 #define SWEEP_AVERAGES         8           // each sample ~20-21 us
 
 //========== Class Declarations ==========//
