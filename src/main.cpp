@@ -118,15 +118,15 @@ LSM6 gyro;
 AT25M02 ram;
 
 //========== Sweep Variable ==========//
-uint8_t shieldID = 0;
+uint8_t shieldID = 60;
 
 //========== Buffers and Messaging ==========//
 int16_t IMUData[10];
 uint32_t IMUTimeStamp;
 uint32_t *p_IMUTimeStamp = &IMUTimeStamp;
 // Use J & T for buffered messages (sentinel + 1)
-uint8_t sweepSentinel[4] = {'#', '#', 'S', shieldID};
-uint8_t sweepSentinelBuf[4] = {'#', '#', 'T', shieldID};
+uint8_t sweepSentinel[3] = {'#', '#', 'S'};       // 3 bytes: "##S"
+uint8_t sweepSentinelBuf[3] = {'#', '#', 'T'};    // 3 bytes: "##T"
 uint8_t imuSentinel[3] = {'#', '#', 'I'};
 uint8_t imuSentinelBuf[3] = {'#', '#', 'J'};
 
@@ -538,12 +538,23 @@ void sendData(){
 	}
     p_memory_block = memory_block;
     if(sendFromRam && ram.usedBytes()>=RAM_BUF_LEN){
+        // 1. Copy sweepSentinel (3 bytes: e.g., { '#', '#', 'S' }).
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
+
+        // 2. Copy payload ID (1 byte) using shieldID.
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
+
+        // 3. Copy sweep timestamp from ramBuf (4 bytes).
         memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
+
+        
+        // 4. Copy sweep ADC data (sweep_buffer).
         memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
         p_memory_block += sizeof(sweep_buffer);
+
         memcpy(p_memory_block, imuSentinel, sizeof(imuSentinel));
         p_memory_block += sizeof(imuSentinel);
         memcpy(p_memory_block, p_IMUTimeStamp, sizeof(IMUTimeStamp));
@@ -561,20 +572,35 @@ void sendData(){
         memcpy(p_memory_block, ramBuf + SWEEP_TIMESTAMP_OFFSET, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
         memcpy(p_memory_block, ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
+
         p_memory_block = memory_block;
         pdc.send(memory_block, totalSize);
     } else {
+        // Non-RAM branch:
+        // 1. Copy sweepSentinel (3 bytes).
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
+
+        // 2. Copy payload ID (1 byte) as shieldID.
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
+
+        // 3. Copy sweep timestamp from p_sweepTimeStamp (4 bytes).
         memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
+
+
+        // 4. Copy sweep ADC data.
         memcpy(p_memory_block, sweep_buffer, sizeof(sweep_buffer));
         p_memory_block += sizeof(sweep_buffer);
+
         memcpy(p_memory_block, imuSentinel, sizeof(imuSentinel));
         p_memory_block += sizeof(imuSentinel);
         memcpy(p_memory_block, p_IMUTimeStamp, sizeof(IMUTimeStamp));
         p_memory_block += sizeof(IMUTimeStamp);
         memcpy(p_memory_block, IMUData, sizeof(IMUData));
+        
+        // Structure: [3-byte sentinel]["4-byte timestamp"]["1-byte payload ID"][sweep data]...
         p_memory_block += sizeof(IMUData);
         pdc.send(memory_block, shortSize);
     } 
