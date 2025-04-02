@@ -542,13 +542,13 @@ void sendData(){
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
 
-        // 2. Copy payload ID (1 byte) using shieldID.
-        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
-        p_memory_block += sizeof(shieldID);
-
         // 3. Copy sweep timestamp from ramBuf (4 bytes).
         memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
+
+        // 2. Copy payload ID (1 byte) using shieldID.
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
 
         
         // 4. Copy sweep ADC data (sweep_buffer).
@@ -571,6 +571,8 @@ void sendData(){
         p_memory_block += sizeof(sweepSentinelBuf);
         memcpy(p_memory_block, ramBuf + SWEEP_TIMESTAMP_OFFSET, sizeof(sweepTimeStamp));
         p_memory_block += sizeof(sweepTimeStamp);
+        memcpy(p_memory_block, &shieldID, sizeof(shieldID));
+        p_memory_block += sizeof(shieldID);
         memcpy(p_memory_block, ramBuf + SWEEP_DATA_OFFSET, sizeof(sweep_buffer));
 
         p_memory_block = memory_block;
@@ -580,14 +582,14 @@ void sendData(){
         // 1. Copy sweepSentinel (3 bytes).
         memcpy(p_memory_block, sweepSentinel, sizeof(sweepSentinel));
         p_memory_block += sizeof(sweepSentinel);
-
+        // 3. Copy sweep timestamp from p_sweepTimeStamp (4 bytes).
+        memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
+        p_memory_block += sizeof(sweepTimeStamp);
         // 2. Copy payload ID (1 byte) as shieldID.
         memcpy(p_memory_block, &shieldID, sizeof(shieldID));
         p_memory_block += sizeof(shieldID);
 
-        // 3. Copy sweep timestamp from p_sweepTimeStamp (4 bytes).
-        memcpy(p_memory_block, p_sweepTimeStamp, sizeof(sweepTimeStamp));
-        p_memory_block += sizeof(sweepTimeStamp);
+     
 
 
         // 4. Copy sweep ADC data.
