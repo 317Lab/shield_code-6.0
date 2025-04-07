@@ -84,11 +84,6 @@ class Pip{
          * Step length, delay, and number of samples are all set by the constructor.
          */
         void sweep();
-        /**
-         * @brief Checks DAC and ADC readings. 
-         * Modify for whatever is needed to test ADC functionality without compromising ADC class security.
-         */
-        void tester();
 
 };
 #endif

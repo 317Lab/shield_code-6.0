@@ -35,6 +35,7 @@ void Pip::sweep(){
         delayMicroseconds(delay_us);
         data[i] = adc.adc_read_avg(avg_num);
     }
+    analogWrite(DAC_PIN, sweep_max);
 }
 /** @copydoc Pip::clear_data(uint16_t data[], uint16_t size) */
 void Pip::clear_data(uint16_t data[], uint16_t size){
@@ -43,28 +44,6 @@ void Pip::clear_data(uint16_t data[], uint16_t size){
     }
 }
 
-void Pip::tester(){
-
-    //Getting timing data
-    //take an average ADC value for a series of DAC readings, send DAC and average ADC
-    //Sean has a python script that puts this into Excel
-    for(int i = 0; i < 4096; i += 128){
-        analogWrite(DAC_PIN, i);
-        delay(200);
-        int adcValue = adc.adc_read();
-        delay(200);
-        int adcAvgValue = adc.adc_read_avg(8);
-        Serial.print("DAC Value: ");
-        Serial.print(i);
-        Serial.print(" | ADC Value: ");
-        Serial.print(adcValue);
-        Serial.print(" | ADC Average (8): ");
-        Serial.println(adcAvgValue);
-
-    }
-    
-}
-
 uint16_t Pip::read_adc(){
-    return adc.adc_read_avg(avg_num);
+    return adc.adc_read();
 }
