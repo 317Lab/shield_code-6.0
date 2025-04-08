@@ -1,7 +1,28 @@
 /*!
 \mainpage Shield Code 6.0 Documentation
 
-test test test test test
+# Shield Code 6.0
+This project manages the shield firmware for the Lynch Rocket Lab at Dartmouth. The code is designed for a custom PCB modeled off of the Arduino Due, and the code uses the Arduino libraries and framework.
+The project is built in Platformio, which is the current industry standard for embedded development. This also means the code is in C++, rather than Arduino .ino
+
+The project uses a finite state machine to manage screen voltage sweeps, ADC sampling, IMU sampling, RAM read/writes, and UART communication. This is described in Ruth Nordhoff's thesis, which members of the lab can access [here](https://drive.google.com/file/d/1XH5SRRh2m84pu7f2B1RSFuYGV1u3EBdw/view?usp=sharing).
+
+One major difference in this version of the firmware is that it is entirely object oriented. This is mean to increase data security and make it easier for physicists to modify readable code in main.cpp while abstracting more complicated code to libraries. I highly recommend that updates to this firmware maintain the object oriented structure.
+
+Members of the 317 lab can access my notes on designing the board and known problems [here](https://docs.google.com/document/d/1zxoe2ke9uMofQnCEMGJmY7DL-JV_K1uOB_eNFqKSiaQ/edit?usp=sharing)
+
+
+## Programming the Board
+GSE-D is configured to program the board. Simply cd into the project repository and run 
+   pio run
+Make sure you fetch and pull changes from git before programming the board.
+
+## Notes and Quirks
+The board uses an external crystal oscillator, rather than the included ceramic oscillator on the Due. This required some changes that are not included in this documentation. First, a modded_system_sam3xa.c file is included in src/ to change the startup clock settings. Then, replace_libsam.py replaces the gcc_rel.a file that contains the precompiled startup code with our modded version. This required manually including the CMSIS libraries in /src/.
+Due to some interrupt handling business explained in the PDC section of the documentation, we have to use a modified version of the Arduino framework, which is stored on my personal repository and included in the platformio configuration file. Whoever replaces me when I graduate should fork this repository to ensure it isn't lost when I lose access to my Dartmouth email. 
+
+## Documentation
+The documentation is maintained with Doxygen. A workflow in the main branch automatically generates and pushes the documentation to this website. Ensure neither Doxyfile nor layout.xml are removed from the main branch.
 */
 /**
  * @file main.cpp
