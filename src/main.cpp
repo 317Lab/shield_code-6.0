@@ -17,7 +17,7 @@ GSE-D is configured to program the board. Simply connect to the board with USB, 
 
    pio run
 
-Make sure you fetch and pull changes from git before programming the board.
+Make sure you fetch and pull changes from git before programming the board. This will build the project again before uploading, but it should be very fast.
 
 ## Notes and Quirks
 The board uses an external crystal oscillator, rather than the included ceramic oscillator on the Due. This required some changes that are not included in this documentation. First, a modded_system_sam3xa.c file is included in src/ to change the startup clock settings. Then, replace_libsam.py replaces the gcc_rel.a file that contains the precompiled startup code with our modded version. This required manually including the CMSIS libraries in /src/.
