@@ -5,7 +5,7 @@
 #include <Pip.hpp>
 /**
  * @brief Manages simultaneous sweep for two Pip sensors.
- * A bit hacky, but allows easily storing separate sweep data in each Pip object without compromising data privacy.
+ * A bit hacky, but allows easily managing simultaneous sweeping while keeping data separate and clean.
  */
 class PipController{
 	private:
@@ -14,8 +14,7 @@ class PipController{
 	public:
 		PipController(Pip& pip1, Pip& pip2) : pip1(pip1), pip2(pip2) {}
 		/**
-		 * @brief Sweeps both DACs simultaneously, reads both ADC channels. 
-		 * Functionally identical to the version committed by Max Roberts in 2015.
+		 * @brief Sweeps both DACs simultaneously, reads both ADC channels. Note that ADC sampling alternates between each pip channel.
 		 */
 		void sweep(){
 			double value1 = pip1.sweep_min;
@@ -32,9 +31,11 @@ class PipController{
 				analogWrite(pip2.dac_pin, (int)value2);
 				value1 += step1;
 				value2 += step2;
+				//preamp settling time - experimentally derived
 				delayMicroseconds(delay);
 				int total_data1 = 0;
 				int total_data2 = 0;
+				//avg_num should be same across both pips.
 				for (int i=0; i < pip1.avg_num; i++){
 					total_data1 += pip1.read_adc();
 					total_data2 += pip2.read_adc();

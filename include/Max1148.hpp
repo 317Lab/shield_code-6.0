@@ -77,7 +77,7 @@ class Max1148{
          */
         void csh();
         /**
-         * @brief Reads an average ADC value from the Max1148 ADC. Uses Arduino's SPI library. 
+         * @brief Reads an average ADC value from the Max1148 ADC. Uses Arduino's SPI library. We don't use this anymore because we wanted to interleave ADC sampling between channels.
          * 
          * @param avg_num The number of samples to average.
          */
@@ -89,7 +89,7 @@ class Max1148{
     public:
         /**
          * @brief ADC constructor. Sets cs_pin as per ADC_CS_PIN macro. Chooses channel from Channel enum.
-         * @param channel The channel to read from. Format: CHAN0, CHAN1, etc.
+         * @param channel The channel to read from. Format: CHAN0, CHAN1, etc. I don't remember why it has to be static_cast but it works.
          */
         Max1148(Channel channel): cs_pin(ADC_CS_PIN) {
             this->channel = static_cast<uint8_t>(channel);

@@ -71,7 +71,8 @@ class Pip{
         uint16_t read_adc();
     public:
         /**
-         * @brief Constructor for the Pip class. All parameters modifiable.
+         * @brief Constructor for the Pip class. 
+         * 
          */
         Pip(int delay_us, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, Max1148& adc);
         /**
@@ -79,11 +80,6 @@ class Pip{
          */
         uint16_t data[SWEEP_MAX_SAMPLES];
 
-        /**
-         * @brief Sweeps the DAC output from min to max.
-         * Step length, delay, and number of samples are all set by the constructor.
-         */
-        void sweep();
 
 };
 #endif

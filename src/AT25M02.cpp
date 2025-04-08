@@ -34,7 +34,7 @@ AT25M02::AT25M02()
 // Public Methods
 
 /**
- * @brief Initialize the AT25M02 EEPROM device.
+ * @brief Initialize the AT25M02 EEPROM device. Define spi settings, chip select pin, and set initial variables to zero.
  */
 void AT25M02::init(){
 	// Set up SPI device settings
@@ -49,16 +49,16 @@ void AT25M02::init(){
 	setWRSR(0x00);
 }
 
-/*
- * Returns how many bytes are free and available to be written to.
+/** 
+ * @brief Returns how many bytes are free and available to be written to.
  */
 uint32_t AT25M02::freeBytes()
 {
 	return RAM_SIZE - usedBytes();
 }
 
-/*
- * Returns the number of bytes currently being used.
+/**
+ * @brief Returns the number of bytes currently being used.
  */
 uint32_t AT25M02::usedBytes()
 {
@@ -90,8 +90,8 @@ uint32_t AT25M02::freeBufferBytes()
 }
 
 
-/*
- * Write from the given array to the memory. This data is appended to the end of
+/**
+ * @brief Write from the given array to the memory. This data is appended to the end of
  * the queue. Returns true if it successfully wrote all bytes. Returns false if
  * it could not write every byte without overwriting existing data.
  */
@@ -164,8 +164,8 @@ uint32_t AT25M02::readMemory(byte *dest, uint32_t length)
 	return len;
 }
 
-/*
- * Write the given number of bytes from the ram into the destination array.
+/**
+ * @brief Write the given number of bytes from the ram into the destination array.
  * These bytes are taken from the start of the queue.
  * Returns how many bytes were read and written to the array.
  */
@@ -181,8 +181,8 @@ int AT25M02::readData(byte* dest, uint32_t length)
 	return memlen + buflen;
 }
 
-/*
- * Checks if the RAM is ready for a new command.
+/**
+ * @brief Checks if the RAM is ready for a new command.
  */
 bool AT25M02::isReady()
 {
@@ -199,8 +199,8 @@ bool AT25M02::isReady()
 
 // Private Methods
 
-/*
- * Write the given data to the RAM in a page write.
+/**
+ * @brief Write the given data to the RAM in a page write.
  * Increments mem_end when done.
  */
 void AT25M02::writePage(uint32_t addr, byte* bytes, uint32_t length)
@@ -266,8 +266,8 @@ void AT25M02::sendCommand(Command cmd)
 	SPI.endTransaction();
 }
 
-/*
- * Sets the WRSR (Write status reg)
+/**
+ * @brief Sets the WRSR (Write status reg)
  */
 void AT25M02::setWRSR(byte val)
 {
@@ -283,8 +283,8 @@ void AT25M02::setWRSR(byte val)
 	SPI.endTransaction();
 }
 
-/*
- * Waits until the RAM is ready to write.
+/**
+ * @brief Waits until the RAM is ready to write.
  */
 void AT25M02::waitUntilReady()
 {
