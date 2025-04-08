@@ -2861,3 +2861,8 @@ MSCGEN_TOOL            =
 # command).
 
 MSCFILE_DIRS           =
+
+
+################ CUSTOM ######################
+GENERATE_GROUPS = NO
+GENERATE_RELATED_PAGES = NO
