@@ -1,2 +1,4 @@
 .vscode
 doxydocs
+project.checksum
+*.json
