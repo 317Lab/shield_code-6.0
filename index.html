@@ -100,7 +100,9 @@ Shield Code 6.0</h1>
 <p>Members of the 317 lab can access my notes on designing the board and known problems <a href="https://docs.google.com/document/d/1zxoe2ke9uMofQnCEMGJmY7DL-JV_K1uOB_eNFqKSiaQ/edit?usp=sharing">here</a></p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Programming the Board</h2>
-<p>GSE-D is configured to program the board. Simply cd into the project repository and run pio run Make sure you fetch and pull changes from git before programming the board.</p>
+<p>GSE-D is configured to program the board. Simply cd into the project repository and run</p>
+<p>pio run</p>
+<p>Make sure you fetch and pull changes from git before programming the board.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Notes and Quirks</h2>
 <p>The board uses an external crystal oscillator, rather than the included ceramic oscillator on the Due. This required some changes that are not included in this documentation. First, a <a class="el" href="modded__system__sam3xa_8c.html">modded_system_sam3xa.c</a> file is included in src/ to change the startup clock settings. Then, replace_libsam.py replaces the gcc_rel.a file that contains the precompiled startup code with our modded version. This required manually including the CMSIS libraries in /src/. Due to some interrupt handling business explained in the <a class="el" href="classPDC.html" title="Manages UART transmits through peripheral DMA controller (PDC).">PDC</a> section of the documentation, we have to use a modified version of the Arduino framework, which is stored on my personal repository and included in the platformio configuration file. Whoever replaces me when I graduate should fork this repository to ensure it isn't lost when I lose access to my Dartmouth email.</p>
