@@ -1,3 +1,8 @@
+/*!
+\mainpage Shield Code 6.0 Documentation
+
+test test test test test
+*/
 /**
  * @file main.cpp
  * @brief Main file for the 317 lab project.
@@ -6,66 +11,6 @@
  * 
  */
 
-/*TODO - IN ORDER OF PRIORITY:
-- Turn on GPS pulse generator
-- Make debugging setup picture/guide
-
-need to figure out how many bytes we are sending. sit down with pen and paper.
-
-- Timestamp issue:
-    - I2C clock turns off 
-    - sweeps get super far apart - like 1 second
-    - CPP has undefined behavior if you try to store too large of an integer into 4 bytes. figure out why this wasn't an issue before?
-
-- DAC settling:
-      - Figure out new timing parameters
-      - SWEEP_DELAY is currently set up with clock cycles. Should change to microseconds.
-      - Need to add preamp settling time to DAC internal delay. Jeff will tell me what that should be.
-
-- Speeding it up:
-    - Communication is only half the sweep. we can throw the IMU query in there using that nonblocking I2C library.
-    - ask Jeff how much we can cut down sweep time.
-    - Very rough test indicates that the interrupts add about 500 us to the sweep time.
-
-- IMU:
-      - Accelerometer and gyro readings are maxing out. Note that we can increase range.
-      - Should stop sending a zero at end of IMU
-*/
-/*
-General notes:
-
-SWEEP NEEDS TO BE FIRST. imu and sweep cadence most important. that worked. don't change.
-
-still jittering. roughly every 400 sweeps, gets slower for 12 sweeps. then back to normal.
-when you increase the sweep time, it gets better. when you narrow it, it gets worse.
-figure out - at 45 Hz, is the issue waiting or not waiting.
-
-when not shortened, there's ~2.5 ms of wiggle room. when shortened, seems like about 600 us - 
-but that's roughly the length of a step so it seems like there's no break
-sweep time drops to about 20 ms.
-
-full shortened period lasts 268 ms. 
-n sweeps:
-- 13
-- 13
-- 13
-
-cycle time in shortened period oscillates between ~20.56 ms and ~19.96 ms - 600 us difference that perfectly matches the SPI write time that 
-happens every other cycle 
-
-happens consistently and exactly every 404 cycles - based on data set of 3210 cycles (about 70 seconds)
-
-issue goes away when you don't send data - includes copying into memory block
-
-on the first error, the timer triggers sweep time twice in a row - wait cycle is ignored and next sweep time is set true immediately
-
-could be related to the usb to serial converter - unplugging the converter then plugging the board back in, then unplugging the board and plugging the 
-converter back in caused the issue to happen.
-
-Delay between when sweeps start and when UART communication starts.
-
-first 13 cycles are short
-*/
 //========== Libraries ==========//
 #include <Arduino.h>
 #include <Pip.hpp> //note, Max1148 isn't included because it's included in Pip
