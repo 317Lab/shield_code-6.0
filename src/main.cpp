@@ -14,7 +14,9 @@ Members of the 317 lab can access my notes on designing the board and known prob
 
 ## Programming the Board
 GSE-D is configured to program the board. Simply cd into the project repository and run 
+
    pio run
+
 Make sure you fetch and pull changes from git before programming the board.
 
 ## Notes and Quirks
