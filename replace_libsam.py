@@ -1,6 +1,14 @@
 Import("env")
 import os
 
+if env.IsIntegrationDump():
+   # stop the current script execution
+   Return()
+
+# code below runs for the "build" and other targets
+env.Append(CPPDEFINES=["MACRO_NAME"])
+
+
 libs = env["LIBS"]
 #print("Current libs: " + str(libs))
 # remove the original "sam_sam3x8e_gcc_rel" lib
