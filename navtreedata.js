@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Shield Code", "index.html", [
-    [ "Shield Code 6.0 Documentation", "index.html", null ],
+    [ "Shield Code 6.0 Documentation", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -53,7 +53,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AT25M02_8cpp.html",
-"pages.html"
+"modded__system__sam3xa_8c.html#aa3cd3e43291e81e795d642b79b6088e6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
