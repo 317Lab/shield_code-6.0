@@ -5,13 +5,14 @@
 #include "SPI.h"
 
 /**
- * Provides a library to interact with Microchip's AT25M02 chip.
+ * @file AT25M02.hpp
+ * @brief Provides a library to interact with Microchip's AT25M02 chip.
  * This treats the chip as a circular queue that will not overwrite it's data.
  *
  */
 
-/*
- * Commands for the AT25M02 chip. Pulled from the data sheet for this chip.
+/**
+ * @brief Commands for the AT25M02 chip. Pulled from the data sheet for this chip.
  * All commands are MSB first.
  */
 enum Command

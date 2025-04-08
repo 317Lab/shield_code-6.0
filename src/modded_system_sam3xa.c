@@ -1,6 +1,11 @@
 #include "cmsis_include/sam3xa.h"
 
-// copied from C:\Users\<user>\.platformio\packages\framework-cmsis-atmel\CMSIS\Device\ATMEL\sam3xa\source\system_sam3xa.c
+/**
+ * @file modded_system_sam3xa.c
+ * @brief Rewrite of system_sam3xa.c to support the external crystal oscillator on the shield. 317 Lab changes are flagged in comments.
+ * This is compiled into modded_libsam_3x8e_gcc_rel.a, which is linked into the final binary with replace_libsam.py. We have to do this because the Arduino framework uses a precompiled library for initial chip setup.
+ * This allows us to modify clock settings without changing the Platformio build process.
+ */
 
 /* @cond 0 */
 /**INDENT-OFF**/
@@ -18,7 +23,7 @@ extern "C" {
 uint32_t SystemCoreClock = CHIP_FREQ_MAINCK_RC_4MHZ;
 
 /**
- * \brief Setup the microcontroller system.
+ * @brief Setup the microcontroller system.
  * Initialize the System and update the SystemFrequency variable.
  */
 void SystemInit( void )
@@ -30,12 +35,13 @@ void SystemInit( void )
   /* Initialize main oscillator */
   if ( !(PMC->CKGR_MOR & CKGR_MOR_MOSCSEL) )
   {
+    //317 LAB - the last flag here bypasses the internal RC oscillator
     PMC->CKGR_MOR = CKGR_MOR_KEY_PASSWD | SYS_BOARD_OSCOUNT | CKGR_MOR_MOSCRCEN | CKGR_MOR_MOSCXTBY;
     while ( !(PMC->PMC_SR & PMC_SR_MOSCXTS) )
     {
     }
   }
-
+  //317 LAB - I don't fully understand why this flag is necessary, but selecting the crystal oscillator with the bypass flag still routes through the external oscillator.
   /* Switch to 3-20MHz Xtal oscillator */
   PMC->CKGR_MOR = CKGR_MOR_KEY_PASSWD | SYS_BOARD_OSCOUNT | CKGR_MOR_MOSCRCEN | CKGR_MOR_MOSCXTBY | CKGR_MOR_MOSCSEL;
 
@@ -68,6 +74,7 @@ void SystemInit( void )
   SystemCoreClock = CHIP_FREQ_CPU_MAX;
 }
 
+//317 LAB - we did not modify this function.
 void SystemCoreClockUpdate( void )
 {
   /* Determine clock frequency according to clock register values */
