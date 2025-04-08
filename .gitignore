@@ -1,3 +1,5 @@
 .vscode
 doxydocs
 Doxyfile
+project.checksum
+*.json
