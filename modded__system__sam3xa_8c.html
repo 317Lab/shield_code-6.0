@@ -96,13 +96,16 @@ $(document).ready(function(){initNavTree('modded__system__sam3xa_8c.html',''); i
   <div class="headertitle"><div class="title">modded_system_sam3xa.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Rewrite of system_sam3xa.c to support the external crystal oscillator on the shield. 317 Lab changes are flagged in comments. This is compiled into modded_libsam_3x8e_gcc_rel.a, which is linked into the final binary with replace_libsam.py. We have to do this because the Arduino framework uses a precompiled library for initial chip setup. This allows us to modify clock settings without changing the Platformio build process.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;cmsis_include/sam3xa.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for modded_system_sam3xa.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="modded__system__sam3xa_8c__incl.png" border="0" usemap="#amodded__system__sam3xa_8c" alt=""/></div>
 <map name="amodded__system__sam3xa_8c" id="amodded__system__sam3xa_8c">
-<area shape="rect" title=" " alt="" coords="5,5,205,31"/>
+<area shape="rect" title="Rewrite of system_sam3xa.c to support the external crystal oscillator on the shield...." alt="" coords="5,5,205,31"/>
 <area shape="rect" title=" " alt="" coords="14,79,197,104"/>
 </map>
 </div>
@@ -133,7 +136,11 @@ Variables</h2></td></tr>
 <tr class="memitem:aa3cd3e43291e81e795d642b79b6088e6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modded__system__sam3xa_8c.html#aa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a> = CHIP_FREQ_MAINCK_RC_4MHZ</td></tr>
 <tr class="separator:aa3cd3e43291e81e795d642b79b6088e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Rewrite of system_sam3xa.c to support the external crystal oscillator on the shield. 317 Lab changes are flagged in comments. This is compiled into modded_libsam_3x8e_gcc_rel.a, which is linked into the final binary with replace_libsam.py. We have to do this because the Arduino framework uses a precompiled library for initial chip setup. This allows us to modify clock settings without changing the Platformio build process. </p>
+
+<p class="definition">Definition in file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a5723ea67fd327e388188538ae2db2f66" name="a5723ea67fd327e388188538ae2db2f66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5723ea67fd327e388188538ae2db2f66">&#9670;&#160;</a></span>SYS_BOARD_MCKR</h2>
 
@@ -146,7 +153,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00016">16</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00021">21</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -162,7 +169,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00014">14</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00019">19</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -178,7 +185,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00015">15</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00020">20</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -200,7 +207,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialize flash. </p>
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00167">167</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00174">174</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -220,7 +227,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00071">71</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00078">78</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -242,7 +249,7 @@ Variables</h2></td></tr>
 
 <p>Setup the microcontroller system. Initialize the System and update the SystemFrequency variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00024">24</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00029">29</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>
@@ -259,7 +266,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00018">18</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modded__system__sam3xa_8c_source.html#l00023">23</a> of file <a class="el" href="modded__system__sam3xa_8c_source.html">modded_system_sam3xa.c</a>.</p>
 
 </div>
 </div>

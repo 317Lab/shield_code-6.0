@@ -30,7 +30,7 @@ var searchData=
   ['store_27',['store',['../main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a03d2c35d0fb8a37579b21cb76e6adf84',1,'main.cpp']]],
   ['storedata_28',['storeData',['../main_8cpp.html#a66c1c0f09bff71e23040b7125f7f3f37',1,'main.cpp']]],
   ['storetoram_29',['storeToRam',['../main_8cpp.html#a82929de58673c514e135c001370f6c44',1,'main.cpp']]],
-  ['sweep_30',['sweep',['../classPip.html#a17f915d3c619b11bbf54df63ffdd73e4',1,'Pip::sweep()'],['../classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198',1,'PipController::sweep()']]],
+  ['sweep_30',['sweep',['../classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198',1,'PipController']]],
   ['sweep_5faverages_31',['SWEEP_AVERAGES',['../main_8cpp.html#afe71fc46c45c4f403772b57370e0004a',1,'main.cpp']]],
   ['sweep_5fbuffer_32',['sweep_buffer',['../main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b',1,'main.cpp']]],
   ['sweep_5fdata_5foffset_33',['SWEEP_DATA_OFFSET',['../main_8cpp.html#afc09cb840571193a6c6f6dcc61a6b5bb',1,'main.cpp']]],

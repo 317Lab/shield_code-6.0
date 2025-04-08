@@ -119,7 +119,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a2b70543fde8b535db33f31fad756bada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the chip select pin to high.  <br /></td></tr>
 <tr class="separator:a2b70543fde8b535db33f31fad756bada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc046ad04d5adef7473775b708bb69c2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMax1148.html#adc046ad04d5adef7473775b708bb69c2">adc_read_avg</a> (int avg_number)</td></tr>
-<tr class="memdesc:adc046ad04d5adef7473775b708bb69c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library.  <br /></td></tr>
+<tr class="memdesc:adc046ad04d5adef7473775b708bb69c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library. We don't use this anymore because we wanted to interleave ADC sampling between channels.  <br /></td></tr>
 <tr class="separator:adc046ad04d5adef7473775b708bb69c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7431950ed3ff37b274524357e84f9e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMax1148.html#aae7431950ed3ff37b274524357e84f9e">adc_read</a> ()</td></tr>
 <tr class="memdesc:aae7431950ed3ff37b274524357e84f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a single ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Used in adc_read_avg.  <br /></td></tr>
@@ -172,7 +172,7 @@ Friends</h2></td></tr>
 <p>ADC constructor. Sets cs_pin as per ADC_CS_PIN macro. Chooses channel from Channel enum. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">channel</td><td>The channel to read from. Format: CHAN0, CHAN1, etc. </td></tr>
+    <tr><td class="paramname">channel</td><td>The channel to read from. Format: CHAN0, CHAN1, etc. I don't remember why it has to be static_cast but it works. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,8 +235,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library. </p>
-<p>Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library.  </p>
+<p>Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library. We don't use this anymore because we wanted to interleave ADC sampling between channels. </p>
+<p>Reads an average ADC value from the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Uses Arduino's SPI library. We don't use this anymore because we wanted to interleave ADC sampling between channels.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">avg_num</td><td>The number of samples to average.</td></tr>

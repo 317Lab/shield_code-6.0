@@ -1,5 +1,5 @@
 <map id="AT25M02.hpp" name="AT25M02.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="65,5,175,31"/>
+<area shape="rect" id="node1" title="Provides a library to interact with Microchip&#39;s AT25M02 chip. This treats the chip as a circular queu..." alt="" coords="65,5,175,31"/>
 <area shape="rect" id="node2" href="$AT25M02_8cpp.html" title="This control&#39;s microchip&#39;s AT25M02 EEPROM Device. This treats it as a circular queue,..." alt="" coords="5,79,115,104"/>
 <area shape="rect" id="node3" href="$main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="139,79,221,104"/>
 </map>

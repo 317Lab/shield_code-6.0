@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('classPipController.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Manages simultaneous sweep for two <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensors. A bit hacky, but allows easily storing separate sweep data in each <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> object without compromising data privacy.  
+<p>Manages simultaneous sweep for two <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensors. A bit hacky, but allows easily managing simultaneous sweeping while keeping data separate and clean.  
  <a href="classPipController.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>&gt;</code></p>
@@ -106,7 +106,7 @@ Collaboration diagram for PipController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPipController__coll__graph.png" border="0" usemap="#aPipController_coll__map" alt="Collaboration graph"/></div>
 <map name="aPipController_coll__map" id="aPipController_coll__map">
-<area shape="rect" title="Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily storing separate sweep..." alt="" coords="5,196,112,221"/>
+<area shape="rect" title="Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily managing simultaneous ..." alt="" coords="5,196,112,221"/>
 <area shape="rect" href="classPip.html" title="Manages the Pip sensor sweep and associated data." alt="" coords="37,93,80,119"/>
 <area shape="rect" href="classMax1148.html" title="Manages interfacing with Max1148 ADC." alt="" coords="17,5,100,31"/>
 </map>
@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59f2ae2a87ed7dc3c6ced758f5a2dab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#a59f2ae2a87ed7dc3c6ced758f5a2dab0">PipController</a> (<a class="el" href="classPip.html">Pip</a> &amp;<a class="el" href="classPipController.html#af0db198058e7289c193ed5eacb2e6834">pip1</a>, <a class="el" href="classPip.html">Pip</a> &amp;<a class="el" href="classPipController.html#a4b630695b9bef5cada3e478c7ac374ea">pip2</a>)</td></tr>
 <tr class="separator:a59f2ae2a87ed7dc3c6ced758f5a2dab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2d40db8c6ae1dd412b8536a6019198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198">sweep</a> ()</td></tr>
-<tr class="memdesc:a9d2d40db8c6ae1dd412b8536a6019198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sweeps both DACs simultaneously, reads both ADC channels. Functionally identical to the version committed by Max Roberts in 2015.  <br /></td></tr>
+<tr class="memdesc:a9d2d40db8c6ae1dd412b8536a6019198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sweeps both DACs simultaneously, reads both ADC channels. Note that ADC sampling alternates between each pip channel.  <br /></td></tr>
 <tr class="separator:a9d2d40db8c6ae1dd412b8536a6019198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -128,7 +128,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4b630695b9bef5cada3e478c7ac374ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages simultaneous sweep for two <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensors. A bit hacky, but allows easily storing separate sweep data in each <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> object without compromising data privacy. </p>
+<div class="textblock"><p>Manages simultaneous sweep for two <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensors. A bit hacky, but allows easily managing simultaneous sweeping while keeping data separate and clean. </p>
 
 <p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00010">10</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -194,9 +194,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sweeps both DACs simultaneously, reads both ADC channels. Functionally identical to the version committed by Max Roberts in 2015. </p>
+<p>Sweeps both DACs simultaneously, reads both ADC channels. Note that ADC sampling alternates between each pip channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00020">20</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00019">19</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
 
 </div>
 </div>

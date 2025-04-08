@@ -108,17 +108,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a453bc57eced5b19eea3cbdf1ddd13572"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a453bc57eced5b19eea3cbdf1ddd13572">AT25M02</a> ()</td></tr>
 <tr class="separator:a453bc57eced5b19eea3cbdf1ddd13572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a27b38d3bdbc3e7f2e4851eef4bd599ad">init</a> ()</td></tr>
-<tr class="memdesc:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device.  <br /></td></tr>
+<tr class="memdesc:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device. Define spi settings, chip select pin, and set initial variables to zero.  <br /></td></tr>
 <tr class="separator:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d7be6c50a18aec76c5255db8707410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a76d7be6c50a18aec76c5255db8707410">writeData</a> (byte *bytes, uint32_t length)</td></tr>
+<tr class="memdesc:a76d7be6c50a18aec76c5255db8707410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write from the given array to the memory. This data is appended to the end of the queue. Returns true if it successfully wrote all bytes. Returns false if it could not write every byte without overwriting existing data.  <br /></td></tr>
 <tr class="separator:a76d7be6c50a18aec76c5255db8707410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a168c0381bff9add840001244472de416"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a168c0381bff9add840001244472de416">readData</a> (byte *dest, uint32_t length)</td></tr>
+<tr class="memdesc:a168c0381bff9add840001244472de416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the given number of bytes from the ram into the destination array. These bytes are taken from the start of the queue. Returns how many bytes were read and written to the array.  <br /></td></tr>
 <tr class="separator:a168c0381bff9add840001244472de416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8a47c94b577284350ef881413217666"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ab8a47c94b577284350ef881413217666">freeBytes</a> ()</td></tr>
+<tr class="memdesc:ab8a47c94b577284350ef881413217666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns how many bytes are free and available to be written to.  <br /></td></tr>
 <tr class="separator:ab8a47c94b577284350ef881413217666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae08e3fb33579e651088f50d519a04ddb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ae08e3fb33579e651088f50d519a04ddb">usedBytes</a> ()</td></tr>
+<tr class="memdesc:ae08e3fb33579e651088f50d519a04ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes currently being used.  <br /></td></tr>
 <tr class="separator:ae08e3fb33579e651088f50d519a04ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa440e942cec35db3d916e5b52c0bcd61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#aa440e942cec35db3d916e5b52c0bcd61">isReady</a> ()</td></tr>
+<tr class="memdesc:aa440e942cec35db3d916e5b52c0bcd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the RAM is ready for a new command.  <br /></td></tr>
 <tr class="separator:aa440e942cec35db3d916e5b52c0bcd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -138,10 +143,13 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a45e32edd992631d6e2ceed29e1e2e567"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a45e32edd992631d6e2ceed29e1e2e567">readMemory</a> (byte *dest, uint32_t length)</td></tr>
 <tr class="separator:a45e32edd992631d6e2ceed29e1e2e567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04fb934ba602c7c6456e260bdc97edfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a04fb934ba602c7c6456e260bdc97edfd">setWRSR</a> (byte val)</td></tr>
+<tr class="memdesc:a04fb934ba602c7c6456e260bdc97edfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the WRSR (Write status reg)  <br /></td></tr>
 <tr class="separator:a04fb934ba602c7c6456e260bdc97edfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41678aaf2a05c47767d191ef919d34f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a41678aaf2a05c47767d191ef919d34f9">waitUntilReady</a> ()</td></tr>
+<tr class="memdesc:a41678aaf2a05c47767d191ef919d34f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits until the RAM is ready to write.  <br /></td></tr>
 <tr class="separator:a41678aaf2a05c47767d191ef919d34f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a357eb337bc299d585ee47ea382c7e765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a357eb337bc299d585ee47ea382c7e765">writePage</a> (uint32_t addr, byte *bytes, uint32_t length)</td></tr>
+<tr class="memdesc:a357eb337bc299d585ee47ea382c7e765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the given data to the RAM in a page write. Increments mem_end when done.  <br /></td></tr>
 <tr class="separator:a357eb337bc299d585ee47ea382c7e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4455f414a3e9bcdbdd633482745665a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ab4455f414a3e9bcdbdd633482745665a">csl</a> ()</td></tr>
 <tr class="separator:ab4455f414a3e9bcdbdd633482745665a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,7 +178,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interfaces with the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM chip. </p>
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00031">31</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00032">32</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a453bc57eced5b19eea3cbdf1ddd13572" name="a453bc57eced5b19eea3cbdf1ddd13572"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a453bc57eced5b19eea3cbdf1ddd13572">&#9670;&#160;</a></span>AT25M02()</h2>
@@ -195,7 +203,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00034">34</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00035">35</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -296,6 +304,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns how many bytes are free and available to be written to. </p>
+
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00055">55</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
 </div>
@@ -342,7 +352,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device. </p>
+<p>Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device. Define spi settings, chip select pin, and set initial variables to zero. </p>
 
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00039">39</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
@@ -362,6 +372,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if the RAM is ready for a new command. </p>
 
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00187">187</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
@@ -392,6 +404,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write the given number of bytes from the ram into the destination array. These bytes are taken from the start of the queue. Returns how many bytes were read and written to the array. </p>
 
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00172">172</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
@@ -552,6 +566,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the WRSR (Write status reg) </p>
+
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00272">272</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
 </div>
@@ -597,6 +613,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the number of bytes currently being used. </p>
 
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00063">63</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
@@ -652,6 +670,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Waits until the RAM is ready to write. </p>
+
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00289">289</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
 </div>
@@ -681,6 +701,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write from the given array to the memory. This data is appended to the end of the queue. Returns true if it successfully wrote all bytes. Returns false if it could not write every byte without overwriting existing data. </p>
 
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00098">98</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
@@ -726,6 +748,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Write the given data to the RAM in a page write. Increments mem_end when done. </p>
+
 <p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00206">206</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
 
 </div>
@@ -751,7 +775,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00127">127</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00128">128</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +799,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00101">101</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00102">102</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -799,7 +823,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00100">100</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00101">101</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -823,7 +847,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00102">102</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00103">103</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -847,7 +871,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00104">104</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00105">105</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -871,7 +895,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00099">99</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00100">100</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
@@ -895,7 +919,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00098">98</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00099">99</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>

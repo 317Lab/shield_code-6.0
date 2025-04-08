@@ -1,5 +1,5 @@
 <map id="PipController" name="PipController">
-<area shape="rect" id="node1" title="Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily storing separate sweep..." alt="" coords="5,196,112,221"/>
+<area shape="rect" id="node1" title="Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily managing simultaneous ..." alt="" coords="5,196,112,221"/>
 <area shape="rect" id="node2" href="$classPip.html" title="Manages the Pip sensor sweep and associated data." alt="" coords="37,93,80,119"/>
 <area shape="rect" id="node3" href="$classMax1148.html" title="Manages interfacing with Max1148 ADC." alt="" coords="17,5,100,31"/>
 </map>

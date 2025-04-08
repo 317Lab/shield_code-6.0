@@ -1,4 +1,4 @@
 <map id="modded_system_sam3xa.c" name="modded_system_sam3xa.c">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,205,31"/>
+<area shape="rect" id="node1" title="Rewrite of system_sam3xa.c to support the external crystal oscillator on the shield...." alt="" coords="5,5,205,31"/>
 <area shape="rect" id="node2" title=" " alt="" coords="14,79,197,104"/>
 </map>

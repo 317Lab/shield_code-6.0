@@ -3,7 +3,6 @@ var classPip =
     [ "Pip", "classPip.html#a11eafb91578a61b66a2aba2883f8f9cf", null ],
     [ "clear_data", "classPip.html#afb6bda586a6369cd28a5e66932581612", null ],
     [ "read_adc", "classPip.html#a86db44288020469244b3f18a90ce5a39", null ],
-    [ "sweep", "classPip.html#a17f915d3c619b11bbf54df63ffdd73e4", null ],
     [ "PipController", "classPip.html#a0d8bab8ca76ab906a8b260d3923bf1fc", null ],
     [ "adc", "classPip.html#a3cf2f54605c84de1d45c6d3369d7841e", null ],
     [ "avg_num", "classPip.html#a689bbda5466bdc867b80c173b3b1428d", null ],

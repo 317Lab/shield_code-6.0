@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('AT25M02_8hpp.html',''); initResizable(
   <div class="headertitle"><div class="title">AT25M02.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides a library to interact with Microchip's <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> chip. This treats the chip as a circular queue that will not overwrite it's data.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
 <code>#include &quot;SPI.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -102,7 +105,7 @@ Include dependency graph for AT25M02.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="AT25M02_8hpp__incl.png" border="0" usemap="#aAT25M02_8hpp" alt=""/></div>
 <map name="aAT25M02_8hpp" id="aAT25M02_8hpp">
-<area shape="rect" title=" " alt="" coords="39,5,149,31"/>
+<area shape="rect" title="Provides a library to interact with Microchip&#39;s AT25M02 chip. This treats the chip as a circular queu..." alt="" coords="39,5,149,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,89,104"/>
 <area shape="rect" title=" " alt="" coords="113,79,168,104"/>
 </map>
@@ -112,7 +115,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="AT25M02_8hpp__dep__incl.png" border="0" usemap="#aAT25M02_8hppdep" alt=""/></div>
 <map name="aAT25M02_8hppdep" id="aAT25M02_8hppdep">
-<area shape="rect" title=" " alt="" coords="65,5,175,31"/>
+<area shape="rect" title="Provides a library to interact with Microchip&#39;s AT25M02 chip. This treats the chip as a circular queu..." alt="" coords="65,5,175,31"/>
 <area shape="rect" href="AT25M02_8cpp.html" title="This control&#39;s microchip&#39;s AT25M02 EEPROM Device. This treats it as a circular queue,..." alt="" coords="5,79,115,104"/>
 <area shape="rect" href="main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="139,79,221,104"/>
 </map>
@@ -140,9 +143,14 @@ Enumerations</h2></td></tr>
 , <a class="el" href="AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153ad47b0c9f464cf12e060f721a9622e154">WRITE_PAGE</a> = 0x02
 <br />
  }</td></tr>
+<tr class="memdesc:a2afce0a47a93eee73a314d53e4890153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commands for the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> chip. Pulled from the data sheet for this chip. All commands are MSB first.  <a href="AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153">More...</a><br /></td></tr>
 <tr class="separator:a2afce0a47a93eee73a314d53e4890153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides a library to interact with Microchip's <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> chip. This treats the chip as a circular queue that will not overwrite it's data. </p>
+
+<p class="definition">Definition in file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a2afce0a47a93eee73a314d53e4890153" name="a2afce0a47a93eee73a314d53e4890153"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2afce0a47a93eee73a314d53e4890153">&#9670;&#160;</a></span>Command</h2>
 
@@ -154,7 +162,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Provides a library to interact with Microchip's <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> chip. This treats the chip as a circular queue that will not overwrite it's data. </p>
+
+<p>Commands for the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> chip. Pulled from the data sheet for this chip. All commands are MSB first. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2afce0a47a93eee73a314d53e4890153a451fb3a060f895e40024da81e03fe45a" name="a2afce0a47a93eee73a314d53e4890153a451fb3a060f895e40024da81e03fe45a"></a>READ_STATUS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2afce0a47a93eee73a314d53e4890153a28ef5f5d868b8d300ee94b542979887b" name="a2afce0a47a93eee73a314d53e4890153a28ef5f5d868b8d300ee94b542979887b"></a>LOW_PWR_WRITE_POLL&#160;</td><td class="fielddoc"></td></tr>
@@ -166,7 +175,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a2afce0a47a93eee73a314d53e4890153ad47b0c9f464cf12e060f721a9622e154" name="a2afce0a47a93eee73a314d53e4890153ad47b0c9f464cf12e060f721a9622e154"></a>WRITE_PAGE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00017">17</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00018">18</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
 
 </div>
 </div>
