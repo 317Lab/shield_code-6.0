@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fdevicevectors_0',['_DeviceVectors',['../struct__DeviceVectors.html',1,'']]]
+  ['at25m02_0',['AT25M02',['../classAT25M02.html',1,'']]]
 ];

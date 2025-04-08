@@ -1,5 +1,0 @@
-<map id="Pwm" name="Pwm">
-<area shape="rect" id="node1" title=" " alt="" coords="80,93,135,119"/>
-<area shape="rect" id="node2" href="$structPwmCmp.html" title="PwmCmp hardware registers." alt="" coords="5,5,89,31"/>
-<area shape="rect" id="node3" href="$structPwmCh__num.html" title="PwmCh_num hardware registers." alt="" coords="114,5,221,31"/>
-</map>

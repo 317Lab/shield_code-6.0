@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['freebufferbytes_0',['freeBufferBytes',['../classAT25M02.html#a1423450348315f3603bd05021b9a1f37',1,'AT25M02']]],
-  ['freebytes_1',['freeBytes',['../classAT25M02.html#ab8a47c94b577284350ef881413217666',1,'AT25M02']]],
-  ['freememorybytes_2',['freeMemoryBytes',['../classAT25M02.html#ad75297e8ebdd2e7246aa4e632c3d7adc',1,'AT25M02']]],
-  ['fsmaction_3',['FSMAction',['../main_8cpp.html#a248cbabf5c512b0faec96f2b47ed2933',1,'main.cpp']]],
-  ['fsmupdate_4',['FSMUpdate',['../main_8cpp.html#aa8e0dc1e1a2b72c66cf527bad9598a78',1,'main.cpp']]]
+  ['init_0',['init',['../classAT25M02.html#a27b38d3bdbc3e7f2e4851eef4bd599ad',1,'AT25M02::init()'],['../classPDC.html#a2ed66e7deaedfa858740aa502139c491',1,'PDC::init()']]],
+  ['initimu_1',['initIMU',['../IMU_8cpp.html#a895e7810df8321351c3b83bb9a81cac1',1,'initIMU(LIS3MDL *mag, LSM6 *gyro_acc):&#160;IMU.cpp'],['../IMU_8hpp.html#a854342c389cd42d21f3013ab9c2aa2ab',1,'initIMU(LIS3MDL *compass, LSM6 *gyro):&#160;IMU.cpp']]],
+  ['is_5fon_2',['is_on',['../classPDC.html#a79db12a42416ac7dd5af8d23d84ccac3',1,'PDC']]],
+  ['isready_3',['isReady',['../classAT25M02.html#aa440e942cec35db3d916e5b52c0bcd61',1,'AT25M02']]]
 ];

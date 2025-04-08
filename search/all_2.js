@@ -1,9 +1,24 @@
 var searchData=
 [
-  ['backup_5fbuffer_0',['backup_buffer',['../classPDC.html#a40b92f11698cce1d1a1f91bf1076d0ea',1,'PDC']]],
-  ['blink_1',['blink',['../main_8cpp.html#a5664bd38fc668253a0152e6b319aafbb',1,'main.cpp']]],
-  ['bobstate_2',['BobState',['../main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079',1,'main.cpp']]],
-  ['buffer_3',['BUFFER',['../main_8cpp.html#a05ec23ea9e68706e210bd8f965beee10',1,'main.cpp']]],
-  ['busfault_5fhandler_4',['BusFault_Handler',['../sam3x8e_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3x8e.h'],['../sam3x8h_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3x8h.h'],['../sam3x8c_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3x8c.h'],['../sam3x4e_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3x4e.h'],['../sam3x4c_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3x4c.h'],['../sam3a8c_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3a8c.h'],['../sam3a4c_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;sam3a4c.h']]],
-  ['busfault_5firqn_5',['BusFault_IRQn',['../sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3a4c.h'],['../sam3a8c_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3a8c.h'],['../sam3x4c_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3x4c.h'],['../sam3x4e_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3x4e.h'],['../sam3x8c_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3x8c.h'],['../sam3x8e_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3x8e.h'],['../sam3x8h_8h.html#a666eb0caeb12ec0e281415592ae89083a8693500eff174f16119e96234fee73af',1,'BusFault_IRQn():&#160;sam3x8h.h']]]
+  ['chan0_0',['CHAN0',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15',1,'Max1148.hpp']]],
+  ['chan1_1',['CHAN1',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f',1,'Max1148.hpp']]],
+  ['chan2_2',['CHAN2',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364',1,'Max1148.hpp']]],
+  ['chan3_3',['CHAN3',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75',1,'Max1148.hpp']]],
+  ['chan4_4',['CHAN4',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b',1,'Max1148.hpp']]],
+  ['chan5_5',['CHAN5',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428',1,'Max1148.hpp']]],
+  ['chan6_6',['CHAN6',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa',1,'Max1148.hpp']]],
+  ['chan7_7',['CHAN7',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c',1,'Max1148.hpp']]],
+  ['channel_8',['channel',['../classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb',1,'Max1148']]],
+  ['channel_9',['Channel',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1',1,'Max1148.hpp']]],
+  ['chip_5fselect_5fpin_10',['chip_select_pin',['../classAT25M02.html#acf22ff342f34f8fafcd06d0e1292d55e',1,'AT25M02']]],
+  ['chip_5fselect_5fpin_11',['CHIP_SELECT_PIN',['../AT25M02_8cpp.html#abdf9543b76f1ba5db0b3a5176612a767',1,'AT25M02.cpp']]],
+  ['clear_5fdata_12',['clear_data',['../classPip.html#afb6bda586a6369cd28a5e66932581612',1,'Pip']]],
+  ['command_13',['Command',['../AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153',1,'AT25M02.hpp']]],
+  ['compass_14',['compass',['../main_8cpp.html#ab9dac5449c305b2f317733a476c436f4',1,'main.cpp']]],
+  ['configuretimerinterrupt_15',['configureTimerInterrupt',['../main_8cpp.html#a329a1985674f611be4ec5aa1b138af79',1,'main.cpp']]],
+  ['cs_5fpin_16',['cs_pin',['../classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725',1,'Max1148']]],
+  ['csh_17',['csh',['../classMax1148.html#a2b70543fde8b535db33f31fad756bada',1,'Max1148::csh()'],['../classAT25M02.html#ad5591f964f093107ba42bcbe1b25a747',1,'AT25M02::csh()']]],
+  ['csl_18',['csl',['../classMax1148.html#a8ac73d182cce6622c459b17cc5e03ee5',1,'Max1148::csl()'],['../classAT25M02.html#ab4455f414a3e9bcdbdd633482745665a',1,'AT25M02::csl()']]],
+  ['currentstate_19',['currentState',['../main_8cpp.html#a2723af79cf63ab162326c9f5ee2fd25b',1,'main.cpp']]],
+  ['cycle_5fcounter_20',['cycle_counter',['../main_8cpp.html#aa1df51c1f8ec630b5d633eb09ec42097',1,'main.cpp']]]
 ];

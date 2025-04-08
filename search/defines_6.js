@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpbr_0',['GPBR',['../sam3a4c_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3a4c.h'],['../sam3a8c_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3a8c.h'],['../sam3x4c_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3x4c.h'],['../sam3x4e_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3x4e.h'],['../sam3x8c_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3x8c.h'],['../sam3x8e_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3x8e.h'],['../sam3x8h_8h.html#a5a1a653525bbbba1b545b920802d3169',1,'GPBR():&#160;sam3x8h.h']]]
+  ['page_5flen_0',['PAGE_LEN',['../AT25M02_8cpp.html#a53c994ec1a66a39c2c48df206036c5de',1,'AT25M02.cpp']]]
 ];

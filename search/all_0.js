@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['_5f_5fcm3_5frev_0',['__CM3_REV',['../sam3a4c_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3a4c.h'],['../sam3a8c_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3a8c.h'],['../sam3x4c_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3x4c.h'],['../sam3x4e_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3x4e.h'],['../sam3x8c_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3x8c.h'],['../sam3x8e_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3x8e.h'],['../sam3x8h_8h.html#ac6a3f185c4640e06443c18b3c8d93f53',1,'__CM3_REV():&#160;sam3x8h.h']]],
-  ['_5f_5fmpu_5fpresent_1',['__MPU_PRESENT',['../sam3x8h_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3x8h.h'],['../sam3x8e_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3x8e.h'],['../sam3x8c_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3x8c.h'],['../sam3x4e_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3x4e.h'],['../sam3a8c_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3a8c.h'],['../sam3a4c_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3a4c.h'],['../sam3x4c_8h.html#a4127d1b31aaf336fab3d7329d117f448',1,'__MPU_PRESENT():&#160;sam3x4c.h']]],
-  ['_5f_5fnvic_5fprio_5fbits_2',['__NVIC_PRIO_BITS',['../sam3x8e_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3x8e.h'],['../sam3x8h_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3x8h.h'],['../sam3x8c_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3x8c.h'],['../sam3x4e_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3x4e.h'],['../sam3x4c_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3x4c.h'],['../sam3a8c_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3a8c.h'],['../sam3a4c_8h.html#ae3fe3587d5100c787e02102ce3944460',1,'__NVIC_PRIO_BITS():&#160;sam3a4c.h']]],
-  ['_5f_5fvendor_5fsystickconfig_3',['__Vendor_SysTickConfig',['../sam3a4c_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3a4c.h'],['../sam3a8c_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3a8c.h'],['../sam3x4c_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3x4c.h'],['../sam3x4e_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3x4e.h'],['../sam3x8c_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3x8c.h'],['../sam3x8e_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3x8e.h'],['../sam3x8h_8h.html#ab58771b4ec03f9bdddc84770f7c95c68',1,'__Vendor_SysTickConfig():&#160;sam3x8h.h']]],
-  ['_5fdevicevectors_4',['_DeviceVectors',['../struct__DeviceVectors.html',1,'']]]
+  ['adc_0',['adc',['../classPip.html#a3cf2f54605c84de1d45c6d3369d7841e',1,'Pip']]],
+  ['adc0_1',['adc0',['../main_8cpp.html#abb1d8eac910587196404a1413a53eb0d',1,'main.cpp']]],
+  ['adc1_2',['adc1',['../main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a',1,'main.cpp']]],
+  ['adc_5fchannel_3',['ADC_CHANNEL',['../Max1148_8hpp.html#a7fb9fde533f9b9bc8e4ae31524c9ea51',1,'Max1148.hpp']]],
+  ['adc_5fcs_5fpin_4',['ADC_CS_PIN',['../Max1148_8hpp.html#a5218409ffc6cf938fa4edce83ad05ff9',1,'Max1148.hpp']]],
+  ['adc_5fpin_5',['ADC_PIN',['../Max1148_8hpp.html#af458889265f213625129e2dd0707a69b',1,'Max1148.hpp']]],
+  ['adc_5fread_6',['adc_read',['../classMax1148.html#aae7431950ed3ff37b274524357e84f9e',1,'Max1148']]],
+  ['adc_5fread_7',['ADC_READ',['../Max1148_8hpp.html#a55efe21d802352cd3d833f3bc9a2cbf9',1,'Max1148.hpp']]],
+  ['adc_5fread_5favg_8',['adc_read_avg',['../classMax1148.html#adc046ad04d5adef7473775b708bb69c2',1,'Max1148']]],
+  ['at25m02_9',['AT25M02',['../classAT25M02.html',1,'AT25M02'],['../classAT25M02.html#a453bc57eced5b19eea3cbdf1ddd13572',1,'AT25M02::AT25M02()']]],
+  ['at25m02_2ecpp_10',['AT25M02.cpp',['../AT25M02_8cpp.html',1,'']]],
+  ['at25m02_2ehpp_11',['AT25M02.hpp',['../AT25M02_8hpp.html',1,'']]],
+  ['avg_5fnum_12',['avg_num',['../classPip.html#a689bbda5466bdc867b80c173b3b1428d',1,'Pip']]]
 ];

@@ -438,12 +438,12 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno"><a class="line" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">  375</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">goLow</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="sam3a4c_8h.html#a2eca52a9a80dbd2067f9dbbba597f63f">  376</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a2b092a5d0af4dd3f63677e90deca5b16">TC0_Handler</a>(){</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="main_8cpp.html#a2b092a5d0af4dd3f63677e90deca5b16">  376</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a2b092a5d0af4dd3f63677e90deca5b16">TC0_Handler</a>(){</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>     <span class="keywordflow">if</span> (<a class="code hl_variable" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">goLow</a>){</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        <a class="code hl_variable" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">goLow</a>=<span class="keyword">false</span>;</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    } </div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="comment">// Clear the status register. This is necessary to prevent the interrupt from being called repeatedly.</span></div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  TC_GetStatus(<a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>, 0);</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  TC_GetStatus(TC0, 0);</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  </div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  <span class="keywordflow">if</span> (micros() - <a class="code hl_variable" href="main_8cpp.html#ac4e9e1d4a8353d6c795f8b5024eeb00e">timer</a> &gt;= SAMPLE_PERIOD) {</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        <a class="code hl_variable" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">goLow</a>=<span class="keyword">true</span>; </div>
@@ -459,25 +459,25 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="main_8cpp.html#a329a1985674f611be4ec5aa1b138af79">  404</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a329a1985674f611be4ec5aa1b138af79">configureTimerInterrupt</a>(){</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="comment">// Enable the clock to the TC0 peripheral</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  pmc_enable_periph_clk(<a class="code hl_define" href="sam3a4c_8h.html#a17a38517c59418d9ed3b113d2d99eb6b">ID_TC0</a>);</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  pmc_enable_periph_clk(ID_TC0);</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="comment">/*Configures the timer:</span></div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="comment">    - First two parameters set it to RC compare waveform mode. This means the timer resets when it reaches the value in RC.</span></div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="comment">    - The third parameter sets the clock source to MCK/128. MCK is at 84 MHz, so this sets the clock to 656.25 kHz.</span></div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="comment">  */</span></div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  TC_Configure(<a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>, 0, <a class="code hl_define" href="tc_8h.html#aeb92866fb982814f6e7afbb19052842a">TC_CMR_WAVE</a> | <a class="code hl_define" href="tc_8h.html#a9a1a224dcd2cefaccb15c9e9881085e0">TC_CMR_WAVSEL_UP_RC</a> | <a class="code hl_define" href="tc_8h.html#a5487b4d5de0bbbad6a0e74ae8ba883fa">TC_CMR_TCCLKS_TIMER_CLOCK4</a>);</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  TC_Configure(TC0, 0, TC_CMR_WAVE | TC_CMR_WAVSEL_UP_RC | TC_CMR_TCCLKS_TIMER_CLOCK4);</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="comment">//RC sets the value that the counter reaches before triggering the interrupt</span></div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="comment">//This sets it to 10kHz</span></div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  TC_SetRC(<a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>, 0, 64.625); <span class="comment">// </span></div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  TC_SetRC(TC0, 0, 64.625); <span class="comment">// </span></div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="comment">// Enable the interrupt RC compare interrupt</span></div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>-&gt;TC_CHANNEL[0].TC_IER = <a class="code hl_define" href="tc_8h.html#a6b0e5b25ddd28d50f17e0091555ae706">TC_IER_CPCS</a>;</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  TC0-&gt;TC_CHANNEL[0].TC_IER = TC_IER_CPCS;</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="comment">// Disable all other TC0 interrupts</span></div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>-&gt;TC_CHANNEL[0].TC_IDR = ~TC_IER_CPCS;</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  NVIC_EnableIRQ(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a22b1945416945d43c4da17beff9a07f5">TC0_IRQn</a>);</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  NVIC_SetPriority(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a22b1945416945d43c4da17beff9a07f5">TC0_IRQn</a>, 0);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  TC0-&gt;TC_CHANNEL[0].TC_IDR = ~TC_IER_CPCS;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  NVIC_EnableIRQ(TC0_IRQn);</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  NVIC_SetPriority(TC0_IRQn, 0);</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  TC_Start(<a class="code hl_define" href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a>, 0);</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  TC_Start(TC0, 0);</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>}</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
@@ -748,14 +748,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="ttc" id="amain_8cpp_html_afda42ddf1f4c852191c9464fc1b52031"><div class="ttname"><a href="main_8cpp.html#afda42ddf1f4c852191c9464fc1b52031">newCycle</a></div><div class="ttdeci">volatile bool newCycle</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00109">main.cpp:109</a></div></div>
 <div class="ttc" id="amain_8cpp_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00190">main.cpp:190</a></div></div>
 <div class="ttc" id="amain_8cpp_html_afe71fc46c45c4f403772b57370e0004a"><div class="ttname"><a href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a></div><div class="ttdeci">#define SWEEP_AVERAGES</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00049">main.cpp:49</a></div></div>
-<div class="ttc" id="asam3a4c_8h_html_a17a38517c59418d9ed3b113d2d99eb6b"><div class="ttname"><a href="sam3a4c_8h.html#a17a38517c59418d9ed3b113d2d99eb6b">ID_TC0</a></div><div class="ttdeci">#define ID_TC0</div><div class="ttdoc">Timer Counter 0 (TC0)</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00344">sam3a4c.h:344</a></div></div>
-<div class="ttc" id="asam3a4c_8h_html_a52e2ffca944a6935b5ac85cfa8157f34"><div class="ttname"><a href="sam3a4c_8h.html#a52e2ffca944a6935b5ac85cfa8157f34">TC0</a></div><div class="ttdeci">#define TC0</div><div class="ttdoc">(TC0 ) Base Address</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00414">sam3a4c.h:414</a></div></div>
-<div class="ttc" id="asam3a4c_8h_html_a666eb0caeb12ec0e281415592ae89083a22b1945416945d43c4da17beff9a07f5"><div class="ttname"><a href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a22b1945416945d43c4da17beff9a07f5">TC0_IRQn</a></div><div class="ttdeci">@ TC0_IRQn</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00090">sam3a4c.h:90</a></div></div>
 <div class="ttc" id="asweep__values__v5__1_8h_html"><div class="ttname"><a href="sweep__values__v5__1_8h.html">sweep_values_v5_1.h</a></div></div>
-<div class="ttc" id="atc_8h_html_a5487b4d5de0bbbad6a0e74ae8ba883fa"><div class="ttname"><a href="tc_8h.html#a5487b4d5de0bbbad6a0e74ae8ba883fa">TC_CMR_TCCLKS_TIMER_CLOCK4</a></div><div class="ttdeci">#define TC_CMR_TCCLKS_TIMER_CLOCK4</div><div class="ttdoc">(TC_CMR) Clock selected: internal MCK/128 clock signal (from PMC)</div><div class="ttdef"><b>Definition:</b> <a href="tc_8h_source.html#l00082">tc.h:82</a></div></div>
-<div class="ttc" id="atc_8h_html_a6b0e5b25ddd28d50f17e0091555ae706"><div class="ttname"><a href="tc_8h.html#a6b0e5b25ddd28d50f17e0091555ae706">TC_IER_CPCS</a></div><div class="ttdeci">#define TC_IER_CPCS</div><div class="ttdoc">(TC_IER) RC Compare</div><div class="ttdef"><b>Definition:</b> <a href="tc_8h_source.html#l00236">tc.h:236</a></div></div>
-<div class="ttc" id="atc_8h_html_a9a1a224dcd2cefaccb15c9e9881085e0"><div class="ttname"><a href="tc_8h.html#a9a1a224dcd2cefaccb15c9e9881085e0">TC_CMR_WAVSEL_UP_RC</a></div><div class="ttdeci">#define TC_CMR_WAVSEL_UP_RC</div><div class="ttdoc">(TC_CMR) UP mode with automatic trigger on RC Compare</div><div class="ttdef"><b>Definition:</b> <a href="tc_8h_source.html#l00143">tc.h:143</a></div></div>
-<div class="ttc" id="atc_8h_html_aeb92866fb982814f6e7afbb19052842a"><div class="ttname"><a href="tc_8h.html#aeb92866fb982814f6e7afbb19052842a">TC_CMR_WAVE</a></div><div class="ttdeci">#define TC_CMR_WAVE</div><div class="ttdoc">(TC_CMR) Waveform Mode</div><div class="ttdef"><b>Definition:</b> <a href="tc_8h_source.html#l00106">tc.h:106</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

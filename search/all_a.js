@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['loop_0',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]],
-  ['low_5fpwr_5fwrite_5fpoll_1',['LOW_PWR_WRITE_POLL',['../AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153a28ef5f5d868b8d300ee94b542979887b',1,'AT25M02.hpp']]]
+  ['newcycle_0',['newCycle',['../main_8cpp.html#afda42ddf1f4c852191c9464fc1b52031',1,'main.cpp']]],
+  ['num_5fpages_1',['NUM_PAGES',['../AT25M02_8cpp.html#ae12c40b3b2496ea64cbd1f626d4a5817',1,'AT25M02.cpp']]],
+  ['num_5fsamples_2',['num_samples',['../classPip.html#a8813bef1da050d9fa97e09c61cebed6f',1,'Pip']]]
 ];

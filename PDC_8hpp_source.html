@@ -196,15 +196,15 @@ $(document).ready(function(){initNavTree('PDC_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">  149</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">enableUARTInterrupt</a>(){</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="comment">//enable UART interrupt</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        NVIC_EnableIRQ(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        NVIC_EnableIRQ(UART_IRQn);</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">//interrupt on TXBUFE</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_define" href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a>-&gt;UART_IER = <a class="code hl_define" href="uart_8h.html#a76d77269c182d6f711a41ba4cdb4358e">UART_IER_TXBUFE</a>;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_define" href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a>-&gt;UART_IDR = ~UART_IER_TXBUFE;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        UART-&gt;UART_IER = UART_IER_TXBUFE;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        UART-&gt;UART_IDR = ~UART_IER_TXBUFE;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">  157</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">UART_Handler</a>(){</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        send(backup_buffer, <span class="keyword">sizeof</span>(backup_buffer));</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        NVIC_DisableIRQ(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        NVIC_DisableIRQ(UART_IRQn);</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
@@ -231,9 +231,6 @@ $(document).ready(function(){initNavTree('PDC_8hpp_source.html',''); initResizab
 <div class="ttc" id="aclassPDC_html_aebd64d170dda641c62e3f76d868ee8e7"><div class="ttname"><a href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">PDC::enableUARTInterrupt</a></div><div class="ttdeci">void enableUARTInterrupt()</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00149">PDC.hpp:149</a></div></div>
 <div class="ttc" id="aclassPDC_html_af4653238c5caabeb5598d362f712a51a"><div class="ttname"><a href="classPDC.html#af4653238c5caabeb5598d362f712a51a">PDC::send_next</a></div><div class="ttdeci">void send_next(T *buffer, int size)</div><div class="ttdoc">Adds data to the backup PDC buffer. Identical to send().</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00122">PDC.hpp:122</a></div></div>
 <div class="ttc" id="aclassPDC_html_af65cbc87ac4594d955c5e83ea0ea7e98"><div class="ttname"><a href="classPDC.html#af65cbc87ac4594d955c5e83ea0ea7e98">PDC::p_UART_TPR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_TPR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00036">PDC.hpp:36</a></div></div>
-<div class="ttc" id="asam3a4c_8h_html_a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb"><div class="ttname"><a href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a></div><div class="ttdeci">@ UART_IRQn</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00079">sam3a4c.h:79</a></div></div>
-<div class="ttc" id="asam3a4c_8h_html_af7cb12b462b4594bd759d1b4e241ec4c"><div class="ttname"><a href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a></div><div class="ttdeci">#define UART</div><div class="ttdoc">(UART ) Base Address</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00439">sam3a4c.h:439</a></div></div>
-<div class="ttc" id="auart_8h_html_a76d77269c182d6f711a41ba4cdb4358e"><div class="ttname"><a href="uart_8h.html#a76d77269c182d6f711a41ba4cdb4358e">UART_IER_TXBUFE</a></div><div class="ttdeci">#define UART_IER_TXBUFE</div><div class="ttdoc">(UART_IER) Enable Buffer Empty Interrupt</div><div class="ttdef"><b>Definition:</b> <a href="uart_8h_source.html#l00097">uart.h:97</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
