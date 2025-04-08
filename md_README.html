@@ -93,7 +93,7 @@ Table of Contents</h1>
 </ol>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Overview</h1>
-<p>The project structure is basically identical to the old version, albeit simpler, as deprecated and unnecessary code and files were removed. The core functionality can be found in <a href="src/main.cpp">main.cpp</a>. This (will) use the same <a href="https://en.wikipedia.org/wiki/Finite-state_machine">"state machine"</a> as the old code. A detailed explanation of this can be found in <a href="https://drive.google.com/file/d/1XH5SRRh2m84pu7f2B1RSFuYGV1u3EBdw/view?usp=sharing">Ruth Nordhoff's thesis</a>. Note that the hardware section of that thesis is now outdated. <br  />
+<p>The project structure is basically identical to the old version, albeit simpler, as deprecated and unnecessary code and files were removed. The core functionality can be found in <a href="src/main.cpp">main.cpp</a>. This (will) use the same <a href="https://en.wikipedia.org/wiki/Finite-state_machine">"state machine"</a> as the old code. <a class="el" href="classA.html">A</a> detailed explanation of this can be found in <a href="https://drive.google.com/file/d/1XH5SRRh2m84pu7f2B1RSFuYGV1u3EBdw/view?usp=sharing">Ruth Nordhoff's thesis</a>. Note that the hardware section of that thesis is now outdated. <br  />
 </p>
 <p>All source (.cpp) files are housed in the [src](src) directory. The header (.hpp) files for custom libraries are housed in the [include](include) directory. All other project libraries are included through the <code>lib_deps</code> flag in <a href="platformio.ini">platformio.ini</a>, which is explained below and will be automatically included when the project is built.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
@@ -125,7 +125,7 @@ Programming the board</h2>
 Serial Monitor</h2>
 <p>I highly recommend using HTerm, not the built in Platformio serial monitor. It is far more flexible and user friendly. You can download it <a href="https://www.der-hammer.info/pages/terminal.html">here</a>. <br  />
 </p>
-<p>Remember that the data the state machine is sending is not ASCII readable. If you need to quickly output readable data for debugging, use Serial.print(). It does not conflict with our PDC library. <br  />
+<p>Remember that the data the state machine is sending is not ASCII readable. If you need to quickly output readable data for debugging, use Serial.print(). It does not conflict with our <a class="el" href="classPDC.html" title="Manages UART transmits through peripheral DMA controller (PDC).">PDC</a> library. <br  />
 </p>
 <p>If you do want to use the Platformio serial monitor, either click the plug icon in the top right or run <code>pio device monitor</code> in terminal.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
