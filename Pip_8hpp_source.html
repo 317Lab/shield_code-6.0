@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: include/Pip.hpp Source File</title>
+<title>Shield Code: Pip.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Pip_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Pip.hpp</div></div>
 </div><!--header-->
@@ -83,48 +99,62 @@ $(function() {
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="Max1148_8hpp.html">Max1148.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//default sweep parameters. can be modified with the constructor.</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define SWEEP_DEFAULT_DELAY 1000</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define SWEEP_DEFAULT_AVG_NUM 25</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define SWEEP_DEFAULT_SAMPLES 28</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define SWEEP_DEFAULT_MIN 0</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define SWEEP_DEFAULT_MAX 4095</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define SWEEP_MAX_SAMPLES 256</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define DEFAULT_ADC_CHANNEL 0;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#ab7b25ff5a5b48ceabe9cce54360f6a05">   20</a></span><span class="preprocessor">#define SWEEP_DEFAULT_DELAY 1000</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#af2a469b68c53040e2c86120ebac7c90f">   21</a></span><span class="preprocessor">#define SWEEP_DEFAULT_AVG_NUM 25</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a5eb133677a0d9f2adf91df2f10120096">   22</a></span><span class="preprocessor">#define SWEEP_DEFAULT_SAMPLES 28</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a0d32c907e39b8b69605f45c20705477d">   23</a></span><span class="preprocessor">#define SWEEP_DEFAULT_MIN 0</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a4d0be542389989b5ec2d031a025a9b2f">   24</a></span><span class="preprocessor">#define SWEEP_DEFAULT_MAX 4095</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a86714fc5cbb4efd38dab6b0e47c21723">   25</a></span><span class="preprocessor">#define SWEEP_MAX_SAMPLES 256</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a2726c836aed3a6f06f94ab3cb5bcd737">   26</a></span><span class="preprocessor">#define DEFAULT_ADC_CHANNEL 0;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define DAC_PIN DAC0</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="Pip_8hpp.html#a3df6766829d4e2a23ad7afffcd8999d1">   28</a></span><span class="preprocessor">#define DAC_PIN DAC0</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classPip.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classPip.html">Pip</a>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classPipController.html">PipController</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classPip.html#a0d8bab8ca76ab906a8b260d3923bf1fc">   34</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classPipController.html">PipController</a>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        uint8_t dac_pin;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">int</span> delay_us;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_class" href="classMax1148.html">Max1148</a> &amp;adc;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        uint16_t avg_num;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        uint16_t num_samples;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        uint16_t sweep_min;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        uint16_t sweep_max;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">   39</a></span>        uint8_t <a class="code hl_variable" href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">dac_pin</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classPip.html#a67d1ee28be368f100889a36439ca5d38">   43</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classPip.html#a67d1ee28be368f100889a36439ca5d38">delay_us</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">   48</a></span>        <a class="code hl_class" href="classMax1148.html">Max1148</a> &amp;<a class="code hl_variable" href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">adc</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">   52</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">avg_num</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">   56</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">num_samples</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classPip.html#a54f67deed262e69483fe99ff2f2c90a5">   60</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#a54f67deed262e69483fe99ff2f2c90a5">sweep_min</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classPip.html#a1d0f96dd592851c44e490404b1bc9ac7">   61</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#a1d0f96dd592851c44e490404b1bc9ac7">sweep_max</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">void</span> clear_data(uint16_t <a class="code hl_variable" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a>[], uint16_t size);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPip.html#afb6bda586a6369cd28a5e66932581612">clear_data</a>(uint16_t <a class="code hl_variable" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a>[], uint16_t size);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        uint16_t read_adc();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        uint16_t <a class="code hl_function" href="classPip.html#a86db44288020469244b3f18a90ce5a39">read_adc</a>();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_class" href="classPip.html">Pip</a>(<span class="keywordtype">int</span> delay_us, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, <a class="code hl_class" href="classMax1148.html">Max1148</a>&amp; adc);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">   80</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a>[SWEEP_MAX_SAMPLES];</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_class" href="classPip.html">Pip</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="classPip.html#a67d1ee28be368f100889a36439ca5d38">delay_us</a>, uint16_t <a class="code hl_variable" href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">avg_num</a>, uint16_t <a class="code hl_variable" href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">num_samples</a>, uint16_t min, uint16_t max, uint8_t <a class="code hl_variable" href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">dac_pin</a>, <a class="code hl_class" href="classMax1148.html">Max1148</a>&amp; <a class="code hl_variable" href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">adc</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">   80</a></span>        uint16_t <a class="code hl_variable" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a>[<a class="code hl_define" href="Pip_8hpp.html#a86714fc5cbb4efd38dab6b0e47c21723">SWEEP_MAX_SAMPLES</a>];</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classPip.html#a17f915d3c619b11bbf54df63ffdd73e4">sweep</a>();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aMax1148_8hpp_html"><div class="ttname"><a href="Max1148_8hpp.html">Max1148.hpp</a></div><div class="ttdoc">Header file for the Max1148 library for Dartmouth's 317 Lab. Manages ADC communication through SPI.</div></div>
-<div class="ttc" id="aclassMax1148_html"><div class="ttname"><a href="classMax1148.html">Max1148</a></div><div class="ttdoc">Manages interfacing with Max1148 ADC.</div><div class="ttdef"><b>Definition:</b> Max1148.hpp:57</div></div>
-<div class="ttc" id="aclassPipController_html"><div class="ttname"><a href="classPipController.html">PipController</a></div><div class="ttdoc">Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily storing separate sweep...</div><div class="ttdef"><b>Definition:</b> PipController.hpp:10</div></div>
-<div class="ttc" id="aclassPip_html"><div class="ttname"><a href="classPip.html">Pip</a></div><div class="ttdoc">Manages the Pip sensor sweep and associated data.</div><div class="ttdef"><b>Definition:</b> Pip.hpp:33</div></div>
-<div class="ttc" id="aclassPip_html_a17f915d3c619b11bbf54df63ffdd73e4"><div class="ttname"><a href="classPip.html#a17f915d3c619b11bbf54df63ffdd73e4">Pip::sweep</a></div><div class="ttdeci">void sweep()</div><div class="ttdoc">Sweeps the DAC output from min to max. Step length, delay, and number of samples are all set by the c...</div><div class="ttdef"><b>Definition:</b> Pip.cpp:25</div></div>
-<div class="ttc" id="aclassPip_html_aa25bd0f64d377f49a5b90e6e371f1cfc"><div class="ttname"><a href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">Pip::data</a></div><div class="ttdeci">uint16_t data[SWEEP_MAX_SAMPLES]</div><div class="ttdoc">The data array for the sweep.</div><div class="ttdef"><b>Definition:</b> Pip.hpp:80</div></div>
+<div class="ttc" id="aPip_8hpp_html_a86714fc5cbb4efd38dab6b0e47c21723"><div class="ttname"><a href="Pip_8hpp.html#a86714fc5cbb4efd38dab6b0e47c21723">SWEEP_MAX_SAMPLES</a></div><div class="ttdeci">#define SWEEP_MAX_SAMPLES</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00025">Pip.hpp:25</a></div></div>
+<div class="ttc" id="aclassMax1148_html"><div class="ttname"><a href="classMax1148.html">Max1148</a></div><div class="ttdoc">Manages interfacing with Max1148 ADC.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00057">Max1148.hpp:57</a></div></div>
+<div class="ttc" id="aclassPipController_html"><div class="ttname"><a href="classPipController.html">PipController</a></div><div class="ttdoc">Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily storing separate sweep...</div><div class="ttdef"><b>Definition:</b> <a href="PipController_8hpp_source.html#l00010">PipController.hpp:10</a></div></div>
+<div class="ttc" id="aclassPip_html"><div class="ttname"><a href="classPip.html">Pip</a></div><div class="ttdoc">Manages the Pip sensor sweep and associated data.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00033">Pip.hpp:33</a></div></div>
+<div class="ttc" id="aclassPip_html_a17f915d3c619b11bbf54df63ffdd73e4"><div class="ttname"><a href="classPip.html#a17f915d3c619b11bbf54df63ffdd73e4">Pip::sweep</a></div><div class="ttdeci">void sweep()</div><div class="ttdoc">Sweeps the DAC output from min to max. Step length, delay, and number of samples are all set by the c...</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8cpp_source.html#l00025">Pip.cpp:25</a></div></div>
+<div class="ttc" id="aclassPip_html_a1d0f96dd592851c44e490404b1bc9ac7"><div class="ttname"><a href="classPip.html#a1d0f96dd592851c44e490404b1bc9ac7">Pip::sweep_max</a></div><div class="ttdeci">uint16_t sweep_max</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00061">Pip.hpp:61</a></div></div>
+<div class="ttc" id="aclassPip_html_a3cf2f54605c84de1d45c6d3369d7841e"><div class="ttname"><a href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">Pip::adc</a></div><div class="ttdeci">Max1148 &amp; adc</div><div class="ttdoc">The ADC object for the Pip to use. Assuming each pip will use a different ADC channel.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00048">Pip.hpp:48</a></div></div>
+<div class="ttc" id="aclassPip_html_a54f67deed262e69483fe99ff2f2c90a5"><div class="ttname"><a href="classPip.html#a54f67deed262e69483fe99ff2f2c90a5">Pip::sweep_min</a></div><div class="ttdeci">uint16_t sweep_min</div><div class="ttdoc">The minimum and maximum values for the sweep.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00060">Pip.hpp:60</a></div></div>
+<div class="ttc" id="aclassPip_html_a67d1ee28be368f100889a36439ca5d38"><div class="ttname"><a href="classPip.html#a67d1ee28be368f100889a36439ca5d38">Pip::delay_us</a></div><div class="ttdeci">int delay_us</div><div class="ttdoc">The delay between steps in the sweep. Measured in microseconds.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00043">Pip.hpp:43</a></div></div>
+<div class="ttc" id="aclassPip_html_a67f232755d6b56c585ffebebd1d1b20d"><div class="ttname"><a href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">Pip::dac_pin</a></div><div class="ttdeci">uint8_t dac_pin</div><div class="ttdoc">The pin for the DAC output.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00039">Pip.hpp:39</a></div></div>
+<div class="ttc" id="aclassPip_html_a689bbda5466bdc867b80c173b3b1428d"><div class="ttname"><a href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">Pip::avg_num</a></div><div class="ttdeci">uint16_t avg_num</div><div class="ttdoc">The number of samples to average when querying the ADC.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00052">Pip.hpp:52</a></div></div>
+<div class="ttc" id="aclassPip_html_a86db44288020469244b3f18a90ce5a39"><div class="ttname"><a href="classPip.html#a86db44288020469244b3f18a90ce5a39">Pip::read_adc</a></div><div class="ttdeci">uint16_t read_adc()</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8cpp_source.html#l00047">Pip.cpp:47</a></div></div>
+<div class="ttc" id="aclassPip_html_a8813bef1da050d9fa97e09c61cebed6f"><div class="ttname"><a href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">Pip::num_samples</a></div><div class="ttdeci">uint16_t num_samples</div><div class="ttdoc">The number of samples to take during the sweep. AKA the number of steps in the sweep.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00056">Pip.hpp:56</a></div></div>
+<div class="ttc" id="aclassPip_html_aa25bd0f64d377f49a5b90e6e371f1cfc"><div class="ttname"><a href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">Pip::data</a></div><div class="ttdeci">uint16_t data[SWEEP_MAX_SAMPLES]</div><div class="ttdoc">The data array for the sweep.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00080">Pip.hpp:80</a></div></div>
+<div class="ttc" id="aclassPip_html_afb6bda586a6369cd28a5e66932581612"><div class="ttname"><a href="classPip.html#afb6bda586a6369cd28a5e66932581612">Pip::clear_data</a></div><div class="ttdeci">void clear_data(uint16_t data[], uint16_t size)</div><div class="ttdoc">Clears the data array.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8cpp_source.html#l00041">Pip.cpp:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="Pip_8hpp.html">Pip.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

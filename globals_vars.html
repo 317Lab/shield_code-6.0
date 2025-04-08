@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -69,13 +89,97 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>adc0&#160;:&#160;<a class="el" href="main_8cpp.html#abb1d8eac910587196404a1413a53eb0d">main.cpp</a></li>
+<li>adc1&#160;:&#160;<a class="el" href="main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>compass&#160;:&#160;<a class="el" href="main_8cpp.html#ab9dac5449c305b2f317733a476c436f4">main.cpp</a></li>
+<li>currentState&#160;:&#160;<a class="el" href="main_8cpp.html#a2723af79cf63ab162326c9f5ee2fd25b">main.cpp</a></li>
+<li>cycle_counter&#160;:&#160;<a class="el" href="main_8cpp.html#aa1df51c1f8ec630b5d633eb09ec42097">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>debug&#160;:&#160;<a class="el" href="main_8cpp.html#a398527b3e9e358c345c5047b16871957">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>goLow&#160;:&#160;<a class="el" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">main.cpp</a></li>
+<li>gyro&#160;:&#160;<a class="el" href="main_8cpp.html#a39bbca0f976078cf4d81bd3603c80db9">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>IMUData&#160;:&#160;<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">main.cpp</a></li>
+<li>imuSentinel&#160;:&#160;<a class="el" href="main_8cpp.html#a56d9fd9969cdc082e5108a1e98539427">main.cpp</a></li>
+<li>imuSentinelBuf&#160;:&#160;<a class="el" href="main_8cpp.html#ac219b15c2c4e600aa87cebad58310574">main.cpp</a></li>
+<li>IMUTimeStamp&#160;:&#160;<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">main.cpp</a></li>
+<li>isFirst&#160;:&#160;<a class="el" href="main_8cpp.html#a08d2a3449f250840171ef25487990223">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>memory_block&#160;:&#160;<a class="el" href="main_8cpp.html#a2bd8a1363b5634d72f2368782e2f844b">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>newCycle&#160;:&#160;<a class="el" href="main_8cpp.html#afda42ddf1f4c852191c9464fc1b52031">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>p_IMUTimeStamp&#160;:&#160;<a class="el" href="main_8cpp.html#ab57f7ebb7b8907c69ab480fff78848eb">main.cpp</a></li>
+<li>p_memory_block&#160;:&#160;<a class="el" href="main_8cpp.html#a61f2cf104e13848d868cec7d52ae367e">main.cpp</a></li>
+<li>p_sweepTimeStamp&#160;:&#160;<a class="el" href="main_8cpp.html#afd779a5f1e9350c96e7734c296abfbbe">main.cpp</a></li>
+<li>pdc&#160;:&#160;<a class="el" href="main_8cpp.html#ab000c195a63cb38c76a088a3bb1aa3fd">main.cpp</a></li>
+<li>pip0&#160;:&#160;<a class="el" href="main_8cpp.html#a0214aea50724a7f0c294783b162e51a7">main.cpp</a></li>
+<li>pip1&#160;:&#160;<a class="el" href="main_8cpp.html#a9501849d7f9b9d57e13cc9266c6f1f0d">main.cpp</a></li>
+<li>pipController&#160;:&#160;<a class="el" href="main_8cpp.html#a27138f89f5b1aaa7b62df8a5bc18a344">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>ram&#160;:&#160;<a class="el" href="main_8cpp.html#a02b731e35d8918b3707371653330f148">main.cpp</a></li>
+<li>RAM_SIZE&#160;:&#160;<a class="el" href="AT25M02_8cpp.html#af6dcece04a7d61bf6a0d953dcae87588">AT25M02.cpp</a></li>
+<li>ramBuf&#160;:&#160;<a class="el" href="main_8cpp.html#a947c2663fb8cd66850476e6d01e331a8">main.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>savedSweep&#160;:&#160;<a class="el" href="main_8cpp.html#ae43663baa508714f1edeb7565dc7c2b4">main.cpp</a></li>
+<li>sendFromRam&#160;:&#160;<a class="el" href="main_8cpp.html#a0d99d0fdfb9b902041cdc13105f861bc">main.cpp</a></li>
+<li>shieldID&#160;:&#160;<a class="el" href="main_8cpp.html#a219637b04debc033e8edb6e2fdd30782">main.cpp</a></li>
+<li>shortSize&#160;:&#160;<a class="el" href="main_8cpp.html#a2166afae9c5c448ef5622ceae4ba1dd6">main.cpp</a></li>
+<li>startTime&#160;:&#160;<a class="el" href="main_8cpp.html#a776f35f97f4e03bed1685798da2dca92">main.cpp</a></li>
+<li>storeToRam&#160;:&#160;<a class="el" href="main_8cpp.html#a82929de58673c514e135c001370f6c44">main.cpp</a></li>
+<li>sweep_buffer&#160;:&#160;<a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">main.cpp</a></li>
+<li>sweepSentinel&#160;:&#160;<a class="el" href="main_8cpp.html#ac3231f91f2cb2202de2bae62e7762a7f">main.cpp</a></li>
+<li>sweepSentinelBuf&#160;:&#160;<a class="el" href="main_8cpp.html#a61632b43304e910a71dba9af1065ef4d">main.cpp</a></li>
+<li>sweepStartTime&#160;:&#160;<a class="el" href="main_8cpp.html#af359f4b533f843c024d45219ff4d8f47">main.cpp</a></li>
+<li>sweepTimeStamp&#160;:&#160;<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">main.cpp</a></li>
+<li>syncPulse&#160;:&#160;<a class="el" href="main_8cpp.html#abf649dd6f428ae1df53df40a9ca0b1e9">main.cpp</a></li>
+<li>SystemCoreClock&#160;:&#160;<a class="el" href="system__sam3xa_8h.html#aa3cd3e43291e81e795d642b79b6088e6">system_sam3xa.h</a>, <a class="el" href="modded__system__sam3xa_8c.html#aa3cd3e43291e81e795d642b79b6088e6">modded_system_sam3xa.c</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>timer&#160;:&#160;<a class="el" href="main_8cpp.html#ac4e9e1d4a8353d6c795f8b5024eeb00e">main.cpp</a></li>
+<li>totalSize&#160;:&#160;<a class="el" href="main_8cpp.html#a0dfde9b3f6a80e7b666be73500b9cd04">main.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

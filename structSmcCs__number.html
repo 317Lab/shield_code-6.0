@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structSmcCs__number.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,36 +103,128 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4357a8090da91516ab58baa891547485"><td class="memItemLeft" align="right" valign="top"><a id="a4357a8090da91516ab58baa891547485" name="a4357a8090da91516ab58baa891547485"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>SMC_SETUP</b></td></tr>
-<tr class="memdesc:a4357a8090da91516ab58baa891547485"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x0) SMC Setup Register <br /></td></tr>
+<tr class="memitem:a4357a8090da91516ab58baa891547485"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSmcCs__number.html#a4357a8090da91516ab58baa891547485">SMC_SETUP</a></td></tr>
+<tr class="memdesc:a4357a8090da91516ab58baa891547485"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x0) SMC Setup Register  <br /></td></tr>
 <tr class="separator:a4357a8090da91516ab58baa891547485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67a89be9275ad71ad3c5a380e8971b5"><td class="memItemLeft" align="right" valign="top"><a id="af67a89be9275ad71ad3c5a380e8971b5" name="af67a89be9275ad71ad3c5a380e8971b5"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>SMC_PULSE</b></td></tr>
-<tr class="memdesc:af67a89be9275ad71ad3c5a380e8971b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x4) SMC Pulse Register <br /></td></tr>
+<tr class="memitem:af67a89be9275ad71ad3c5a380e8971b5"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSmcCs__number.html#af67a89be9275ad71ad3c5a380e8971b5">SMC_PULSE</a></td></tr>
+<tr class="memdesc:af67a89be9275ad71ad3c5a380e8971b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x4) SMC Pulse Register  <br /></td></tr>
 <tr class="separator:af67a89be9275ad71ad3c5a380e8971b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42516353dc8e3b13854b36d1a5ac017a"><td class="memItemLeft" align="right" valign="top"><a id="a42516353dc8e3b13854b36d1a5ac017a" name="a42516353dc8e3b13854b36d1a5ac017a"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>SMC_CYCLE</b></td></tr>
-<tr class="memdesc:a42516353dc8e3b13854b36d1a5ac017a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x8) SMC Cycle Register <br /></td></tr>
+<tr class="memitem:a42516353dc8e3b13854b36d1a5ac017a"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSmcCs__number.html#a42516353dc8e3b13854b36d1a5ac017a">SMC_CYCLE</a></td></tr>
+<tr class="memdesc:a42516353dc8e3b13854b36d1a5ac017a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x8) SMC Cycle Register  <br /></td></tr>
 <tr class="separator:a42516353dc8e3b13854b36d1a5ac017a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af95b65a758dfcce14593409962bede29"><td class="memItemLeft" align="right" valign="top"><a id="af95b65a758dfcce14593409962bede29" name="af95b65a758dfcce14593409962bede29"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>SMC_TIMINGS</b></td></tr>
-<tr class="memdesc:af95b65a758dfcce14593409962bede29"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0xC) SMC Timings Register <br /></td></tr>
+<tr class="memitem:af95b65a758dfcce14593409962bede29"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSmcCs__number.html#af95b65a758dfcce14593409962bede29">SMC_TIMINGS</a></td></tr>
+<tr class="memdesc:af95b65a758dfcce14593409962bede29"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0xC) SMC Timings Register  <br /></td></tr>
 <tr class="separator:af95b65a758dfcce14593409962bede29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfee80d4a6702b950e2950f8a3935170"><td class="memItemLeft" align="right" valign="top"><a id="acfee80d4a6702b950e2950f8a3935170" name="acfee80d4a6702b950e2950f8a3935170"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>SMC_MODE</b></td></tr>
-<tr class="memdesc:acfee80d4a6702b950e2950f8a3935170"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x10) SMC Mode Register <br /></td></tr>
+<tr class="memitem:acfee80d4a6702b950e2950f8a3935170"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSmcCs__number.html#acfee80d4a6702b950e2950f8a3935170">SMC_MODE</a></td></tr>
+<tr class="memdesc:acfee80d4a6702b950e2950f8a3935170"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x10) SMC Mode Register  <br /></td></tr>
 <tr class="separator:acfee80d4a6702b950e2950f8a3935170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="smc_8h_source.html">smc.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00041">41</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a42516353dc8e3b13854b36d1a5ac017a" name="a42516353dc8e3b13854b36d1a5ac017a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42516353dc8e3b13854b36d1a5ac017a">&#9670;&#160;</a></span>SMC_CYCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t SmcCs_number::SMC_CYCLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x8) SMC Cycle Register </p>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00044">44</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+
+</div>
+</div>
+<a id="acfee80d4a6702b950e2950f8a3935170" name="acfee80d4a6702b950e2950f8a3935170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfee80d4a6702b950e2950f8a3935170">&#9670;&#160;</a></span>SMC_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t SmcCs_number::SMC_MODE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x10) SMC Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00046">46</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+
+</div>
+</div>
+<a id="af67a89be9275ad71ad3c5a380e8971b5" name="af67a89be9275ad71ad3c5a380e8971b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67a89be9275ad71ad3c5a380e8971b5">&#9670;&#160;</a></span>SMC_PULSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t SmcCs_number::SMC_PULSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x4) SMC Pulse Register </p>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00043">43</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+
+</div>
+</div>
+<a id="a4357a8090da91516ab58baa891547485" name="a4357a8090da91516ab58baa891547485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4357a8090da91516ab58baa891547485">&#9670;&#160;</a></span>SMC_SETUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t SmcCs_number::SMC_SETUP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0x0) SMC Setup Register </p>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00042">42</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+
+</div>
+</div>
+<a id="af95b65a758dfcce14593409962bede29" name="af95b65a758dfcce14593409962bede29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af95b65a758dfcce14593409962bede29">&#9670;&#160;</a></span>SMC_TIMINGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t SmcCs_number::SMC_TIMINGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structSmcCs__number.html" title="SmcCs_number hardware registers.">SmcCs_number</a> Offset: 0xC) SMC Timings Register </p>
+
+<p class="definition">Definition at line <a class="el" href="smc_8h_source.html#l00045">45</a> of file <a class="el" href="smc_8h_source.html">smc.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="smc_8h_source.html">smc.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structSmcCs__number.html">SmcCs_number</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

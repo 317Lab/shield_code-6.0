@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structUotghsHstdma.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,32 +103,107 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ada2d88afa294149d48c4ee2f2d00d9ce"><td class="memItemLeft" align="right" valign="top"><a id="ada2d88afa294149d48c4ee2f2d00d9ce" name="ada2d88afa294149d48c4ee2f2d00d9ce"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UOTGHS_HSTDMANXTDSC</b></td></tr>
-<tr class="memdesc:ada2d88afa294149d48c4ee2f2d00d9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x0) Host DMA Channel Next Descriptor Address Register <br /></td></tr>
+<tr class="memitem:ada2d88afa294149d48c4ee2f2d00d9ce"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUotghsHstdma.html#ada2d88afa294149d48c4ee2f2d00d9ce">UOTGHS_HSTDMANXTDSC</a></td></tr>
+<tr class="memdesc:ada2d88afa294149d48c4ee2f2d00d9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x0) Host DMA Channel Next Descriptor Address Register  <br /></td></tr>
 <tr class="separator:ada2d88afa294149d48c4ee2f2d00d9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9260cb732c34262eb0a3262b27ff6b0e"><td class="memItemLeft" align="right" valign="top"><a id="a9260cb732c34262eb0a3262b27ff6b0e" name="a9260cb732c34262eb0a3262b27ff6b0e"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UOTGHS_HSTDMAADDRESS</b></td></tr>
-<tr class="memdesc:a9260cb732c34262eb0a3262b27ff6b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x4) Host DMA Channel Address Register <br /></td></tr>
+<tr class="memitem:a9260cb732c34262eb0a3262b27ff6b0e"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUotghsHstdma.html#a9260cb732c34262eb0a3262b27ff6b0e">UOTGHS_HSTDMAADDRESS</a></td></tr>
+<tr class="memdesc:a9260cb732c34262eb0a3262b27ff6b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x4) Host DMA Channel Address Register  <br /></td></tr>
 <tr class="separator:a9260cb732c34262eb0a3262b27ff6b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d26e0fd1e8ad19b1c9e6a5244d556bd"><td class="memItemLeft" align="right" valign="top"><a id="a7d26e0fd1e8ad19b1c9e6a5244d556bd" name="a7d26e0fd1e8ad19b1c9e6a5244d556bd"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UOTGHS_HSTDMACONTROL</b></td></tr>
-<tr class="memdesc:a7d26e0fd1e8ad19b1c9e6a5244d556bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x8) Host DMA Channel Control Register <br /></td></tr>
+<tr class="memitem:a7d26e0fd1e8ad19b1c9e6a5244d556bd"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUotghsHstdma.html#a7d26e0fd1e8ad19b1c9e6a5244d556bd">UOTGHS_HSTDMACONTROL</a></td></tr>
+<tr class="memdesc:a7d26e0fd1e8ad19b1c9e6a5244d556bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x8) Host DMA Channel Control Register  <br /></td></tr>
 <tr class="separator:a7d26e0fd1e8ad19b1c9e6a5244d556bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6750d66754bfb556bb60b2a0e86bc614"><td class="memItemLeft" align="right" valign="top"><a id="a6750d66754bfb556bb60b2a0e86bc614" name="a6750d66754bfb556bb60b2a0e86bc614"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UOTGHS_HSTDMASTATUS</b></td></tr>
-<tr class="memdesc:a6750d66754bfb556bb60b2a0e86bc614"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0xC) Host DMA Channel Status Register <br /></td></tr>
+<tr class="memitem:a6750d66754bfb556bb60b2a0e86bc614"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUotghsHstdma.html#a6750d66754bfb556bb60b2a0e86bc614">UOTGHS_HSTDMASTATUS</a></td></tr>
+<tr class="memdesc:a6750d66754bfb556bb60b2a0e86bc614"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0xC) Host DMA Channel Status Register  <br /></td></tr>
 <tr class="separator:a6750d66754bfb556bb60b2a0e86bc614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="uotghs_8h_source.html">uotghs.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="uotghs_8h_source.html#l00048">48</a> of file <a class="el" href="uotghs_8h_source.html">uotghs.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9260cb732c34262eb0a3262b27ff6b0e" name="a9260cb732c34262eb0a3262b27ff6b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9260cb732c34262eb0a3262b27ff6b0e">&#9670;&#160;</a></span>UOTGHS_HSTDMAADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t UotghsHstdma::UOTGHS_HSTDMAADDRESS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x4) Host DMA Channel Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uotghs_8h_source.html#l00050">50</a> of file <a class="el" href="uotghs_8h_source.html">uotghs.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d26e0fd1e8ad19b1c9e6a5244d556bd" name="a7d26e0fd1e8ad19b1c9e6a5244d556bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d26e0fd1e8ad19b1c9e6a5244d556bd">&#9670;&#160;</a></span>UOTGHS_HSTDMACONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t UotghsHstdma::UOTGHS_HSTDMACONTROL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x8) Host DMA Channel Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uotghs_8h_source.html#l00051">51</a> of file <a class="el" href="uotghs_8h_source.html">uotghs.h</a>.</p>
+
+</div>
+</div>
+<a id="ada2d88afa294149d48c4ee2f2d00d9ce" name="ada2d88afa294149d48c4ee2f2d00d9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2d88afa294149d48c4ee2f2d00d9ce">&#9670;&#160;</a></span>UOTGHS_HSTDMANXTDSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t UotghsHstdma::UOTGHS_HSTDMANXTDSC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0x0) Host DMA Channel Next Descriptor Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uotghs_8h_source.html#l00049">49</a> of file <a class="el" href="uotghs_8h_source.html">uotghs.h</a>.</p>
+
+</div>
+</div>
+<a id="a6750d66754bfb556bb60b2a0e86bc614" name="a6750d66754bfb556bb60b2a0e86bc614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6750d66754bfb556bb60b2a0e86bc614">&#9670;&#160;</a></span>UOTGHS_HSTDMASTATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t UotghsHstdma::UOTGHS_HSTDMASTATUS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUotghsHstdma.html" title="UotghsHstdma hardware registers.">UotghsHstdma</a> Offset: 0xC) Host DMA Channel Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uotghs_8h_source.html#l00052">52</a> of file <a class="el" href="uotghs_8h_source.html">uotghs.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="uotghs_8h_source.html">uotghs.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structUotghsHstdma.html">UotghsHstdma</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

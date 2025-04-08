@@ -1,5 +1,5 @@
-<map id="include/IMU.hpp" name="include/IMU.hpp">
-<area shape="rect" id="node1" title="Header file for the IMU library for Dartmouth&#39;s 317 Lab." alt="" coords="54,5,181,31"/>
-<area shape="rect" id="node2" href="$IMU_8cpp.html" title="Source file for the IMU library for Dartmouth&#39;s 317 Lab." alt="" coords="5,79,104,104"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="129,79,234,104"/>
+<map id="IMU.hpp" name="IMU.hpp">
+<area shape="rect" id="node1" title="Header file for the IMU library for Dartmouth&#39;s 317 Lab." alt="" coords="55,5,131,31"/>
+<area shape="rect" id="node2" href="$IMU_8cpp.html" title="Source file for the IMU library for Dartmouth&#39;s 317 Lab." alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="104,79,187,104"/>
 </map>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structDmacCh__num.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,43 +103,167 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab947119ab1fe0eadda7bad6117409631"><td class="memItemLeft" align="right" valign="top"><a id="ab947119ab1fe0eadda7bad6117409631" name="ab947119ab1fe0eadda7bad6117409631"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_SADDR</b></td></tr>
-<tr class="memdesc:ab947119ab1fe0eadda7bad6117409631"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x0) DMAC Channel Source Address Register <br /></td></tr>
+<tr class="memitem:ab947119ab1fe0eadda7bad6117409631"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#ab947119ab1fe0eadda7bad6117409631">DMAC_SADDR</a></td></tr>
+<tr class="memdesc:ab947119ab1fe0eadda7bad6117409631"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x0) DMAC Channel Source Address Register  <br /></td></tr>
 <tr class="separator:ab947119ab1fe0eadda7bad6117409631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc650ea1a219a49cd6f319c86edde961"><td class="memItemLeft" align="right" valign="top"><a id="afc650ea1a219a49cd6f319c86edde961" name="afc650ea1a219a49cd6f319c86edde961"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_DADDR</b></td></tr>
-<tr class="memdesc:afc650ea1a219a49cd6f319c86edde961"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x4) DMAC Channel Destination Address Register <br /></td></tr>
+<tr class="memitem:afc650ea1a219a49cd6f319c86edde961"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#afc650ea1a219a49cd6f319c86edde961">DMAC_DADDR</a></td></tr>
+<tr class="memdesc:afc650ea1a219a49cd6f319c86edde961"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x4) DMAC Channel Destination Address Register  <br /></td></tr>
 <tr class="separator:afc650ea1a219a49cd6f319c86edde961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa5ad25c97a5941f2e120f2ad854b2ac"><td class="memItemLeft" align="right" valign="top"><a id="aaa5ad25c97a5941f2e120f2ad854b2ac" name="aaa5ad25c97a5941f2e120f2ad854b2ac"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_DSCR</b></td></tr>
-<tr class="memdesc:aaa5ad25c97a5941f2e120f2ad854b2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x8) DMAC Channel Descriptor Address Register <br /></td></tr>
+<tr class="memitem:aaa5ad25c97a5941f2e120f2ad854b2ac"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#aaa5ad25c97a5941f2e120f2ad854b2ac">DMAC_DSCR</a></td></tr>
+<tr class="memdesc:aaa5ad25c97a5941f2e120f2ad854b2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x8) DMAC Channel Descriptor Address Register  <br /></td></tr>
 <tr class="separator:aaa5ad25c97a5941f2e120f2ad854b2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2f474f6468b9aecea8c51bff915166"><td class="memItemLeft" align="right" valign="top"><a id="a1e2f474f6468b9aecea8c51bff915166" name="a1e2f474f6468b9aecea8c51bff915166"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CTRLA</b></td></tr>
-<tr class="memdesc:a1e2f474f6468b9aecea8c51bff915166"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0xC) DMAC Channel Control A Register <br /></td></tr>
+<tr class="memitem:a1e2f474f6468b9aecea8c51bff915166"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#a1e2f474f6468b9aecea8c51bff915166">DMAC_CTRLA</a></td></tr>
+<tr class="memdesc:a1e2f474f6468b9aecea8c51bff915166"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0xC) DMAC Channel Control A Register  <br /></td></tr>
 <tr class="separator:a1e2f474f6468b9aecea8c51bff915166"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2afa0652d8e726e89a9770196b428950"><td class="memItemLeft" align="right" valign="top"><a id="a2afa0652d8e726e89a9770196b428950" name="a2afa0652d8e726e89a9770196b428950"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CTRLB</b></td></tr>
-<tr class="memdesc:a2afa0652d8e726e89a9770196b428950"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x10) DMAC Channel Control B Register <br /></td></tr>
+<tr class="memitem:a2afa0652d8e726e89a9770196b428950"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#a2afa0652d8e726e89a9770196b428950">DMAC_CTRLB</a></td></tr>
+<tr class="memdesc:a2afa0652d8e726e89a9770196b428950"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x10) DMAC Channel Control B Register  <br /></td></tr>
 <tr class="separator:a2afa0652d8e726e89a9770196b428950"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4ef716a13999e475243ca43bc83e0c3"><td class="memItemLeft" align="right" valign="top"><a id="aa4ef716a13999e475243ca43bc83e0c3" name="aa4ef716a13999e475243ca43bc83e0c3"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CFG</b></td></tr>
-<tr class="memdesc:aa4ef716a13999e475243ca43bc83e0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x14) DMAC Channel Configuration Register <br /></td></tr>
+<tr class="memitem:aa4ef716a13999e475243ca43bc83e0c3"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#aa4ef716a13999e475243ca43bc83e0c3">DMAC_CFG</a></td></tr>
+<tr class="memdesc:aa4ef716a13999e475243ca43bc83e0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x14) DMAC Channel Configuration Register  <br /></td></tr>
 <tr class="separator:aa4ef716a13999e475243ca43bc83e0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeec75f6e354d03acafdfb7d21d055f0"><td class="memItemLeft" align="right" valign="top"><a id="adeec75f6e354d03acafdfb7d21d055f0" name="adeec75f6e354d03acafdfb7d21d055f0"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [4]</td></tr>
+<tr class="memitem:adeec75f6e354d03acafdfb7d21d055f0"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmacCh__num.html#adeec75f6e354d03acafdfb7d21d055f0">Reserved1</a> [4]</td></tr>
 <tr class="separator:adeec75f6e354d03acafdfb7d21d055f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="dmac_8h_source.html">dmac.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00041">41</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa4ef716a13999e475243ca43bc83e0c3" name="aa4ef716a13999e475243ca43bc83e0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ef716a13999e475243ca43bc83e0c3">&#9670;&#160;</a></span>DMAC_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_CFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x14) DMAC Channel Configuration Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00047">47</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e2f474f6468b9aecea8c51bff915166" name="a1e2f474f6468b9aecea8c51bff915166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2f474f6468b9aecea8c51bff915166">&#9670;&#160;</a></span>DMAC_CTRLA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_CTRLA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0xC) DMAC Channel Control A Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00045">45</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a2afa0652d8e726e89a9770196b428950" name="a2afa0652d8e726e89a9770196b428950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2afa0652d8e726e89a9770196b428950">&#9670;&#160;</a></span>DMAC_CTRLB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_CTRLB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x10) DMAC Channel Control B Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00046">46</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="afc650ea1a219a49cd6f319c86edde961" name="afc650ea1a219a49cd6f319c86edde961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc650ea1a219a49cd6f319c86edde961">&#9670;&#160;</a></span>DMAC_DADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_DADDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x4) DMAC Channel Destination Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00043">43</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa5ad25c97a5941f2e120f2ad854b2ac" name="aaa5ad25c97a5941f2e120f2ad854b2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5ad25c97a5941f2e120f2ad854b2ac">&#9670;&#160;</a></span>DMAC_DSCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_DSCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x8) DMAC Channel Descriptor Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00044">44</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="ab947119ab1fe0eadda7bad6117409631" name="ab947119ab1fe0eadda7bad6117409631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab947119ab1fe0eadda7bad6117409631">&#9670;&#160;</a></span>DMAC_SADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t DmacCh_num::DMAC_SADDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmacCh__num.html" title="DmacCh_num hardware registers.">DmacCh_num</a> Offset: 0x0) DMAC Channel Source Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00042">42</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="adeec75f6e354d03acafdfb7d21d055f0" name="adeec75f6e354d03acafdfb7d21d055f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeec75f6e354d03acafdfb7d21d055f0">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t DmacCh_num::Reserved1[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00048">48</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="dmac_8h_source.html">dmac.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structDmacCh__num.html">DmacCh_num</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

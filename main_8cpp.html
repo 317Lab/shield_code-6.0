@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: src/main.cpp File Reference</title>
+<title>Shield Code: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -87,108 +103,94 @@ $(function() {
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="PDC_8hpp_source.html">PDC.hpp</a>&gt;</code><br />
-<code>#include &lt;AT25M02.hpp&gt;</code><br />
-<code>#include &lt;PipController.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="IMU_8hpp_source.html">IMU.hpp</a>&gt;</code><br />
 <code>#include &lt;Wire.h&gt;</code><br />
 <code>#include &lt;LSM6.h&gt;</code><br />
 <code>#include &lt;LIS3MDL.h&gt;</code><br />
-<code>#include &quot;sweep_values_v5_1.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="sweep__values__v5__1_8h_source.html">sweep_values_v5_1.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
-<map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
-<area shape="rect" title="Main file for the 317 lab project." alt="" coords="389,5,494,31"/>
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
+<map name="amain_8cpp" id="amain_8cpp">
+<area shape="rect" title="Main file for the 317 lab project." alt="" coords="400,5,483,31"/>
 <area shape="rect" title=" " alt="" coords="179,299,263,324"/>
 <area shape="rect" href="Pip_8hpp.html" title="Header file for the Pip library for Dartmouth&#39;s 317 Lab." alt="" coords="279,152,350,177"/>
 <area shape="rect" title=" " alt="" coords="395,225,459,251"/>
 <area shape="rect" href="PDC_8hpp.html" title="Header file for the PDC library for Dartmouth&#39;s 317 Lab." alt="" coords="5,152,83,177"/>
-<area shape="rect" href="AT25M02_8hpp_source.html" title=" " alt="" coords="534,225,645,251"/>
-<area shape="rect" href="PipController_8hpp_source.html" title=" " alt="" coords="169,79,303,104"/>
+<area shape="rect" href="AT25M02_8hpp.html" title=" " alt="" coords="534,225,645,251"/>
+<area shape="rect" href="PipController_8hpp.html" title=" " alt="" coords="169,79,303,104"/>
 <area shape="rect" href="IMU_8hpp.html" title="Header file for the IMU library for Dartmouth&#39;s 317 Lab." alt="" coords="454,79,530,104"/>
 <area shape="rect" title=" " alt="" coords="529,152,620,177"/>
 <area shape="rect" title=" " alt="" coords="644,152,713,177"/>
-<area shape="rect" href="sweep__values__v5__1_8h_source.html" title=" " alt="" coords="789,79,953,104"/>
+<area shape="rect" href="sweep__values__v5__1_8h.html" title=" " alt="" coords="789,79,953,104"/>
 <area shape="rect" href="Max1148_8hpp.html" title="Header file for the Max1148 library for Dartmouth&#39;s 317 Lab. Manages ADC communication through SPI." alt="" coords="259,225,370,251"/>
 <area shape="rect" title=" " alt="" coords="425,299,479,324"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a05ec23ea9e68706e210bd8f965beee10"><td class="memItemLeft" align="right" valign="top"><a id="a05ec23ea9e68706e210bd8f965beee10" name="a05ec23ea9e68706e210bd8f965beee10"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUFFER</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="memitem:a05ec23ea9e68706e210bd8f965beee10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a05ec23ea9e68706e210bd8f965beee10">BUFFER</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:a05ec23ea9e68706e210bd8f965beee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfb15043f3196121199cd86fdd4e43b1"><td class="memItemLeft" align="right" valign="top"><a id="adfb15043f3196121199cd86fdd4e43b1" name="adfb15043f3196121199cd86fdd4e43b1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_OFFSET</b>&#160;&#160;&#160;500</td></tr>
+<tr class="memitem:adfb15043f3196121199cd86fdd4e43b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adfb15043f3196121199cd86fdd4e43b1">SWEEP_OFFSET</a>&#160;&#160;&#160;500</td></tr>
 <tr class="separator:adfb15043f3196121199cd86fdd4e43b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37536aa867f4027769c8df94eca9ddb2"><td class="memItemLeft" align="right" valign="top"><a id="a37536aa867f4027769c8df94eca9ddb2" name="a37536aa867f4027769c8df94eca9ddb2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RAM_BUFFER_DELAY</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a37536aa867f4027769c8df94eca9ddb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a37536aa867f4027769c8df94eca9ddb2">RAM_BUFFER_DELAY</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a37536aa867f4027769c8df94eca9ddb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70ad1f67c45d53628831860aab79cf77"><td class="memItemLeft" align="right" valign="top"><a id="a70ad1f67c45d53628831860aab79cf77" name="a70ad1f67c45d53628831860aab79cf77"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_STEPS</b>&#160;&#160;&#160;28</td></tr>
+<tr class="memitem:a70ad1f67c45d53628831860aab79cf77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>&#160;&#160;&#160;28</td></tr>
 <tr class="separator:a70ad1f67c45d53628831860aab79cf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac95a042fb2b18abf551ce67782fbfa4"><td class="memItemLeft" align="right" valign="top"><a id="aac95a042fb2b18abf551ce67782fbfa4" name="aac95a042fb2b18abf551ce67782fbfa4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SHIELD_NUMBER</b>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:aac95a042fb2b18abf551ce67782fbfa4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aac95a042fb2b18abf551ce67782fbfa4">SHIELD_NUMBER</a>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:aac95a042fb2b18abf551ce67782fbfa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4e686a1cadd7359fa3eb796d735db7f"><td class="memItemLeft" align="right" valign="top"><a id="af4e686a1cadd7359fa3eb796d735db7f" name="af4e686a1cadd7359fa3eb796d735db7f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_DELAY</b>&#160;&#160;&#160;46.875</td></tr>
+<tr class="memitem:af4e686a1cadd7359fa3eb796d735db7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>&#160;&#160;&#160;46.875</td></tr>
 <tr class="separator:af4e686a1cadd7359fa3eb796d735db7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe71fc46c45c4f403772b57370e0004a"><td class="memItemLeft" align="right" valign="top"><a id="afe71fc46c45c4f403772b57370e0004a" name="afe71fc46c45c4f403772b57370e0004a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_AVERAGES</b>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:afe71fc46c45c4f403772b57370e0004a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:afe71fc46c45c4f403772b57370e0004a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2eb612895060b2f63a90fb14f40addd"><td class="memItemLeft" align="right" valign="top"><a id="ae2eb612895060b2f63a90fb14f40addd" name="ae2eb612895060b2f63a90fb14f40addd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMU_TIMESTAMP_OFFSET</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:ae2eb612895060b2f63a90fb14f40addd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae2eb612895060b2f63a90fb14f40addd">IMU_TIMESTAMP_OFFSET</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ae2eb612895060b2f63a90fb14f40addd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d3550400a7a672ff18fe4081b88bfe1"><td class="memItemLeft" align="right" valign="top"><a id="a9d3550400a7a672ff18fe4081b88bfe1" name="a9d3550400a7a672ff18fe4081b88bfe1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMU_DATA_OFFSET</b>&#160;&#160;&#160;(sizeof(IMUTimeStamp) + IMU_TIMESTAMP_OFFSET)</td></tr>
+<tr class="memitem:a9d3550400a7a672ff18fe4081b88bfe1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9d3550400a7a672ff18fe4081b88bfe1">IMU_DATA_OFFSET</a>&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>) + <a class="el" href="main_8cpp.html#ae2eb612895060b2f63a90fb14f40addd">IMU_TIMESTAMP_OFFSET</a>)</td></tr>
 <tr class="separator:a9d3550400a7a672ff18fe4081b88bfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a669f8567050c199fbe8a50fab48ead7d"><td class="memItemLeft" align="right" valign="top"><a id="a669f8567050c199fbe8a50fab48ead7d" name="a669f8567050c199fbe8a50fab48ead7d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_TIMESTAMP_OFFSET</b>&#160;&#160;&#160;(sizeof(IMUData) + IMU_DATA_OFFSET)</td></tr>
+<tr class="memitem:a669f8567050c199fbe8a50fab48ead7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a669f8567050c199fbe8a50fab48ead7d">SWEEP_TIMESTAMP_OFFSET</a>&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>) + <a class="el" href="main_8cpp.html#a9d3550400a7a672ff18fe4081b88bfe1">IMU_DATA_OFFSET</a>)</td></tr>
 <tr class="separator:a669f8567050c199fbe8a50fab48ead7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc09cb840571193a6c6f6dcc61a6b5bb"><td class="memItemLeft" align="right" valign="top"><a id="afc09cb840571193a6c6f6dcc61a6b5bb" name="afc09cb840571193a6c6f6dcc61a6b5bb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SWEEP_DATA_OFFSET</b>&#160;&#160;&#160;(sizeof(sweepTimeStamp) + SWEEP_TIMESTAMP_OFFSET)</td></tr>
+<tr class="memitem:afc09cb840571193a6c6f6dcc61a6b5bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afc09cb840571193a6c6f6dcc61a6b5bb">SWEEP_DATA_OFFSET</a>&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>) + <a class="el" href="main_8cpp.html#a669f8567050c199fbe8a50fab48ead7d">SWEEP_TIMESTAMP_OFFSET</a>)</td></tr>
 <tr class="separator:afc09cb840571193a6c6f6dcc61a6b5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa5f3529a58715ebb04cf2a5b98ccf7"><td class="memItemLeft" align="right" valign="top"><a id="afaa5f3529a58715ebb04cf2a5b98ccf7" name="afaa5f3529a58715ebb04cf2a5b98ccf7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RAM_BUF_LEN</b>&#160;&#160;&#160;(sizeof(IMUTimeStamp) + sizeof(IMUData) + sizeof(sweepTimeStamp) + sizeof(sweep_buffer))</td></tr>
+<tr class="memitem:afaa5f3529a58715ebb04cf2a5b98ccf7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afaa5f3529a58715ebb04cf2a5b98ccf7">RAM_BUF_LEN</a>&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>) + sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>) + sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>) + sizeof(<a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">sweep_buffer</a>))</td></tr>
 <tr class="separator:afaa5f3529a58715ebb04cf2a5b98ccf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6528d00cbccc360e013bea6d5c59d377"><td class="memItemLeft" align="right" valign="top"><a id="a6528d00cbccc360e013bea6d5c59d377" name="a6528d00cbccc360e013bea6d5c59d377"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYNC_PIN</b>&#160;&#160;&#160;53</td></tr>
+<tr class="memitem:a6528d00cbccc360e013bea6d5c59d377"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6528d00cbccc360e013bea6d5c59d377">SYNC_PIN</a>&#160;&#160;&#160;53</td></tr>
 <tr class="separator:a6528d00cbccc360e013bea6d5c59d377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aeca43c76d21018e0d569eef2edd6c079"><td class="memItemLeft" align="right" valign="top"><a id="aeca43c76d21018e0d569eef2edd6c079" name="aeca43c76d21018e0d569eef2edd6c079"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>BobState</b> { <br />
-&#160;&#160;<b>idle</b>
-, <b>startSweep</b>
-, <b>sendSweep</b>
-, <b>takeIMU</b>
+<tr class="memitem:aeca43c76d21018e0d569eef2edd6c079"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079">BobState</a> { <br />
+&#160;&#160;<a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a0e9a37114c0e458d28d52f06ec0f2242">idle</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079aa03418081b9078553a893b0d566e93cc">startSweep</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a844fc3069d9b35f5049b8e92924fbf51">sendSweep</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a490c6d9f659aed4d76d6b21a78e02d24">takeIMU</a>
 , <br />
-&#160;&#160;<b>sendIMU</b>
-, <b>sendStored</b>
-, <b>sendTimeStamps</b>
-, <b>waitForNewCycle</b>
+&#160;&#160;<a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a21a69315f35b0da171449645d93a1096">sendIMU</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079abf3c8ebab97989eb4d322dfc1aa69668">sendStored</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a14ab84c9e85a676dacc023d8173e0d8d">sendTimeStamps</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079ad7dedb800e675284a4a6e0781d42cd17">waitForNewCycle</a>
 , <br />
-&#160;&#160;<b>interrupted</b>
-, <b>store</b>
-, <b>read</b>
+&#160;&#160;<a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a003beb8657ecf6c9c7708f421c12e8aa">interrupted</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a03d2c35d0fb8a37579b21cb76e6adf84">store</a>
+, <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079aea7c12cb3031ad9e88104ce9859ce1c5">read</a>
 <br />
  }</td></tr>
 <tr class="separator:aeca43c76d21018e0d569eef2edd6c079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5664bd38fc668253a0152e6b319aafbb"><td class="memItemLeft" align="right" valign="top"><a id="a5664bd38fc668253a0152e6b319aafbb" name="a5664bd38fc668253a0152e6b319aafbb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>blink</b> ()</td></tr>
-<tr class="memdesc:a5664bd38fc668253a0152e6b319aafbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blinks the onboard LED. Used for debugging. <br /></td></tr>
+<tr class="memitem:a5664bd38fc668253a0152e6b319aafbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5664bd38fc668253a0152e6b319aafbb">blink</a> ()</td></tr>
+<tr class="memdesc:a5664bd38fc668253a0152e6b319aafbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blinks the onboard LED. Used for debugging.  <br /></td></tr>
 <tr class="separator:a5664bd38fc668253a0152e6b319aafbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329a1985674f611be4ec5aa1b138af79"><td class="memItemLeft" align="right" valign="top"><a id="a329a1985674f611be4ec5aa1b138af79" name="a329a1985674f611be4ec5aa1b138af79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>configureTimerInterrupt</b> ()</td></tr>
-<tr class="memdesc:a329a1985674f611be4ec5aa1b138af79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures timer counter for interrupt Documentation for internal functions - see tc.c (system/libsam/source/tc.c at <a href="https://github.com/swallace23/framework-arduino-sam">https://github.com/swallace23/framework-arduino-sam</a>) The processor has 3 clocks, each have 3 channels and 3 registers (RA, RB, RC). This is set up to use TC0 and channel 0. RC is used to store the compare value. The interrupt is triggered when the counter reaches the compare value. Calculate interrupt frequency with: interrupt frequency = clock frequency / (RC+1) Note that the clock frequency for TC0 is configured to be 656.25 kHz. <br /></td></tr>
+<tr class="memitem:a329a1985674f611be4ec5aa1b138af79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a329a1985674f611be4ec5aa1b138af79">configureTimerInterrupt</a> ()</td></tr>
+<tr class="memdesc:a329a1985674f611be4ec5aa1b138af79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures timer counter for interrupt Documentation for internal functions - see tc.c (system/libsam/source/tc.c at <a href="https://github.com/swallace23/framework-arduino-sam">https://github.com/swallace23/framework-arduino-sam</a>) The processor has 3 clocks, each have 3 channels and 3 registers (RA, RB, RC). This is set up to use TC0 and channel 0. RC is used to store the compare value. The interrupt is triggered when the counter reaches the compare value. Calculate interrupt frequency with: interrupt frequency = clock frequency / (RC+1) Note that the clock frequency for TC0 is configured to be 656.25 kHz.  <br /></td></tr>
 <tr class="separator:a329a1985674f611be4ec5aa1b138af79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a027f1bbb8798e7d328ed452d01988e2b"><td class="memItemLeft" align="right" valign="top"><a id="a027f1bbb8798e7d328ed452d01988e2b" name="a027f1bbb8798e7d328ed452d01988e2b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>syncHandler</b> ()</td></tr>
+<tr class="memitem:a027f1bbb8798e7d328ed452d01988e2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a027f1bbb8798e7d328ed452d01988e2b">syncHandler</a> ()</td></tr>
 <tr class="separator:a027f1bbb8798e7d328ed452d01988e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e0dc1e1a2b72c66cf527bad9598a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa8e0dc1e1a2b72c66cf527bad9598a78">FSMUpdate</a> ()</td></tr>
 <tr class="memdesc:aa8e0dc1e1a2b72c66cf527bad9598a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite State Machine update function.  <br /></td></tr>
@@ -196,163 +198,397 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>syncHandler</b> ()</t
 <tr class="memitem:a248cbabf5c512b0faec96f2b47ed2933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a248cbabf5c512b0faec96f2b47ed2933">FSMAction</a> ()</td></tr>
 <tr class="memdesc:a248cbabf5c512b0faec96f2b47ed2933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite State Machine action function.  <br /></td></tr>
 <tr class="separator:a248cbabf5c512b0faec96f2b47ed2933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7673a7ecdca5d3e2520e4dda2bc9e74"><td class="memItemLeft" align="right" valign="top"><a id="aa7673a7ecdca5d3e2520e4dda2bc9e74" name="aa7673a7ecdca5d3e2520e4dda2bc9e74"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startSweepOnShield</b> ()</td></tr>
-<tr class="memdesc:aa7673a7ecdca5d3e2520e4dda2bc9e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches last data buffer to UART <a class="el" href="classPDC.html" title="Manages UART transmits through peripheral DMA controller (PDC).">PDC</a>, runs DAC sweep, and saves pip data into a combined buffer. <br /></td></tr>
+<tr class="memitem:aa7673a7ecdca5d3e2520e4dda2bc9e74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa7673a7ecdca5d3e2520e4dda2bc9e74">startSweepOnShield</a> ()</td></tr>
+<tr class="memdesc:aa7673a7ecdca5d3e2520e4dda2bc9e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches last data buffer to UART <a class="el" href="classPDC.html" title="Manages UART transmits through peripheral DMA controller (PDC).">PDC</a>, runs DAC sweep, and saves pip data into a combined buffer.  <br /></td></tr>
 <tr class="separator:aa7673a7ecdca5d3e2520e4dda2bc9e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac7f8101ecca804832632cd2c96476bf"><td class="memItemLeft" align="right" valign="top"><a id="aac7f8101ecca804832632cd2c96476bf" name="aac7f8101ecca804832632cd2c96476bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendIMUData</b> ()</td></tr>
+<tr class="memitem:aac7f8101ecca804832632cd2c96476bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aac7f8101ecca804832632cd2c96476bf">sendIMUData</a> ()</td></tr>
 <tr class="separator:aac7f8101ecca804832632cd2c96476bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adae1b5cbbb25aaec81ea57ef654877df"><td class="memItemLeft" align="right" valign="top"><a id="adae1b5cbbb25aaec81ea57ef654877df" name="adae1b5cbbb25aaec81ea57ef654877df"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendSweepData</b> ()</td></tr>
+<tr class="memitem:adae1b5cbbb25aaec81ea57ef654877df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adae1b5cbbb25aaec81ea57ef654877df">sendSweepData</a> ()</td></tr>
 <tr class="separator:adae1b5cbbb25aaec81ea57ef654877df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3efd8d2b64db09bf694c8895bbc3b11e"><td class="memItemLeft" align="right" valign="top"><a id="a3efd8d2b64db09bf694c8895bbc3b11e" name="a3efd8d2b64db09bf694c8895bbc3b11e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>takeIMUData</b> ()</td></tr>
+<tr class="memitem:a3efd8d2b64db09bf694c8895bbc3b11e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3efd8d2b64db09bf694c8895bbc3b11e">takeIMUData</a> ()</td></tr>
 <tr class="separator:a3efd8d2b64db09bf694c8895bbc3b11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae33848371a48e447cd49101d2aaca7e2"><td class="memItemLeft" align="right" valign="top"><a id="ae33848371a48e447cd49101d2aaca7e2" name="ae33848371a48e447cd49101d2aaca7e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendStoredData</b> ()</td></tr>
+<tr class="memitem:ae33848371a48e447cd49101d2aaca7e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae33848371a48e447cd49101d2aaca7e2">sendStoredData</a> ()</td></tr>
 <tr class="separator:ae33848371a48e447cd49101d2aaca7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66c1c0f09bff71e23040b7125f7f3f37"><td class="memItemLeft" align="right" valign="top"><a id="a66c1c0f09bff71e23040b7125f7f3f37" name="a66c1c0f09bff71e23040b7125f7f3f37"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>storeData</b> ()</td></tr>
+<tr class="memitem:a66c1c0f09bff71e23040b7125f7f3f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a66c1c0f09bff71e23040b7125f7f3f37">storeData</a> ()</td></tr>
 <tr class="separator:a66c1c0f09bff71e23040b7125f7f3f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1703367762abc1490e00dcd5ccb29bc"><td class="memItemLeft" align="right" valign="top"><a id="ab1703367762abc1490e00dcd5ccb29bc" name="ab1703367762abc1490e00dcd5ccb29bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>readData</b> ()</td></tr>
+<tr class="memitem:ab1703367762abc1490e00dcd5ccb29bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab1703367762abc1490e00dcd5ccb29bc">readData</a> ()</td></tr>
 <tr class="separator:ab1703367762abc1490e00dcd5ccb29bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95b1b253ee46df6a93285803cf1f3370"><td class="memItemLeft" align="right" valign="top"><a id="a95b1b253ee46df6a93285803cf1f3370" name="a95b1b253ee46df6a93285803cf1f3370"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendData</b> ()</td></tr>
+<tr class="memitem:a95b1b253ee46df6a93285803cf1f3370"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a95b1b253ee46df6a93285803cf1f3370">sendData</a> ()</td></tr>
 <tr class="separator:a95b1b253ee46df6a93285803cf1f3370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top"><a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> ()</td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top"><a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b092a5d0af4dd3f63677e90deca5b16"><td class="memItemLeft" align="right" valign="top"><a id="a2b092a5d0af4dd3f63677e90deca5b16" name="a2b092a5d0af4dd3f63677e90deca5b16"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>TC0_Handler</b> ()</td></tr>
+<tr class="memitem:a2b092a5d0af4dd3f63677e90deca5b16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2b092a5d0af4dd3f63677e90deca5b16">TC0_Handler</a> ()</td></tr>
 <tr class="separator:a2b092a5d0af4dd3f63677e90deca5b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a398527b3e9e358c345c5047b16871957"><td class="memItemLeft" align="right" valign="top"><a id="a398527b3e9e358c345c5047b16871957" name="a398527b3e9e358c345c5047b16871957"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> = false</td></tr>
+<tr class="memitem:a398527b3e9e358c345c5047b16871957"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a398527b3e9e358c345c5047b16871957">debug</a> = false</td></tr>
 <tr class="separator:a398527b3e9e358c345c5047b16871957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1df51c1f8ec630b5d633eb09ec42097"><td class="memItemLeft" align="right" valign="top"><a id="aa1df51c1f8ec630b5d633eb09ec42097" name="aa1df51c1f8ec630b5d633eb09ec42097"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>cycle_counter</b> = 0</td></tr>
+<tr class="memitem:aa1df51c1f8ec630b5d633eb09ec42097"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa1df51c1f8ec630b5d633eb09ec42097">cycle_counter</a> = 0</td></tr>
 <tr class="separator:aa1df51c1f8ec630b5d633eb09ec42097"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab000c195a63cb38c76a088a3bb1aa3fd"><td class="memItemLeft" align="right" valign="top"><a id="ab000c195a63cb38c76a088a3bb1aa3fd" name="ab000c195a63cb38c76a088a3bb1aa3fd"></a>
-<a class="el" href="classPDC.html">PDC</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pdc</b></td></tr>
+<tr class="memitem:ab000c195a63cb38c76a088a3bb1aa3fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPDC.html">PDC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab000c195a63cb38c76a088a3bb1aa3fd">pdc</a></td></tr>
 <tr class="separator:ab000c195a63cb38c76a088a3bb1aa3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1d8eac910587196404a1413a53eb0d"><td class="memItemLeft" align="right" valign="top"><a id="abb1d8eac910587196404a1413a53eb0d" name="abb1d8eac910587196404a1413a53eb0d"></a>
-<a class="el" href="classMax1148.html">Max1148</a>&#160;</td><td class="memItemRight" valign="bottom"><b>adc0</b> (Channel::CHAN2)</td></tr>
+<tr class="memitem:abb1d8eac910587196404a1413a53eb0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMax1148.html">Max1148</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abb1d8eac910587196404a1413a53eb0d">adc0</a> (<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">Channel::CHAN2</a>)</td></tr>
 <tr class="separator:abb1d8eac910587196404a1413a53eb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae46b75222d6bdf70259c8b6c2469916a"><td class="memItemLeft" align="right" valign="top"><a id="ae46b75222d6bdf70259c8b6c2469916a" name="ae46b75222d6bdf70259c8b6c2469916a"></a>
-<a class="el" href="classMax1148.html">Max1148</a>&#160;</td><td class="memItemRight" valign="bottom"><b>adc1</b> (Channel::CHAN1)</td></tr>
+<tr class="memitem:ae46b75222d6bdf70259c8b6c2469916a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMax1148.html">Max1148</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a">adc1</a> (<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">Channel::CHAN1</a>)</td></tr>
 <tr class="separator:ae46b75222d6bdf70259c8b6c2469916a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0214aea50724a7f0c294783b162e51a7"><td class="memItemLeft" align="right" valign="top"><a id="a0214aea50724a7f0c294783b162e51a7" name="a0214aea50724a7f0c294783b162e51a7"></a>
-<a class="el" href="classPip.html">Pip</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pip0</b> (SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 339, 3752, DAC0, adc0)</td></tr>
+<tr class="memitem:a0214aea50724a7f0c294783b162e51a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPip.html">Pip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0214aea50724a7f0c294783b162e51a7">pip0</a> (<a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>, <a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>, <a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>, 339, 3752, DAC0, <a class="el" href="main_8cpp.html#abb1d8eac910587196404a1413a53eb0d">adc0</a>)</td></tr>
 <tr class="separator:a0214aea50724a7f0c294783b162e51a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9501849d7f9b9d57e13cc9266c6f1f0d"><td class="memItemLeft" align="right" valign="top"><a id="a9501849d7f9b9d57e13cc9266c6f1f0d" name="a9501849d7f9b9d57e13cc9266c6f1f0d"></a>
-<a class="el" href="classPip.html">Pip</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pip1</b> (SWEEP_DELAY, SWEEP_AVERAGES, SWEEP_STEPS, 339, 3752, DAC1, adc1)</td></tr>
+<tr class="memitem:a9501849d7f9b9d57e13cc9266c6f1f0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPip.html">Pip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9501849d7f9b9d57e13cc9266c6f1f0d">pip1</a> (<a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>, <a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>, <a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>, 339, 3752, DAC1, <a class="el" href="main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a">adc1</a>)</td></tr>
 <tr class="separator:a9501849d7f9b9d57e13cc9266c6f1f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27138f89f5b1aaa7b62df8a5bc18a344"><td class="memItemLeft" align="right" valign="top"><a id="a27138f89f5b1aaa7b62df8a5bc18a344" name="a27138f89f5b1aaa7b62df8a5bc18a344"></a>
-<a class="el" href="classPipController.html">PipController</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pipController</b> (pip0, pip1)</td></tr>
+<tr class="memitem:a27138f89f5b1aaa7b62df8a5bc18a344"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPipController.html">PipController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a27138f89f5b1aaa7b62df8a5bc18a344">pipController</a> (<a class="el" href="main_8cpp.html#a0214aea50724a7f0c294783b162e51a7">pip0</a>, <a class="el" href="main_8cpp.html#a9501849d7f9b9d57e13cc9266c6f1f0d">pip1</a>)</td></tr>
 <tr class="separator:a27138f89f5b1aaa7b62df8a5bc18a344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9dac5449c305b2f317733a476c436f4"><td class="memItemLeft" align="right" valign="top"><a id="ab9dac5449c305b2f317733a476c436f4" name="ab9dac5449c305b2f317733a476c436f4"></a>
-LIS3MDL&#160;</td><td class="memItemRight" valign="bottom"><b>compass</b></td></tr>
+<tr class="memitem:ab9dac5449c305b2f317733a476c436f4"><td class="memItemLeft" align="right" valign="top">LIS3MDL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab9dac5449c305b2f317733a476c436f4">compass</a></td></tr>
 <tr class="separator:ab9dac5449c305b2f317733a476c436f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bbca0f976078cf4d81bd3603c80db9"><td class="memItemLeft" align="right" valign="top"><a id="a39bbca0f976078cf4d81bd3603c80db9" name="a39bbca0f976078cf4d81bd3603c80db9"></a>
-LSM6&#160;</td><td class="memItemRight" valign="bottom"><b>gyro</b></td></tr>
+<tr class="memitem:a39bbca0f976078cf4d81bd3603c80db9"><td class="memItemLeft" align="right" valign="top">LSM6&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a39bbca0f976078cf4d81bd3603c80db9">gyro</a></td></tr>
 <tr class="separator:a39bbca0f976078cf4d81bd3603c80db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02b731e35d8918b3707371653330f148"><td class="memItemLeft" align="right" valign="top"><a id="a02b731e35d8918b3707371653330f148" name="a02b731e35d8918b3707371653330f148"></a>
-<a class="el" href="classAT25M02.html">AT25M02</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ram</b></td></tr>
+<tr class="memitem:a02b731e35d8918b3707371653330f148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAT25M02.html">AT25M02</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a02b731e35d8918b3707371653330f148">ram</a></td></tr>
 <tr class="separator:a02b731e35d8918b3707371653330f148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219637b04debc033e8edb6e2fdd30782"><td class="memItemLeft" align="right" valign="top"><a id="a219637b04debc033e8edb6e2fdd30782" name="a219637b04debc033e8edb6e2fdd30782"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>shieldID</b> = 60</td></tr>
+<tr class="memitem:a219637b04debc033e8edb6e2fdd30782"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a219637b04debc033e8edb6e2fdd30782">shieldID</a> = 60</td></tr>
 <tr class="separator:a219637b04debc033e8edb6e2fdd30782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b874b9ce0e21e8d23446ce70d636376"><td class="memItemLeft" align="right" valign="top"><a id="a2b874b9ce0e21e8d23446ce70d636376" name="a2b874b9ce0e21e8d23446ce70d636376"></a>
-int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>IMUData</b> [10]</td></tr>
+<tr class="memitem:a2b874b9ce0e21e8d23446ce70d636376"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a> [10]</td></tr>
 <tr class="separator:a2b874b9ce0e21e8d23446ce70d636376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a558917a53a6c9a4f1b3b539e0f63e20a"><td class="memItemLeft" align="right" valign="top"><a id="a558917a53a6c9a4f1b3b539e0f63e20a" name="a558917a53a6c9a4f1b3b539e0f63e20a"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>IMUTimeStamp</b></td></tr>
+<tr class="memitem:a558917a53a6c9a4f1b3b539e0f63e20a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a></td></tr>
 <tr class="separator:a558917a53a6c9a4f1b3b539e0f63e20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab57f7ebb7b8907c69ab480fff78848eb"><td class="memItemLeft" align="right" valign="top"><a id="ab57f7ebb7b8907c69ab480fff78848eb" name="ab57f7ebb7b8907c69ab480fff78848eb"></a>
-uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><b>p_IMUTimeStamp</b> = &amp;IMUTimeStamp</td></tr>
+<tr class="memitem:ab57f7ebb7b8907c69ab480fff78848eb"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab57f7ebb7b8907c69ab480fff78848eb">p_IMUTimeStamp</a> = &amp;<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a></td></tr>
 <tr class="separator:ab57f7ebb7b8907c69ab480fff78848eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3231f91f2cb2202de2bae62e7762a7f"><td class="memItemLeft" align="right" valign="top"><a id="ac3231f91f2cb2202de2bae62e7762a7f" name="ac3231f91f2cb2202de2bae62e7762a7f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sweepSentinel</b> [3] = {'#', '#', 'S'}</td></tr>
+<tr class="memitem:ac3231f91f2cb2202de2bae62e7762a7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac3231f91f2cb2202de2bae62e7762a7f">sweepSentinel</a> [3] = {'#', '#', 'S'}</td></tr>
 <tr class="separator:ac3231f91f2cb2202de2bae62e7762a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61632b43304e910a71dba9af1065ef4d"><td class="memItemLeft" align="right" valign="top"><a id="a61632b43304e910a71dba9af1065ef4d" name="a61632b43304e910a71dba9af1065ef4d"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sweepSentinelBuf</b> [3] = {'#', '#', 'T'}</td></tr>
+<tr class="memitem:a61632b43304e910a71dba9af1065ef4d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a61632b43304e910a71dba9af1065ef4d">sweepSentinelBuf</a> [3] = {'#', '#', 'T'}</td></tr>
 <tr class="separator:a61632b43304e910a71dba9af1065ef4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d9fd9969cdc082e5108a1e98539427"><td class="memItemLeft" align="right" valign="top"><a id="a56d9fd9969cdc082e5108a1e98539427" name="a56d9fd9969cdc082e5108a1e98539427"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>imuSentinel</b> [3] = {'#', '#', 'I'}</td></tr>
+<tr class="memitem:a56d9fd9969cdc082e5108a1e98539427"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a56d9fd9969cdc082e5108a1e98539427">imuSentinel</a> [3] = {'#', '#', 'I'}</td></tr>
 <tr class="separator:a56d9fd9969cdc082e5108a1e98539427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac219b15c2c4e600aa87cebad58310574"><td class="memItemLeft" align="right" valign="top"><a id="ac219b15c2c4e600aa87cebad58310574" name="ac219b15c2c4e600aa87cebad58310574"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>imuSentinelBuf</b> [3] = {'#', '#', 'J'}</td></tr>
+<tr class="memitem:ac219b15c2c4e600aa87cebad58310574"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac219b15c2c4e600aa87cebad58310574">imuSentinelBuf</a> [3] = {'#', '#', 'J'}</td></tr>
 <tr class="separator:ac219b15c2c4e600aa87cebad58310574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae43663baa508714f1edeb7565dc7c2b4"><td class="memItemLeft" align="right" valign="top"><a id="ae43663baa508714f1edeb7565dc7c2b4" name="ae43663baa508714f1edeb7565dc7c2b4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>savedSweep</b> = false</td></tr>
+<tr class="memitem:ae43663baa508714f1edeb7565dc7c2b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae43663baa508714f1edeb7565dc7c2b4">savedSweep</a> = false</td></tr>
 <tr class="separator:ae43663baa508714f1edeb7565dc7c2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d99d0fdfb9b902041cdc13105f861bc"><td class="memItemLeft" align="right" valign="top"><a id="a0d99d0fdfb9b902041cdc13105f861bc" name="a0d99d0fdfb9b902041cdc13105f861bc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sendFromRam</b> = false</td></tr>
+<tr class="memitem:a0d99d0fdfb9b902041cdc13105f861bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0d99d0fdfb9b902041cdc13105f861bc">sendFromRam</a> = false</td></tr>
 <tr class="separator:a0d99d0fdfb9b902041cdc13105f861bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82929de58673c514e135c001370f6c44"><td class="memItemLeft" align="right" valign="top"><a id="a82929de58673c514e135c001370f6c44" name="a82929de58673c514e135c001370f6c44"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>storeToRam</b> = true</td></tr>
+<tr class="memitem:a82929de58673c514e135c001370f6c44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a82929de58673c514e135c001370f6c44">storeToRam</a> = true</td></tr>
 <tr class="separator:a82929de58673c514e135c001370f6c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d64da5ada368b6ca60d3ff68394850b"><td class="memItemLeft" align="right" valign="top"><a id="a8d64da5ada368b6ca60d3ff68394850b" name="a8d64da5ada368b6ca60d3ff68394850b"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>sweep_buffer</b> [2 *SWEEP_STEPS]</td></tr>
+<tr class="memitem:a8d64da5ada368b6ca60d3ff68394850b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">sweep_buffer</a> [2 *<a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>]</td></tr>
 <tr class="separator:a8d64da5ada368b6ca60d3ff68394850b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a776f35f97f4e03bed1685798da2dca92"><td class="memItemLeft" align="right" valign="top"><a id="a776f35f97f4e03bed1685798da2dca92" name="a776f35f97f4e03bed1685798da2dca92"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>startTime</b> = 0</td></tr>
+<tr class="memitem:a776f35f97f4e03bed1685798da2dca92"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a776f35f97f4e03bed1685798da2dca92">startTime</a> = 0</td></tr>
 <tr class="separator:a776f35f97f4e03bed1685798da2dca92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af359f4b533f843c024d45219ff4d8f47"><td class="memItemLeft" align="right" valign="top"><a id="af359f4b533f843c024d45219ff4d8f47" name="af359f4b533f843c024d45219ff4d8f47"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sweepStartTime</b> = 0</td></tr>
+<tr class="memitem:af359f4b533f843c024d45219ff4d8f47"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af359f4b533f843c024d45219ff4d8f47">sweepStartTime</a> = 0</td></tr>
 <tr class="separator:af359f4b533f843c024d45219ff4d8f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acafee29b8bc61d015c7263cd8deddedc"><td class="memItemLeft" align="right" valign="top"><a id="acafee29b8bc61d015c7263cd8deddedc" name="acafee29b8bc61d015c7263cd8deddedc"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sweepTimeStamp</b> = 0</td></tr>
+<tr class="memitem:acafee29b8bc61d015c7263cd8deddedc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a> = 0</td></tr>
 <tr class="separator:acafee29b8bc61d015c7263cd8deddedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd779a5f1e9350c96e7734c296abfbbe"><td class="memItemLeft" align="right" valign="top"><a id="afd779a5f1e9350c96e7734c296abfbbe" name="afd779a5f1e9350c96e7734c296abfbbe"></a>
-uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><b>p_sweepTimeStamp</b> = &amp;sweepTimeStamp</td></tr>
+<tr class="memitem:afd779a5f1e9350c96e7734c296abfbbe"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afd779a5f1e9350c96e7734c296abfbbe">p_sweepTimeStamp</a> = &amp;<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a></td></tr>
 <tr class="separator:afd779a5f1e9350c96e7734c296abfbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a947c2663fb8cd66850476e6d01e331a8"><td class="memItemLeft" align="right" valign="top"><a id="a947c2663fb8cd66850476e6d01e331a8" name="a947c2663fb8cd66850476e6d01e331a8"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ramBuf</b> [RAM_BUF_LEN]</td></tr>
+<tr class="memitem:a947c2663fb8cd66850476e6d01e331a8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a947c2663fb8cd66850476e6d01e331a8">ramBuf</a> [<a class="el" href="main_8cpp.html#afaa5f3529a58715ebb04cf2a5b98ccf7">RAM_BUF_LEN</a>]</td></tr>
 <tr class="separator:a947c2663fb8cd66850476e6d01e331a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dfde9b3f6a80e7b666be73500b9cd04"><td class="memItemLeft" align="right" valign="top"><a id="a0dfde9b3f6a80e7b666be73500b9cd04" name="a0dfde9b3f6a80e7b666be73500b9cd04"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><b>totalSize</b> = 294</td></tr>
+<tr class="memitem:a0dfde9b3f6a80e7b666be73500b9cd04"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0dfde9b3f6a80e7b666be73500b9cd04">totalSize</a> = 294</td></tr>
 <tr class="separator:a0dfde9b3f6a80e7b666be73500b9cd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bd8a1363b5634d72f2368782e2f844b"><td class="memItemLeft" align="right" valign="top"><a id="a2bd8a1363b5634d72f2368782e2f844b" name="a2bd8a1363b5634d72f2368782e2f844b"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>memory_block</b> [totalSize]</td></tr>
+<tr class="memitem:a2bd8a1363b5634d72f2368782e2f844b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2bd8a1363b5634d72f2368782e2f844b">memory_block</a> [<a class="el" href="main_8cpp.html#a0dfde9b3f6a80e7b666be73500b9cd04">totalSize</a>]</td></tr>
 <tr class="separator:a2bd8a1363b5634d72f2368782e2f844b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61f2cf104e13848d868cec7d52ae367e"><td class="memItemLeft" align="right" valign="top"><a id="a61f2cf104e13848d868cec7d52ae367e" name="a61f2cf104e13848d868cec7d52ae367e"></a>
-uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>p_memory_block</b> = memory_block</td></tr>
+<tr class="memitem:a61f2cf104e13848d868cec7d52ae367e"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a61f2cf104e13848d868cec7d52ae367e">p_memory_block</a> = <a class="el" href="main_8cpp.html#a2bd8a1363b5634d72f2368782e2f844b">memory_block</a></td></tr>
 <tr class="separator:a61f2cf104e13848d868cec7d52ae367e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e9e1d4a8353d6c795f8b5024eeb00e"><td class="memItemLeft" align="right" valign="top"><a id="ac4e9e1d4a8353d6c795f8b5024eeb00e" name="ac4e9e1d4a8353d6c795f8b5024eeb00e"></a>
-volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
+<tr class="memitem:ac4e9e1d4a8353d6c795f8b5024eeb00e"><td class="memItemLeft" align="right" valign="top">volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac4e9e1d4a8353d6c795f8b5024eeb00e">timer</a></td></tr>
 <tr class="separator:ac4e9e1d4a8353d6c795f8b5024eeb00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf649dd6f428ae1df53df40a9ca0b1e9"><td class="memItemLeft" align="right" valign="top"><a id="abf649dd6f428ae1df53df40a9ca0b1e9" name="abf649dd6f428ae1df53df40a9ca0b1e9"></a>
-volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>syncPulse</b></td></tr>
+<tr class="memitem:abf649dd6f428ae1df53df40a9ca0b1e9"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abf649dd6f428ae1df53df40a9ca0b1e9">syncPulse</a></td></tr>
 <tr class="separator:abf649dd6f428ae1df53df40a9ca0b1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afda42ddf1f4c852191c9464fc1b52031"><td class="memItemLeft" align="right" valign="top"><a id="afda42ddf1f4c852191c9464fc1b52031" name="afda42ddf1f4c852191c9464fc1b52031"></a>
-volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>newCycle</b></td></tr>
+<tr class="memitem:afda42ddf1f4c852191c9464fc1b52031"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afda42ddf1f4c852191c9464fc1b52031">newCycle</a></td></tr>
 <tr class="separator:afda42ddf1f4c852191c9464fc1b52031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2723af79cf63ab162326c9f5ee2fd25b"><td class="memItemLeft" align="right" valign="top"><a id="a2723af79cf63ab162326c9f5ee2fd25b" name="a2723af79cf63ab162326c9f5ee2fd25b"></a>
-BobState&#160;</td><td class="memItemRight" valign="bottom"><b>currentState</b> = idle</td></tr>
+<tr class="memitem:a2723af79cf63ab162326c9f5ee2fd25b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079">BobState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2723af79cf63ab162326c9f5ee2fd25b">currentState</a> = <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a0e9a37114c0e458d28d52f06ec0f2242">idle</a></td></tr>
 <tr class="separator:a2723af79cf63ab162326c9f5ee2fd25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d2a3449f250840171ef25487990223"><td class="memItemLeft" align="right" valign="top"><a id="a08d2a3449f250840171ef25487990223" name="a08d2a3449f250840171ef25487990223"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFirst</b> = true</td></tr>
+<tr class="memitem:a08d2a3449f250840171ef25487990223"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a08d2a3449f250840171ef25487990223">isFirst</a> = true</td></tr>
 <tr class="separator:a08d2a3449f250840171ef25487990223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cd5ca580809ca51799c6667dc5ce43a"><td class="memItemLeft" align="right" valign="top"><a id="a1cd5ca580809ca51799c6667dc5ce43a" name="a1cd5ca580809ca51799c6667dc5ce43a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>goLow</b> = true</td></tr>
-<tr class="memdesc:a1cd5ca580809ca51799c6667dc5ce43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the TC0 timer. <br /></td></tr>
+<tr class="memitem:a1cd5ca580809ca51799c6667dc5ce43a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1cd5ca580809ca51799c6667dc5ce43a">goLow</a> = true</td></tr>
+<tr class="memdesc:a1cd5ca580809ca51799c6667dc5ce43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the TC0 timer.  <br /></td></tr>
 <tr class="separator:a1cd5ca580809ca51799c6667dc5ce43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2166afae9c5c448ef5622ceae4ba1dd6"><td class="memItemLeft" align="right" valign="top"><a id="a2166afae9c5c448ef5622ceae4ba1dd6" name="a2166afae9c5c448ef5622ceae4ba1dd6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>shortSize</b> = sizeof(sweepSentinel)+sizeof(sweepTimeStamp)+sizeof(sweep_buffer)+sizeof(imuSentinel)+sizeof(IMUTimeStamp)+sizeof(IMUData)</td></tr>
+<tr class="memitem:a2166afae9c5c448ef5622ceae4ba1dd6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2166afae9c5c448ef5622ceae4ba1dd6">shortSize</a> = sizeof(<a class="el" href="main_8cpp.html#ac3231f91f2cb2202de2bae62e7762a7f">sweepSentinel</a>)+sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>)+sizeof(<a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">sweep_buffer</a>)+sizeof(<a class="el" href="main_8cpp.html#a56d9fd9969cdc082e5108a1e98539427">imuSentinel</a>)+sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>)+sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>)</td></tr>
 <tr class="separator:a2166afae9c5c448ef5622ceae4ba1dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main file for the 317 lab project. </p>
 <p>Contains shield initialization, state machine implementation and functions, and interrupt handling. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+
+<p class="definition">Definition in file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a05ec23ea9e68706e210bd8f965beee10" name="a05ec23ea9e68706e210bd8f965beee10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ec23ea9e68706e210bd8f965beee10">&#9670;&#160;</a></span>BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00028">28</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9d3550400a7a672ff18fe4081b88bfe1" name="a9d3550400a7a672ff18fe4081b88bfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3550400a7a672ff18fe4081b88bfe1">&#9670;&#160;</a></span>IMU_DATA_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMU_DATA_OFFSET&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>) + <a class="el" href="main_8cpp.html#ae2eb612895060b2f63a90fb14f40addd">IMU_TIMESTAMP_OFFSET</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae2eb612895060b2f63a90fb14f40addd" name="ae2eb612895060b2f63a90fb14f40addd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2eb612895060b2f63a90fb14f40addd">&#9670;&#160;</a></span>IMU_TIMESTAMP_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMU_TIMESTAMP_OFFSET&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afaa5f3529a58715ebb04cf2a5b98ccf7" name="afaa5f3529a58715ebb04cf2a5b98ccf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa5f3529a58715ebb04cf2a5b98ccf7">&#9670;&#160;</a></span>RAM_BUF_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RAM_BUF_LEN&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>) + sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>) + sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>) + sizeof(<a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">sweep_buffer</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a37536aa867f4027769c8df94eca9ddb2" name="a37536aa867f4027769c8df94eca9ddb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37536aa867f4027769c8df94eca9ddb2">&#9670;&#160;</a></span>RAM_BUFFER_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RAM_BUFFER_DELAY&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00030">30</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aac95a042fb2b18abf551ce67782fbfa4" name="aac95a042fb2b18abf551ce67782fbfa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac95a042fb2b18abf551ce67782fbfa4">&#9670;&#160;</a></span>SHIELD_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHIELD_NUMBER&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00040">40</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afe71fc46c45c4f403772b57370e0004a" name="afe71fc46c45c4f403772b57370e0004a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe71fc46c45c4f403772b57370e0004a">&#9670;&#160;</a></span>SWEEP_AVERAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_AVERAGES&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00049">49</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afc09cb840571193a6c6f6dcc61a6b5bb" name="afc09cb840571193a6c6f6dcc61a6b5bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc09cb840571193a6c6f6dcc61a6b5bb">&#9670;&#160;</a></span>SWEEP_DATA_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_DATA_OFFSET&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>) + <a class="el" href="main_8cpp.html#a669f8567050c199fbe8a50fab48ead7d">SWEEP_TIMESTAMP_OFFSET</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00097">97</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af4e686a1cadd7359fa3eb796d735db7f" name="af4e686a1cadd7359fa3eb796d735db7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e686a1cadd7359fa3eb796d735db7f">&#9670;&#160;</a></span>SWEEP_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_DELAY&#160;&#160;&#160;46.875</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00048">48</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adfb15043f3196121199cd86fdd4e43b1" name="adfb15043f3196121199cd86fdd4e43b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb15043f3196121199cd86fdd4e43b1">&#9670;&#160;</a></span>SWEEP_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_OFFSET&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a70ad1f67c45d53628831860aab79cf77" name="a70ad1f67c45d53628831860aab79cf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ad1f67c45d53628831860aab79cf77">&#9670;&#160;</a></span>SWEEP_STEPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_STEPS&#160;&#160;&#160;28</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a669f8567050c199fbe8a50fab48ead7d" name="a669f8567050c199fbe8a50fab48ead7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669f8567050c199fbe8a50fab48ead7d">&#9670;&#160;</a></span>SWEEP_TIMESTAMP_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SWEEP_TIMESTAMP_OFFSET&#160;&#160;&#160;(sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>) + <a class="el" href="main_8cpp.html#a9d3550400a7a672ff18fe4081b88bfe1">IMU_DATA_OFFSET</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00096">96</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6528d00cbccc360e013bea6d5c59d377" name="a6528d00cbccc360e013bea6d5c59d377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6528d00cbccc360e013bea6d5c59d377">&#9670;&#160;</a></span>SYNC_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYNC_PIN&#160;&#160;&#160;53</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00106">106</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aeca43c76d21018e0d569eef2edd6c079" name="aeca43c76d21018e0d569eef2edd6c079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca43c76d21018e0d569eef2edd6c079">&#9670;&#160;</a></span>BobState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079">BobState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a0e9a37114c0e458d28d52f06ec0f2242" name="aeca43c76d21018e0d569eef2edd6c079a0e9a37114c0e458d28d52f06ec0f2242"></a>idle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079aa03418081b9078553a893b0d566e93cc" name="aeca43c76d21018e0d569eef2edd6c079aa03418081b9078553a893b0d566e93cc"></a>startSweep&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a844fc3069d9b35f5049b8e92924fbf51" name="aeca43c76d21018e0d569eef2edd6c079a844fc3069d9b35f5049b8e92924fbf51"></a>sendSweep&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a490c6d9f659aed4d76d6b21a78e02d24" name="aeca43c76d21018e0d569eef2edd6c079a490c6d9f659aed4d76d6b21a78e02d24"></a>takeIMU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a21a69315f35b0da171449645d93a1096" name="aeca43c76d21018e0d569eef2edd6c079a21a69315f35b0da171449645d93a1096"></a>sendIMU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079abf3c8ebab97989eb4d322dfc1aa69668" name="aeca43c76d21018e0d569eef2edd6c079abf3c8ebab97989eb4d322dfc1aa69668"></a>sendStored&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a14ab84c9e85a676dacc023d8173e0d8d" name="aeca43c76d21018e0d569eef2edd6c079a14ab84c9e85a676dacc023d8173e0d8d"></a>sendTimeStamps&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079ad7dedb800e675284a4a6e0781d42cd17" name="aeca43c76d21018e0d569eef2edd6c079ad7dedb800e675284a4a6e0781d42cd17"></a>waitForNewCycle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a003beb8657ecf6c9c7708f421c12e8aa" name="aeca43c76d21018e0d569eef2edd6c079a003beb8657ecf6c9c7708f421c12e8aa"></a>interrupted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079a03d2c35d0fb8a37579b21cb76e6adf84" name="aeca43c76d21018e0d569eef2edd6c079a03d2c35d0fb8a37579b21cb76e6adf84"></a>store&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeca43c76d21018e0d569eef2edd6c079aea7c12cb3031ad9e88104ce9859ce1c5" name="aeca43c76d21018e0d569eef2edd6c079aea7c12cb3031ad9e88104ce9859ce1c5"></a>read&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00114">114</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5664bd38fc668253a0152e6b319aafbb" name="a5664bd38fc668253a0152e6b319aafbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5664bd38fc668253a0152e6b319aafbb">&#9670;&#160;</a></span>blink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void blink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Blinks the onboard LED. Used for debugging. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00365">365</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a329a1985674f611be4ec5aa1b138af79" name="a329a1985674f611be4ec5aa1b138af79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329a1985674f611be4ec5aa1b138af79">&#9670;&#160;</a></span>configureTimerInterrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void configureTimerInterrupt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures timer counter for interrupt Documentation for internal functions - see tc.c (system/libsam/source/tc.c at <a href="https://github.com/swallace23/framework-arduino-sam">https://github.com/swallace23/framework-arduino-sam</a>) The processor has 3 clocks, each have 3 channels and 3 registers (RA, RB, RC). This is set up to use TC0 and channel 0. RC is used to store the compare value. The interrupt is triggered when the counter reaches the compare value. Calculate interrupt frequency with: interrupt frequency = clock frequency / (RC+1) Note that the clock frequency for TC0 is configured to be 656.25 kHz. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00404">404</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a248cbabf5c512b0faec96f2b47ed2933" name="a248cbabf5c512b0faec96f2b47ed2933"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a248cbabf5c512b0faec96f2b47ed2933">&#9670;&#160;</a></span>FSMAction()</h2>
 
@@ -370,6 +606,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>shortSize</b> = sizeof
 
 <p>Finite State Machine action function. </p>
 <p>This function performs the action associated with the current state. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00327">327</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -391,12 +629,954 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>shortSize</b> = sizeof
 <p>Finite State Machine update function. </p>
 <p>This function updates the state machine based on the current state. </p>
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00208">208</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00190">190</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab1703367762abc1490e00dcd5ccb29bc" name="ab1703367762abc1490e00dcd5ccb29bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1703367762abc1490e00dcd5ccb29bc">&#9670;&#160;</a></span>readData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00469">469</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a95b1b253ee46df6a93285803cf1f3370" name="a95b1b253ee46df6a93285803cf1f3370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b1b253ee46df6a93285803cf1f3370">&#9670;&#160;</a></span>sendData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00477">477</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aac7f8101ecca804832632cd2c96476bf" name="aac7f8101ecca804832632cd2c96476bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac7f8101ecca804832632cd2c96476bf">&#9670;&#160;</a></span>sendIMUData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendIMUData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae33848371a48e447cd49101d2aaca7e2" name="ae33848371a48e447cd49101d2aaca7e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae33848371a48e447cd49101d2aaca7e2">&#9670;&#160;</a></span>sendStoredData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendStoredData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adae1b5cbbb25aaec81ea57ef654877df" name="adae1b5cbbb25aaec81ea57ef654877df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae1b5cbbb25aaec81ea57ef654877df">&#9670;&#160;</a></span>sendSweepData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendSweepData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00143">143</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa7673a7ecdca5d3e2520e4dda2bc9e74" name="aa7673a7ecdca5d3e2520e4dda2bc9e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7673a7ecdca5d3e2520e4dda2bc9e74">&#9670;&#160;</a></span>startSweepOnShield()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void startSweepOnShield </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attaches last data buffer to UART <a class="el" href="classPDC.html" title="Manages UART transmits through peripheral DMA controller (PDC).">PDC</a>, runs DAC sweep, and saves pip data into a combined buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00432">432</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a66c1c0f09bff71e23040b7125f7f3f37" name="a66c1c0f09bff71e23040b7125f7f3f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c1c0f09bff71e23040b7125f7f3f37">&#9670;&#160;</a></span>storeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void storeData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00460">460</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a027f1bbb8798e7d328ed452d01988e2b" name="a027f1bbb8798e7d328ed452d01988e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a027f1bbb8798e7d328ed452d01988e2b">&#9670;&#160;</a></span>syncHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void syncHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00390">390</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3efd8d2b64db09bf694c8895bbc3b11e" name="a3efd8d2b64db09bf694c8895bbc3b11e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efd8d2b64db09bf694c8895bbc3b11e">&#9670;&#160;</a></span>takeIMUData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void takeIMUData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00455">455</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b092a5d0af4dd3f63677e90deca5b16" name="a2b092a5d0af4dd3f63677e90deca5b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b092a5d0af4dd3f63677e90deca5b16">&#9670;&#160;</a></span>TC0_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TC0_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00376">376</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="abb1d8eac910587196404a1413a53eb0d" name="abb1d8eac910587196404a1413a53eb0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1d8eac910587196404a1413a53eb0d">&#9670;&#160;</a></span>adc0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMax1148.html">Max1148</a> adc0(<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">Channel::CHAN2</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">Channel::CHAN2</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae46b75222d6bdf70259c8b6c2469916a" name="ae46b75222d6bdf70259c8b6c2469916a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46b75222d6bdf70259c8b6c2469916a">&#9670;&#160;</a></span>adc1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMax1148.html">Max1148</a> adc1(<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">Channel::CHAN1</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">Channel::CHAN1</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9dac5449c305b2f317733a476c436f4" name="ab9dac5449c305b2f317733a476c436f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9dac5449c305b2f317733a476c436f4">&#9670;&#160;</a></span>compass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LIS3MDL compass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00061">61</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2723af79cf63ab162326c9f5ee2fd25b" name="a2723af79cf63ab162326c9f5ee2fd25b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2723af79cf63ab162326c9f5ee2fd25b">&#9670;&#160;</a></span>currentState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079">BobState</a> currentState = <a class="el" href="main_8cpp.html#aeca43c76d21018e0d569eef2edd6c079a0e9a37114c0e458d28d52f06ec0f2242">idle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00127">127</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa1df51c1f8ec630b5d633eb09ec42097" name="aa1df51c1f8ec630b5d633eb09ec42097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1df51c1f8ec630b5d633eb09ec42097">&#9670;&#160;</a></span>cycle_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cycle_counter = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00035">35</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a398527b3e9e358c345c5047b16871957" name="a398527b3e9e358c345c5047b16871957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398527b3e9e358c345c5047b16871957">&#9670;&#160;</a></span>debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool debug = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00034">34</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1cd5ca580809ca51799c6667dc5ce43a" name="a1cd5ca580809ca51799c6667dc5ce43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cd5ca580809ca51799c6667dc5ce43a">&#9670;&#160;</a></span>goLow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool goLow = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt handler for the TC0 timer. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00375">375</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a39bbca0f976078cf4d81bd3603c80db9" name="a39bbca0f976078cf4d81bd3603c80db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39bbca0f976078cf4d81bd3603c80db9">&#9670;&#160;</a></span>gyro</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LSM6 gyro</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b874b9ce0e21e8d23446ce70d636376" name="a2b874b9ce0e21e8d23446ce70d636376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b874b9ce0e21e8d23446ce70d636376">&#9670;&#160;</a></span>IMUData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IMUData[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00069">69</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a56d9fd9969cdc082e5108a1e98539427" name="a56d9fd9969cdc082e5108a1e98539427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d9fd9969cdc082e5108a1e98539427">&#9670;&#160;</a></span>imuSentinel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t imuSentinel[3] = {'#', '#', 'I'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00075">75</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac219b15c2c4e600aa87cebad58310574" name="ac219b15c2c4e600aa87cebad58310574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac219b15c2c4e600aa87cebad58310574">&#9670;&#160;</a></span>imuSentinelBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t imuSentinelBuf[3] = {'#', '#', 'J'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00076">76</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a558917a53a6c9a4f1b3b539e0f63e20a" name="a558917a53a6c9a4f1b3b539e0f63e20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a558917a53a6c9a4f1b3b539e0f63e20a">&#9670;&#160;</a></span>IMUTimeStamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IMUTimeStamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00070">70</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a08d2a3449f250840171ef25487990223" name="a08d2a3449f250840171ef25487990223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d2a3449f250840171ef25487990223">&#9670;&#160;</a></span>isFirst</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isFirst = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00141">141</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2bd8a1363b5634d72f2368782e2f844b" name="a2bd8a1363b5634d72f2368782e2f844b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd8a1363b5634d72f2368782e2f844b">&#9670;&#160;</a></span>memory_block</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t memory_block[<a class="el" href="main_8cpp.html#a0dfde9b3f6a80e7b666be73500b9cd04">totalSize</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00103">103</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afda42ddf1f4c852191c9464fc1b52031" name="afda42ddf1f4c852191c9464fc1b52031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda42ddf1f4c852191c9464fc1b52031">&#9670;&#160;</a></span>newCycle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool newCycle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00109">109</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab57f7ebb7b8907c69ab480fff78848eb" name="ab57f7ebb7b8907c69ab480fff78848eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57f7ebb7b8907c69ab480fff78848eb">&#9670;&#160;</a></span>p_IMUTimeStamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t* p_IMUTimeStamp = &amp;<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a61f2cf104e13848d868cec7d52ae367e" name="a61f2cf104e13848d868cec7d52ae367e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f2cf104e13848d868cec7d52ae367e">&#9670;&#160;</a></span>p_memory_block</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* p_memory_block = <a class="el" href="main_8cpp.html#a2bd8a1363b5634d72f2368782e2f844b">memory_block</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00104">104</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afd779a5f1e9350c96e7734c296abfbbe" name="afd779a5f1e9350c96e7734c296abfbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd779a5f1e9350c96e7734c296abfbbe">&#9670;&#160;</a></span>p_sweepTimeStamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t* p_sweepTimeStamp = &amp;<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00091">91</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab000c195a63cb38c76a088a3bb1aa3fd" name="ab000c195a63cb38c76a088a3bb1aa3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab000c195a63cb38c76a088a3bb1aa3fd">&#9670;&#160;</a></span>pdc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPDC.html">PDC</a> pdc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00052">52</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0214aea50724a7f0c294783b162e51a7" name="a0214aea50724a7f0c294783b162e51a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0214aea50724a7f0c294783b162e51a7">&#9670;&#160;</a></span>pip0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPip.html">Pip</a> pip0(<a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>, <a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>, <a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>, 339, 3752, DAC0, <a class="el" href="main_8cpp.html#abb1d8eac910587196404a1413a53eb0d">adc0</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">339&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">3752&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DAC0&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#abb1d8eac910587196404a1413a53eb0d">adc0</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9501849d7f9b9d57e13cc9266c6f1f0d" name="a9501849d7f9b9d57e13cc9266c6f1f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9501849d7f9b9d57e13cc9266c6f1f0d">&#9670;&#160;</a></span>pip1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPip.html">Pip</a> pip1(<a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>, <a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>, <a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>, 339, 3752, DAC1, <a class="el" href="main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a">adc1</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#af4e686a1cadd7359fa3eb796d735db7f">SWEEP_DELAY</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#afe71fc46c45c4f403772b57370e0004a">SWEEP_AVERAGES</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">339&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">3752&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DAC1&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#ae46b75222d6bdf70259c8b6c2469916a">adc1</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27138f89f5b1aaa7b62df8a5bc18a344" name="a27138f89f5b1aaa7b62df8a5bc18a344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27138f89f5b1aaa7b62df8a5bc18a344">&#9670;&#160;</a></span>pipController</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPipController.html">PipController</a> pipController(<a class="el" href="main_8cpp.html#a0214aea50724a7f0c294783b162e51a7">pip0</a>, <a class="el" href="main_8cpp.html#a9501849d7f9b9d57e13cc9266c6f1f0d">pip1</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a0214aea50724a7f0c294783b162e51a7">pip0</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a9501849d7f9b9d57e13cc9266c6f1f0d">pip1</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02b731e35d8918b3707371653330f148" name="a02b731e35d8918b3707371653330f148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b731e35d8918b3707371653330f148">&#9670;&#160;</a></span>ram</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAT25M02.html">AT25M02</a> ram</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a947c2663fb8cd66850476e6d01e331a8" name="a947c2663fb8cd66850476e6d01e331a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947c2663fb8cd66850476e6d01e331a8">&#9670;&#160;</a></span>ramBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ramBuf[<a class="el" href="main_8cpp.html#afaa5f3529a58715ebb04cf2a5b98ccf7">RAM_BUF_LEN</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00100">100</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae43663baa508714f1edeb7565dc7c2b4" name="ae43663baa508714f1edeb7565dc7c2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43663baa508714f1edeb7565dc7c2b4">&#9670;&#160;</a></span>savedSweep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool savedSweep = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00078">78</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d99d0fdfb9b902041cdc13105f861bc" name="a0d99d0fdfb9b902041cdc13105f861bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d99d0fdfb9b902041cdc13105f861bc">&#9670;&#160;</a></span>sendFromRam</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sendFromRam = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00079">79</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a219637b04debc033e8edb6e2fdd30782" name="a219637b04debc033e8edb6e2fdd30782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219637b04debc033e8edb6e2fdd30782">&#9670;&#160;</a></span>shieldID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t shieldID = 60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2166afae9c5c448ef5622ceae4ba1dd6" name="a2166afae9c5c448ef5622ceae4ba1dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2166afae9c5c448ef5622ceae4ba1dd6">&#9670;&#160;</a></span>shortSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int shortSize = sizeof(<a class="el" href="main_8cpp.html#ac3231f91f2cb2202de2bae62e7762a7f">sweepSentinel</a>)+sizeof(<a class="el" href="main_8cpp.html#acafee29b8bc61d015c7263cd8deddedc">sweepTimeStamp</a>)+sizeof(<a class="el" href="main_8cpp.html#a8d64da5ada368b6ca60d3ff68394850b">sweep_buffer</a>)+sizeof(<a class="el" href="main_8cpp.html#a56d9fd9969cdc082e5108a1e98539427">imuSentinel</a>)+sizeof(<a class="el" href="main_8cpp.html#a558917a53a6c9a4f1b3b539e0f63e20a">IMUTimeStamp</a>)+sizeof(<a class="el" href="main_8cpp.html#a2b874b9ce0e21e8d23446ce70d636376">IMUData</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00475">475</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a776f35f97f4e03bed1685798da2dca92" name="a776f35f97f4e03bed1685798da2dca92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776f35f97f4e03bed1685798da2dca92">&#9670;&#160;</a></span>startTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t startTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a82929de58673c514e135c001370f6c44" name="a82929de58673c514e135c001370f6c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82929de58673c514e135c001370f6c44">&#9670;&#160;</a></span>storeToRam</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool storeToRam = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8d64da5ada368b6ca60d3ff68394850b" name="a8d64da5ada368b6ca60d3ff68394850b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d64da5ada368b6ca60d3ff68394850b">&#9670;&#160;</a></span>sweep_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sweep_buffer[2 *<a class="el" href="main_8cpp.html#a70ad1f67c45d53628831860aab79cf77">SWEEP_STEPS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00083">83</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac3231f91f2cb2202de2bae62e7762a7f" name="ac3231f91f2cb2202de2bae62e7762a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3231f91f2cb2202de2bae62e7762a7f">&#9670;&#160;</a></span>sweepSentinel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t sweepSentinel[3] = {'#', '#', 'S'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00073">73</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a61632b43304e910a71dba9af1065ef4d" name="a61632b43304e910a71dba9af1065ef4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61632b43304e910a71dba9af1065ef4d">&#9670;&#160;</a></span>sweepSentinelBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t sweepSentinelBuf[3] = {'#', '#', 'T'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af359f4b533f843c024d45219ff4d8f47" name="af359f4b533f843c024d45219ff4d8f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af359f4b533f843c024d45219ff4d8f47">&#9670;&#160;</a></span>sweepStartTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sweepStartTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00089">89</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acafee29b8bc61d015c7263cd8deddedc" name="acafee29b8bc61d015c7263cd8deddedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acafee29b8bc61d015c7263cd8deddedc">&#9670;&#160;</a></span>sweepTimeStamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sweepTimeStamp = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abf649dd6f428ae1df53df40a9ca0b1e9" name="abf649dd6f428ae1df53df40a9ca0b1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf649dd6f428ae1df53df40a9ca0b1e9">&#9670;&#160;</a></span>syncPulse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool syncPulse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00108">108</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac4e9e1d4a8353d6c795f8b5024eeb00e" name="ac4e9e1d4a8353d6c795f8b5024eeb00e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e9e1d4a8353d6c795f8b5024eeb00e">&#9670;&#160;</a></span>timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t timer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00107">107</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0dfde9b3f6a80e7b666be73500b9cd04" name="a0dfde9b3f6a80e7b666be73500b9cd04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfde9b3f6a80e7b666be73500b9cd04">&#9670;&#160;</a></span>totalSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t totalSize = 294</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

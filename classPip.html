@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classPip.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,12 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classPip-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Pip Class Reference</div></div>
@@ -82,10 +104,19 @@ $(function() {
  <a href="classPip.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Pip:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPip__coll__graph.png" border="0" usemap="#aPip_coll__map" alt="Collaboration graph"/></div>
+<map name="aPip_coll__map" id="aPip_coll__map">
+<area shape="rect" title="Manages the Pip sensor sweep and associated data." alt="" coords="25,93,68,119"/>
+<area shape="rect" href="classMax1148.html" title="Manages interfacing with Max1148 ADC." alt="" coords="5,5,88,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a11eafb91578a61b66a2aba2883f8f9cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a11eafb91578a61b66a2aba2883f8f9cf">Pip</a> (int delay_us, uint16_t avg_num, uint16_t num_samples, uint16_t min, uint16_t max, uint8_t dac_pin, <a class="el" href="classMax1148.html">Max1148</a> &amp;adc)</td></tr>
+<tr class="memitem:a11eafb91578a61b66a2aba2883f8f9cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a11eafb91578a61b66a2aba2883f8f9cf">Pip</a> (int <a class="el" href="classPip.html#a67d1ee28be368f100889a36439ca5d38">delay_us</a>, uint16_t <a class="el" href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">avg_num</a>, uint16_t <a class="el" href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">num_samples</a>, uint16_t min, uint16_t max, uint8_t <a class="el" href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">dac_pin</a>, <a class="el" href="classMax1148.html">Max1148</a> &amp;<a class="el" href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">adc</a>)</td></tr>
 <tr class="memdesc:a11eafb91578a61b66a2aba2883f8f9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> class. All parameters modifiable.  <br /></td></tr>
 <tr class="separator:a11eafb91578a61b66a2aba2883f8f9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f915d3c619b11bbf54df63ffdd73e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a17f915d3c619b11bbf54df63ffdd73e4">sweep</a> ()</td></tr>
@@ -94,19 +125,50 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa25bd0f64d377f49a5b90e6e371f1cfc"><td class="memItemLeft" align="right" valign="top"><a id="aa25bd0f64d377f49a5b90e6e371f1cfc" name="aa25bd0f64d377f49a5b90e6e371f1cfc"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> [SWEEP_MAX_SAMPLES]</td></tr>
-<tr class="memdesc:aa25bd0f64d377f49a5b90e6e371f1cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data array for the sweep. <br /></td></tr>
+<tr class="memitem:aa25bd0f64d377f49a5b90e6e371f1cfc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a> [<a class="el" href="Pip_8hpp.html#a86714fc5cbb4efd38dab6b0e47c21723">SWEEP_MAX_SAMPLES</a>]</td></tr>
+<tr class="memdesc:aa25bd0f64d377f49a5b90e6e371f1cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data array for the sweep.  <br /></td></tr>
 <tr class="separator:aa25bd0f64d377f49a5b90e6e371f1cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:afb6bda586a6369cd28a5e66932581612"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#afb6bda586a6369cd28a5e66932581612">clear_data</a> (uint16_t <a class="el" href="classPip.html#aa25bd0f64d377f49a5b90e6e371f1cfc">data</a>[], uint16_t size)</td></tr>
+<tr class="memdesc:afb6bda586a6369cd28a5e66932581612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the data array.  <br /></td></tr>
+<tr class="separator:afb6bda586a6369cd28a5e66932581612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86db44288020469244b3f18a90ce5a39"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a86db44288020469244b3f18a90ce5a39">read_adc</a> ()</td></tr>
+<tr class="separator:a86db44288020469244b3f18a90ce5a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a67f232755d6b56c585ffebebd1d1b20d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a67f232755d6b56c585ffebebd1d1b20d">dac_pin</a></td></tr>
+<tr class="memdesc:a67f232755d6b56c585ffebebd1d1b20d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin for the DAC output.  <br /></td></tr>
+<tr class="separator:a67f232755d6b56c585ffebebd1d1b20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d1ee28be368f100889a36439ca5d38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a67d1ee28be368f100889a36439ca5d38">delay_us</a></td></tr>
+<tr class="memdesc:a67d1ee28be368f100889a36439ca5d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay between steps in the sweep. Measured in microseconds.  <br /></td></tr>
+<tr class="separator:a67d1ee28be368f100889a36439ca5d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf2f54605c84de1d45c6d3369d7841e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMax1148.html">Max1148</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a3cf2f54605c84de1d45c6d3369d7841e">adc</a></td></tr>
+<tr class="memdesc:a3cf2f54605c84de1d45c6d3369d7841e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ADC object for the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> to use. Assuming each pip will use a different ADC channel.  <br /></td></tr>
+<tr class="separator:a3cf2f54605c84de1d45c6d3369d7841e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a689bbda5466bdc867b80c173b3b1428d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a689bbda5466bdc867b80c173b3b1428d">avg_num</a></td></tr>
+<tr class="memdesc:a689bbda5466bdc867b80c173b3b1428d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of samples to average when querying the ADC.  <br /></td></tr>
+<tr class="separator:a689bbda5466bdc867b80c173b3b1428d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8813bef1da050d9fa97e09c61cebed6f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a8813bef1da050d9fa97e09c61cebed6f">num_samples</a></td></tr>
+<tr class="memdesc:a8813bef1da050d9fa97e09c61cebed6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of samples to take during the sweep. AKA the number of steps in the sweep.  <br /></td></tr>
+<tr class="separator:a8813bef1da050d9fa97e09c61cebed6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f67deed262e69483fe99ff2f2c90a5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a54f67deed262e69483fe99ff2f2c90a5">sweep_min</a></td></tr>
+<tr class="memdesc:a54f67deed262e69483fe99ff2f2c90a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum and maximum values for the sweep.  <br /></td></tr>
+<tr class="separator:a54f67deed262e69483fe99ff2f2c90a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0f96dd592851c44e490404b1bc9ac7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a1d0f96dd592851c44e490404b1bc9ac7">sweep_max</a></td></tr>
+<tr class="separator:a1d0f96dd592851c44e490404b1bc9ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a0d8bab8ca76ab906a8b260d3923bf1fc"><td class="memItemLeft" align="right" valign="top"><a id="a0d8bab8ca76ab906a8b260d3923bf1fc" name="a0d8bab8ca76ab906a8b260d3923bf1fc"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>PipController</b></td></tr>
+<tr class="memitem:a0d8bab8ca76ab906a8b260d3923bf1fc"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPip.html#a0d8bab8ca76ab906a8b260d3923bf1fc">PipController</a></td></tr>
 <tr class="separator:a0d8bab8ca76ab906a8b260d3923bf1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensor sweep and associated data. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00033">33</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a11eafb91578a61b66a2aba2883f8f9cf" name="a11eafb91578a61b66a2aba2883f8f9cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11eafb91578a61b66a2aba2883f8f9cf">&#9670;&#160;</a></span>Pip()</h2>
@@ -166,9 +228,93 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>PipController</b></t
 
 <p>Constructor for the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> class. All parameters modifiable. </p>
 
+<p class="definition">Definition at line <a class="el" href="Pip_8cpp_source.html#l00017">17</a> of file <a class="el" href="Pip_8cpp_source.html">Pip.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb6bda586a6369cd28a5e66932581612" name="afb6bda586a6369cd28a5e66932581612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6bda586a6369cd28a5e66932581612">&#9670;&#160;</a></span>clear_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pip::clear_data </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>data</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears the data array. </p>
+<p>Clears the data array.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data array to clear. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the data array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data array to clear. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the data array.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8cpp_source.html#l00041">41</a> of file <a class="el" href="Pip_8cpp_source.html">Pip.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a86db44288020469244b3f18a90ce5a39" name="a86db44288020469244b3f18a90ce5a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86db44288020469244b3f18a90ce5a39">&#9670;&#160;</a></span>read_adc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::read_adc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Pip_8cpp_source.html#l00047">47</a> of file <a class="el" href="Pip_8cpp_source.html">Pip.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a17f915d3c619b11bbf54df63ffdd73e4" name="a17f915d3c619b11bbf54df63ffdd73e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17f915d3c619b11bbf54df63ffdd73e4">&#9670;&#160;</a></span>sweep()</h2>
 
@@ -187,16 +333,246 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>PipController</b></t
 <p>Sweeps the DAC output from min to max. Step length, delay, and number of samples are all set by the constructor. </p>
 <p>Sweeps the DAC output from min to max. Step length, delay, and number of samples are all set by the constructor.  </p>
 
+<p class="definition">Definition at line <a class="el" href="Pip_8cpp_source.html#l00025">25</a> of file <a class="el" href="Pip_8cpp_source.html">Pip.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a0d8bab8ca76ab906a8b260d3923bf1fc" name="a0d8bab8ca76ab906a8b260d3923bf1fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8bab8ca76ab906a8b260d3923bf1fc">&#9670;&#160;</a></span>PipController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classPipController.html">PipController</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00034">34</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3cf2f54605c84de1d45c6d3369d7841e" name="a3cf2f54605c84de1d45c6d3369d7841e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf2f54605c84de1d45c6d3369d7841e">&#9670;&#160;</a></span>adc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMax1148.html">Max1148</a>&amp; Pip::adc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The ADC object for the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> to use. Assuming each pip will use a different ADC channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00048">48</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a689bbda5466bdc867b80c173b3b1428d" name="a689bbda5466bdc867b80c173b3b1428d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a689bbda5466bdc867b80c173b3b1428d">&#9670;&#160;</a></span>avg_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::avg_num</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of samples to average when querying the ADC. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00052">52</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a67f232755d6b56c585ffebebd1d1b20d" name="a67f232755d6b56c585ffebebd1d1b20d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f232755d6b56c585ffebebd1d1b20d">&#9670;&#160;</a></span>dac_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Pip::dac_pin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pin for the DAC output. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00039">39</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa25bd0f64d377f49a5b90e6e371f1cfc" name="aa25bd0f64d377f49a5b90e6e371f1cfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25bd0f64d377f49a5b90e6e371f1cfc">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::data[<a class="el" href="Pip_8hpp.html#a86714fc5cbb4efd38dab6b0e47c21723">SWEEP_MAX_SAMPLES</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The data array for the sweep. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00080">80</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a67d1ee28be368f100889a36439ca5d38" name="a67d1ee28be368f100889a36439ca5d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d1ee28be368f100889a36439ca5d38">&#9670;&#160;</a></span>delay_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Pip::delay_us</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The delay between steps in the sweep. Measured in microseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00043">43</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8813bef1da050d9fa97e09c61cebed6f" name="a8813bef1da050d9fa97e09c61cebed6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8813bef1da050d9fa97e09c61cebed6f">&#9670;&#160;</a></span>num_samples</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::num_samples</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of samples to take during the sweep. AKA the number of steps in the sweep. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00056">56</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1d0f96dd592851c44e490404b1bc9ac7" name="a1d0f96dd592851c44e490404b1bc9ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0f96dd592851c44e490404b1bc9ac7">&#9670;&#160;</a></span>sweep_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::sweep_max</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00061">61</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a54f67deed262e69483fe99ff2f2c90a5" name="a54f67deed262e69483fe99ff2f2c90a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f67deed262e69483fe99ff2f2c90a5">&#9670;&#160;</a></span>sweep_min</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Pip::sweep_min</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The minimum and maximum values for the sweep. </p>
+
+<p class="definition">Definition at line <a class="el" href="Pip_8hpp_source.html#l00060">60</a> of file <a class="el" href="Pip_8hpp_source.html">Pip.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="Pip_8hpp_source.html">Pip.hpp</a></li>
-<li>src/<a class="el" href="Pip_8cpp.html">Pip.cpp</a></li>
+<li><a class="el" href="Pip_8hpp_source.html">Pip.hpp</a></li>
+<li><a class="el" href="Pip_8cpp_source.html">Pip.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classPip.html">Pip</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

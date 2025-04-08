@@ -1,0 +1,4 @@
+<map id="Pip" name="Pip">
+<area shape="rect" id="node1" title="Manages the Pip sensor sweep and associated data." alt="" coords="25,93,68,119"/>
+<area shape="rect" id="node2" href="$classMax1148.html" title="Manages interfacing with Max1148 ADC." alt="" coords="5,5,88,31"/>
+</map>

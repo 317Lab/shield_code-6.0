@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dir_68267d1309a1af8e8297ef4c3efbcdba.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">src Directory Reference</div></div>
 </div><!--header-->
@@ -81,10 +97,11 @@ Directory dependency graph for src:</div>
 <div class="dyncontent">
 <div class="center"><img src="dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png" border="0" usemap="#adir__68267d1309a1af8e8297ef4c3efbcdba__dep" alt="src"/></div>
 <map name="adir__68267d1309a1af8e8297ef4c3efbcdba__dep" id="adir__68267d1309a1af8e8297ef4c3efbcdba__dep">
-<area shape="rect" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="152,100,221,125"/>
-<area shape="rect" href="dir_000004_000002.html" title="6" alt="" coords="190,74,200,89"/>
-<area shape="rect" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html" title="cmsis_include" alt="" coords="27,27,141,52"/>
-<area shape="rect" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" alt="" coords="16,16,219,63"/>
+<area shape="rect" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html" title="cmsis_include" alt="" coords="27,100,141,125"/>
+<area shape="rect" href="dir_000004_000000.html" title="199" alt="" coords="87,77,112,92"/>
+<area shape="rect" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="165,100,235,125"/>
+<area shape="rect" href="dir_000004_000002.html" title="10" alt="" coords="165,75,183,90"/>
+<area shape="rect" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" alt="" coords="16,16,152,136"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -95,23 +112,31 @@ Directories</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AT25M02_8cpp.html">AT25M02.cpp</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AT25M02_8cpp.html">AT25M02.cpp</a> <a href="AT25M02_8cpp_source.html">[code]</a></td></tr>
 <tr class="memdesc:AT25M02_8cpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">This control's microchip's <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM Device. This treats it as a circular queue, and will not overwrite existing data. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IMU_8cpp.html">IMU.cpp</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IMU_8cpp.html">IMU.cpp</a> <a href="IMU_8cpp_source.html">[code]</a></td></tr>
 <tr class="memdesc:IMU_8cpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source file for the IMU library for Dartmouth's 317 Lab. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html">main.cpp</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html">main.cpp</a> <a href="main_8cpp_source.html">[code]</a></td></tr>
 <tr class="memdesc:main_8cpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main file for the 317 lab project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pip_8cpp.html">Pip.cpp</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8cpp.html">Max1148.cpp</a> <a href="Max1148_8cpp_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modded__system__sam3xa_8c.html">modded_system_sam3xa.c</a> <a href="modded__system__sam3xa_8c_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Pip_8cpp.html">Pip.cpp</a> <a href="Pip_8cpp_source.html">[code]</a></td></tr>
 <tr class="memdesc:Pip_8cpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source file for the <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> library for Dartmouth's 317 Lab. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

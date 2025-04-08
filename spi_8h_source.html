@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: src/cmsis_include/component/spi.h Source File</title>
+<title>Shield Code: spi.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('spi_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,16 +88,11 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html">cmsis_include</a></li><li class="navelem"><a class="el" href="dir_cf3f98327ed32b37c04c90509765bc66.html">component</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">spi.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
+<a href="spi_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*                  Atmel Microcontroller Software Support                      */</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*                       SAM Software Package License                           */</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
@@ -121,131 +137,135 @@ $(function() {
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structSpi.html#a2cde5578804cb090b599fe07eeaa04d4">   47</a></span>  __O  uint32_t <a class="code hl_variable" href="structSpi.html#a2cde5578804cb090b599fe07eeaa04d4">SPI_IER</a>;       </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structSpi.html#a8c8575c6d9cf819ce6aff62ea79276eb">   48</a></span>  __O  uint32_t <a class="code hl_variable" href="structSpi.html#a8c8575c6d9cf819ce6aff62ea79276eb">SPI_IDR</a>;       </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structSpi.html#a9b25e67749c807004595f3301c65b9ad">   49</a></span>  __I  uint32_t <a class="code hl_variable" href="structSpi.html#a9b25e67749c807004595f3301c65b9ad">SPI_IMR</a>;       </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  __I  uint32_t Reserved1[4];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structSpi.html#a25020c28d26d3ffec0c2a8dea5432172">   50</a></span>  __I  uint32_t Reserved1[4];</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structSpi.html#aa87a90974ab3e726b0e2e9c6c1041891">   51</a></span>  __IO uint32_t SPI_CSR[4];    </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  __I  uint32_t Reserved2[41];</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structSpi.html#ac57ee7f68f110b032c39c03b5985fc65">   52</a></span>  __I  uint32_t Reserved2[41];</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structSpi.html#aa50a6b8d402cbb0f75e48cdbfd3a077c">   53</a></span>  __IO uint32_t <a class="code hl_variable" href="structSpi.html#aa50a6b8d402cbb0f75e48cdbfd3a077c">SPI_WPMR</a>;      </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structSpi.html#adc4d26963ecf8db62fc9fea6e8841c33">   54</a></span>  __I  uint32_t <a class="code hl_variable" href="structSpi.html#adc4d26963ecf8db62fc9fea6e8841c33">SPI_WPSR</a>;      </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>} <a class="code hl_struct" href="structSpi.html">Spi</a>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">/* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/* -------- SPI_CR : (SPI Offset: 0x00) Control Register -------- */</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define SPI_CR_SPIEN (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#define SPI_CR_SPIDIS (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#define SPI_CR_SWRST (0x1u &lt;&lt; 7) </span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define SPI_CR_LASTXFER (0x1u &lt;&lt; 24) </span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="spi_8h.html#a18e49c9e57711f924dfedfd2f0ed649c">   58</a></span><span class="preprocessor">#define SPI_CR_SPIEN (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="spi_8h.html#a6033c504d035c6742001457c4af46117">   59</a></span><span class="preprocessor">#define SPI_CR_SPIDIS (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="spi_8h.html#ae38a67df1f3efd301c202f553c2731b3">   60</a></span><span class="preprocessor">#define SPI_CR_SWRST (0x1u &lt;&lt; 7) </span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="spi_8h.html#aee7187afaf8a064de2b4386d5ca386b2">   61</a></span><span class="preprocessor">#define SPI_CR_LASTXFER (0x1u &lt;&lt; 24) </span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/* -------- SPI_MR : (SPI Offset: 0x04) Mode Register -------- */</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#define SPI_MR_MSTR (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define SPI_MR_PS (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#define SPI_MR_PCSDEC (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#define SPI_MR_MODFDIS (0x1u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#define SPI_MR_WDRBT (0x1u &lt;&lt; 5) </span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#define SPI_MR_LLB (0x1u &lt;&lt; 7) </span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#define SPI_MR_PCS_Pos 16</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#define SPI_MR_PCS_Msk (0xfu &lt;&lt; SPI_MR_PCS_Pos) </span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define SPI_MR_PCS(value) ((SPI_MR_PCS_Msk &amp; ((value) &lt;&lt; SPI_MR_PCS_Pos)))</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#define SPI_MR_DLYBCS_Pos 24</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#define SPI_MR_DLYBCS_Msk (0xffu &lt;&lt; SPI_MR_DLYBCS_Pos) </span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#define SPI_MR_DLYBCS(value) ((SPI_MR_DLYBCS_Msk &amp; ((value) &lt;&lt; SPI_MR_DLYBCS_Pos)))</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="spi_8h.html#a6cb9df56f1ed31b09bb13f2cb667b7b0">   63</a></span><span class="preprocessor">#define SPI_MR_MSTR (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="spi_8h.html#a9ca9841edc87c230a7133e73225eace4">   64</a></span><span class="preprocessor">#define SPI_MR_PS (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="spi_8h.html#aabed13bbc11a6de9dd4973503c65efb1">   65</a></span><span class="preprocessor">#define SPI_MR_PCSDEC (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="spi_8h.html#ad83d639a5fcafd4e97017d4cc9fb8975">   66</a></span><span class="preprocessor">#define SPI_MR_MODFDIS (0x1u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="spi_8h.html#ab353dbc5ae459b9babad4a2b3cc1be97">   67</a></span><span class="preprocessor">#define SPI_MR_WDRBT (0x1u &lt;&lt; 5) </span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="spi_8h.html#ab385ebbd203f156ff46a39ea17755452">   68</a></span><span class="preprocessor">#define SPI_MR_LLB (0x1u &lt;&lt; 7) </span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="spi_8h.html#a98bb8412434c4013fe81a209876a936d">   69</a></span><span class="preprocessor">#define SPI_MR_PCS_Pos 16</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="spi_8h.html#a204505b639ffd30a0b3fe42cdaf5754c">   70</a></span><span class="preprocessor">#define SPI_MR_PCS_Msk (0xfu &lt;&lt; SPI_MR_PCS_Pos) </span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="spi_8h.html#a7c6b524f610c76238ca9e4cb24ccb603">   71</a></span><span class="preprocessor">#define SPI_MR_PCS(value) ((SPI_MR_PCS_Msk &amp; ((value) &lt;&lt; SPI_MR_PCS_Pos)))</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="spi_8h.html#abf2b423c0da7c1324db52c625d476049">   72</a></span><span class="preprocessor">#define SPI_MR_DLYBCS_Pos 24</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="spi_8h.html#a9ba686c6d3aba29bfa363b65ddd16877">   73</a></span><span class="preprocessor">#define SPI_MR_DLYBCS_Msk (0xffu &lt;&lt; SPI_MR_DLYBCS_Pos) </span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="spi_8h.html#a375e18a7ef3cfdfd1bdfafcc3c9235de">   74</a></span><span class="preprocessor">#define SPI_MR_DLYBCS(value) ((SPI_MR_DLYBCS_Msk &amp; ((value) &lt;&lt; SPI_MR_DLYBCS_Pos)))</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">/* -------- SPI_RDR : (SPI Offset: 0x08) Receive Data Register -------- */</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#define SPI_RDR_RD_Pos 0</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#define SPI_RDR_RD_Msk (0xffffu &lt;&lt; SPI_RDR_RD_Pos) </span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#define SPI_RDR_PCS_Pos 16</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#define SPI_RDR_PCS_Msk (0xfu &lt;&lt; SPI_RDR_PCS_Pos) </span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="spi_8h.html#a3c3b4a9abdcc8edbd135513a88460bfc">   76</a></span><span class="preprocessor">#define SPI_RDR_RD_Pos 0</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="spi_8h.html#a09e45fbff420a0436869160ea3e96b4b">   77</a></span><span class="preprocessor">#define SPI_RDR_RD_Msk (0xffffu &lt;&lt; SPI_RDR_RD_Pos) </span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="spi_8h.html#a6a9992a6cca823fbe997b6045451aa6d">   78</a></span><span class="preprocessor">#define SPI_RDR_PCS_Pos 16</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="spi_8h.html#a2dd5820a581e24546853af787e511dbd">   79</a></span><span class="preprocessor">#define SPI_RDR_PCS_Msk (0xfu &lt;&lt; SPI_RDR_PCS_Pos) </span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">/* -------- SPI_TDR : (SPI Offset: 0x0C) Transmit Data Register -------- */</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#define SPI_TDR_TD_Pos 0</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#define SPI_TDR_TD_Msk (0xffffu &lt;&lt; SPI_TDR_TD_Pos) </span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#define SPI_TDR_TD(value) ((SPI_TDR_TD_Msk &amp; ((value) &lt;&lt; SPI_TDR_TD_Pos)))</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#define SPI_TDR_PCS_Pos 16</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#define SPI_TDR_PCS_Msk (0xfu &lt;&lt; SPI_TDR_PCS_Pos) </span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#define SPI_TDR_PCS(value) ((SPI_TDR_PCS_Msk &amp; ((value) &lt;&lt; SPI_TDR_PCS_Pos)))</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#define SPI_TDR_LASTXFER (0x1u &lt;&lt; 24) </span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="spi_8h.html#a9b2a421f5088b3753b4a067fdd96e9c9">   81</a></span><span class="preprocessor">#define SPI_TDR_TD_Pos 0</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="spi_8h.html#abbaac983bfec5d0d9a48192c549e2581">   82</a></span><span class="preprocessor">#define SPI_TDR_TD_Msk (0xffffu &lt;&lt; SPI_TDR_TD_Pos) </span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="spi_8h.html#a6ce99dec36e2a21756edb67f34ce7884">   83</a></span><span class="preprocessor">#define SPI_TDR_TD(value) ((SPI_TDR_TD_Msk &amp; ((value) &lt;&lt; SPI_TDR_TD_Pos)))</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="spi_8h.html#a73461db4882d2fc9f46965ca39cfa5db">   84</a></span><span class="preprocessor">#define SPI_TDR_PCS_Pos 16</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="spi_8h.html#a0b195ce01bdd06c5f0eb6c892108f1fc">   85</a></span><span class="preprocessor">#define SPI_TDR_PCS_Msk (0xfu &lt;&lt; SPI_TDR_PCS_Pos) </span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="spi_8h.html#abe73c458c7378a83a85454f37e62030c">   86</a></span><span class="preprocessor">#define SPI_TDR_PCS(value) ((SPI_TDR_PCS_Msk &amp; ((value) &lt;&lt; SPI_TDR_PCS_Pos)))</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="spi_8h.html#a6cafe9086ebb0a0b39ada838a98528bc">   87</a></span><span class="preprocessor">#define SPI_TDR_LASTXFER (0x1u &lt;&lt; 24) </span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/* -------- SPI_SR : (SPI Offset: 0x10) Status Register -------- */</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#define SPI_SR_RDRF (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#define SPI_SR_TDRE (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#define SPI_SR_MODF (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#define SPI_SR_OVRES (0x1u &lt;&lt; 3) </span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#define SPI_SR_NSSR (0x1u &lt;&lt; 8) </span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#define SPI_SR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#define SPI_SR_UNDES (0x1u &lt;&lt; 10) </span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#define SPI_SR_SPIENS (0x1u &lt;&lt; 16) </span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="spi_8h.html#ab1016447bf7e9804ded0679d3acceb6c">   89</a></span><span class="preprocessor">#define SPI_SR_RDRF (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="spi_8h.html#a83c040f5551321ce4d005ed71ae179ad">   90</a></span><span class="preprocessor">#define SPI_SR_TDRE (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="spi_8h.html#abaa043349833dc7b8138969c64f63adf">   91</a></span><span class="preprocessor">#define SPI_SR_MODF (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="spi_8h.html#af26d14d58b00dde1fc4e9b6ee306f187">   92</a></span><span class="preprocessor">#define SPI_SR_OVRES (0x1u &lt;&lt; 3) </span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="spi_8h.html#abeda016ebc9ea6b515755cd56e78a8fe">   93</a></span><span class="preprocessor">#define SPI_SR_NSSR (0x1u &lt;&lt; 8) </span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="spi_8h.html#a84407cd4d97c87ff79ddf135427ecfe4">   94</a></span><span class="preprocessor">#define SPI_SR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="spi_8h.html#aaa676bbaa36a74be559ee6a5d46eaa9d">   95</a></span><span class="preprocessor">#define SPI_SR_UNDES (0x1u &lt;&lt; 10) </span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="spi_8h.html#ae7580fa93c7e03c5bb5538abc0dfc152">   96</a></span><span class="preprocessor">#define SPI_SR_SPIENS (0x1u &lt;&lt; 16) </span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">/* -------- SPI_IER : (SPI Offset: 0x14) Interrupt Enable Register -------- */</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#define SPI_IER_RDRF (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#define SPI_IER_TDRE (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#define SPI_IER_MODF (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#define SPI_IER_OVRES (0x1u &lt;&lt; 3) </span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#define SPI_IER_NSSR (0x1u &lt;&lt; 8) </span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#define SPI_IER_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#define SPI_IER_UNDES (0x1u &lt;&lt; 10) </span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="spi_8h.html#a1105f94156b60c5ee82de84925b30178">   98</a></span><span class="preprocessor">#define SPI_IER_RDRF (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="spi_8h.html#a04e042ee66fcf2a93c27921abca640e4">   99</a></span><span class="preprocessor">#define SPI_IER_TDRE (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="spi_8h.html#a052ed154bfbc9fa3aa97e3a3aa619687">  100</a></span><span class="preprocessor">#define SPI_IER_MODF (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="spi_8h.html#a34a22f2529e88361ef639e93eb318659">  101</a></span><span class="preprocessor">#define SPI_IER_OVRES (0x1u &lt;&lt; 3) </span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="spi_8h.html#accb704204fcb7d07ca807b608c3e19ca">  102</a></span><span class="preprocessor">#define SPI_IER_NSSR (0x1u &lt;&lt; 8) </span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="spi_8h.html#a0113a457347e793c91055a4edb98e5a3">  103</a></span><span class="preprocessor">#define SPI_IER_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="spi_8h.html#a1ff8797fb0a9d82230514cd9d5caac59">  104</a></span><span class="preprocessor">#define SPI_IER_UNDES (0x1u &lt;&lt; 10) </span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">/* -------- SPI_IDR : (SPI Offset: 0x18) Interrupt Disable Register -------- */</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#define SPI_IDR_RDRF (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#define SPI_IDR_TDRE (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#define SPI_IDR_MODF (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#define SPI_IDR_OVRES (0x1u &lt;&lt; 3) </span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#define SPI_IDR_NSSR (0x1u &lt;&lt; 8) </span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#define SPI_IDR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#define SPI_IDR_UNDES (0x1u &lt;&lt; 10) </span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="spi_8h.html#abdb3e78af146a108e460424053a9db92">  106</a></span><span class="preprocessor">#define SPI_IDR_RDRF (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="spi_8h.html#a87757165dbe02f10c128f465eec220ba">  107</a></span><span class="preprocessor">#define SPI_IDR_TDRE (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="spi_8h.html#a30165a04bb5f28d0b4868be8474acf1c">  108</a></span><span class="preprocessor">#define SPI_IDR_MODF (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="spi_8h.html#a2d169c1bd619fe85b3387b374f580b09">  109</a></span><span class="preprocessor">#define SPI_IDR_OVRES (0x1u &lt;&lt; 3) </span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="spi_8h.html#a728d5a8cad7c29250360f0157b5e8f79">  110</a></span><span class="preprocessor">#define SPI_IDR_NSSR (0x1u &lt;&lt; 8) </span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="spi_8h.html#addf4b26c2541629e1997132e50178b4f">  111</a></span><span class="preprocessor">#define SPI_IDR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="spi_8h.html#a795088b6ea6b89af56c9d5bd3bba66cb">  112</a></span><span class="preprocessor">#define SPI_IDR_UNDES (0x1u &lt;&lt; 10) </span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">/* -------- SPI_IMR : (SPI Offset: 0x1C) Interrupt Mask Register -------- */</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#define SPI_IMR_RDRF (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#define SPI_IMR_TDRE (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#define SPI_IMR_MODF (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#define SPI_IMR_OVRES (0x1u &lt;&lt; 3) </span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#define SPI_IMR_NSSR (0x1u &lt;&lt; 8) </span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#define SPI_IMR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#define SPI_IMR_UNDES (0x1u &lt;&lt; 10) </span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="spi_8h.html#acba1530f6c28a001ec4c36c25d391cdf">  114</a></span><span class="preprocessor">#define SPI_IMR_RDRF (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="spi_8h.html#a1ae4f282e180509cbb5e8b19598243b9">  115</a></span><span class="preprocessor">#define SPI_IMR_TDRE (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="spi_8h.html#a8a2186d7a3469d20ed526dd3678bcbf2">  116</a></span><span class="preprocessor">#define SPI_IMR_MODF (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="spi_8h.html#ac07260e5ce36c6a0b6911ffe0a8b0a63">  117</a></span><span class="preprocessor">#define SPI_IMR_OVRES (0x1u &lt;&lt; 3) </span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="spi_8h.html#a19e20161f498a459839b5b2b1e45be4b">  118</a></span><span class="preprocessor">#define SPI_IMR_NSSR (0x1u &lt;&lt; 8) </span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="spi_8h.html#ad4614e5714a116d626d45bb98fabac74">  119</a></span><span class="preprocessor">#define SPI_IMR_TXEMPTY (0x1u &lt;&lt; 9) </span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="spi_8h.html#a4b17e314a7181955c68b713a74d2a386">  120</a></span><span class="preprocessor">#define SPI_IMR_UNDES (0x1u &lt;&lt; 10) </span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">/* -------- SPI_CSR[4] : (SPI Offset: 0x30) Chip Select Register -------- */</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#define SPI_CSR_CPOL (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#define SPI_CSR_NCPHA (0x1u &lt;&lt; 1) </span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#define SPI_CSR_CSNAAT (0x1u &lt;&lt; 2) </span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#define SPI_CSR_CSAAT (0x1u &lt;&lt; 3) </span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#define SPI_CSR_BITS_Pos 4</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#define SPI_CSR_BITS_Msk (0xfu &lt;&lt; SPI_CSR_BITS_Pos) </span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#define SPI_CSR_BITS(value) ((SPI_CSR_BITS_Msk &amp; ((value) &lt;&lt; SPI_CSR_BITS_Pos)))</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#define   SPI_CSR_BITS_8_BIT (0x0u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#define   SPI_CSR_BITS_9_BIT (0x1u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#define   SPI_CSR_BITS_10_BIT (0x2u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#define   SPI_CSR_BITS_11_BIT (0x3u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#define   SPI_CSR_BITS_12_BIT (0x4u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#define   SPI_CSR_BITS_13_BIT (0x5u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#define   SPI_CSR_BITS_14_BIT (0x6u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#define   SPI_CSR_BITS_15_BIT (0x7u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#define   SPI_CSR_BITS_16_BIT (0x8u &lt;&lt; 4) </span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#define SPI_CSR_SCBR_Pos 8</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#define SPI_CSR_SCBR_Msk (0xffu &lt;&lt; SPI_CSR_SCBR_Pos) </span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#define SPI_CSR_SCBR(value) ((SPI_CSR_SCBR_Msk &amp; ((value) &lt;&lt; SPI_CSR_SCBR_Pos)))</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#define SPI_CSR_DLYBS_Pos 16</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#define SPI_CSR_DLYBS_Msk (0xffu &lt;&lt; SPI_CSR_DLYBS_Pos) </span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#define SPI_CSR_DLYBS(value) ((SPI_CSR_DLYBS_Msk &amp; ((value) &lt;&lt; SPI_CSR_DLYBS_Pos)))</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#define SPI_CSR_DLYBCT_Pos 24</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#define SPI_CSR_DLYBCT_Msk (0xffu &lt;&lt; SPI_CSR_DLYBCT_Pos) </span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#define SPI_CSR_DLYBCT(value) ((SPI_CSR_DLYBCT_Msk &amp; ((value) &lt;&lt; SPI_CSR_DLYBCT_Pos)))</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="spi_8h.html#aa32540a52ce9bec344c733e63578c1e5">  122</a></span><span class="preprocessor">#define SPI_CSR_CPOL (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="spi_8h.html#ab1ac2d1468b0bcaf5699b4f7ca338278">  123</a></span><span class="preprocessor">#define SPI_CSR_NCPHA (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="spi_8h.html#af55a6eabcdcc72e93d8316de76e22f0f">  124</a></span><span class="preprocessor">#define SPI_CSR_CSNAAT (0x1u &lt;&lt; 2) </span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="spi_8h.html#aa80e81d8dc4efe289e56e31f04896bb1">  125</a></span><span class="preprocessor">#define SPI_CSR_CSAAT (0x1u &lt;&lt; 3) </span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="spi_8h.html#a258e39598582afc45f14b9ef8cdf42fe">  126</a></span><span class="preprocessor">#define SPI_CSR_BITS_Pos 4</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="spi_8h.html#a9f4c680f57d1ded5c34993cffc91bd94">  127</a></span><span class="preprocessor">#define SPI_CSR_BITS_Msk (0xfu &lt;&lt; SPI_CSR_BITS_Pos) </span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="spi_8h.html#a3d3527e959f17ad02331393badb05b1b">  128</a></span><span class="preprocessor">#define SPI_CSR_BITS(value) ((SPI_CSR_BITS_Msk &amp; ((value) &lt;&lt; SPI_CSR_BITS_Pos)))</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="spi_8h.html#a8549c361b375d157602dee315513c150">  129</a></span><span class="preprocessor">#define   SPI_CSR_BITS_8_BIT (0x0u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="spi_8h.html#ab02437662c1d559ea485ac7d39e88dba">  130</a></span><span class="preprocessor">#define   SPI_CSR_BITS_9_BIT (0x1u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="spi_8h.html#a6fc81b52de5354cd3b92615ad1b55496">  131</a></span><span class="preprocessor">#define   SPI_CSR_BITS_10_BIT (0x2u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="spi_8h.html#a0cb17f459512707bd7d1dd718a3abe6e">  132</a></span><span class="preprocessor">#define   SPI_CSR_BITS_11_BIT (0x3u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="spi_8h.html#a4d7b32df6f855f2dddf62b27a61c167f">  133</a></span><span class="preprocessor">#define   SPI_CSR_BITS_12_BIT (0x4u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="spi_8h.html#a73c6f8ce576ea59ae84a0745bde2fcf9">  134</a></span><span class="preprocessor">#define   SPI_CSR_BITS_13_BIT (0x5u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="spi_8h.html#a9f50944da65963d4e710e798eb1b4ffb">  135</a></span><span class="preprocessor">#define   SPI_CSR_BITS_14_BIT (0x6u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="spi_8h.html#a421d68bc73d5065443e29cdd9f3fc2d8">  136</a></span><span class="preprocessor">#define   SPI_CSR_BITS_15_BIT (0x7u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="spi_8h.html#a04ecfd6c12d345ef631c6e8cfc29df6c">  137</a></span><span class="preprocessor">#define   SPI_CSR_BITS_16_BIT (0x8u &lt;&lt; 4) </span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="spi_8h.html#ae6ae17c888b48816bf0e11a161d8ac71">  138</a></span><span class="preprocessor">#define SPI_CSR_SCBR_Pos 8</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="spi_8h.html#a2f43c4d328adbac6ce40e5cfbf489c3d">  139</a></span><span class="preprocessor">#define SPI_CSR_SCBR_Msk (0xffu &lt;&lt; SPI_CSR_SCBR_Pos) </span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="spi_8h.html#a79a3b403edc0716791844ff68b28f345">  140</a></span><span class="preprocessor">#define SPI_CSR_SCBR(value) ((SPI_CSR_SCBR_Msk &amp; ((value) &lt;&lt; SPI_CSR_SCBR_Pos)))</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="spi_8h.html#a6e819d6b871a3792ec34ccb65bc0d408">  141</a></span><span class="preprocessor">#define SPI_CSR_DLYBS_Pos 16</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="spi_8h.html#aa09d39f94f35fb03298dc0fd811d86b5">  142</a></span><span class="preprocessor">#define SPI_CSR_DLYBS_Msk (0xffu &lt;&lt; SPI_CSR_DLYBS_Pos) </span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="spi_8h.html#a3941994b67e6d6f31e1bf2c5be54a20a">  143</a></span><span class="preprocessor">#define SPI_CSR_DLYBS(value) ((SPI_CSR_DLYBS_Msk &amp; ((value) &lt;&lt; SPI_CSR_DLYBS_Pos)))</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="spi_8h.html#ae954fb84cf6a98ba767786c6bf99b8ea">  144</a></span><span class="preprocessor">#define SPI_CSR_DLYBCT_Pos 24</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="spi_8h.html#acfa9a89f587873cca6797fb1a3a1f76d">  145</a></span><span class="preprocessor">#define SPI_CSR_DLYBCT_Msk (0xffu &lt;&lt; SPI_CSR_DLYBCT_Pos) </span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="spi_8h.html#a83472baced06540c97a84138c4e0921c">  146</a></span><span class="preprocessor">#define SPI_CSR_DLYBCT(value) ((SPI_CSR_DLYBCT_Msk &amp; ((value) &lt;&lt; SPI_CSR_DLYBCT_Pos)))</span></div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">/* -------- SPI_WPMR : (SPI Offset: 0xE4) Write Protection Control Register -------- */</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#define SPI_WPMR_WPEN (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#define SPI_WPMR_WPKEY_Pos 8</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#define SPI_WPMR_WPKEY_Msk (0xffffffu &lt;&lt; SPI_WPMR_WPKEY_Pos) </span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#define SPI_WPMR_WPKEY(value) ((SPI_WPMR_WPKEY_Msk &amp; ((value) &lt;&lt; SPI_WPMR_WPKEY_Pos)))</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#define   SPI_WPMR_WPKEY_PASSWD (0x535049u &lt;&lt; 8) </span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="spi_8h.html#abac843beb0be37bdb38953c1180c7761">  148</a></span><span class="preprocessor">#define SPI_WPMR_WPEN (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="spi_8h.html#a554eabdaa35d2efa16e3b68128386a2c">  149</a></span><span class="preprocessor">#define SPI_WPMR_WPKEY_Pos 8</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="spi_8h.html#a7254c94ec647be0fb21569bd816dff76">  150</a></span><span class="preprocessor">#define SPI_WPMR_WPKEY_Msk (0xffffffu &lt;&lt; SPI_WPMR_WPKEY_Pos) </span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="spi_8h.html#a7ff5b005cf613283c146a3d682a80c4b">  151</a></span><span class="preprocessor">#define SPI_WPMR_WPKEY(value) ((SPI_WPMR_WPKEY_Msk &amp; ((value) &lt;&lt; SPI_WPMR_WPKEY_Pos)))</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="spi_8h.html#ad5eacda218874e9f160526fd09b840f7">  152</a></span><span class="preprocessor">#define   SPI_WPMR_WPKEY_PASSWD (0x535049u &lt;&lt; 8) </span></div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">/* -------- SPI_WPSR : (SPI Offset: 0xE8) Write Protection Status Register -------- */</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#define SPI_WPSR_WPVS (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#define SPI_WPSR_WPVSRC_Pos 8</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#define SPI_WPSR_WPVSRC_Msk (0xffu &lt;&lt; SPI_WPSR_WPVSRC_Pos) </span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="spi_8h.html#a2fdfc086344d7f94c78b3411f9300ff6">  154</a></span><span class="preprocessor">#define SPI_WPSR_WPVS (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="spi_8h.html#ab5938ab029cbff7d33f85030efee59a1">  155</a></span><span class="preprocessor">#define SPI_WPSR_WPVSRC_Pos 8</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="spi_8h.html#a85243137e58ab2f2dfe757f0d5847744">  156</a></span><span class="preprocessor">#define SPI_WPSR_WPVSRC_Msk (0xffu &lt;&lt; SPI_WPSR_WPVSRC_Pos) </span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif </span><span class="comment">/* _SAM3XA_SPI_COMPONENT_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astructSpi_html"><div class="ttname"><a href="structSpi.html">Spi</a></div><div class="ttdoc">Spi hardware registers.</div><div class="ttdef"><b>Definition:</b> spi.h:41</div></div>
-<div class="ttc" id="astructSpi_html_a2cde5578804cb090b599fe07eeaa04d4"><div class="ttname"><a href="structSpi.html#a2cde5578804cb090b599fe07eeaa04d4">Spi::SPI_IER</a></div><div class="ttdeci">__O uint32_t SPI_IER</div><div class="ttdoc">(Spi Offset: 0x14) Interrupt Enable Register</div><div class="ttdef"><b>Definition:</b> spi.h:47</div></div>
-<div class="ttc" id="astructSpi_html_a648508291f5d4893e6e85546bcf153db"><div class="ttname"><a href="structSpi.html#a648508291f5d4893e6e85546bcf153db">Spi::SPI_MR</a></div><div class="ttdeci">__IO uint32_t SPI_MR</div><div class="ttdoc">(Spi Offset: 0x04) Mode Register</div><div class="ttdef"><b>Definition:</b> spi.h:43</div></div>
-<div class="ttc" id="astructSpi_html_a8c8575c6d9cf819ce6aff62ea79276eb"><div class="ttname"><a href="structSpi.html#a8c8575c6d9cf819ce6aff62ea79276eb">Spi::SPI_IDR</a></div><div class="ttdeci">__O uint32_t SPI_IDR</div><div class="ttdoc">(Spi Offset: 0x18) Interrupt Disable Register</div><div class="ttdef"><b>Definition:</b> spi.h:48</div></div>
-<div class="ttc" id="astructSpi_html_a8c8f55ee122f6b0ad33d438a4f1ff1ef"><div class="ttname"><a href="structSpi.html#a8c8f55ee122f6b0ad33d438a4f1ff1ef">Spi::SPI_TDR</a></div><div class="ttdeci">__O uint32_t SPI_TDR</div><div class="ttdoc">(Spi Offset: 0x0C) Transmit Data Register</div><div class="ttdef"><b>Definition:</b> spi.h:45</div></div>
-<div class="ttc" id="astructSpi_html_a9b25e67749c807004595f3301c65b9ad"><div class="ttname"><a href="structSpi.html#a9b25e67749c807004595f3301c65b9ad">Spi::SPI_IMR</a></div><div class="ttdeci">__I uint32_t SPI_IMR</div><div class="ttdoc">(Spi Offset: 0x1C) Interrupt Mask Register</div><div class="ttdef"><b>Definition:</b> spi.h:49</div></div>
-<div class="ttc" id="astructSpi_html_aa50a6b8d402cbb0f75e48cdbfd3a077c"><div class="ttname"><a href="structSpi.html#aa50a6b8d402cbb0f75e48cdbfd3a077c">Spi::SPI_WPMR</a></div><div class="ttdeci">__IO uint32_t SPI_WPMR</div><div class="ttdoc">(Spi Offset: 0xE4) Write Protection Control Register</div><div class="ttdef"><b>Definition:</b> spi.h:53</div></div>
-<div class="ttc" id="astructSpi_html_ad734fbd4fd26168d4677c0620e5efc02"><div class="ttname"><a href="structSpi.html#ad734fbd4fd26168d4677c0620e5efc02">Spi::SPI_CR</a></div><div class="ttdeci">__O uint32_t SPI_CR</div><div class="ttdoc">(Spi Offset: 0x00) Control Register</div><div class="ttdef"><b>Definition:</b> spi.h:42</div></div>
-<div class="ttc" id="astructSpi_html_adc4d26963ecf8db62fc9fea6e8841c33"><div class="ttname"><a href="structSpi.html#adc4d26963ecf8db62fc9fea6e8841c33">Spi::SPI_WPSR</a></div><div class="ttdeci">__I uint32_t SPI_WPSR</div><div class="ttdoc">(Spi Offset: 0xE8) Write Protection Status Register</div><div class="ttdef"><b>Definition:</b> spi.h:54</div></div>
-<div class="ttc" id="astructSpi_html_ae1f91a373e95428f2e2b1d6bfab333b2"><div class="ttname"><a href="structSpi.html#ae1f91a373e95428f2e2b1d6bfab333b2">Spi::SPI_SR</a></div><div class="ttdeci">__I uint32_t SPI_SR</div><div class="ttdoc">(Spi Offset: 0x10) Status Register</div><div class="ttdef"><b>Definition:</b> spi.h:46</div></div>
-<div class="ttc" id="astructSpi_html_af9e9f674383afb8c517e99b44a4fc9eb"><div class="ttname"><a href="structSpi.html#af9e9f674383afb8c517e99b44a4fc9eb">Spi::SPI_RDR</a></div><div class="ttdeci">__I uint32_t SPI_RDR</div><div class="ttdoc">(Spi Offset: 0x08) Receive Data Register</div><div class="ttdef"><b>Definition:</b> spi.h:44</div></div>
+<div class="ttc" id="astructSpi_html"><div class="ttname"><a href="structSpi.html">Spi</a></div><div class="ttdoc">Spi hardware registers.</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00041">spi.h:41</a></div></div>
+<div class="ttc" id="astructSpi_html_a2cde5578804cb090b599fe07eeaa04d4"><div class="ttname"><a href="structSpi.html#a2cde5578804cb090b599fe07eeaa04d4">Spi::SPI_IER</a></div><div class="ttdeci">__O uint32_t SPI_IER</div><div class="ttdoc">(Spi Offset: 0x14) Interrupt Enable Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00047">spi.h:47</a></div></div>
+<div class="ttc" id="astructSpi_html_a648508291f5d4893e6e85546bcf153db"><div class="ttname"><a href="structSpi.html#a648508291f5d4893e6e85546bcf153db">Spi::SPI_MR</a></div><div class="ttdeci">__IO uint32_t SPI_MR</div><div class="ttdoc">(Spi Offset: 0x04) Mode Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00043">spi.h:43</a></div></div>
+<div class="ttc" id="astructSpi_html_a8c8575c6d9cf819ce6aff62ea79276eb"><div class="ttname"><a href="structSpi.html#a8c8575c6d9cf819ce6aff62ea79276eb">Spi::SPI_IDR</a></div><div class="ttdeci">__O uint32_t SPI_IDR</div><div class="ttdoc">(Spi Offset: 0x18) Interrupt Disable Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00048">spi.h:48</a></div></div>
+<div class="ttc" id="astructSpi_html_a8c8f55ee122f6b0ad33d438a4f1ff1ef"><div class="ttname"><a href="structSpi.html#a8c8f55ee122f6b0ad33d438a4f1ff1ef">Spi::SPI_TDR</a></div><div class="ttdeci">__O uint32_t SPI_TDR</div><div class="ttdoc">(Spi Offset: 0x0C) Transmit Data Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00045">spi.h:45</a></div></div>
+<div class="ttc" id="astructSpi_html_a9b25e67749c807004595f3301c65b9ad"><div class="ttname"><a href="structSpi.html#a9b25e67749c807004595f3301c65b9ad">Spi::SPI_IMR</a></div><div class="ttdeci">__I uint32_t SPI_IMR</div><div class="ttdoc">(Spi Offset: 0x1C) Interrupt Mask Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00049">spi.h:49</a></div></div>
+<div class="ttc" id="astructSpi_html_aa50a6b8d402cbb0f75e48cdbfd3a077c"><div class="ttname"><a href="structSpi.html#aa50a6b8d402cbb0f75e48cdbfd3a077c">Spi::SPI_WPMR</a></div><div class="ttdeci">__IO uint32_t SPI_WPMR</div><div class="ttdoc">(Spi Offset: 0xE4) Write Protection Control Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00053">spi.h:53</a></div></div>
+<div class="ttc" id="astructSpi_html_ad734fbd4fd26168d4677c0620e5efc02"><div class="ttname"><a href="structSpi.html#ad734fbd4fd26168d4677c0620e5efc02">Spi::SPI_CR</a></div><div class="ttdeci">__O uint32_t SPI_CR</div><div class="ttdoc">(Spi Offset: 0x00) Control Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00042">spi.h:42</a></div></div>
+<div class="ttc" id="astructSpi_html_adc4d26963ecf8db62fc9fea6e8841c33"><div class="ttname"><a href="structSpi.html#adc4d26963ecf8db62fc9fea6e8841c33">Spi::SPI_WPSR</a></div><div class="ttdeci">__I uint32_t SPI_WPSR</div><div class="ttdoc">(Spi Offset: 0xE8) Write Protection Status Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00054">spi.h:54</a></div></div>
+<div class="ttc" id="astructSpi_html_ae1f91a373e95428f2e2b1d6bfab333b2"><div class="ttname"><a href="structSpi.html#ae1f91a373e95428f2e2b1d6bfab333b2">Spi::SPI_SR</a></div><div class="ttdeci">__I uint32_t SPI_SR</div><div class="ttdoc">(Spi Offset: 0x10) Status Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00046">spi.h:46</a></div></div>
+<div class="ttc" id="astructSpi_html_af9e9f674383afb8c517e99b44a4fc9eb"><div class="ttname"><a href="structSpi.html#af9e9f674383afb8c517e99b44a4fc9eb">Spi::SPI_RDR</a></div><div class="ttdeci">__I uint32_t SPI_RDR</div><div class="ttdoc">(Spi Offset: 0x08) Receive Data Register</div><div class="ttdef"><b>Definition:</b> <a href="spi_8h_source.html#l00044">spi.h:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html">cmsis_include</a></li><li class="navelem"><a class="el" href="dir_cf3f98327ed32b37c04c90509765bc66.html">component</a></li><li class="navelem"><a class="el" href="spi_8h.html">spi.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classAT25M02.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,10 +88,11 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classAT25M02-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AT25M02 Class Reference</div></div>
 </div><!--header-->
@@ -83,36 +105,812 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="memItemLeft" align="right" valign="top"><a id="a27b38d3bdbc3e7f2e4851eef4bd599ad" name="a27b38d3bdbc3e7f2e4851eef4bd599ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
-<tr class="memdesc:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device. <br /></td></tr>
+<tr class="memitem:a453bc57eced5b19eea3cbdf1ddd13572"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a453bc57eced5b19eea3cbdf1ddd13572">AT25M02</a> ()</td></tr>
+<tr class="separator:a453bc57eced5b19eea3cbdf1ddd13572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a27b38d3bdbc3e7f2e4851eef4bd599ad">init</a> ()</td></tr>
+<tr class="memdesc:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device.  <br /></td></tr>
 <tr class="separator:a27b38d3bdbc3e7f2e4851eef4bd599ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d7be6c50a18aec76c5255db8707410"><td class="memItemLeft" align="right" valign="top"><a id="a76d7be6c50a18aec76c5255db8707410" name="a76d7be6c50a18aec76c5255db8707410"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b> (byte *bytes, uint32_t length)</td></tr>
+<tr class="memitem:a76d7be6c50a18aec76c5255db8707410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a76d7be6c50a18aec76c5255db8707410">writeData</a> (byte *bytes, uint32_t length)</td></tr>
 <tr class="separator:a76d7be6c50a18aec76c5255db8707410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a168c0381bff9add840001244472de416"><td class="memItemLeft" align="right" valign="top"><a id="a168c0381bff9add840001244472de416" name="a168c0381bff9add840001244472de416"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>readData</b> (byte *dest, uint32_t length)</td></tr>
+<tr class="memitem:a168c0381bff9add840001244472de416"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a168c0381bff9add840001244472de416">readData</a> (byte *dest, uint32_t length)</td></tr>
 <tr class="separator:a168c0381bff9add840001244472de416"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a47c94b577284350ef881413217666"><td class="memItemLeft" align="right" valign="top"><a id="ab8a47c94b577284350ef881413217666" name="ab8a47c94b577284350ef881413217666"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>freeBytes</b> ()</td></tr>
+<tr class="memitem:ab8a47c94b577284350ef881413217666"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ab8a47c94b577284350ef881413217666">freeBytes</a> ()</td></tr>
 <tr class="separator:ab8a47c94b577284350ef881413217666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae08e3fb33579e651088f50d519a04ddb"><td class="memItemLeft" align="right" valign="top"><a id="ae08e3fb33579e651088f50d519a04ddb" name="ae08e3fb33579e651088f50d519a04ddb"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>usedBytes</b> ()</td></tr>
+<tr class="memitem:ae08e3fb33579e651088f50d519a04ddb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ae08e3fb33579e651088f50d519a04ddb">usedBytes</a> ()</td></tr>
 <tr class="separator:ae08e3fb33579e651088f50d519a04ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa440e942cec35db3d916e5b52c0bcd61"><td class="memItemLeft" align="right" valign="top"><a id="aa440e942cec35db3d916e5b52c0bcd61" name="aa440e942cec35db3d916e5b52c0bcd61"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isReady</b> ()</td></tr>
+<tr class="memitem:aa440e942cec35db3d916e5b52c0bcd61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#aa440e942cec35db3d916e5b52c0bcd61">isReady</a> ()</td></tr>
 <tr class="separator:aa440e942cec35db3d916e5b52c0bcd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad88033c98d88836557c55fc532826975"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ad88033c98d88836557c55fc532826975">readStatusReg</a> ()</td></tr>
+<tr class="separator:ad88033c98d88836557c55fc532826975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aeb75524a19dd7f88c7e46f13f60f4e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a5aeb75524a19dd7f88c7e46f13f60f4e">usedMemoryBytes</a> ()</td></tr>
+<tr class="separator:a5aeb75524a19dd7f88c7e46f13f60f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75297e8ebdd2e7246aa4e632c3d7adc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ad75297e8ebdd2e7246aa4e632c3d7adc">freeMemoryBytes</a> ()</td></tr>
+<tr class="separator:ad75297e8ebdd2e7246aa4e632c3d7adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa09eadfc15eb5dc3986a7edc8c2d646a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#aa09eadfc15eb5dc3986a7edc8c2d646a">usedBufferBytes</a> ()</td></tr>
+<tr class="separator:aa09eadfc15eb5dc3986a7edc8c2d646a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1423450348315f3603bd05021b9a1f37"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a1423450348315f3603bd05021b9a1f37">freeBufferBytes</a> ()</td></tr>
+<tr class="separator:a1423450348315f3603bd05021b9a1f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaaa5359718d0addb5d7a99df71ba8a4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#abaaa5359718d0addb5d7a99df71ba8a4">readWriteBuffer</a> (byte *dest, uint32_t length)</td></tr>
+<tr class="separator:abaaa5359718d0addb5d7a99df71ba8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e32edd992631d6e2ceed29e1e2e567"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a45e32edd992631d6e2ceed29e1e2e567">readMemory</a> (byte *dest, uint32_t length)</td></tr>
+<tr class="separator:a45e32edd992631d6e2ceed29e1e2e567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fb934ba602c7c6456e260bdc97edfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a04fb934ba602c7c6456e260bdc97edfd">setWRSR</a> (byte val)</td></tr>
+<tr class="separator:a04fb934ba602c7c6456e260bdc97edfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41678aaf2a05c47767d191ef919d34f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a41678aaf2a05c47767d191ef919d34f9">waitUntilReady</a> ()</td></tr>
+<tr class="separator:a41678aaf2a05c47767d191ef919d34f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357eb337bc299d585ee47ea382c7e765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a357eb337bc299d585ee47ea382c7e765">writePage</a> (uint32_t addr, byte *bytes, uint32_t length)</td></tr>
+<tr class="separator:a357eb337bc299d585ee47ea382c7e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4455f414a3e9bcdbdd633482745665a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ab4455f414a3e9bcdbdd633482745665a">csl</a> ()</td></tr>
+<tr class="separator:ab4455f414a3e9bcdbdd633482745665a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5591f964f093107ba42bcbe1b25a747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ad5591f964f093107ba42bcbe1b25a747">csh</a> ()</td></tr>
+<tr class="separator:ad5591f964f093107ba42bcbe1b25a747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47e9099d07b1f219adfb5d3739e760b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#ac47e9099d07b1f219adfb5d3739e760b">sendCommand</a> (<a class="el" href="AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153">Command</a> cmd)</td></tr>
+<tr class="separator:ac47e9099d07b1f219adfb5d3739e760b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1ea15d9fe31d02997285825a36e0a698"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a1ea15d9fe31d02997285825a36e0a698">write_buffer</a> [256]</td></tr>
+<tr class="separator:a1ea15d9fe31d02997285825a36e0a698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52584b3bad5db29ae519894e299f5f04"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a52584b3bad5db29ae519894e299f5f04">wb_end</a></td></tr>
+<tr class="separator:a52584b3bad5db29ae519894e299f5f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5dd098f9a5356ecfd511a3670f6683"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a8e5dd098f9a5356ecfd511a3670f6683">mem_start</a></td></tr>
+<tr class="separator:a8e5dd098f9a5356ecfd511a3670f6683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cdece2870bd70461b462d647d61738"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a61cdece2870bd70461b462d647d61738">mem_end</a></td></tr>
+<tr class="separator:a61cdece2870bd70461b462d647d61738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b52f07c537a998b135355ebb0214702"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a8b52f07c537a998b135355ebb0214702">ram_full</a></td></tr>
+<tr class="separator:a8b52f07c537a998b135355ebb0214702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b2cdea0bb6ed2fb325a79197de84a8"><td class="memItemLeft" align="right" valign="top">SPISettings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#a51b2cdea0bb6ed2fb325a79197de84a8">spi_settings</a></td></tr>
+<tr class="separator:a51b2cdea0bb6ed2fb325a79197de84a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf22ff342f34f8fafcd06d0e1292d55e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAT25M02.html#acf22ff342f34f8fafcd06d0e1292d55e">chip_select_pin</a></td></tr>
+<tr class="separator:acf22ff342f34f8fafcd06d0e1292d55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interfaces with the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM chip. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a></li>
-<li>src/<a class="el" href="AT25M02_8cpp.html">AT25M02.cpp</a></li>
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00031">31</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a453bc57eced5b19eea3cbdf1ddd13572" name="a453bc57eced5b19eea3cbdf1ddd13572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453bc57eced5b19eea3cbdf1ddd13572">&#9670;&#160;</a></span>AT25M02()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AT25M02::AT25M02 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00034">34</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad5591f964f093107ba42bcbe1b25a747" name="ad5591f964f093107ba42bcbe1b25a747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5591f964f093107ba42bcbe1b25a747">&#9670;&#160;</a></span>csh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::csh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00239">239</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab4455f414a3e9bcdbdd633482745665a" name="ab4455f414a3e9bcdbdd633482745665a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4455f414a3e9bcdbdd633482745665a">&#9670;&#160;</a></span>csl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::csl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00231">231</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1423450348315f3603bd05021b9a1f37" name="a1423450348315f3603bd05021b9a1f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1423450348315f3603bd05021b9a1f37">&#9670;&#160;</a></span>freeBufferBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::freeBufferBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00087">87</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab8a47c94b577284350ef881413217666" name="ab8a47c94b577284350ef881413217666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a47c94b577284350ef881413217666">&#9670;&#160;</a></span>freeBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::freeBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00055">55</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad75297e8ebdd2e7246aa4e632c3d7adc" name="ad75297e8ebdd2e7246aa4e632c3d7adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75297e8ebdd2e7246aa4e632c3d7adc">&#9670;&#160;</a></span>freeMemoryBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::freeMemoryBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00077">77</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a27b38d3bdbc3e7f2e4851eef4bd599ad" name="a27b38d3bdbc3e7f2e4851eef4bd599ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b38d3bdbc3e7f2e4851eef4bd599ad">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the <a class="el" href="classAT25M02.html" title="Interfaces with the AT25M02 EEPROM chip.">AT25M02</a> EEPROM device. </p>
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00039">39</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa440e942cec35db3d916e5b52c0bcd61" name="aa440e942cec35db3d916e5b52c0bcd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa440e942cec35db3d916e5b52c0bcd61">&#9670;&#160;</a></span>isReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AT25M02::isReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00187">187</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a168c0381bff9add840001244472de416" name="a168c0381bff9add840001244472de416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168c0381bff9add840001244472de416">&#9670;&#160;</a></span>readData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AT25M02::readData </td>
+          <td>(</td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00172">172</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a45e32edd992631d6e2ceed29e1e2e567" name="a45e32edd992631d6e2ceed29e1e2e567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e32edd992631d6e2ceed29e1e2e567">&#9670;&#160;</a></span>readMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::readMemory </td>
+          <td>(</td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00141">141</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad88033c98d88836557c55fc532826975" name="ad88033c98d88836557c55fc532826975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88033c98d88836557c55fc532826975">&#9670;&#160;</a></span>readStatusReg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte AT25M02::readStatusReg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00245">245</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abaaa5359718d0addb5d7a99df71ba8a4" name="abaaa5359718d0addb5d7a99df71ba8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaaa5359718d0addb5d7a99df71ba8a4">&#9670;&#160;</a></span>readWriteBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::readWriteBuffer </td>
+          <td>(</td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00130">130</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac47e9099d07b1f219adfb5d3739e760b" name="ac47e9099d07b1f219adfb5d3739e760b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47e9099d07b1f219adfb5d3739e760b">&#9670;&#160;</a></span>sendCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::sendCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="AT25M02_8hpp.html#a2afce0a47a93eee73a314d53e4890153">Command</a>&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00260">260</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a04fb934ba602c7c6456e260bdc97edfd" name="a04fb934ba602c7c6456e260bdc97edfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04fb934ba602c7c6456e260bdc97edfd">&#9670;&#160;</a></span>setWRSR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::setWRSR </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00272">272</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa09eadfc15eb5dc3986a7edc8c2d646a" name="aa09eadfc15eb5dc3986a7edc8c2d646a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09eadfc15eb5dc3986a7edc8c2d646a">&#9670;&#160;</a></span>usedBufferBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::usedBufferBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00082">82</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae08e3fb33579e651088f50d519a04ddb" name="ae08e3fb33579e651088f50d519a04ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08e3fb33579e651088f50d519a04ddb">&#9670;&#160;</a></span>usedBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::usedBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00063">63</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5aeb75524a19dd7f88c7e46f13f60f4e" name="a5aeb75524a19dd7f88c7e46f13f60f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aeb75524a19dd7f88c7e46f13f60f4e">&#9670;&#160;</a></span>usedMemoryBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::usedMemoryBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00068">68</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a41678aaf2a05c47767d191ef919d34f9" name="a41678aaf2a05c47767d191ef919d34f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41678aaf2a05c47767d191ef919d34f9">&#9670;&#160;</a></span>waitUntilReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::waitUntilReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00289">289</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76d7be6c50a18aec76c5255db8707410" name="a76d7be6c50a18aec76c5255db8707410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d7be6c50a18aec76c5255db8707410">&#9670;&#160;</a></span>writeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AT25M02::writeData </td>
+          <td>(</td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00098">98</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a357eb337bc299d585ee47ea382c7e765" name="a357eb337bc299d585ee47ea382c7e765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357eb337bc299d585ee47ea382c7e765">&#9670;&#160;</a></span>writePage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AT25M02::writePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8cpp_source.html#l00206">206</a> of file <a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="acf22ff342f34f8fafcd06d0e1292d55e" name="acf22ff342f34f8fafcd06d0e1292d55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf22ff342f34f8fafcd06d0e1292d55e">&#9670;&#160;</a></span>chip_select_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AT25M02::chip_select_pin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00127">127</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a61cdece2870bd70461b462d647d61738" name="a61cdece2870bd70461b462d647d61738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cdece2870bd70461b462d647d61738">&#9670;&#160;</a></span>mem_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::mem_end</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00101">101</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8e5dd098f9a5356ecfd511a3670f6683" name="a8e5dd098f9a5356ecfd511a3670f6683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5dd098f9a5356ecfd511a3670f6683">&#9670;&#160;</a></span>mem_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::mem_start</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00100">100</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b52f07c537a998b135355ebb0214702" name="a8b52f07c537a998b135355ebb0214702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b52f07c537a998b135355ebb0214702">&#9670;&#160;</a></span>ram_full</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AT25M02::ram_full</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00102">102</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a51b2cdea0bb6ed2fb325a79197de84a8" name="a51b2cdea0bb6ed2fb325a79197de84a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b2cdea0bb6ed2fb325a79197de84a8">&#9670;&#160;</a></span>spi_settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPISettings AT25M02::spi_settings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00104">104</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a52584b3bad5db29ae519894e299f5f04" name="a52584b3bad5db29ae519894e299f5f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52584b3bad5db29ae519894e299f5f04">&#9670;&#160;</a></span>wb_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t AT25M02::wb_end</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00099">99</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ea15d9fe31d02997285825a36e0a698" name="a1ea15d9fe31d02997285825a36e0a698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea15d9fe31d02997285825a36e0a698">&#9670;&#160;</a></span>write_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t AT25M02::write_buffer[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AT25M02_8hpp_source.html#l00098">98</a> of file <a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="AT25M02_8hpp_source.html">AT25M02.hpp</a></li>
+<li><a class="el" href="AT25M02_8cpp_source.html">AT25M02.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classAT25M02.html">AT25M02</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

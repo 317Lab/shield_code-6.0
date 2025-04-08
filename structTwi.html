@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structTwi.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,106 +103,500 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aaf7a309b34fc2ba192282f8ba3c7958a"><td class="memItemLeft" align="right" valign="top"><a id="aaf7a309b34fc2ba192282f8ba3c7958a" name="aaf7a309b34fc2ba192282f8ba3c7958a"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_CR</b></td></tr>
-<tr class="memdesc:aaf7a309b34fc2ba192282f8ba3c7958a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x00) Control Register <br /></td></tr>
+<tr class="memitem:aaf7a309b34fc2ba192282f8ba3c7958a"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#aaf7a309b34fc2ba192282f8ba3c7958a">TWI_CR</a></td></tr>
+<tr class="memdesc:aaf7a309b34fc2ba192282f8ba3c7958a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x00) Control Register  <br /></td></tr>
 <tr class="separator:aaf7a309b34fc2ba192282f8ba3c7958a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd5c6cf893e34f8c63b6697855a720d"><td class="memItemLeft" align="right" valign="top"><a id="abcd5c6cf893e34f8c63b6697855a720d" name="abcd5c6cf893e34f8c63b6697855a720d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_MMR</b></td></tr>
-<tr class="memdesc:abcd5c6cf893e34f8c63b6697855a720d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x04) Master Mode Register <br /></td></tr>
+<tr class="memitem:abcd5c6cf893e34f8c63b6697855a720d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#abcd5c6cf893e34f8c63b6697855a720d">TWI_MMR</a></td></tr>
+<tr class="memdesc:abcd5c6cf893e34f8c63b6697855a720d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x04) Master Mode Register  <br /></td></tr>
 <tr class="separator:abcd5c6cf893e34f8c63b6697855a720d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb2e9c92ee9635dcd338f09032cd4e6f"><td class="memItemLeft" align="right" valign="top"><a id="afb2e9c92ee9635dcd338f09032cd4e6f" name="afb2e9c92ee9635dcd338f09032cd4e6f"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_SMR</b></td></tr>
-<tr class="memdesc:afb2e9c92ee9635dcd338f09032cd4e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x08) Slave Mode Register <br /></td></tr>
+<tr class="memitem:afb2e9c92ee9635dcd338f09032cd4e6f"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#afb2e9c92ee9635dcd338f09032cd4e6f">TWI_SMR</a></td></tr>
+<tr class="memdesc:afb2e9c92ee9635dcd338f09032cd4e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x08) Slave Mode Register  <br /></td></tr>
 <tr class="separator:afb2e9c92ee9635dcd338f09032cd4e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a389192128269dc9ab13c3fb99553118d"><td class="memItemLeft" align="right" valign="top"><a id="a389192128269dc9ab13c3fb99553118d" name="a389192128269dc9ab13c3fb99553118d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_IADR</b></td></tr>
-<tr class="memdesc:a389192128269dc9ab13c3fb99553118d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x0C) Internal Address Register <br /></td></tr>
+<tr class="memitem:a389192128269dc9ab13c3fb99553118d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a389192128269dc9ab13c3fb99553118d">TWI_IADR</a></td></tr>
+<tr class="memdesc:a389192128269dc9ab13c3fb99553118d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x0C) Internal Address Register  <br /></td></tr>
 <tr class="separator:a389192128269dc9ab13c3fb99553118d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1722c85b8de729cb9eb026e2f7c05392"><td class="memItemLeft" align="right" valign="top"><a id="a1722c85b8de729cb9eb026e2f7c05392" name="a1722c85b8de729cb9eb026e2f7c05392"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_CWGR</b></td></tr>
-<tr class="memdesc:a1722c85b8de729cb9eb026e2f7c05392"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10) Clock Waveform Generator Register <br /></td></tr>
+<tr class="memitem:a1722c85b8de729cb9eb026e2f7c05392"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a1722c85b8de729cb9eb026e2f7c05392">TWI_CWGR</a></td></tr>
+<tr class="memdesc:a1722c85b8de729cb9eb026e2f7c05392"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10) Clock Waveform Generator Register  <br /></td></tr>
 <tr class="separator:a1722c85b8de729cb9eb026e2f7c05392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ce3ad456b5e37d49519aa50e785042"><td class="memItemLeft" align="right" valign="top"><a id="a53ce3ad456b5e37d49519aa50e785042" name="a53ce3ad456b5e37d49519aa50e785042"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [3]</td></tr>
+<tr class="memitem:a53ce3ad456b5e37d49519aa50e785042"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a53ce3ad456b5e37d49519aa50e785042">Reserved1</a> [3]</td></tr>
 <tr class="separator:a53ce3ad456b5e37d49519aa50e785042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a013eb3ffaa279bf7407970b234673320"><td class="memItemLeft" align="right" valign="top"><a id="a013eb3ffaa279bf7407970b234673320" name="a013eb3ffaa279bf7407970b234673320"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_SR</b></td></tr>
-<tr class="memdesc:a013eb3ffaa279bf7407970b234673320"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x20) Status Register <br /></td></tr>
+<tr class="memitem:a013eb3ffaa279bf7407970b234673320"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a013eb3ffaa279bf7407970b234673320">TWI_SR</a></td></tr>
+<tr class="memdesc:a013eb3ffaa279bf7407970b234673320"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x20) Status Register  <br /></td></tr>
 <tr class="separator:a013eb3ffaa279bf7407970b234673320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab05d7323a22bbfe00d1f4539ea50e79f"><td class="memItemLeft" align="right" valign="top"><a id="ab05d7323a22bbfe00d1f4539ea50e79f" name="ab05d7323a22bbfe00d1f4539ea50e79f"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_IER</b></td></tr>
-<tr class="memdesc:ab05d7323a22bbfe00d1f4539ea50e79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x24) Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:ab05d7323a22bbfe00d1f4539ea50e79f"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#ab05d7323a22bbfe00d1f4539ea50e79f">TWI_IER</a></td></tr>
+<tr class="memdesc:ab05d7323a22bbfe00d1f4539ea50e79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x24) Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:ab05d7323a22bbfe00d1f4539ea50e79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7714425c70adfa8fc6079c085c8c19b0"><td class="memItemLeft" align="right" valign="top"><a id="a7714425c70adfa8fc6079c085c8c19b0" name="a7714425c70adfa8fc6079c085c8c19b0"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_IDR</b></td></tr>
-<tr class="memdesc:a7714425c70adfa8fc6079c085c8c19b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x28) Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:a7714425c70adfa8fc6079c085c8c19b0"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a7714425c70adfa8fc6079c085c8c19b0">TWI_IDR</a></td></tr>
+<tr class="memdesc:a7714425c70adfa8fc6079c085c8c19b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x28) Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:a7714425c70adfa8fc6079c085c8c19b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedd5037a1d812ed638d2eee16bc76e13"><td class="memItemLeft" align="right" valign="top"><a id="aedd5037a1d812ed638d2eee16bc76e13" name="aedd5037a1d812ed638d2eee16bc76e13"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_IMR</b></td></tr>
-<tr class="memdesc:aedd5037a1d812ed638d2eee16bc76e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x2C) Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:aedd5037a1d812ed638d2eee16bc76e13"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#aedd5037a1d812ed638d2eee16bc76e13">TWI_IMR</a></td></tr>
+<tr class="memdesc:aedd5037a1d812ed638d2eee16bc76e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x2C) Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:aedd5037a1d812ed638d2eee16bc76e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c234be97c419728597e2ca07d6b239e"><td class="memItemLeft" align="right" valign="top"><a id="a0c234be97c419728597e2ca07d6b239e" name="a0c234be97c419728597e2ca07d6b239e"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_RHR</b></td></tr>
-<tr class="memdesc:a0c234be97c419728597e2ca07d6b239e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x30) Receive Holding Register <br /></td></tr>
+<tr class="memitem:a0c234be97c419728597e2ca07d6b239e"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a0c234be97c419728597e2ca07d6b239e">TWI_RHR</a></td></tr>
+<tr class="memdesc:a0c234be97c419728597e2ca07d6b239e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x30) Receive Holding Register  <br /></td></tr>
 <tr class="separator:a0c234be97c419728597e2ca07d6b239e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72e7a949703588154913e818201b704"><td class="memItemLeft" align="right" valign="top"><a id="ad72e7a949703588154913e818201b704" name="ad72e7a949703588154913e818201b704"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_THR</b></td></tr>
-<tr class="memdesc:ad72e7a949703588154913e818201b704"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x34) Transmit Holding Register <br /></td></tr>
+<tr class="memitem:ad72e7a949703588154913e818201b704"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#ad72e7a949703588154913e818201b704">TWI_THR</a></td></tr>
+<tr class="memdesc:ad72e7a949703588154913e818201b704"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x34) Transmit Holding Register  <br /></td></tr>
 <tr class="separator:ad72e7a949703588154913e818201b704"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4b53d2f7da966be7ee3b64c06c06e3d"><td class="memItemLeft" align="right" valign="top"><a id="ab4b53d2f7da966be7ee3b64c06c06e3d" name="ab4b53d2f7da966be7ee3b64c06c06e3d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [50]</td></tr>
+<tr class="memitem:ab4b53d2f7da966be7ee3b64c06c06e3d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#ab4b53d2f7da966be7ee3b64c06c06e3d">Reserved2</a> [50]</td></tr>
 <tr class="separator:ab4b53d2f7da966be7ee3b64c06c06e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b005f27248c1e140bd158b228b6880"><td class="memItemLeft" align="right" valign="top"><a id="a43b005f27248c1e140bd158b228b6880" name="a43b005f27248c1e140bd158b228b6880"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_RPR</b></td></tr>
-<tr class="memdesc:a43b005f27248c1e140bd158b228b6880"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x100) Receive Pointer Register <br /></td></tr>
+<tr class="memitem:a43b005f27248c1e140bd158b228b6880"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a43b005f27248c1e140bd158b228b6880">TWI_RPR</a></td></tr>
+<tr class="memdesc:a43b005f27248c1e140bd158b228b6880"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x100) Receive Pointer Register  <br /></td></tr>
 <tr class="separator:a43b005f27248c1e140bd158b228b6880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b2c40bc3760ba2d2da1caea051e567a"><td class="memItemLeft" align="right" valign="top"><a id="a0b2c40bc3760ba2d2da1caea051e567a" name="a0b2c40bc3760ba2d2da1caea051e567a"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_RCR</b></td></tr>
-<tr class="memdesc:a0b2c40bc3760ba2d2da1caea051e567a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x104) Receive Counter Register <br /></td></tr>
+<tr class="memitem:a0b2c40bc3760ba2d2da1caea051e567a"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a0b2c40bc3760ba2d2da1caea051e567a">TWI_RCR</a></td></tr>
+<tr class="memdesc:a0b2c40bc3760ba2d2da1caea051e567a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x104) Receive Counter Register  <br /></td></tr>
 <tr class="separator:a0b2c40bc3760ba2d2da1caea051e567a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e5862b61959dd29d1b74913a0536391"><td class="memItemLeft" align="right" valign="top"><a id="a4e5862b61959dd29d1b74913a0536391" name="a4e5862b61959dd29d1b74913a0536391"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_TPR</b></td></tr>
-<tr class="memdesc:a4e5862b61959dd29d1b74913a0536391"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x108) Transmit Pointer Register <br /></td></tr>
+<tr class="memitem:a4e5862b61959dd29d1b74913a0536391"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a4e5862b61959dd29d1b74913a0536391">TWI_TPR</a></td></tr>
+<tr class="memdesc:a4e5862b61959dd29d1b74913a0536391"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x108) Transmit Pointer Register  <br /></td></tr>
 <tr class="separator:a4e5862b61959dd29d1b74913a0536391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f03f041dffec14be73d57905d1aa311"><td class="memItemLeft" align="right" valign="top"><a id="a3f03f041dffec14be73d57905d1aa311" name="a3f03f041dffec14be73d57905d1aa311"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_TCR</b></td></tr>
-<tr class="memdesc:a3f03f041dffec14be73d57905d1aa311"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10C) Transmit Counter Register <br /></td></tr>
+<tr class="memitem:a3f03f041dffec14be73d57905d1aa311"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a3f03f041dffec14be73d57905d1aa311">TWI_TCR</a></td></tr>
+<tr class="memdesc:a3f03f041dffec14be73d57905d1aa311"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10C) Transmit Counter Register  <br /></td></tr>
 <tr class="separator:a3f03f041dffec14be73d57905d1aa311"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eb59c15171a035bb076beb4775c654d"><td class="memItemLeft" align="right" valign="top"><a id="a2eb59c15171a035bb076beb4775c654d" name="a2eb59c15171a035bb076beb4775c654d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_RNPR</b></td></tr>
-<tr class="memdesc:a2eb59c15171a035bb076beb4775c654d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x110) Receive Next Pointer Register <br /></td></tr>
+<tr class="memitem:a2eb59c15171a035bb076beb4775c654d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a2eb59c15171a035bb076beb4775c654d">TWI_RNPR</a></td></tr>
+<tr class="memdesc:a2eb59c15171a035bb076beb4775c654d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x110) Receive Next Pointer Register  <br /></td></tr>
 <tr class="separator:a2eb59c15171a035bb076beb4775c654d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f028f5a51a37f931f02580d20c6729e"><td class="memItemLeft" align="right" valign="top"><a id="a2f028f5a51a37f931f02580d20c6729e" name="a2f028f5a51a37f931f02580d20c6729e"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_RNCR</b></td></tr>
-<tr class="memdesc:a2f028f5a51a37f931f02580d20c6729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x114) Receive Next Counter Register <br /></td></tr>
+<tr class="memitem:a2f028f5a51a37f931f02580d20c6729e"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a2f028f5a51a37f931f02580d20c6729e">TWI_RNCR</a></td></tr>
+<tr class="memdesc:a2f028f5a51a37f931f02580d20c6729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x114) Receive Next Counter Register  <br /></td></tr>
 <tr class="separator:a2f028f5a51a37f931f02580d20c6729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2e3124136b411dbd4fbd27715bc6926"><td class="memItemLeft" align="right" valign="top"><a id="af2e3124136b411dbd4fbd27715bc6926" name="af2e3124136b411dbd4fbd27715bc6926"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_TNPR</b></td></tr>
-<tr class="memdesc:af2e3124136b411dbd4fbd27715bc6926"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x118) Transmit Next Pointer Register <br /></td></tr>
+<tr class="memitem:af2e3124136b411dbd4fbd27715bc6926"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#af2e3124136b411dbd4fbd27715bc6926">TWI_TNPR</a></td></tr>
+<tr class="memdesc:af2e3124136b411dbd4fbd27715bc6926"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x118) Transmit Next Pointer Register  <br /></td></tr>
 <tr class="separator:af2e3124136b411dbd4fbd27715bc6926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80673dbfab91a32eeec50ee04f27c5b5"><td class="memItemLeft" align="right" valign="top"><a id="a80673dbfab91a32eeec50ee04f27c5b5" name="a80673dbfab91a32eeec50ee04f27c5b5"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_TNCR</b></td></tr>
-<tr class="memdesc:a80673dbfab91a32eeec50ee04f27c5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x11C) Transmit Next Counter Register <br /></td></tr>
+<tr class="memitem:a80673dbfab91a32eeec50ee04f27c5b5"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a80673dbfab91a32eeec50ee04f27c5b5">TWI_TNCR</a></td></tr>
+<tr class="memdesc:a80673dbfab91a32eeec50ee04f27c5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x11C) Transmit Next Counter Register  <br /></td></tr>
 <tr class="separator:a80673dbfab91a32eeec50ee04f27c5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43769cba16dc6cc0a5ebbfda208dc9fd"><td class="memItemLeft" align="right" valign="top"><a id="a43769cba16dc6cc0a5ebbfda208dc9fd" name="a43769cba16dc6cc0a5ebbfda208dc9fd"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_PTCR</b></td></tr>
-<tr class="memdesc:a43769cba16dc6cc0a5ebbfda208dc9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x120) Transfer Control Register <br /></td></tr>
+<tr class="memitem:a43769cba16dc6cc0a5ebbfda208dc9fd"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a43769cba16dc6cc0a5ebbfda208dc9fd">TWI_PTCR</a></td></tr>
+<tr class="memdesc:a43769cba16dc6cc0a5ebbfda208dc9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x120) Transfer Control Register  <br /></td></tr>
 <tr class="separator:a43769cba16dc6cc0a5ebbfda208dc9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e2d6ba433b1df5fc4c69d6981049780"><td class="memItemLeft" align="right" valign="top"><a id="a2e2d6ba433b1df5fc4c69d6981049780" name="a2e2d6ba433b1df5fc4c69d6981049780"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TWI_PTSR</b></td></tr>
-<tr class="memdesc:a2e2d6ba433b1df5fc4c69d6981049780"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x124) Transfer Status Register <br /></td></tr>
+<tr class="memitem:a2e2d6ba433b1df5fc4c69d6981049780"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTwi.html#a2e2d6ba433b1df5fc4c69d6981049780">TWI_PTSR</a></td></tr>
+<tr class="memdesc:a2e2d6ba433b1df5fc4c69d6981049780"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x124) Transfer Status Register  <br /></td></tr>
 <tr class="separator:a2e2d6ba433b1df5fc4c69d6981049780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="twi_8h_source.html">twi.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00041">41</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a53ce3ad456b5e37d49519aa50e785042" name="a53ce3ad456b5e37d49519aa50e785042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ce3ad456b5e37d49519aa50e785042">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::Reserved1[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00047">47</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4b53d2f7da966be7ee3b64c06c06e3d" name="ab4b53d2f7da966be7ee3b64c06c06e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b53d2f7da966be7ee3b64c06c06e3d">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::Reserved2[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00054">54</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf7a309b34fc2ba192282f8ba3c7958a" name="aaf7a309b34fc2ba192282f8ba3c7958a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf7a309b34fc2ba192282f8ba3c7958a">&#9670;&#160;</a></span>TWI_CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Twi::TWI_CR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x00) Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00042">42</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a1722c85b8de729cb9eb026e2f7c05392" name="a1722c85b8de729cb9eb026e2f7c05392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1722c85b8de729cb9eb026e2f7c05392">&#9670;&#160;</a></span>TWI_CWGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_CWGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10) Clock Waveform Generator Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00046">46</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a389192128269dc9ab13c3fb99553118d" name="a389192128269dc9ab13c3fb99553118d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a389192128269dc9ab13c3fb99553118d">&#9670;&#160;</a></span>TWI_IADR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_IADR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x0C) Internal Address Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00045">45</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a7714425c70adfa8fc6079c085c8c19b0" name="a7714425c70adfa8fc6079c085c8c19b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7714425c70adfa8fc6079c085c8c19b0">&#9670;&#160;</a></span>TWI_IDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Twi::TWI_IDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x28) Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00050">50</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="ab05d7323a22bbfe00d1f4539ea50e79f" name="ab05d7323a22bbfe00d1f4539ea50e79f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05d7323a22bbfe00d1f4539ea50e79f">&#9670;&#160;</a></span>TWI_IER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Twi::TWI_IER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x24) Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00049">49</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="aedd5037a1d812ed638d2eee16bc76e13" name="aedd5037a1d812ed638d2eee16bc76e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd5037a1d812ed638d2eee16bc76e13">&#9670;&#160;</a></span>TWI_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::TWI_IMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x2C) Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00051">51</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="abcd5c6cf893e34f8c63b6697855a720d" name="abcd5c6cf893e34f8c63b6697855a720d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd5c6cf893e34f8c63b6697855a720d">&#9670;&#160;</a></span>TWI_MMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_MMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x04) Master Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00043">43</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a43769cba16dc6cc0a5ebbfda208dc9fd" name="a43769cba16dc6cc0a5ebbfda208dc9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43769cba16dc6cc0a5ebbfda208dc9fd">&#9670;&#160;</a></span>TWI_PTCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Twi::TWI_PTCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x120) Transfer Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00063">63</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e2d6ba433b1df5fc4c69d6981049780" name="a2e2d6ba433b1df5fc4c69d6981049780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2d6ba433b1df5fc4c69d6981049780">&#9670;&#160;</a></span>TWI_PTSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::TWI_PTSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x124) Transfer Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00064">64</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b2c40bc3760ba2d2da1caea051e567a" name="a0b2c40bc3760ba2d2da1caea051e567a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2c40bc3760ba2d2da1caea051e567a">&#9670;&#160;</a></span>TWI_RCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_RCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x104) Receive Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00056">56</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c234be97c419728597e2ca07d6b239e" name="a0c234be97c419728597e2ca07d6b239e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c234be97c419728597e2ca07d6b239e">&#9670;&#160;</a></span>TWI_RHR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::TWI_RHR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x30) Receive Holding Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00052">52</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a2f028f5a51a37f931f02580d20c6729e" name="a2f028f5a51a37f931f02580d20c6729e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f028f5a51a37f931f02580d20c6729e">&#9670;&#160;</a></span>TWI_RNCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_RNCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x114) Receive Next Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00060">60</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a2eb59c15171a035bb076beb4775c654d" name="a2eb59c15171a035bb076beb4775c654d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb59c15171a035bb076beb4775c654d">&#9670;&#160;</a></span>TWI_RNPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_RNPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x110) Receive Next Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00059">59</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a43b005f27248c1e140bd158b228b6880" name="a43b005f27248c1e140bd158b228b6880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b005f27248c1e140bd158b228b6880">&#9670;&#160;</a></span>TWI_RPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_RPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x100) Receive Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00055">55</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="afb2e9c92ee9635dcd338f09032cd4e6f" name="afb2e9c92ee9635dcd338f09032cd4e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2e9c92ee9635dcd338f09032cd4e6f">&#9670;&#160;</a></span>TWI_SMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_SMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x08) Slave Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00044">44</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a013eb3ffaa279bf7407970b234673320" name="a013eb3ffaa279bf7407970b234673320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a013eb3ffaa279bf7407970b234673320">&#9670;&#160;</a></span>TWI_SR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Twi::TWI_SR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x20) Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00048">48</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f03f041dffec14be73d57905d1aa311" name="a3f03f041dffec14be73d57905d1aa311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f03f041dffec14be73d57905d1aa311">&#9670;&#160;</a></span>TWI_TCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_TCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x10C) Transmit Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00058">58</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="ad72e7a949703588154913e818201b704" name="ad72e7a949703588154913e818201b704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72e7a949703588154913e818201b704">&#9670;&#160;</a></span>TWI_THR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Twi::TWI_THR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x34) Transmit Holding Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00053">53</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a80673dbfab91a32eeec50ee04f27c5b5" name="a80673dbfab91a32eeec50ee04f27c5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80673dbfab91a32eeec50ee04f27c5b5">&#9670;&#160;</a></span>TWI_TNCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_TNCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x11C) Transmit Next Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00062">62</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="af2e3124136b411dbd4fbd27715bc6926" name="af2e3124136b411dbd4fbd27715bc6926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e3124136b411dbd4fbd27715bc6926">&#9670;&#160;</a></span>TWI_TNPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_TNPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x118) Transmit Next Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00061">61</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e5862b61959dd29d1b74913a0536391" name="a4e5862b61959dd29d1b74913a0536391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e5862b61959dd29d1b74913a0536391">&#9670;&#160;</a></span>TWI_TPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Twi::TWI_TPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTwi.html" title="Twi hardware registers.">Twi</a> Offset: 0x108) Transmit Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="twi_8h_source.html#l00057">57</a> of file <a class="el" href="twi_8h_source.html">twi.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="twi_8h_source.html">twi.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTwi.html">Twi</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

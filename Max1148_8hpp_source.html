@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: include/Max1148.hpp Source File</title>
+<title>Shield Code: Max1148.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Max1148_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Max1148.hpp</div></div>
 </div><!--header-->
@@ -91,49 +107,68 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define SPI_SPEED 2000000</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define SPI_MODE SPI_MODE0</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define ADC_CHANNEL 0</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define ADC_PIN 10</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define ADC_CS_PIN 10</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define ADC_READ 0x00</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#a0056b7fdd0f81fad9cd38e9fd389a4b6">   32</a></span><span class="preprocessor">#define SPI_SPEED 2000000</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#ab1dcc9464e3fcb94922386e8a7f53f21">   33</a></span><span class="preprocessor">#define SPI_MODE SPI_MODE0</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">   34</a></span><span class="preprocessor">#define ADC_CHANNEL 0</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#af458889265f213625129e2dd0707a69b">   35</a></span><span class="preprocessor">#define ADC_PIN 10</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#a5218409ffc6cf938fa4edce83ad05ff9">   36</a></span><span class="preprocessor">#define ADC_CS_PIN 10</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#a55efe21d802352cd3d833f3bc9a2cbf9">   37</a></span><span class="preprocessor">#define ADC_READ 0x00</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">   44</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> : uint8_t{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    CHAN0 = 0x8F,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    CHAN1 = 0xCF,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    CHAN2 = 0x9F,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    CHAN3 = 0xDF,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    CHAN4 = 0xAF,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    CHAN5 = 0xEF,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    CHAN6 = 0xBF,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    CHAN7 = 0xFF</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15">CHAN0</a> = 0x8F,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">CHAN1</a> = 0xCF,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">CHAN2</a> = 0x9F,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75">CHAN3</a> = 0xDF,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b">CHAN4</a> = 0xAF,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428">CHAN5</a> = 0xEF,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa">CHAN6</a> = 0xBF,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumvalue" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c">CHAN7</a> = 0xFF</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classMax1148.html">   57</a></span><span class="keyword">class </span><a class="code hl_class" href="classMax1148.html">Max1148</a>{</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classMax1148.html#af77241432e77ddae9a8e8a11a6c2f8e6">   61</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classPip.html">Pip</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordtype">int</span> cs_pin;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        uint8_t channel;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">void</span> csl();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">void</span> csh();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        uint16_t adc_read_avg(<span class="keywordtype">int</span> avg_number);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        uint16_t adc_read();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725">   66</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725">cs_pin</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb">   70</a></span>        uint8_t <a class="code hl_variable" href="classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb">channel</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classMax1148.html#a8ac73d182cce6622c459b17cc5e03ee5">csl</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classMax1148.html#a2b70543fde8b535db33f31fad756bada">csh</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        uint16_t <a class="code hl_function" href="classMax1148.html#adc046ad04d5adef7473775b708bb69c2">adc_read_avg</a>(<span class="keywordtype">int</span> avg_number);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        uint16_t <a class="code hl_function" href="classMax1148.html#aae7431950ed3ff37b274524357e84f9e">adc_read</a>();</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">   94</a></span>        <a class="code hl_function" href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">Max1148</a>(<a class="code hl_enumeration" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> channel): cs_pin(ADC_CS_PIN) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            this-&gt;channel = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(channel);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            pinMode(cs_pin, OUTPUT);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">   94</a></span>        <a class="code hl_function" href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">Max1148</a>(<a class="code hl_enumeration" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> <a class="code hl_variable" href="classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb">channel</a>): <a class="code hl_variable" href="classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725">cs_pin</a>(<a class="code hl_define" href="Max1148_8hpp.html#a5218409ffc6cf938fa4edce83ad05ff9">ADC_CS_PIN</a>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            this-&gt;channel = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb">channel</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            pinMode(<a class="code hl_variable" href="classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725">cs_pin</a>, OUTPUT);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }        </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};        </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a></div><div class="ttdeci">Channel</div><div class="ttdoc">Control bytes for the Max1148 ADC. Only modifiable parameter is the channel. We use single ended,...</div><div class="ttdef"><b>Definition:</b> Max1148.hpp:44</div></div>
-<div class="ttc" id="aclassMax1148_html"><div class="ttname"><a href="classMax1148.html">Max1148</a></div><div class="ttdoc">Manages interfacing with Max1148 ADC.</div><div class="ttdef"><b>Definition:</b> Max1148.hpp:57</div></div>
-<div class="ttc" id="aclassMax1148_html_a0650fc16b26b0f3de8c69eec354c235c"><div class="ttname"><a href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">Max1148::Max1148</a></div><div class="ttdeci">Max1148(Channel channel)</div><div class="ttdoc">ADC constructor. Sets cs_pin as per ADC_CS_PIN macro. Chooses channel from Channel enum.</div><div class="ttdef"><b>Definition:</b> Max1148.hpp:94</div></div>
-<div class="ttc" id="aclassPip_html"><div class="ttname"><a href="classPip.html">Pip</a></div><div class="ttdoc">Manages the Pip sensor sweep and associated data.</div><div class="ttdef"><b>Definition:</b> Pip.hpp:33</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a5218409ffc6cf938fa4edce83ad05ff9"><div class="ttname"><a href="Max1148_8hpp.html#a5218409ffc6cf938fa4edce83ad05ff9">ADC_CS_PIN</a></div><div class="ttdeci">#define ADC_CS_PIN</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00036">Max1148.hpp:36</a></div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a></div><div class="ttdeci">Channel</div><div class="ttdoc">Control bytes for the Max1148 ADC. Only modifiable parameter is the channel. We use single ended,...</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00044">Max1148.hpp:44</a></div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa">Channel::CHAN6</a></div><div class="ttdeci">@ CHAN6</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75">Channel::CHAN3</a></div><div class="ttdeci">@ CHAN3</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">Channel::CHAN1</a></div><div class="ttdeci">@ CHAN1</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b">Channel::CHAN4</a></div><div class="ttdeci">@ CHAN4</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c">Channel::CHAN7</a></div><div class="ttdeci">@ CHAN7</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428">Channel::CHAN5</a></div><div class="ttdeci">@ CHAN5</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">Channel::CHAN2</a></div><div class="ttdeci">@ CHAN2</div></div>
+<div class="ttc" id="aMax1148_8hpp_html_a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15"><div class="ttname"><a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15">Channel::CHAN0</a></div><div class="ttdeci">@ CHAN0</div></div>
+<div class="ttc" id="aclassMax1148_html"><div class="ttname"><a href="classMax1148.html">Max1148</a></div><div class="ttdoc">Manages interfacing with Max1148 ADC.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00057">Max1148.hpp:57</a></div></div>
+<div class="ttc" id="aclassMax1148_html_a0650fc16b26b0f3de8c69eec354c235c"><div class="ttname"><a href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">Max1148::Max1148</a></div><div class="ttdeci">Max1148(Channel channel)</div><div class="ttdoc">ADC constructor. Sets cs_pin as per ADC_CS_PIN macro. Chooses channel from Channel enum.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00094">Max1148.hpp:94</a></div></div>
+<div class="ttc" id="aclassMax1148_html_a2b70543fde8b535db33f31fad756bada"><div class="ttname"><a href="classMax1148.html#a2b70543fde8b535db33f31fad756bada">Max1148::csh</a></div><div class="ttdeci">void csh()</div><div class="ttdoc">Sets the chip select pin to high.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8cpp_source.html#l00043">Max1148.cpp:43</a></div></div>
+<div class="ttc" id="aclassMax1148_html_a8ac73d182cce6622c459b17cc5e03ee5"><div class="ttname"><a href="classMax1148.html#a8ac73d182cce6622c459b17cc5e03ee5">Max1148::csl</a></div><div class="ttdeci">void csl()</div><div class="ttdoc">Sets the chip select pin to low.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8cpp_source.html#l00038">Max1148.cpp:38</a></div></div>
+<div class="ttc" id="aclassMax1148_html_aae7431950ed3ff37b274524357e84f9e"><div class="ttname"><a href="classMax1148.html#aae7431950ed3ff37b274524357e84f9e">Max1148::adc_read</a></div><div class="ttdeci">uint16_t adc_read()</div><div class="ttdoc">Reads a single ADC value from the Max1148 ADC. Used in adc_read_avg.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8cpp_source.html#l00016">Max1148.cpp:16</a></div></div>
+<div class="ttc" id="aclassMax1148_html_ab3bb128f7ba48990cb34e28570fffdfb"><div class="ttname"><a href="classMax1148.html#ab3bb128f7ba48990cb34e28570fffdfb">Max1148::channel</a></div><div class="ttdeci">uint8_t channel</div><div class="ttdoc">Channel for the ADC. Selected in the constructor.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00070">Max1148.hpp:70</a></div></div>
+<div class="ttc" id="aclassMax1148_html_ac3485ddf1fa65ae90317ba2acf628725"><div class="ttname"><a href="classMax1148.html#ac3485ddf1fa65ae90317ba2acf628725">Max1148::cs_pin</a></div><div class="ttdeci">int cs_pin</div><div class="ttdoc">Chip select pin for the ADC.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8hpp_source.html#l00066">Max1148.hpp:66</a></div></div>
+<div class="ttc" id="aclassMax1148_html_adc046ad04d5adef7473775b708bb69c2"><div class="ttname"><a href="classMax1148.html#adc046ad04d5adef7473775b708bb69c2">Max1148::adc_read_avg</a></div><div class="ttdeci">uint16_t adc_read_avg(int avg_number)</div><div class="ttdoc">Reads an average ADC value from the Max1148 ADC. Uses Arduino's SPI library.</div><div class="ttdef"><b>Definition:</b> <a href="Max1148_8cpp_source.html#l00003">Max1148.cpp:3</a></div></div>
+<div class="ttc" id="aclassPip_html"><div class="ttname"><a href="classPip.html">Pip</a></div><div class="ttdoc">Manages the Pip sensor sweep and associated data.</div><div class="ttdef"><b>Definition:</b> <a href="Pip_8hpp_source.html#l00033">Pip.hpp:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="Max1148_8hpp.html">Max1148.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

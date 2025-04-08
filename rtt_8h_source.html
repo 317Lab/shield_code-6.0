@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: src/cmsis_include/component/rtt.h Source File</title>
+<title>Shield Code: rtt.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rtt_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,16 +88,11 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html">cmsis_include</a></li><li class="navelem"><a class="el" href="dir_cf3f98327ed32b37c04c90509765bc66.html">component</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">rtt.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
+<a href="rtt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*                  Atmel Microcontroller Software Support                      */</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*                       SAM Software Package License                           */</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/* ---------------------------------------------------------------------------- */</span></div>
@@ -120,34 +136,38 @@ $(function() {
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="structRtt.html">Rtt</a>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">/* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/* -------- RTT_MR : (RTT Offset: 0x00) Mode Register -------- */</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define RTT_MR_RTPRES_Pos 0</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define RTT_MR_RTPRES_Msk (0xffffu &lt;&lt; RTT_MR_RTPRES_Pos) </span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define RTT_MR_RTPRES(value) ((RTT_MR_RTPRES_Msk &amp; ((value) &lt;&lt; RTT_MR_RTPRES_Pos)))</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define RTT_MR_ALMIEN (0x1u &lt;&lt; 16) </span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define RTT_MR_RTTINCIEN (0x1u &lt;&lt; 17) </span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define RTT_MR_RTTRST (0x1u &lt;&lt; 18) </span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="rtt_8h.html#a8d85794f6786a6c9f30cd78964050d86">   49</a></span><span class="preprocessor">#define RTT_MR_RTPRES_Pos 0</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="rtt_8h.html#acdd4a8c9acdf4343ed2a25240437a1b2">   50</a></span><span class="preprocessor">#define RTT_MR_RTPRES_Msk (0xffffu &lt;&lt; RTT_MR_RTPRES_Pos) </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="rtt_8h.html#a22e0d358af0c9ca57a365afb7e30df8d">   51</a></span><span class="preprocessor">#define RTT_MR_RTPRES(value) ((RTT_MR_RTPRES_Msk &amp; ((value) &lt;&lt; RTT_MR_RTPRES_Pos)))</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="rtt_8h.html#a67e177c6b2e40adc61fcfe62f8675e52">   52</a></span><span class="preprocessor">#define RTT_MR_ALMIEN (0x1u &lt;&lt; 16) </span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="rtt_8h.html#ab6afde8057293ffb46379444202a7958">   53</a></span><span class="preprocessor">#define RTT_MR_RTTINCIEN (0x1u &lt;&lt; 17) </span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="rtt_8h.html#a482b39172ea03a76dc8b1a6a5c84aa66">   54</a></span><span class="preprocessor">#define RTT_MR_RTTRST (0x1u &lt;&lt; 18) </span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/* -------- RTT_AR : (RTT Offset: 0x04) Alarm Register -------- */</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define RTT_AR_ALMV_Pos 0</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define RTT_AR_ALMV_Msk (0xffffffffu &lt;&lt; RTT_AR_ALMV_Pos) </span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define RTT_AR_ALMV(value) ((RTT_AR_ALMV_Msk &amp; ((value) &lt;&lt; RTT_AR_ALMV_Pos)))</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="rtt_8h.html#abbd645d14d1c014c71a1c078e4a1032a">   56</a></span><span class="preprocessor">#define RTT_AR_ALMV_Pos 0</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="rtt_8h.html#a36b0d183807e73e3aa8c8b330ac66847">   57</a></span><span class="preprocessor">#define RTT_AR_ALMV_Msk (0xffffffffu &lt;&lt; RTT_AR_ALMV_Pos) </span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="rtt_8h.html#a2a9eae1ff82dee18d1c4a6c37981aac0">   58</a></span><span class="preprocessor">#define RTT_AR_ALMV(value) ((RTT_AR_ALMV_Msk &amp; ((value) &lt;&lt; RTT_AR_ALMV_Pos)))</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/* -------- RTT_VR : (RTT Offset: 0x08) Value Register -------- */</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#define RTT_VR_CRTV_Pos 0</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define RTT_VR_CRTV_Msk (0xffffffffu &lt;&lt; RTT_VR_CRTV_Pos) </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="rtt_8h.html#ac59f44445ad06093e0c81e051a0b6cca">   60</a></span><span class="preprocessor">#define RTT_VR_CRTV_Pos 0</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="rtt_8h.html#a22a7ea647f2c864cc966b55fd7243361">   61</a></span><span class="preprocessor">#define RTT_VR_CRTV_Msk (0xffffffffu &lt;&lt; RTT_VR_CRTV_Pos) </span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/* -------- RTT_SR : (RTT Offset: 0x0C) Status Register -------- */</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#define RTT_SR_ALMS (0x1u &lt;&lt; 0) </span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define RTT_SR_RTTINC (0x1u &lt;&lt; 1) </span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="rtt_8h.html#a720ace86aa6019d471e88e48ab0ebcc2">   63</a></span><span class="preprocessor">#define RTT_SR_ALMS (0x1u &lt;&lt; 0) </span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="rtt_8h.html#addbba20794cb3d55d82f040aeaac0b09">   64</a></span><span class="preprocessor">#define RTT_SR_RTTINC (0x1u &lt;&lt; 1) </span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">/* _SAM3XA_RTT_COMPONENT_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astructRtt_html"><div class="ttname"><a href="structRtt.html">Rtt</a></div><div class="ttdoc">Rtt hardware registers.</div><div class="ttdef"><b>Definition:</b> rtt.h:41</div></div>
-<div class="ttc" id="astructRtt_html_a1aff9c8586d4d75b6266f60c3562a1fd"><div class="ttname"><a href="structRtt.html#a1aff9c8586d4d75b6266f60c3562a1fd">Rtt::RTT_MR</a></div><div class="ttdeci">__IO uint32_t RTT_MR</div><div class="ttdoc">(Rtt Offset: 0x00) Mode Register</div><div class="ttdef"><b>Definition:</b> rtt.h:42</div></div>
-<div class="ttc" id="astructRtt_html_a357aa572cae79ea8256410fc3ef00a96"><div class="ttname"><a href="structRtt.html#a357aa572cae79ea8256410fc3ef00a96">Rtt::RTT_SR</a></div><div class="ttdeci">__I uint32_t RTT_SR</div><div class="ttdoc">(Rtt Offset: 0x0C) Status Register</div><div class="ttdef"><b>Definition:</b> rtt.h:45</div></div>
-<div class="ttc" id="astructRtt_html_a7a723968e381b0865eb8e63aa9dabcaf"><div class="ttname"><a href="structRtt.html#a7a723968e381b0865eb8e63aa9dabcaf">Rtt::RTT_VR</a></div><div class="ttdeci">__I uint32_t RTT_VR</div><div class="ttdoc">(Rtt Offset: 0x08) Value Register</div><div class="ttdef"><b>Definition:</b> rtt.h:44</div></div>
-<div class="ttc" id="astructRtt_html_ac8d9b69c0a5c3525e54d02f4079f8212"><div class="ttname"><a href="structRtt.html#ac8d9b69c0a5c3525e54d02f4079f8212">Rtt::RTT_AR</a></div><div class="ttdeci">__IO uint32_t RTT_AR</div><div class="ttdoc">(Rtt Offset: 0x04) Alarm Register</div><div class="ttdef"><b>Definition:</b> rtt.h:43</div></div>
+<div class="ttc" id="astructRtt_html"><div class="ttname"><a href="structRtt.html">Rtt</a></div><div class="ttdoc">Rtt hardware registers.</div><div class="ttdef"><b>Definition:</b> <a href="rtt_8h_source.html#l00041">rtt.h:41</a></div></div>
+<div class="ttc" id="astructRtt_html_a1aff9c8586d4d75b6266f60c3562a1fd"><div class="ttname"><a href="structRtt.html#a1aff9c8586d4d75b6266f60c3562a1fd">Rtt::RTT_MR</a></div><div class="ttdeci">__IO uint32_t RTT_MR</div><div class="ttdoc">(Rtt Offset: 0x00) Mode Register</div><div class="ttdef"><b>Definition:</b> <a href="rtt_8h_source.html#l00042">rtt.h:42</a></div></div>
+<div class="ttc" id="astructRtt_html_a357aa572cae79ea8256410fc3ef00a96"><div class="ttname"><a href="structRtt.html#a357aa572cae79ea8256410fc3ef00a96">Rtt::RTT_SR</a></div><div class="ttdeci">__I uint32_t RTT_SR</div><div class="ttdoc">(Rtt Offset: 0x0C) Status Register</div><div class="ttdef"><b>Definition:</b> <a href="rtt_8h_source.html#l00045">rtt.h:45</a></div></div>
+<div class="ttc" id="astructRtt_html_a7a723968e381b0865eb8e63aa9dabcaf"><div class="ttname"><a href="structRtt.html#a7a723968e381b0865eb8e63aa9dabcaf">Rtt::RTT_VR</a></div><div class="ttdeci">__I uint32_t RTT_VR</div><div class="ttdoc">(Rtt Offset: 0x08) Value Register</div><div class="ttdef"><b>Definition:</b> <a href="rtt_8h_source.html#l00044">rtt.h:44</a></div></div>
+<div class="ttc" id="astructRtt_html_ac8d9b69c0a5c3525e54d02f4079f8212"><div class="ttname"><a href="structRtt.html#ac8d9b69c0a5c3525e54d02f4079f8212">Rtt::RTT_AR</a></div><div class="ttdeci">__IO uint32_t RTT_AR</div><div class="ttdoc">(Rtt Offset: 0x04) Alarm Register</div><div class="ttdef"><b>Definition:</b> <a href="rtt_8h_source.html#l00043">rtt.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c30fbef3e6b4ec2d2ec786d2dc2f590e.html">cmsis_include</a></li><li class="navelem"><a class="el" href="dir_cf3f98327ed32b37c04c90509765bc66.html">component</a></li><li class="navelem"><a class="el" href="rtt_8h.html">rtt.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

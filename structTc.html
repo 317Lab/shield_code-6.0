@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structTc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -75,6 +95,8 @@ $(function() {
   <div class="headertitle"><div class="title">Tc Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="tc_8h_source.html">tc.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Tc:</div>
 <div class="dyncontent">
@@ -83,57 +105,233 @@ Collaboration diagram for Tc:</div>
 <area shape="rect" title=" " alt="" coords="30,93,69,119"/>
 <area shape="rect" href="structTcChannel.html" title="TcChannel hardware registers." alt="" coords="5,5,93,31"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8f72d05a1da2c7d018bc85d1c21f28ed"><td class="memItemLeft" align="right" valign="top"><a id="a8f72d05a1da2c7d018bc85d1c21f28ed" name="a8f72d05a1da2c7d018bc85d1c21f28ed"></a>
-<a class="el" href="structTcChannel.html">TcChannel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TC_CHANNEL</b> [TCCHANNEL_NUMBER]</td></tr>
-<tr class="memdesc:a8f72d05a1da2c7d018bc85d1c21f28ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0x0) channel = 0 .. 2 <br /></td></tr>
+<tr class="memitem:a8f72d05a1da2c7d018bc85d1c21f28ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTcChannel.html">TcChannel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#a8f72d05a1da2c7d018bc85d1c21f28ed">TC_CHANNEL</a> [<a class="el" href="tc_8h.html#ade643c68c03a7a68a7a0795255b7873b">TCCHANNEL_NUMBER</a>]</td></tr>
+<tr class="memdesc:a8f72d05a1da2c7d018bc85d1c21f28ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0x0) channel = 0 .. 2  <br /></td></tr>
 <tr class="separator:a8f72d05a1da2c7d018bc85d1c21f28ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add680abf1976e4aa74e780a8afabdc98"><td class="memItemLeft" align="right" valign="top"><a id="add680abf1976e4aa74e780a8afabdc98" name="add680abf1976e4aa74e780a8afabdc98"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_BCR</b></td></tr>
-<tr class="memdesc:add680abf1976e4aa74e780a8afabdc98"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC0) Block Control Register <br /></td></tr>
+<tr class="memitem:add680abf1976e4aa74e780a8afabdc98"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#add680abf1976e4aa74e780a8afabdc98">TC_BCR</a></td></tr>
+<tr class="memdesc:add680abf1976e4aa74e780a8afabdc98"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC0) Block Control Register  <br /></td></tr>
 <tr class="separator:add680abf1976e4aa74e780a8afabdc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7698401b4a2eac1d1f446beeafe055f2"><td class="memItemLeft" align="right" valign="top"><a id="a7698401b4a2eac1d1f446beeafe055f2" name="a7698401b4a2eac1d1f446beeafe055f2"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_BMR</b></td></tr>
-<tr class="memdesc:a7698401b4a2eac1d1f446beeafe055f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC4) Block Mode Register <br /></td></tr>
+<tr class="memitem:a7698401b4a2eac1d1f446beeafe055f2"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#a7698401b4a2eac1d1f446beeafe055f2">TC_BMR</a></td></tr>
+<tr class="memdesc:a7698401b4a2eac1d1f446beeafe055f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC4) Block Mode Register  <br /></td></tr>
 <tr class="separator:a7698401b4a2eac1d1f446beeafe055f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf1c2a721c6df49b1adec48465ba72bd"><td class="memItemLeft" align="right" valign="top"><a id="adf1c2a721c6df49b1adec48465ba72bd" name="adf1c2a721c6df49b1adec48465ba72bd"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_QIER</b></td></tr>
-<tr class="memdesc:adf1c2a721c6df49b1adec48465ba72bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC8) QDEC Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:adf1c2a721c6df49b1adec48465ba72bd"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#adf1c2a721c6df49b1adec48465ba72bd">TC_QIER</a></td></tr>
+<tr class="memdesc:adf1c2a721c6df49b1adec48465ba72bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xC8) QDEC Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:adf1c2a721c6df49b1adec48465ba72bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d94aeb6db2d212dc5b8b041d033e23d"><td class="memItemLeft" align="right" valign="top"><a id="a4d94aeb6db2d212dc5b8b041d033e23d" name="a4d94aeb6db2d212dc5b8b041d033e23d"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_QIDR</b></td></tr>
-<tr class="memdesc:a4d94aeb6db2d212dc5b8b041d033e23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xCC) QDEC Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:a4d94aeb6db2d212dc5b8b041d033e23d"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#a4d94aeb6db2d212dc5b8b041d033e23d">TC_QIDR</a></td></tr>
+<tr class="memdesc:a4d94aeb6db2d212dc5b8b041d033e23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xCC) QDEC Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:a4d94aeb6db2d212dc5b8b041d033e23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a816446778b9add8aa4ade9dbc7bba5e5"><td class="memItemLeft" align="right" valign="top"><a id="a816446778b9add8aa4ade9dbc7bba5e5" name="a816446778b9add8aa4ade9dbc7bba5e5"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_QIMR</b></td></tr>
-<tr class="memdesc:a816446778b9add8aa4ade9dbc7bba5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD0) QDEC Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:a816446778b9add8aa4ade9dbc7bba5e5"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#a816446778b9add8aa4ade9dbc7bba5e5">TC_QIMR</a></td></tr>
+<tr class="memdesc:a816446778b9add8aa4ade9dbc7bba5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD0) QDEC Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:a816446778b9add8aa4ade9dbc7bba5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab8e80012810a89f37cea6bb565ecee"><td class="memItemLeft" align="right" valign="top"><a id="afab8e80012810a89f37cea6bb565ecee" name="afab8e80012810a89f37cea6bb565ecee"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_QISR</b></td></tr>
-<tr class="memdesc:afab8e80012810a89f37cea6bb565ecee"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD4) QDEC Interrupt Status Register <br /></td></tr>
+<tr class="memitem:afab8e80012810a89f37cea6bb565ecee"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#afab8e80012810a89f37cea6bb565ecee">TC_QISR</a></td></tr>
+<tr class="memdesc:afab8e80012810a89f37cea6bb565ecee"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD4) QDEC Interrupt Status Register  <br /></td></tr>
 <tr class="separator:afab8e80012810a89f37cea6bb565ecee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1948e26cff45c67052d07b1a9b679356"><td class="memItemLeft" align="right" valign="top"><a id="a1948e26cff45c67052d07b1a9b679356" name="a1948e26cff45c67052d07b1a9b679356"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_FMR</b></td></tr>
-<tr class="memdesc:a1948e26cff45c67052d07b1a9b679356"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD8) Fault Mode Register <br /></td></tr>
+<tr class="memitem:a1948e26cff45c67052d07b1a9b679356"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#a1948e26cff45c67052d07b1a9b679356">TC_FMR</a></td></tr>
+<tr class="memdesc:a1948e26cff45c67052d07b1a9b679356"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xD8) Fault Mode Register  <br /></td></tr>
 <tr class="separator:a1948e26cff45c67052d07b1a9b679356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac70c7d8afb0897c8fc00b0830f4e86b9"><td class="memItemLeft" align="right" valign="top"><a id="ac70c7d8afb0897c8fc00b0830f4e86b9" name="ac70c7d8afb0897c8fc00b0830f4e86b9"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [2]</td></tr>
+<tr class="memitem:ac70c7d8afb0897c8fc00b0830f4e86b9"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#ac70c7d8afb0897c8fc00b0830f4e86b9">Reserved1</a> [2]</td></tr>
 <tr class="separator:ac70c7d8afb0897c8fc00b0830f4e86b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae1f7f0f396426804c11a9ff19f253ef"><td class="memItemLeft" align="right" valign="top"><a id="aae1f7f0f396426804c11a9ff19f253ef" name="aae1f7f0f396426804c11a9ff19f253ef"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TC_WPMR</b></td></tr>
-<tr class="memdesc:aae1f7f0f396426804c11a9ff19f253ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xE4) Write Protection Mode Register <br /></td></tr>
+<tr class="memitem:aae1f7f0f396426804c11a9ff19f253ef"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTc.html#aae1f7f0f396426804c11a9ff19f253ef">TC_WPMR</a></td></tr>
+<tr class="memdesc:aae1f7f0f396426804c11a9ff19f253ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structTc.html">Tc</a> Offset: 0xE4) Write Protection Mode Register  <br /></td></tr>
 <tr class="separator:aae1f7f0f396426804c11a9ff19f253ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00058">58</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac70c7d8afb0897c8fc00b0830f4e86b9" name="ac70c7d8afb0897c8fc00b0830f4e86b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70c7d8afb0897c8fc00b0830f4e86b9">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Tc::Reserved1[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00067">67</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="add680abf1976e4aa74e780a8afabdc98" name="add680abf1976e4aa74e780a8afabdc98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add680abf1976e4aa74e780a8afabdc98">&#9670;&#160;</a></span>TC_BCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Tc::TC_BCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xC0) Block Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00060">60</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="a7698401b4a2eac1d1f446beeafe055f2" name="a7698401b4a2eac1d1f446beeafe055f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7698401b4a2eac1d1f446beeafe055f2">&#9670;&#160;</a></span>TC_BMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Tc::TC_BMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xC4) Block Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00061">61</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f72d05a1da2c7d018bc85d1c21f28ed" name="a8f72d05a1da2c7d018bc85d1c21f28ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f72d05a1da2c7d018bc85d1c21f28ed">&#9670;&#160;</a></span>TC_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTcChannel.html">TcChannel</a> Tc::TC_CHANNEL[<a class="el" href="tc_8h.html#ade643c68c03a7a68a7a0795255b7873b">TCCHANNEL_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0x0) channel = 0 .. 2 </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00059">59</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="a1948e26cff45c67052d07b1a9b679356" name="a1948e26cff45c67052d07b1a9b679356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1948e26cff45c67052d07b1a9b679356">&#9670;&#160;</a></span>TC_FMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Tc::TC_FMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xD8) Fault Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00066">66</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d94aeb6db2d212dc5b8b041d033e23d" name="a4d94aeb6db2d212dc5b8b041d033e23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d94aeb6db2d212dc5b8b041d033e23d">&#9670;&#160;</a></span>TC_QIDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Tc::TC_QIDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xCC) QDEC Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00063">63</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="adf1c2a721c6df49b1adec48465ba72bd" name="adf1c2a721c6df49b1adec48465ba72bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf1c2a721c6df49b1adec48465ba72bd">&#9670;&#160;</a></span>TC_QIER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Tc::TC_QIER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xC8) QDEC Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00062">62</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="a816446778b9add8aa4ade9dbc7bba5e5" name="a816446778b9add8aa4ade9dbc7bba5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816446778b9add8aa4ade9dbc7bba5e5">&#9670;&#160;</a></span>TC_QIMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Tc::TC_QIMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xD0) QDEC Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00064">64</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="afab8e80012810a89f37cea6bb565ecee" name="afab8e80012810a89f37cea6bb565ecee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab8e80012810a89f37cea6bb565ecee">&#9670;&#160;</a></span>TC_QISR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Tc::TC_QISR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xD4) QDEC Interrupt Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00065">65</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
+<a id="aae1f7f0f396426804c11a9ff19f253ef" name="aae1f7f0f396426804c11a9ff19f253ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1f7f0f396426804c11a9ff19f253ef">&#9670;&#160;</a></span>TC_WPMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Tc::TC_WPMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structTc.html">Tc</a> Offset: 0xE4) Write Protection Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="tc_8h_source.html#l00068">68</a> of file <a class="el" href="tc_8h_source.html">tc.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="tc_8h_source.html">tc.h</a></li>
+<li><a class="el" href="tc_8h_source.html">tc.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTc.html">Tc</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

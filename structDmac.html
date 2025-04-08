@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structDmac.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -75,6 +95,8 @@ $(function() {
   <div class="headertitle"><div class="title">Dmac Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dmac_8h_source.html">dmac.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Dmac:</div>
 <div class="dyncontent">
@@ -83,87 +105,395 @@ Collaboration diagram for Dmac:</div>
 <area shape="rect" title=" " alt="" coords="32,93,92,119"/>
 <area shape="rect" href="structDmacCh__num.html" title="DmacCh_num hardware registers." alt="" coords="5,5,119,31"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4df2843d9102f3ed54d7a46055771a65"><td class="memItemLeft" align="right" valign="top"><a id="a4df2843d9102f3ed54d7a46055771a65" name="a4df2843d9102f3ed54d7a46055771a65"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_GCFG</b></td></tr>
-<tr class="memdesc:a4df2843d9102f3ed54d7a46055771a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x000) DMAC Global Configuration Register <br /></td></tr>
+<tr class="memitem:a4df2843d9102f3ed54d7a46055771a65"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a4df2843d9102f3ed54d7a46055771a65">DMAC_GCFG</a></td></tr>
+<tr class="memdesc:a4df2843d9102f3ed54d7a46055771a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x000) DMAC Global Configuration Register  <br /></td></tr>
 <tr class="separator:a4df2843d9102f3ed54d7a46055771a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c117dafc19fd4fa1813c201cbf7627"><td class="memItemLeft" align="right" valign="top"><a id="a26c117dafc19fd4fa1813c201cbf7627" name="a26c117dafc19fd4fa1813c201cbf7627"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_EN</b></td></tr>
-<tr class="memdesc:a26c117dafc19fd4fa1813c201cbf7627"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x004) DMAC Enable Register <br /></td></tr>
+<tr class="memitem:a26c117dafc19fd4fa1813c201cbf7627"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a26c117dafc19fd4fa1813c201cbf7627">DMAC_EN</a></td></tr>
+<tr class="memdesc:a26c117dafc19fd4fa1813c201cbf7627"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x004) DMAC Enable Register  <br /></td></tr>
 <tr class="separator:a26c117dafc19fd4fa1813c201cbf7627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f248de3c1128e7c93980a071eef0acb"><td class="memItemLeft" align="right" valign="top"><a id="a3f248de3c1128e7c93980a071eef0acb" name="a3f248de3c1128e7c93980a071eef0acb"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_SREQ</b></td></tr>
-<tr class="memdesc:a3f248de3c1128e7c93980a071eef0acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x008) DMAC Software Single Request Register <br /></td></tr>
+<tr class="memitem:a3f248de3c1128e7c93980a071eef0acb"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a3f248de3c1128e7c93980a071eef0acb">DMAC_SREQ</a></td></tr>
+<tr class="memdesc:a3f248de3c1128e7c93980a071eef0acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x008) DMAC Software Single Request Register  <br /></td></tr>
 <tr class="separator:a3f248de3c1128e7c93980a071eef0acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e9ee1796b3daa2988e240d7452e8f09"><td class="memItemLeft" align="right" valign="top"><a id="a3e9ee1796b3daa2988e240d7452e8f09" name="a3e9ee1796b3daa2988e240d7452e8f09"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CREQ</b></td></tr>
-<tr class="memdesc:a3e9ee1796b3daa2988e240d7452e8f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x00C) DMAC Software Chunk Transfer Request Register <br /></td></tr>
+<tr class="memitem:a3e9ee1796b3daa2988e240d7452e8f09"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a3e9ee1796b3daa2988e240d7452e8f09">DMAC_CREQ</a></td></tr>
+<tr class="memdesc:a3e9ee1796b3daa2988e240d7452e8f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x00C) DMAC Software Chunk Transfer Request Register  <br /></td></tr>
 <tr class="separator:a3e9ee1796b3daa2988e240d7452e8f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad568b857b28c47f048b766dcbcfab9d4"><td class="memItemLeft" align="right" valign="top"><a id="ad568b857b28c47f048b766dcbcfab9d4" name="ad568b857b28c47f048b766dcbcfab9d4"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_LAST</b></td></tr>
-<tr class="memdesc:ad568b857b28c47f048b766dcbcfab9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x010) DMAC Software Last Transfer Flag Register <br /></td></tr>
+<tr class="memitem:ad568b857b28c47f048b766dcbcfab9d4"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#ad568b857b28c47f048b766dcbcfab9d4">DMAC_LAST</a></td></tr>
+<tr class="memdesc:ad568b857b28c47f048b766dcbcfab9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x010) DMAC Software Last Transfer Flag Register  <br /></td></tr>
 <tr class="separator:ad568b857b28c47f048b766dcbcfab9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa58653f3a34339b476cc2c73ea3f3e64"><td class="memItemLeft" align="right" valign="top"><a id="aa58653f3a34339b476cc2c73ea3f3e64" name="aa58653f3a34339b476cc2c73ea3f3e64"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [1]</td></tr>
+<tr class="memitem:aa58653f3a34339b476cc2c73ea3f3e64"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#aa58653f3a34339b476cc2c73ea3f3e64">Reserved1</a> [1]</td></tr>
 <tr class="separator:aa58653f3a34339b476cc2c73ea3f3e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff0756d2ee46bf8e3be73badd72f9042"><td class="memItemLeft" align="right" valign="top"><a id="aff0756d2ee46bf8e3be73badd72f9042" name="aff0756d2ee46bf8e3be73badd72f9042"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_EBCIER</b></td></tr>
-<tr class="memdesc:aff0756d2ee46bf8e3be73badd72f9042"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x018) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register. <br /></td></tr>
+<tr class="memitem:aff0756d2ee46bf8e3be73badd72f9042"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#aff0756d2ee46bf8e3be73badd72f9042">DMAC_EBCIER</a></td></tr>
+<tr class="memdesc:aff0756d2ee46bf8e3be73badd72f9042"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x018) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register.  <br /></td></tr>
 <tr class="separator:aff0756d2ee46bf8e3be73badd72f9042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04c51017acb16d9e85ac1e6af56fc93a"><td class="memItemLeft" align="right" valign="top"><a id="a04c51017acb16d9e85ac1e6af56fc93a" name="a04c51017acb16d9e85ac1e6af56fc93a"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_EBCIDR</b></td></tr>
-<tr class="memdesc:a04c51017acb16d9e85ac1e6af56fc93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x01C) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register. <br /></td></tr>
+<tr class="memitem:a04c51017acb16d9e85ac1e6af56fc93a"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a04c51017acb16d9e85ac1e6af56fc93a">DMAC_EBCIDR</a></td></tr>
+<tr class="memdesc:a04c51017acb16d9e85ac1e6af56fc93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x01C) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.  <br /></td></tr>
 <tr class="separator:a04c51017acb16d9e85ac1e6af56fc93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c820b50433ce3731bf24f02bb876a01"><td class="memItemLeft" align="right" valign="top"><a id="a5c820b50433ce3731bf24f02bb876a01" name="a5c820b50433ce3731bf24f02bb876a01"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_EBCIMR</b></td></tr>
-<tr class="memdesc:a5c820b50433ce3731bf24f02bb876a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x020) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register. <br /></td></tr>
+<tr class="memitem:a5c820b50433ce3731bf24f02bb876a01"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a5c820b50433ce3731bf24f02bb876a01">DMAC_EBCIMR</a></td></tr>
+<tr class="memdesc:a5c820b50433ce3731bf24f02bb876a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x020) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.  <br /></td></tr>
 <tr class="separator:a5c820b50433ce3731bf24f02bb876a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05a45ee4730bce0b1dd3eb0597108878"><td class="memItemLeft" align="right" valign="top"><a id="a05a45ee4730bce0b1dd3eb0597108878" name="a05a45ee4730bce0b1dd3eb0597108878"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_EBCISR</b></td></tr>
-<tr class="memdesc:a05a45ee4730bce0b1dd3eb0597108878"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x024) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register. <br /></td></tr>
+<tr class="memitem:a05a45ee4730bce0b1dd3eb0597108878"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a05a45ee4730bce0b1dd3eb0597108878">DMAC_EBCISR</a></td></tr>
+<tr class="memdesc:a05a45ee4730bce0b1dd3eb0597108878"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x024) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.  <br /></td></tr>
 <tr class="separator:a05a45ee4730bce0b1dd3eb0597108878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d55b1dcbf4b1a8eaabb2aad7f90655"><td class="memItemLeft" align="right" valign="top"><a id="a11d55b1dcbf4b1a8eaabb2aad7f90655" name="a11d55b1dcbf4b1a8eaabb2aad7f90655"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CHER</b></td></tr>
-<tr class="memdesc:a11d55b1dcbf4b1a8eaabb2aad7f90655"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x028) DMAC Channel Handler Enable Register <br /></td></tr>
+<tr class="memitem:a11d55b1dcbf4b1a8eaabb2aad7f90655"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a11d55b1dcbf4b1a8eaabb2aad7f90655">DMAC_CHER</a></td></tr>
+<tr class="memdesc:a11d55b1dcbf4b1a8eaabb2aad7f90655"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x028) DMAC Channel Handler Enable Register  <br /></td></tr>
 <tr class="separator:a11d55b1dcbf4b1a8eaabb2aad7f90655"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550cce1c89221a946bb11e2aadd45325"><td class="memItemLeft" align="right" valign="top"><a id="a550cce1c89221a946bb11e2aadd45325" name="a550cce1c89221a946bb11e2aadd45325"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CHDR</b></td></tr>
-<tr class="memdesc:a550cce1c89221a946bb11e2aadd45325"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x02C) DMAC Channel Handler Disable Register <br /></td></tr>
+<tr class="memitem:a550cce1c89221a946bb11e2aadd45325"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a550cce1c89221a946bb11e2aadd45325">DMAC_CHDR</a></td></tr>
+<tr class="memdesc:a550cce1c89221a946bb11e2aadd45325"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x02C) DMAC Channel Handler Disable Register  <br /></td></tr>
 <tr class="separator:a550cce1c89221a946bb11e2aadd45325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6bff511f795d1c362a726a0c382e5df"><td class="memItemLeft" align="right" valign="top"><a id="aa6bff511f795d1c362a726a0c382e5df" name="aa6bff511f795d1c362a726a0c382e5df"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CHSR</b></td></tr>
-<tr class="memdesc:aa6bff511f795d1c362a726a0c382e5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x030) DMAC Channel Handler Status Register <br /></td></tr>
+<tr class="memitem:aa6bff511f795d1c362a726a0c382e5df"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#aa6bff511f795d1c362a726a0c382e5df">DMAC_CHSR</a></td></tr>
+<tr class="memdesc:aa6bff511f795d1c362a726a0c382e5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x030) DMAC Channel Handler Status Register  <br /></td></tr>
 <tr class="separator:aa6bff511f795d1c362a726a0c382e5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8340d1ef83409f6cc4a8c400081ec5c8"><td class="memItemLeft" align="right" valign="top"><a id="a8340d1ef83409f6cc4a8c400081ec5c8" name="a8340d1ef83409f6cc4a8c400081ec5c8"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [2]</td></tr>
+<tr class="memitem:a8340d1ef83409f6cc4a8c400081ec5c8"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a8340d1ef83409f6cc4a8c400081ec5c8">Reserved2</a> [2]</td></tr>
 <tr class="separator:a8340d1ef83409f6cc4a8c400081ec5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00b8a5f0dd1c954e0d85739157f5686"><td class="memItemLeft" align="right" valign="top"><a id="af00b8a5f0dd1c954e0d85739157f5686" name="af00b8a5f0dd1c954e0d85739157f5686"></a>
-<a class="el" href="structDmacCh__num.html">DmacCh_num</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_CH_NUM</b> [DMACCH_NUM_NUMBER]</td></tr>
-<tr class="memdesc:af00b8a5f0dd1c954e0d85739157f5686"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x3C) ch_num = 0 .. 5 <br /></td></tr>
+<tr class="memitem:af00b8a5f0dd1c954e0d85739157f5686"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDmacCh__num.html">DmacCh_num</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#af00b8a5f0dd1c954e0d85739157f5686">DMAC_CH_NUM</a> [<a class="el" href="dmac_8h.html#a536908541afbe0573014be8b6e74aaeb">DMACCH_NUM_NUMBER</a>]</td></tr>
+<tr class="memdesc:af00b8a5f0dd1c954e0d85739157f5686"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x3C) ch_num = 0 .. 5  <br /></td></tr>
 <tr class="separator:af00b8a5f0dd1c954e0d85739157f5686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557255d37fba335867515e798dc6e74d"><td class="memItemLeft" align="right" valign="top"><a id="a557255d37fba335867515e798dc6e74d" name="a557255d37fba335867515e798dc6e74d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved3</b> [46]</td></tr>
+<tr class="memitem:a557255d37fba335867515e798dc6e74d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a557255d37fba335867515e798dc6e74d">Reserved3</a> [46]</td></tr>
 <tr class="separator:a557255d37fba335867515e798dc6e74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b6f5038e6ea1b720cc12d6adc83f73"><td class="memItemLeft" align="right" valign="top"><a id="a87b6f5038e6ea1b720cc12d6adc83f73" name="a87b6f5038e6ea1b720cc12d6adc83f73"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_WPMR</b></td></tr>
-<tr class="memdesc:a87b6f5038e6ea1b720cc12d6adc83f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E4) DMAC Write Protect Mode Register <br /></td></tr>
+<tr class="memitem:a87b6f5038e6ea1b720cc12d6adc83f73"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#a87b6f5038e6ea1b720cc12d6adc83f73">DMAC_WPMR</a></td></tr>
+<tr class="memdesc:a87b6f5038e6ea1b720cc12d6adc83f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E4) DMAC Write Protect Mode Register  <br /></td></tr>
 <tr class="separator:a87b6f5038e6ea1b720cc12d6adc83f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb006b4c437d125b4307aee88e522c98"><td class="memItemLeft" align="right" valign="top"><a id="acb006b4c437d125b4307aee88e522c98" name="acb006b4c437d125b4307aee88e522c98"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DMAC_WPSR</b></td></tr>
-<tr class="memdesc:acb006b4c437d125b4307aee88e522c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E8) DMAC Write Protect Status Register <br /></td></tr>
+<tr class="memitem:acb006b4c437d125b4307aee88e522c98"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDmac.html#acb006b4c437d125b4307aee88e522c98">DMAC_WPSR</a></td></tr>
+<tr class="memdesc:acb006b4c437d125b4307aee88e522c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E8) DMAC Write Protect Status Register  <br /></td></tr>
 <tr class="separator:acb006b4c437d125b4307aee88e522c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00052">52</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="af00b8a5f0dd1c954e0d85739157f5686" name="af00b8a5f0dd1c954e0d85739157f5686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00b8a5f0dd1c954e0d85739157f5686">&#9670;&#160;</a></span>DMAC_CH_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structDmacCh__num.html">DmacCh_num</a> Dmac::DMAC_CH_NUM[<a class="el" href="dmac_8h.html#a536908541afbe0573014be8b6e74aaeb">DMACCH_NUM_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x3C) ch_num = 0 .. 5 </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00067">67</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a550cce1c89221a946bb11e2aadd45325" name="a550cce1c89221a946bb11e2aadd45325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550cce1c89221a946bb11e2aadd45325">&#9670;&#160;</a></span>DMAC_CHDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dmac::DMAC_CHDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x02C) DMAC Channel Handler Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00064">64</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a11d55b1dcbf4b1a8eaabb2aad7f90655" name="a11d55b1dcbf4b1a8eaabb2aad7f90655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d55b1dcbf4b1a8eaabb2aad7f90655">&#9670;&#160;</a></span>DMAC_CHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dmac::DMAC_CHER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x028) DMAC Channel Handler Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00063">63</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6bff511f795d1c362a726a0c382e5df" name="aa6bff511f795d1c362a726a0c382e5df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bff511f795d1c362a726a0c382e5df">&#9670;&#160;</a></span>DMAC_CHSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::DMAC_CHSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x030) DMAC Channel Handler Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00065">65</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e9ee1796b3daa2988e240d7452e8f09" name="a3e9ee1796b3daa2988e240d7452e8f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9ee1796b3daa2988e240d7452e8f09">&#9670;&#160;</a></span>DMAC_CREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_CREQ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x00C) DMAC Software Chunk Transfer Request Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00056">56</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a04c51017acb16d9e85ac1e6af56fc93a" name="a04c51017acb16d9e85ac1e6af56fc93a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c51017acb16d9e85ac1e6af56fc93a">&#9670;&#160;</a></span>DMAC_EBCIDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dmac::DMAC_EBCIDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x01C) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register. </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00060">60</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="aff0756d2ee46bf8e3be73badd72f9042" name="aff0756d2ee46bf8e3be73badd72f9042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0756d2ee46bf8e3be73badd72f9042">&#9670;&#160;</a></span>DMAC_EBCIER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dmac::DMAC_EBCIER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x018) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register. </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00059">59</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c820b50433ce3731bf24f02bb876a01" name="a5c820b50433ce3731bf24f02bb876a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c820b50433ce3731bf24f02bb876a01">&#9670;&#160;</a></span>DMAC_EBCIMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::DMAC_EBCIMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x020) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00061">61</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a05a45ee4730bce0b1dd3eb0597108878" name="a05a45ee4730bce0b1dd3eb0597108878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a45ee4730bce0b1dd3eb0597108878">&#9670;&#160;</a></span>DMAC_EBCISR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::DMAC_EBCISR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x024) DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00062">62</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a26c117dafc19fd4fa1813c201cbf7627" name="a26c117dafc19fd4fa1813c201cbf7627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c117dafc19fd4fa1813c201cbf7627">&#9670;&#160;</a></span>DMAC_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_EN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x004) DMAC Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00054">54</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a4df2843d9102f3ed54d7a46055771a65" name="a4df2843d9102f3ed54d7a46055771a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df2843d9102f3ed54d7a46055771a65">&#9670;&#160;</a></span>DMAC_GCFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_GCFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x000) DMAC Global Configuration Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00053">53</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="ad568b857b28c47f048b766dcbcfab9d4" name="ad568b857b28c47f048b766dcbcfab9d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad568b857b28c47f048b766dcbcfab9d4">&#9670;&#160;</a></span>DMAC_LAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_LAST</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x010) DMAC Software Last Transfer Flag Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00057">57</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f248de3c1128e7c93980a071eef0acb" name="a3f248de3c1128e7c93980a071eef0acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f248de3c1128e7c93980a071eef0acb">&#9670;&#160;</a></span>DMAC_SREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_SREQ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x008) DMAC Software Single Request Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00055">55</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a87b6f5038e6ea1b720cc12d6adc83f73" name="a87b6f5038e6ea1b720cc12d6adc83f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b6f5038e6ea1b720cc12d6adc83f73">&#9670;&#160;</a></span>DMAC_WPMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dmac::DMAC_WPMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E4) DMAC Write Protect Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00069">69</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="acb006b4c437d125b4307aee88e522c98" name="acb006b4c437d125b4307aee88e522c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb006b4c437d125b4307aee88e522c98">&#9670;&#160;</a></span>DMAC_WPSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::DMAC_WPSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDmac.html">Dmac</a> Offset: 0x1E8) DMAC Write Protect Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00070">70</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa58653f3a34339b476cc2c73ea3f3e64" name="aa58653f3a34339b476cc2c73ea3f3e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58653f3a34339b476cc2c73ea3f3e64">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::Reserved1[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00058">58</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a8340d1ef83409f6cc4a8c400081ec5c8" name="a8340d1ef83409f6cc4a8c400081ec5c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8340d1ef83409f6cc4a8c400081ec5c8">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::Reserved2[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00066">66</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
+<a id="a557255d37fba335867515e798dc6e74d" name="a557255d37fba335867515e798dc6e74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557255d37fba335867515e798dc6e74d">&#9670;&#160;</a></span>Reserved3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dmac::Reserved3[46]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dmac_8h_source.html#l00068">68</a> of file <a class="el" href="dmac_8h_source.html">dmac.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="dmac_8h_source.html">dmac.h</a></li>
+<li><a class="el" href="dmac_8h_source.html">dmac.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structDmac.html">Dmac</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: include/Max1148.hpp File Reference</title>
+<title>Shield Code: Max1148.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Max1148_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -88,9 +104,9 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Max1148.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="Max1148_8hpp__incl.png" border="0" usemap="#ainclude_2Max1148_8hpp" alt=""/></div>
-<map name="ainclude_2Max1148_8hpp" id="ainclude_2Max1148_8hpp">
-<area shape="rect" title="Header file for the Max1148 library for Dartmouth&#39;s 317 Lab. Manages ADC communication through SPI." alt="" coords="13,5,175,31"/>
+<div class="center"><img src="Max1148_8hpp__incl.png" border="0" usemap="#aMax1148_8hpp" alt=""/></div>
+<map name="aMax1148_8hpp" id="aMax1148_8hpp">
+<area shape="rect" title="Header file for the Max1148 library for Dartmouth&#39;s 317 Lab. Manages ADC communication through SPI." alt="" coords="39,5,149,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,89,104"/>
 <area shape="rect" title=" " alt="" coords="113,79,168,104"/>
 </map>
@@ -98,13 +114,14 @@ Include dependency graph for Max1148.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="Max1148_8hpp__dep__incl.png" border="0" usemap="#ainclude_2Max1148_8hppdep" alt=""/></div>
-<map name="ainclude_2Max1148_8hppdep" id="ainclude_2Max1148_8hppdep">
-<area shape="rect" title="Header file for the Max1148 library for Dartmouth&#39;s 317 Lab. Manages ADC communication through SPI." alt="" coords="146,5,307,31"/>
-<area shape="rect" href="Pip_8hpp.html" title="Header file for the Pip library for Dartmouth&#39;s 317 Lab." alt="" coords="166,79,287,104"/>
-<area shape="rect" href="PipController_8hpp_source.html" title=" " alt="" coords="5,152,189,177"/>
-<area shape="rect" href="main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="109,225,214,251"/>
-<area shape="rect" href="Pip_8cpp.html" title="Source file for the Pip library for Dartmouth&#39;s 317 Lab." alt="" coords="265,152,357,177"/>
+<div class="center"><img src="Max1148_8hpp__dep__incl.png" border="0" usemap="#aMax1148_8hppdep" alt=""/></div>
+<map name="aMax1148_8hppdep" id="aMax1148_8hppdep">
+<area shape="rect" title="Header file for the Max1148 library for Dartmouth&#39;s 317 Lab. Manages ADC communication through SPI." alt="" coords="62,5,173,31"/>
+<area shape="rect" href="Max1148_8cpp.html" title=" " alt="" coords="5,79,115,104"/>
+<area shape="rect" href="Pip_8hpp.html" title="Header file for the Pip library for Dartmouth&#39;s 317 Lab." alt="" coords="139,79,210,104"/>
+<area shape="rect" href="Pip_8cpp.html" title="Source file for the Pip library for Dartmouth&#39;s 317 Lab." alt="" coords="15,152,84,177"/>
+<area shape="rect" href="PipController_8hpp.html" title=" " alt="" coords="108,152,241,177"/>
+<area shape="rect" href="main_8cpp.html" title="Main file for the 317 lab project." alt="" coords="185,225,268,251"/>
 </map>
 </div>
 </div>
@@ -118,40 +135,34 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a0056b7fdd0f81fad9cd38e9fd389a4b6"><td class="memItemLeft" align="right" valign="top"><a id="a0056b7fdd0f81fad9cd38e9fd389a4b6" name="a0056b7fdd0f81fad9cd38e9fd389a4b6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPI_SPEED</b>&#160;&#160;&#160;2000000</td></tr>
+<tr class="memitem:a0056b7fdd0f81fad9cd38e9fd389a4b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a0056b7fdd0f81fad9cd38e9fd389a4b6">SPI_SPEED</a>&#160;&#160;&#160;2000000</td></tr>
 <tr class="separator:a0056b7fdd0f81fad9cd38e9fd389a4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1dcc9464e3fcb94922386e8a7f53f21"><td class="memItemLeft" align="right" valign="top"><a id="ab1dcc9464e3fcb94922386e8a7f53f21" name="ab1dcc9464e3fcb94922386e8a7f53f21"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPI_MODE</b>&#160;&#160;&#160;SPI_MODE0</td></tr>
+<tr class="memitem:ab1dcc9464e3fcb94922386e8a7f53f21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#ab1dcc9464e3fcb94922386e8a7f53f21">SPI_MODE</a>&#160;&#160;&#160;SPI_MODE0</td></tr>
 <tr class="separator:ab1dcc9464e3fcb94922386e8a7f53f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fb9fde533f9b9bc8e4ae31524c9ea51"><td class="memItemLeft" align="right" valign="top"><a id="a7fb9fde533f9b9bc8e4ae31524c9ea51" name="a7fb9fde533f9b9bc8e4ae31524c9ea51"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_CHANNEL</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a7fb9fde533f9b9bc8e4ae31524c9ea51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">ADC_CHANNEL</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a7fb9fde533f9b9bc8e4ae31524c9ea51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af458889265f213625129e2dd0707a69b"><td class="memItemLeft" align="right" valign="top"><a id="af458889265f213625129e2dd0707a69b" name="af458889265f213625129e2dd0707a69b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_PIN</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:af458889265f213625129e2dd0707a69b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#af458889265f213625129e2dd0707a69b">ADC_PIN</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:af458889265f213625129e2dd0707a69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5218409ffc6cf938fa4edce83ad05ff9"><td class="memItemLeft" align="right" valign="top"><a id="a5218409ffc6cf938fa4edce83ad05ff9" name="a5218409ffc6cf938fa4edce83ad05ff9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_CS_PIN</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a5218409ffc6cf938fa4edce83ad05ff9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a5218409ffc6cf938fa4edce83ad05ff9">ADC_CS_PIN</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a5218409ffc6cf938fa4edce83ad05ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55efe21d802352cd3d833f3bc9a2cbf9"><td class="memItemLeft" align="right" valign="top"><a id="a55efe21d802352cd3d833f3bc9a2cbf9" name="a55efe21d802352cd3d833f3bc9a2cbf9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_READ</b>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memitem:a55efe21d802352cd3d833f3bc9a2cbf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a55efe21d802352cd3d833f3bc9a2cbf9">ADC_READ</a>&#160;&#160;&#160;0x00</td></tr>
 <tr class="separator:a55efe21d802352cd3d833f3bc9a2cbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a98c9a0e90b3b640f4f95ae647038d5e1"><td class="memItemLeft" align="right" valign="top"><a id="a98c9a0e90b3b640f4f95ae647038d5e1" name="a98c9a0e90b3b640f4f95ae647038d5e1"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> : uint8_t { <br />
-&#160;&#160;<b>CHAN0</b> = 0x8F
-, <b>CHAN1</b> = 0xCF
-, <b>CHAN2</b> = 0x9F
-, <b>CHAN3</b> = 0xDF
+<tr class="memitem:a98c9a0e90b3b640f4f95ae647038d5e1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15">CHAN0</a> = 0x8F
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f">CHAN1</a> = 0xCF
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364">CHAN2</a> = 0x9F
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75">CHAN3</a> = 0xDF
 , <br />
-&#160;&#160;<b>CHAN4</b> = 0xAF
-, <b>CHAN5</b> = 0xEF
-, <b>CHAN6</b> = 0xBF
-, <b>CHAN7</b> = 0xFF
+&#160;&#160;<a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b">CHAN4</a> = 0xAF
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428">CHAN5</a> = 0xEF
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa">CHAN6</a> = 0xBF
+, <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c">CHAN7</a> = 0xFF
 <br />
  }</td></tr>
-<tr class="memdesc:a98c9a0e90b3b640f4f95ae647038d5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control bytes for the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Only modifiable parameter is the channel. We use single ended, unipolar conversion, and external clock mode. Note that the old code used internal clock. <br /></td></tr>
+<tr class="memdesc:a98c9a0e90b3b640f4f95ae647038d5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control bytes for the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Only modifiable parameter is the channel. We use single ended, unipolar conversion, and external clock mode. Note that the old code used internal clock.  <a href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">More...</a><br /></td></tr>
 <tr class="separator:a98c9a0e90b3b640f4f95ae647038d5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,10 +172,150 @@ Enumerations</h2></td></tr>
 <p>See the data sheet for more information - <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/MAX1146-MAX1149.pdf">https://www.analog.com/media/en/technical-documentation/data-sheets/MAX1146-MAX1149.pdf</a></p>
 <dl class="section author"><dt>Author</dt><dd>Sean Wallace </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-06-25 </dd></dl>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7fb9fde533f9b9bc8e4ae31524c9ea51" name="a7fb9fde533f9b9bc8e4ae31524c9ea51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb9fde533f9b9bc8e4ae31524c9ea51">&#9670;&#160;</a></span>ADC_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_CHANNEL&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00034">34</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5218409ffc6cf938fa4edce83ad05ff9" name="a5218409ffc6cf938fa4edce83ad05ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5218409ffc6cf938fa4edce83ad05ff9">&#9670;&#160;</a></span>ADC_CS_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_CS_PIN&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00036">36</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af458889265f213625129e2dd0707a69b" name="af458889265f213625129e2dd0707a69b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af458889265f213625129e2dd0707a69b">&#9670;&#160;</a></span>ADC_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_PIN&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00035">35</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a55efe21d802352cd3d833f3bc9a2cbf9" name="a55efe21d802352cd3d833f3bc9a2cbf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55efe21d802352cd3d833f3bc9a2cbf9">&#9670;&#160;</a></span>ADC_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC_READ&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00037">37</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab1dcc9464e3fcb94922386e8a7f53f21" name="ab1dcc9464e3fcb94922386e8a7f53f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1dcc9464e3fcb94922386e8a7f53f21">&#9670;&#160;</a></span>SPI_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_MODE&#160;&#160;&#160;SPI_MODE0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00033">33</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0056b7fdd0f81fad9cd38e9fd389a4b6" name="a0056b7fdd0f81fad9cd38e9fd389a4b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0056b7fdd0f81fad9cd38e9fd389a4b6">&#9670;&#160;</a></span>SPI_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_SPEED&#160;&#160;&#160;2000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00032">32</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a98c9a0e90b3b640f4f95ae647038d5e1" name="a98c9a0e90b3b640f4f95ae647038d5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c9a0e90b3b640f4f95ae647038d5e1">&#9670;&#160;</a></span>Channel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1">Channel</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Control bytes for the <a class="el" href="classMax1148.html" title="Manages interfacing with Max1148 ADC.">Max1148</a> ADC. Only modifiable parameter is the channel. We use single ended, unipolar conversion, and external clock mode. Note that the old code used internal clock. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15" name="a98c9a0e90b3b640f4f95ae647038d5e1ae4a5c6089cb7540d76a9602165cd2e15"></a>CHAN0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f" name="a98c9a0e90b3b640f4f95ae647038d5e1a20547ced943d0fd7e83ceec9a783697f"></a>CHAN1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364" name="a98c9a0e90b3b640f4f95ae647038d5e1ac96661fbc35cd5edfb2f6ee049a96364"></a>CHAN2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75" name="a98c9a0e90b3b640f4f95ae647038d5e1a061071791e666e47f3cd3fdf553a2a75"></a>CHAN3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b" name="a98c9a0e90b3b640f4f95ae647038d5e1a5503f6d6ed56dc69f2004ff0a152e70b"></a>CHAN4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428" name="a98c9a0e90b3b640f4f95ae647038d5e1a8ab8d80d5158b8889297242312bbb428"></a>CHAN5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa" name="a98c9a0e90b3b640f4f95ae647038d5e1a0501c726648bdbbe9f39eb40173a4cfa"></a>CHAN6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c" name="a98c9a0e90b3b640f4f95ae647038d5e1a6db5485ff8dcf5ef7a7eb81ec645328c"></a>CHAN7&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="Max1148_8hpp_source.html#l00044">44</a> of file <a class="el" href="Max1148_8hpp_source.html">Max1148.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="Max1148_8hpp.html">Max1148.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

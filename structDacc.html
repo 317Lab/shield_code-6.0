@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structDacc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,110 +103,530 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a48b4e673b7ee90e09f94a9fce1ba2990"><td class="memItemLeft" align="right" valign="top"><a id="a48b4e673b7ee90e09f94a9fce1ba2990" name="a48b4e673b7ee90e09f94a9fce1ba2990"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_CR</b></td></tr>
-<tr class="memdesc:a48b4e673b7ee90e09f94a9fce1ba2990"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x00) Control Register <br /></td></tr>
+<tr class="memitem:a48b4e673b7ee90e09f94a9fce1ba2990"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a48b4e673b7ee90e09f94a9fce1ba2990">DACC_CR</a></td></tr>
+<tr class="memdesc:a48b4e673b7ee90e09f94a9fce1ba2990"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x00) Control Register  <br /></td></tr>
 <tr class="separator:a48b4e673b7ee90e09f94a9fce1ba2990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45307b0cc8da9f0aaccf3d1f1a368ef3"><td class="memItemLeft" align="right" valign="top"><a id="a45307b0cc8da9f0aaccf3d1f1a368ef3" name="a45307b0cc8da9f0aaccf3d1f1a368ef3"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_MR</b></td></tr>
-<tr class="memdesc:a45307b0cc8da9f0aaccf3d1f1a368ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x04) Mode Register <br /></td></tr>
+<tr class="memitem:a45307b0cc8da9f0aaccf3d1f1a368ef3"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a45307b0cc8da9f0aaccf3d1f1a368ef3">DACC_MR</a></td></tr>
+<tr class="memdesc:a45307b0cc8da9f0aaccf3d1f1a368ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x04) Mode Register  <br /></td></tr>
 <tr class="separator:a45307b0cc8da9f0aaccf3d1f1a368ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f25bf0fb3a261c05fb40ef9e805f7b"><td class="memItemLeft" align="right" valign="top"><a id="a13f25bf0fb3a261c05fb40ef9e805f7b" name="a13f25bf0fb3a261c05fb40ef9e805f7b"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [2]</td></tr>
+<tr class="memitem:a13f25bf0fb3a261c05fb40ef9e805f7b"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a13f25bf0fb3a261c05fb40ef9e805f7b">Reserved1</a> [2]</td></tr>
 <tr class="separator:a13f25bf0fb3a261c05fb40ef9e805f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0548f522857f9bfe33e0ebf6abaedcb7"><td class="memItemLeft" align="right" valign="top"><a id="a0548f522857f9bfe33e0ebf6abaedcb7" name="a0548f522857f9bfe33e0ebf6abaedcb7"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_CHER</b></td></tr>
-<tr class="memdesc:a0548f522857f9bfe33e0ebf6abaedcb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10) Channel Enable Register <br /></td></tr>
+<tr class="memitem:a0548f522857f9bfe33e0ebf6abaedcb7"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a0548f522857f9bfe33e0ebf6abaedcb7">DACC_CHER</a></td></tr>
+<tr class="memdesc:a0548f522857f9bfe33e0ebf6abaedcb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10) Channel Enable Register  <br /></td></tr>
 <tr class="separator:a0548f522857f9bfe33e0ebf6abaedcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeffc0a6a58c0954b5ef80d34958981a4"><td class="memItemLeft" align="right" valign="top"><a id="aeffc0a6a58c0954b5ef80d34958981a4" name="aeffc0a6a58c0954b5ef80d34958981a4"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_CHDR</b></td></tr>
-<tr class="memdesc:aeffc0a6a58c0954b5ef80d34958981a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x14) Channel Disable Register <br /></td></tr>
+<tr class="memitem:aeffc0a6a58c0954b5ef80d34958981a4"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#aeffc0a6a58c0954b5ef80d34958981a4">DACC_CHDR</a></td></tr>
+<tr class="memdesc:aeffc0a6a58c0954b5ef80d34958981a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x14) Channel Disable Register  <br /></td></tr>
 <tr class="separator:aeffc0a6a58c0954b5ef80d34958981a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b296351c32f8be2a39872d3f8a96da7"><td class="memItemLeft" align="right" valign="top"><a id="a4b296351c32f8be2a39872d3f8a96da7" name="a4b296351c32f8be2a39872d3f8a96da7"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_CHSR</b></td></tr>
-<tr class="memdesc:a4b296351c32f8be2a39872d3f8a96da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x18) Channel Status Register <br /></td></tr>
+<tr class="memitem:a4b296351c32f8be2a39872d3f8a96da7"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a4b296351c32f8be2a39872d3f8a96da7">DACC_CHSR</a></td></tr>
+<tr class="memdesc:a4b296351c32f8be2a39872d3f8a96da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x18) Channel Status Register  <br /></td></tr>
 <tr class="separator:a4b296351c32f8be2a39872d3f8a96da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91c976907ca96080a35657697e3714b5"><td class="memItemLeft" align="right" valign="top"><a id="a91c976907ca96080a35657697e3714b5" name="a91c976907ca96080a35657697e3714b5"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [1]</td></tr>
+<tr class="memitem:a91c976907ca96080a35657697e3714b5"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a91c976907ca96080a35657697e3714b5">Reserved2</a> [1]</td></tr>
 <tr class="separator:a91c976907ca96080a35657697e3714b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a245b066a10d1806e27a6aa3e6e8906a2"><td class="memItemLeft" align="right" valign="top"><a id="a245b066a10d1806e27a6aa3e6e8906a2" name="a245b066a10d1806e27a6aa3e6e8906a2"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_CDR</b></td></tr>
-<tr class="memdesc:a245b066a10d1806e27a6aa3e6e8906a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x20) Conversion Data Register <br /></td></tr>
+<tr class="memitem:a245b066a10d1806e27a6aa3e6e8906a2"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a245b066a10d1806e27a6aa3e6e8906a2">DACC_CDR</a></td></tr>
+<tr class="memdesc:a245b066a10d1806e27a6aa3e6e8906a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x20) Conversion Data Register  <br /></td></tr>
 <tr class="separator:a245b066a10d1806e27a6aa3e6e8906a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae3036f4a7fb6730c8194904f898a93"><td class="memItemLeft" align="right" valign="top"><a id="afae3036f4a7fb6730c8194904f898a93" name="afae3036f4a7fb6730c8194904f898a93"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_IER</b></td></tr>
-<tr class="memdesc:afae3036f4a7fb6730c8194904f898a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x24) Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:afae3036f4a7fb6730c8194904f898a93"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#afae3036f4a7fb6730c8194904f898a93">DACC_IER</a></td></tr>
+<tr class="memdesc:afae3036f4a7fb6730c8194904f898a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x24) Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:afae3036f4a7fb6730c8194904f898a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a167106a9f9219c19702012e03f1d4b61"><td class="memItemLeft" align="right" valign="top"><a id="a167106a9f9219c19702012e03f1d4b61" name="a167106a9f9219c19702012e03f1d4b61"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_IDR</b></td></tr>
-<tr class="memdesc:a167106a9f9219c19702012e03f1d4b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x28) Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:a167106a9f9219c19702012e03f1d4b61"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a167106a9f9219c19702012e03f1d4b61">DACC_IDR</a></td></tr>
+<tr class="memdesc:a167106a9f9219c19702012e03f1d4b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x28) Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:a167106a9f9219c19702012e03f1d4b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a145af762db0fefcca94c7cf37aed98a1"><td class="memItemLeft" align="right" valign="top"><a id="a145af762db0fefcca94c7cf37aed98a1" name="a145af762db0fefcca94c7cf37aed98a1"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_IMR</b></td></tr>
-<tr class="memdesc:a145af762db0fefcca94c7cf37aed98a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x2C) Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:a145af762db0fefcca94c7cf37aed98a1"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a145af762db0fefcca94c7cf37aed98a1">DACC_IMR</a></td></tr>
+<tr class="memdesc:a145af762db0fefcca94c7cf37aed98a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x2C) Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:a145af762db0fefcca94c7cf37aed98a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9412cfef25e8248b3a160e83072cc513"><td class="memItemLeft" align="right" valign="top"><a id="a9412cfef25e8248b3a160e83072cc513" name="a9412cfef25e8248b3a160e83072cc513"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_ISR</b></td></tr>
-<tr class="memdesc:a9412cfef25e8248b3a160e83072cc513"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x30) Interrupt Status Register <br /></td></tr>
+<tr class="memitem:a9412cfef25e8248b3a160e83072cc513"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a9412cfef25e8248b3a160e83072cc513">DACC_ISR</a></td></tr>
+<tr class="memdesc:a9412cfef25e8248b3a160e83072cc513"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x30) Interrupt Status Register  <br /></td></tr>
 <tr class="separator:a9412cfef25e8248b3a160e83072cc513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a960f92190e810ba0b0fd75b48daa96be"><td class="memItemLeft" align="right" valign="top"><a id="a960f92190e810ba0b0fd75b48daa96be" name="a960f92190e810ba0b0fd75b48daa96be"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved3</b> [24]</td></tr>
+<tr class="memitem:a960f92190e810ba0b0fd75b48daa96be"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a960f92190e810ba0b0fd75b48daa96be">Reserved3</a> [24]</td></tr>
 <tr class="separator:a960f92190e810ba0b0fd75b48daa96be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a723e7b1c3acf89bfd9e92ed169c7fdf5"><td class="memItemLeft" align="right" valign="top"><a id="a723e7b1c3acf89bfd9e92ed169c7fdf5" name="a723e7b1c3acf89bfd9e92ed169c7fdf5"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_ACR</b></td></tr>
-<tr class="memdesc:a723e7b1c3acf89bfd9e92ed169c7fdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x94) Analog Current Register <br /></td></tr>
+<tr class="memitem:a723e7b1c3acf89bfd9e92ed169c7fdf5"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a723e7b1c3acf89bfd9e92ed169c7fdf5">DACC_ACR</a></td></tr>
+<tr class="memdesc:a723e7b1c3acf89bfd9e92ed169c7fdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x94) Analog Current Register  <br /></td></tr>
 <tr class="separator:a723e7b1c3acf89bfd9e92ed169c7fdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a45b7d2fdec7c25d58d113766962de"><td class="memItemLeft" align="right" valign="top"><a id="ad3a45b7d2fdec7c25d58d113766962de" name="ad3a45b7d2fdec7c25d58d113766962de"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved4</b> [19]</td></tr>
+<tr class="memitem:ad3a45b7d2fdec7c25d58d113766962de"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#ad3a45b7d2fdec7c25d58d113766962de">Reserved4</a> [19]</td></tr>
 <tr class="separator:ad3a45b7d2fdec7c25d58d113766962de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5deaa688b44a8ad9d11524ca4e6a560"><td class="memItemLeft" align="right" valign="top"><a id="ae5deaa688b44a8ad9d11524ca4e6a560" name="ae5deaa688b44a8ad9d11524ca4e6a560"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_WPMR</b></td></tr>
-<tr class="memdesc:ae5deaa688b44a8ad9d11524ca4e6a560"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE4) Write Protect Mode register <br /></td></tr>
+<tr class="memitem:ae5deaa688b44a8ad9d11524ca4e6a560"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#ae5deaa688b44a8ad9d11524ca4e6a560">DACC_WPMR</a></td></tr>
+<tr class="memdesc:ae5deaa688b44a8ad9d11524ca4e6a560"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE4) Write Protect Mode register  <br /></td></tr>
 <tr class="separator:ae5deaa688b44a8ad9d11524ca4e6a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a238d3925d9af596e25cd6810cd2357df"><td class="memItemLeft" align="right" valign="top"><a id="a238d3925d9af596e25cd6810cd2357df" name="a238d3925d9af596e25cd6810cd2357df"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_WPSR</b></td></tr>
-<tr class="memdesc:a238d3925d9af596e25cd6810cd2357df"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE8) Write Protect Status register <br /></td></tr>
+<tr class="memitem:a238d3925d9af596e25cd6810cd2357df"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a238d3925d9af596e25cd6810cd2357df">DACC_WPSR</a></td></tr>
+<tr class="memdesc:a238d3925d9af596e25cd6810cd2357df"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE8) Write Protect Status register  <br /></td></tr>
 <tr class="separator:a238d3925d9af596e25cd6810cd2357df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a058f1cebf806f4282f03ccdb0fc89da4"><td class="memItemLeft" align="right" valign="top"><a id="a058f1cebf806f4282f03ccdb0fc89da4" name="a058f1cebf806f4282f03ccdb0fc89da4"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved5</b> [7]</td></tr>
+<tr class="memitem:a058f1cebf806f4282f03ccdb0fc89da4"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a058f1cebf806f4282f03ccdb0fc89da4">Reserved5</a> [7]</td></tr>
 <tr class="separator:a058f1cebf806f4282f03ccdb0fc89da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af342686374832720f372f8fdf1c3a3bd"><td class="memItemLeft" align="right" valign="top"><a id="af342686374832720f372f8fdf1c3a3bd" name="af342686374832720f372f8fdf1c3a3bd"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_TPR</b></td></tr>
-<tr class="memdesc:af342686374832720f372f8fdf1c3a3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x108) Transmit Pointer Register <br /></td></tr>
+<tr class="memitem:af342686374832720f372f8fdf1c3a3bd"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#af342686374832720f372f8fdf1c3a3bd">DACC_TPR</a></td></tr>
+<tr class="memdesc:af342686374832720f372f8fdf1c3a3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x108) Transmit Pointer Register  <br /></td></tr>
 <tr class="separator:af342686374832720f372f8fdf1c3a3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1abc2bcd2ee70407a7fc834d6a69b4"><td class="memItemLeft" align="right" valign="top"><a id="a3a1abc2bcd2ee70407a7fc834d6a69b4" name="a3a1abc2bcd2ee70407a7fc834d6a69b4"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_TCR</b></td></tr>
-<tr class="memdesc:a3a1abc2bcd2ee70407a7fc834d6a69b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10C) Transmit Counter Register <br /></td></tr>
+<tr class="memitem:a3a1abc2bcd2ee70407a7fc834d6a69b4"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a3a1abc2bcd2ee70407a7fc834d6a69b4">DACC_TCR</a></td></tr>
+<tr class="memdesc:a3a1abc2bcd2ee70407a7fc834d6a69b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10C) Transmit Counter Register  <br /></td></tr>
 <tr class="separator:a3a1abc2bcd2ee70407a7fc834d6a69b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b16fde4f1c2015d6e35db3f362314a3"><td class="memItemLeft" align="right" valign="top"><a id="a2b16fde4f1c2015d6e35db3f362314a3" name="a2b16fde4f1c2015d6e35db3f362314a3"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved6</b> [2]</td></tr>
+<tr class="memitem:a2b16fde4f1c2015d6e35db3f362314a3"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a2b16fde4f1c2015d6e35db3f362314a3">Reserved6</a> [2]</td></tr>
 <tr class="separator:a2b16fde4f1c2015d6e35db3f362314a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40a57c7732d431792ddbdd9d2048b897"><td class="memItemLeft" align="right" valign="top"><a id="a40a57c7732d431792ddbdd9d2048b897" name="a40a57c7732d431792ddbdd9d2048b897"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_TNPR</b></td></tr>
-<tr class="memdesc:a40a57c7732d431792ddbdd9d2048b897"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x118) Transmit Next Pointer Register <br /></td></tr>
+<tr class="memitem:a40a57c7732d431792ddbdd9d2048b897"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a40a57c7732d431792ddbdd9d2048b897">DACC_TNPR</a></td></tr>
+<tr class="memdesc:a40a57c7732d431792ddbdd9d2048b897"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x118) Transmit Next Pointer Register  <br /></td></tr>
 <tr class="separator:a40a57c7732d431792ddbdd9d2048b897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaea42bc082f3278773ee8841a38079c5"><td class="memItemLeft" align="right" valign="top"><a id="aaea42bc082f3278773ee8841a38079c5" name="aaea42bc082f3278773ee8841a38079c5"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_TNCR</b></td></tr>
-<tr class="memdesc:aaea42bc082f3278773ee8841a38079c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x11C) Transmit Next Counter Register <br /></td></tr>
+<tr class="memitem:aaea42bc082f3278773ee8841a38079c5"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#aaea42bc082f3278773ee8841a38079c5">DACC_TNCR</a></td></tr>
+<tr class="memdesc:aaea42bc082f3278773ee8841a38079c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x11C) Transmit Next Counter Register  <br /></td></tr>
 <tr class="separator:aaea42bc082f3278773ee8841a38079c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c5772b9a334cd122e0aa7e7a2f2f5f"><td class="memItemLeft" align="right" valign="top"><a id="a16c5772b9a334cd122e0aa7e7a2f2f5f" name="a16c5772b9a334cd122e0aa7e7a2f2f5f"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_PTCR</b></td></tr>
-<tr class="memdesc:a16c5772b9a334cd122e0aa7e7a2f2f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x120) Transfer Control Register <br /></td></tr>
+<tr class="memitem:a16c5772b9a334cd122e0aa7e7a2f2f5f"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a16c5772b9a334cd122e0aa7e7a2f2f5f">DACC_PTCR</a></td></tr>
+<tr class="memdesc:a16c5772b9a334cd122e0aa7e7a2f2f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x120) Transfer Control Register  <br /></td></tr>
 <tr class="separator:a16c5772b9a334cd122e0aa7e7a2f2f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d813e5e90bd4912daa48418ab2fdba"><td class="memItemLeft" align="right" valign="top"><a id="a05d813e5e90bd4912daa48418ab2fdba" name="a05d813e5e90bd4912daa48418ab2fdba"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>DACC_PTSR</b></td></tr>
-<tr class="memdesc:a05d813e5e90bd4912daa48418ab2fdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x124) Transfer Status Register <br /></td></tr>
+<tr class="memitem:a05d813e5e90bd4912daa48418ab2fdba"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDacc.html#a05d813e5e90bd4912daa48418ab2fdba">DACC_PTSR</a></td></tr>
+<tr class="memdesc:a05d813e5e90bd4912daa48418ab2fdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x124) Transfer Status Register  <br /></td></tr>
 <tr class="separator:a05d813e5e90bd4912daa48418ab2fdba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="dacc_8h_source.html">dacc.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00041">41</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a723e7b1c3acf89bfd9e92ed169c7fdf5" name="a723e7b1c3acf89bfd9e92ed169c7fdf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723e7b1c3acf89bfd9e92ed169c7fdf5">&#9670;&#160;</a></span>DACC_ACR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_ACR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x94) Analog Current Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00055">55</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a245b066a10d1806e27a6aa3e6e8906a2" name="a245b066a10d1806e27a6aa3e6e8906a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a245b066a10d1806e27a6aa3e6e8906a2">&#9670;&#160;</a></span>DACC_CDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_CDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x20) Conversion Data Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00049">49</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="aeffc0a6a58c0954b5ef80d34958981a4" name="aeffc0a6a58c0954b5ef80d34958981a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeffc0a6a58c0954b5ef80d34958981a4">&#9670;&#160;</a></span>DACC_CHDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_CHDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x14) Channel Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00046">46</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a0548f522857f9bfe33e0ebf6abaedcb7" name="a0548f522857f9bfe33e0ebf6abaedcb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0548f522857f9bfe33e0ebf6abaedcb7">&#9670;&#160;</a></span>DACC_CHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_CHER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10) Channel Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00045">45</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b296351c32f8be2a39872d3f8a96da7" name="a4b296351c32f8be2a39872d3f8a96da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b296351c32f8be2a39872d3f8a96da7">&#9670;&#160;</a></span>DACC_CHSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::DACC_CHSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x18) Channel Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00047">47</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a48b4e673b7ee90e09f94a9fce1ba2990" name="a48b4e673b7ee90e09f94a9fce1ba2990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b4e673b7ee90e09f94a9fce1ba2990">&#9670;&#160;</a></span>DACC_CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_CR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x00) Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00042">42</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a167106a9f9219c19702012e03f1d4b61" name="a167106a9f9219c19702012e03f1d4b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a167106a9f9219c19702012e03f1d4b61">&#9670;&#160;</a></span>DACC_IDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_IDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x28) Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00051">51</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="afae3036f4a7fb6730c8194904f898a93" name="afae3036f4a7fb6730c8194904f898a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae3036f4a7fb6730c8194904f898a93">&#9670;&#160;</a></span>DACC_IER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_IER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x24) Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00050">50</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a145af762db0fefcca94c7cf37aed98a1" name="a145af762db0fefcca94c7cf37aed98a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a145af762db0fefcca94c7cf37aed98a1">&#9670;&#160;</a></span>DACC_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::DACC_IMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x2C) Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00052">52</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a9412cfef25e8248b3a160e83072cc513" name="a9412cfef25e8248b3a160e83072cc513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9412cfef25e8248b3a160e83072cc513">&#9670;&#160;</a></span>DACC_ISR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::DACC_ISR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x30) Interrupt Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00053">53</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a45307b0cc8da9f0aaccf3d1f1a368ef3" name="a45307b0cc8da9f0aaccf3d1f1a368ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45307b0cc8da9f0aaccf3d1f1a368ef3">&#9670;&#160;</a></span>DACC_MR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_MR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x04) Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00043">43</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a16c5772b9a334cd122e0aa7e7a2f2f5f" name="a16c5772b9a334cd122e0aa7e7a2f2f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c5772b9a334cd122e0aa7e7a2f2f5f">&#9670;&#160;</a></span>DACC_PTCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Dacc::DACC_PTCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x120) Transfer Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00065">65</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a05d813e5e90bd4912daa48418ab2fdba" name="a05d813e5e90bd4912daa48418ab2fdba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d813e5e90bd4912daa48418ab2fdba">&#9670;&#160;</a></span>DACC_PTSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::DACC_PTSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x124) Transfer Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00066">66</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a1abc2bcd2ee70407a7fc834d6a69b4" name="a3a1abc2bcd2ee70407a7fc834d6a69b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a1abc2bcd2ee70407a7fc834d6a69b4">&#9670;&#160;</a></span>DACC_TCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_TCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x10C) Transmit Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00061">61</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="aaea42bc082f3278773ee8841a38079c5" name="aaea42bc082f3278773ee8841a38079c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea42bc082f3278773ee8841a38079c5">&#9670;&#160;</a></span>DACC_TNCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_TNCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x11C) Transmit Next Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00064">64</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a40a57c7732d431792ddbdd9d2048b897" name="a40a57c7732d431792ddbdd9d2048b897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a57c7732d431792ddbdd9d2048b897">&#9670;&#160;</a></span>DACC_TNPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_TNPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x118) Transmit Next Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00063">63</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="af342686374832720f372f8fdf1c3a3bd" name="af342686374832720f372f8fdf1c3a3bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af342686374832720f372f8fdf1c3a3bd">&#9670;&#160;</a></span>DACC_TPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_TPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0x108) Transmit Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00060">60</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5deaa688b44a8ad9d11524ca4e6a560" name="ae5deaa688b44a8ad9d11524ca4e6a560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5deaa688b44a8ad9d11524ca4e6a560">&#9670;&#160;</a></span>DACC_WPMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Dacc::DACC_WPMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE4) Write Protect Mode register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00057">57</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a238d3925d9af596e25cd6810cd2357df" name="a238d3925d9af596e25cd6810cd2357df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a238d3925d9af596e25cd6810cd2357df">&#9670;&#160;</a></span>DACC_WPSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::DACC_WPSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structDacc.html" title="Dacc hardware registers.">Dacc</a> Offset: 0xE8) Write Protect Status register </p>
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00058">58</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a13f25bf0fb3a261c05fb40ef9e805f7b" name="a13f25bf0fb3a261c05fb40ef9e805f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f25bf0fb3a261c05fb40ef9e805f7b">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved1[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00044">44</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a91c976907ca96080a35657697e3714b5" name="a91c976907ca96080a35657697e3714b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c976907ca96080a35657697e3714b5">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved2[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00048">48</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a960f92190e810ba0b0fd75b48daa96be" name="a960f92190e810ba0b0fd75b48daa96be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960f92190e810ba0b0fd75b48daa96be">&#9670;&#160;</a></span>Reserved3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved3[24]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00054">54</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3a45b7d2fdec7c25d58d113766962de" name="ad3a45b7d2fdec7c25d58d113766962de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a45b7d2fdec7c25d58d113766962de">&#9670;&#160;</a></span>Reserved4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved4[19]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00056">56</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a058f1cebf806f4282f03ccdb0fc89da4" name="a058f1cebf806f4282f03ccdb0fc89da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058f1cebf806f4282f03ccdb0fc89da4">&#9670;&#160;</a></span>Reserved5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved5[7]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00059">59</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b16fde4f1c2015d6e35db3f362314a3" name="a2b16fde4f1c2015d6e35db3f362314a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b16fde4f1c2015d6e35db3f362314a3">&#9670;&#160;</a></span>Reserved6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Dacc::Reserved6[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dacc_8h_source.html#l00062">62</a> of file <a class="el" href="dacc_8h_source.html">dacc.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="dacc_8h_source.html">dacc.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structDacc.html">Dacc</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

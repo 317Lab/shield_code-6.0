@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structEmac.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -75,6 +95,8 @@ $(function() {
   <div class="headertitle"><div class="title">Emac Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="emac_8h_source.html">emac.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Emac:</div>
 <div class="dyncontent">
@@ -83,179 +105,878 @@ Collaboration diagram for Emac:</div>
 <area shape="rect" title=" " alt="" coords="13,93,72,119"/>
 <area shape="rect" href="structEmacSa.html" title="EmacSa hardware registers." alt="" coords="5,5,80,31"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af33f09a4d3e93016cf1642f3bf535060"><td class="memItemLeft" align="right" valign="top"><a id="af33f09a4d3e93016cf1642f3bf535060" name="af33f09a4d3e93016cf1642f3bf535060"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_NCR</b></td></tr>
-<tr class="memdesc:af33f09a4d3e93016cf1642f3bf535060"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x00) Network Control Register <br /></td></tr>
+<tr class="memitem:af33f09a4d3e93016cf1642f3bf535060"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#af33f09a4d3e93016cf1642f3bf535060">EMAC_NCR</a></td></tr>
+<tr class="memdesc:af33f09a4d3e93016cf1642f3bf535060"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x00) Network Control Register  <br /></td></tr>
 <tr class="separator:af33f09a4d3e93016cf1642f3bf535060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38cb7f63a5f9679b478672fa07b910ae"><td class="memItemLeft" align="right" valign="top"><a id="a38cb7f63a5f9679b478672fa07b910ae" name="a38cb7f63a5f9679b478672fa07b910ae"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_NCFGR</b></td></tr>
-<tr class="memdesc:a38cb7f63a5f9679b478672fa07b910ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x04) Network Configuration Register <br /></td></tr>
+<tr class="memitem:a38cb7f63a5f9679b478672fa07b910ae"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a38cb7f63a5f9679b478672fa07b910ae">EMAC_NCFGR</a></td></tr>
+<tr class="memdesc:a38cb7f63a5f9679b478672fa07b910ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x04) Network Configuration Register  <br /></td></tr>
 <tr class="separator:a38cb7f63a5f9679b478672fa07b910ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25f772d9a2316fda3bff8e3814db3ec2"><td class="memItemLeft" align="right" valign="top"><a id="a25f772d9a2316fda3bff8e3814db3ec2" name="a25f772d9a2316fda3bff8e3814db3ec2"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_NSR</b></td></tr>
-<tr class="memdesc:a25f772d9a2316fda3bff8e3814db3ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x08) Network Status Register <br /></td></tr>
+<tr class="memitem:a25f772d9a2316fda3bff8e3814db3ec2"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a25f772d9a2316fda3bff8e3814db3ec2">EMAC_NSR</a></td></tr>
+<tr class="memdesc:a25f772d9a2316fda3bff8e3814db3ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x08) Network Status Register  <br /></td></tr>
 <tr class="separator:a25f772d9a2316fda3bff8e3814db3ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa02713868b52fdf1617043ae2fbbc00"><td class="memItemLeft" align="right" valign="top"><a id="afa02713868b52fdf1617043ae2fbbc00" name="afa02713868b52fdf1617043ae2fbbc00"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [2]</td></tr>
+<tr class="memitem:afa02713868b52fdf1617043ae2fbbc00"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#afa02713868b52fdf1617043ae2fbbc00">Reserved1</a> [2]</td></tr>
 <tr class="separator:afa02713868b52fdf1617043ae2fbbc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f63e29ba02709406a1d42243351423"><td class="memItemLeft" align="right" valign="top"><a id="a15f63e29ba02709406a1d42243351423" name="a15f63e29ba02709406a1d42243351423"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_TSR</b></td></tr>
-<tr class="memdesc:a15f63e29ba02709406a1d42243351423"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x14) Transmit Status Register <br /></td></tr>
+<tr class="memitem:a15f63e29ba02709406a1d42243351423"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a15f63e29ba02709406a1d42243351423">EMAC_TSR</a></td></tr>
+<tr class="memdesc:a15f63e29ba02709406a1d42243351423"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x14) Transmit Status Register  <br /></td></tr>
 <tr class="separator:a15f63e29ba02709406a1d42243351423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa966e6ce5edec3f03ef576bb54cbf7d2"><td class="memItemLeft" align="right" valign="top"><a id="aa966e6ce5edec3f03ef576bb54cbf7d2" name="aa966e6ce5edec3f03ef576bb54cbf7d2"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RBQP</b></td></tr>
-<tr class="memdesc:aa966e6ce5edec3f03ef576bb54cbf7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x18) Receive Buffer Queue Pointer Register <br /></td></tr>
+<tr class="memitem:aa966e6ce5edec3f03ef576bb54cbf7d2"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#aa966e6ce5edec3f03ef576bb54cbf7d2">EMAC_RBQP</a></td></tr>
+<tr class="memdesc:aa966e6ce5edec3f03ef576bb54cbf7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x18) Receive Buffer Queue Pointer Register  <br /></td></tr>
 <tr class="separator:aa966e6ce5edec3f03ef576bb54cbf7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a304e4ee0554c92a3d8a2a3173fde734a"><td class="memItemLeft" align="right" valign="top"><a id="a304e4ee0554c92a3d8a2a3173fde734a" name="a304e4ee0554c92a3d8a2a3173fde734a"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_TBQP</b></td></tr>
-<tr class="memdesc:a304e4ee0554c92a3d8a2a3173fde734a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x1C) Transmit Buffer Queue Pointer Register <br /></td></tr>
+<tr class="memitem:a304e4ee0554c92a3d8a2a3173fde734a"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a304e4ee0554c92a3d8a2a3173fde734a">EMAC_TBQP</a></td></tr>
+<tr class="memdesc:a304e4ee0554c92a3d8a2a3173fde734a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x1C) Transmit Buffer Queue Pointer Register  <br /></td></tr>
 <tr class="separator:a304e4ee0554c92a3d8a2a3173fde734a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7b7f871513695f50902c258debe74ea"><td class="memItemLeft" align="right" valign="top"><a id="aa7b7f871513695f50902c258debe74ea" name="aa7b7f871513695f50902c258debe74ea"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RSR</b></td></tr>
-<tr class="memdesc:aa7b7f871513695f50902c258debe74ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x20) Receive Status Register <br /></td></tr>
+<tr class="memitem:aa7b7f871513695f50902c258debe74ea"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#aa7b7f871513695f50902c258debe74ea">EMAC_RSR</a></td></tr>
+<tr class="memdesc:aa7b7f871513695f50902c258debe74ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x20) Receive Status Register  <br /></td></tr>
 <tr class="separator:aa7b7f871513695f50902c258debe74ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace3be90748bc33226d46b846d71c07cd"><td class="memItemLeft" align="right" valign="top"><a id="ace3be90748bc33226d46b846d71c07cd" name="ace3be90748bc33226d46b846d71c07cd"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_ISR</b></td></tr>
-<tr class="memdesc:ace3be90748bc33226d46b846d71c07cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x24) Interrupt Status Register <br /></td></tr>
+<tr class="memitem:ace3be90748bc33226d46b846d71c07cd"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#ace3be90748bc33226d46b846d71c07cd">EMAC_ISR</a></td></tr>
+<tr class="memdesc:ace3be90748bc33226d46b846d71c07cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x24) Interrupt Status Register  <br /></td></tr>
 <tr class="separator:ace3be90748bc33226d46b846d71c07cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ab437773bfed7ac614c43ed8fb16c2"><td class="memItemLeft" align="right" valign="top"><a id="ab1ab437773bfed7ac614c43ed8fb16c2" name="ab1ab437773bfed7ac614c43ed8fb16c2"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_IER</b></td></tr>
-<tr class="memdesc:ab1ab437773bfed7ac614c43ed8fb16c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x28) Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:ab1ab437773bfed7ac614c43ed8fb16c2"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#ab1ab437773bfed7ac614c43ed8fb16c2">EMAC_IER</a></td></tr>
+<tr class="memdesc:ab1ab437773bfed7ac614c43ed8fb16c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x28) Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:ab1ab437773bfed7ac614c43ed8fb16c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1afb3c6dce4b819a63178fcbd00d33e5"><td class="memItemLeft" align="right" valign="top"><a id="a1afb3c6dce4b819a63178fcbd00d33e5" name="a1afb3c6dce4b819a63178fcbd00d33e5"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_IDR</b></td></tr>
-<tr class="memdesc:a1afb3c6dce4b819a63178fcbd00d33e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x2C) Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:a1afb3c6dce4b819a63178fcbd00d33e5"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a1afb3c6dce4b819a63178fcbd00d33e5">EMAC_IDR</a></td></tr>
+<tr class="memdesc:a1afb3c6dce4b819a63178fcbd00d33e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x2C) Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:a1afb3c6dce4b819a63178fcbd00d33e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a595bdb42c2413dd79d48e39e70055236"><td class="memItemLeft" align="right" valign="top"><a id="a595bdb42c2413dd79d48e39e70055236" name="a595bdb42c2413dd79d48e39e70055236"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_IMR</b></td></tr>
-<tr class="memdesc:a595bdb42c2413dd79d48e39e70055236"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x30) Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:a595bdb42c2413dd79d48e39e70055236"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a595bdb42c2413dd79d48e39e70055236">EMAC_IMR</a></td></tr>
+<tr class="memdesc:a595bdb42c2413dd79d48e39e70055236"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x30) Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:a595bdb42c2413dd79d48e39e70055236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0270070e78086011697139b837a80d8c"><td class="memItemLeft" align="right" valign="top"><a id="a0270070e78086011697139b837a80d8c" name="a0270070e78086011697139b837a80d8c"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_MAN</b></td></tr>
-<tr class="memdesc:a0270070e78086011697139b837a80d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x34) Phy Maintenance Register <br /></td></tr>
+<tr class="memitem:a0270070e78086011697139b837a80d8c"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a0270070e78086011697139b837a80d8c">EMAC_MAN</a></td></tr>
+<tr class="memdesc:a0270070e78086011697139b837a80d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x34) Phy Maintenance Register  <br /></td></tr>
 <tr class="separator:a0270070e78086011697139b837a80d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d8a25183bf037f1afd19264617982e"><td class="memItemLeft" align="right" valign="top"><a id="a33d8a25183bf037f1afd19264617982e" name="a33d8a25183bf037f1afd19264617982e"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_PTR</b></td></tr>
-<tr class="memdesc:a33d8a25183bf037f1afd19264617982e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x38) Pause Time Register <br /></td></tr>
+<tr class="memitem:a33d8a25183bf037f1afd19264617982e"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a33d8a25183bf037f1afd19264617982e">EMAC_PTR</a></td></tr>
+<tr class="memdesc:a33d8a25183bf037f1afd19264617982e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x38) Pause Time Register  <br /></td></tr>
 <tr class="separator:a33d8a25183bf037f1afd19264617982e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a345e5a925914c9f3ce3ce9ef827e98e0"><td class="memItemLeft" align="right" valign="top"><a id="a345e5a925914c9f3ce3ce9ef827e98e0" name="a345e5a925914c9f3ce3ce9ef827e98e0"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_PFR</b></td></tr>
-<tr class="memdesc:a345e5a925914c9f3ce3ce9ef827e98e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x3C) Pause Frames Received Register <br /></td></tr>
+<tr class="memitem:a345e5a925914c9f3ce3ce9ef827e98e0"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a345e5a925914c9f3ce3ce9ef827e98e0">EMAC_PFR</a></td></tr>
+<tr class="memdesc:a345e5a925914c9f3ce3ce9ef827e98e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x3C) Pause Frames Received Register  <br /></td></tr>
 <tr class="separator:a345e5a925914c9f3ce3ce9ef827e98e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47f399fd0d4190270af718be8ffacf19"><td class="memItemLeft" align="right" valign="top"><a id="a47f399fd0d4190270af718be8ffacf19" name="a47f399fd0d4190270af718be8ffacf19"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_FTO</b></td></tr>
-<tr class="memdesc:a47f399fd0d4190270af718be8ffacf19"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x40) Frames Transmitted Ok Register <br /></td></tr>
+<tr class="memitem:a47f399fd0d4190270af718be8ffacf19"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a47f399fd0d4190270af718be8ffacf19">EMAC_FTO</a></td></tr>
+<tr class="memdesc:a47f399fd0d4190270af718be8ffacf19"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x40) Frames Transmitted Ok Register  <br /></td></tr>
 <tr class="separator:a47f399fd0d4190270af718be8ffacf19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7741431c31beae5b292ad5f958225a"><td class="memItemLeft" align="right" valign="top"><a id="a6f7741431c31beae5b292ad5f958225a" name="a6f7741431c31beae5b292ad5f958225a"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_SCF</b></td></tr>
-<tr class="memdesc:a6f7741431c31beae5b292ad5f958225a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x44) Single Collision Frames Register <br /></td></tr>
+<tr class="memitem:a6f7741431c31beae5b292ad5f958225a"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a6f7741431c31beae5b292ad5f958225a">EMAC_SCF</a></td></tr>
+<tr class="memdesc:a6f7741431c31beae5b292ad5f958225a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x44) Single Collision Frames Register  <br /></td></tr>
 <tr class="separator:a6f7741431c31beae5b292ad5f958225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa92678c2f7dd7fa383ca6c7c81e94880"><td class="memItemLeft" align="right" valign="top"><a id="aa92678c2f7dd7fa383ca6c7c81e94880" name="aa92678c2f7dd7fa383ca6c7c81e94880"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_MCF</b></td></tr>
-<tr class="memdesc:aa92678c2f7dd7fa383ca6c7c81e94880"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x48) Multiple Collision Frames Register <br /></td></tr>
+<tr class="memitem:aa92678c2f7dd7fa383ca6c7c81e94880"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#aa92678c2f7dd7fa383ca6c7c81e94880">EMAC_MCF</a></td></tr>
+<tr class="memdesc:aa92678c2f7dd7fa383ca6c7c81e94880"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x48) Multiple Collision Frames Register  <br /></td></tr>
 <tr class="separator:aa92678c2f7dd7fa383ca6c7c81e94880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93388da439ec53217736d2d30a7b2acf"><td class="memItemLeft" align="right" valign="top"><a id="a93388da439ec53217736d2d30a7b2acf" name="a93388da439ec53217736d2d30a7b2acf"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_FRO</b></td></tr>
-<tr class="memdesc:a93388da439ec53217736d2d30a7b2acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x4C) Frames Received Ok Register <br /></td></tr>
+<tr class="memitem:a93388da439ec53217736d2d30a7b2acf"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a93388da439ec53217736d2d30a7b2acf">EMAC_FRO</a></td></tr>
+<tr class="memdesc:a93388da439ec53217736d2d30a7b2acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x4C) Frames Received Ok Register  <br /></td></tr>
 <tr class="separator:a93388da439ec53217736d2d30a7b2acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d7b6769786f45ad592254a2da39a116"><td class="memItemLeft" align="right" valign="top"><a id="a6d7b6769786f45ad592254a2da39a116" name="a6d7b6769786f45ad592254a2da39a116"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_FCSE</b></td></tr>
-<tr class="memdesc:a6d7b6769786f45ad592254a2da39a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x50) Frame Check Sequence Errors Register <br /></td></tr>
+<tr class="memitem:a6d7b6769786f45ad592254a2da39a116"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a6d7b6769786f45ad592254a2da39a116">EMAC_FCSE</a></td></tr>
+<tr class="memdesc:a6d7b6769786f45ad592254a2da39a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x50) Frame Check Sequence Errors Register  <br /></td></tr>
 <tr class="separator:a6d7b6769786f45ad592254a2da39a116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3625251b63fe293d06982b5f19f17010"><td class="memItemLeft" align="right" valign="top"><a id="a3625251b63fe293d06982b5f19f17010" name="a3625251b63fe293d06982b5f19f17010"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_ALE</b></td></tr>
-<tr class="memdesc:a3625251b63fe293d06982b5f19f17010"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x54) Alignment Errors Register <br /></td></tr>
+<tr class="memitem:a3625251b63fe293d06982b5f19f17010"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a3625251b63fe293d06982b5f19f17010">EMAC_ALE</a></td></tr>
+<tr class="memdesc:a3625251b63fe293d06982b5f19f17010"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x54) Alignment Errors Register  <br /></td></tr>
 <tr class="separator:a3625251b63fe293d06982b5f19f17010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5706745eb6cded8367745918387fc5e"><td class="memItemLeft" align="right" valign="top"><a id="aa5706745eb6cded8367745918387fc5e" name="aa5706745eb6cded8367745918387fc5e"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_DTF</b></td></tr>
-<tr class="memdesc:aa5706745eb6cded8367745918387fc5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x58) Deferred Transmission Frames Register <br /></td></tr>
+<tr class="memitem:aa5706745eb6cded8367745918387fc5e"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#aa5706745eb6cded8367745918387fc5e">EMAC_DTF</a></td></tr>
+<tr class="memdesc:aa5706745eb6cded8367745918387fc5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x58) Deferred Transmission Frames Register  <br /></td></tr>
 <tr class="separator:aa5706745eb6cded8367745918387fc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1d8e0d1457813432e0afdda5919d77"><td class="memItemLeft" align="right" valign="top"><a id="adc1d8e0d1457813432e0afdda5919d77" name="adc1d8e0d1457813432e0afdda5919d77"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_LCOL</b></td></tr>
-<tr class="memdesc:adc1d8e0d1457813432e0afdda5919d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x5C) Late Collisions Register <br /></td></tr>
+<tr class="memitem:adc1d8e0d1457813432e0afdda5919d77"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#adc1d8e0d1457813432e0afdda5919d77">EMAC_LCOL</a></td></tr>
+<tr class="memdesc:adc1d8e0d1457813432e0afdda5919d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x5C) Late Collisions Register  <br /></td></tr>
 <tr class="separator:adc1d8e0d1457813432e0afdda5919d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40286a90b63681632b8e0771da824815"><td class="memItemLeft" align="right" valign="top"><a id="a40286a90b63681632b8e0771da824815" name="a40286a90b63681632b8e0771da824815"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_ECOL</b></td></tr>
-<tr class="memdesc:a40286a90b63681632b8e0771da824815"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x60) Excessive Collisions Register <br /></td></tr>
+<tr class="memitem:a40286a90b63681632b8e0771da824815"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a40286a90b63681632b8e0771da824815">EMAC_ECOL</a></td></tr>
+<tr class="memdesc:a40286a90b63681632b8e0771da824815"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x60) Excessive Collisions Register  <br /></td></tr>
 <tr class="separator:a40286a90b63681632b8e0771da824815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b8161e7caef9baff2bc393510cb171"><td class="memItemLeft" align="right" valign="top"><a id="a87b8161e7caef9baff2bc393510cb171" name="a87b8161e7caef9baff2bc393510cb171"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_TUND</b></td></tr>
-<tr class="memdesc:a87b8161e7caef9baff2bc393510cb171"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x64) Transmit Underrun Errors Register <br /></td></tr>
+<tr class="memitem:a87b8161e7caef9baff2bc393510cb171"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a87b8161e7caef9baff2bc393510cb171">EMAC_TUND</a></td></tr>
+<tr class="memdesc:a87b8161e7caef9baff2bc393510cb171"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x64) Transmit Underrun Errors Register  <br /></td></tr>
 <tr class="separator:a87b8161e7caef9baff2bc393510cb171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab40727ffa54a3028c9092917db29c336"><td class="memItemLeft" align="right" valign="top"><a id="ab40727ffa54a3028c9092917db29c336" name="ab40727ffa54a3028c9092917db29c336"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_CSE</b></td></tr>
-<tr class="memdesc:ab40727ffa54a3028c9092917db29c336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x68) Carrier Sense Errors Register <br /></td></tr>
+<tr class="memitem:ab40727ffa54a3028c9092917db29c336"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#ab40727ffa54a3028c9092917db29c336">EMAC_CSE</a></td></tr>
+<tr class="memdesc:ab40727ffa54a3028c9092917db29c336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x68) Carrier Sense Errors Register  <br /></td></tr>
 <tr class="separator:ab40727ffa54a3028c9092917db29c336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd41147622428a07a8876a79ca4b5ef8"><td class="memItemLeft" align="right" valign="top"><a id="acd41147622428a07a8876a79ca4b5ef8" name="acd41147622428a07a8876a79ca4b5ef8"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RRE</b></td></tr>
-<tr class="memdesc:acd41147622428a07a8876a79ca4b5ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x6C) Receive Resource Errors Register <br /></td></tr>
+<tr class="memitem:acd41147622428a07a8876a79ca4b5ef8"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#acd41147622428a07a8876a79ca4b5ef8">EMAC_RRE</a></td></tr>
+<tr class="memdesc:acd41147622428a07a8876a79ca4b5ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x6C) Receive Resource Errors Register  <br /></td></tr>
 <tr class="separator:acd41147622428a07a8876a79ca4b5ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea8618f934448c050f06dfa9f1830b7"><td class="memItemLeft" align="right" valign="top"><a id="a8ea8618f934448c050f06dfa9f1830b7" name="a8ea8618f934448c050f06dfa9f1830b7"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_ROV</b></td></tr>
-<tr class="memdesc:a8ea8618f934448c050f06dfa9f1830b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x70) Receive Overrun Errors Register <br /></td></tr>
+<tr class="memitem:a8ea8618f934448c050f06dfa9f1830b7"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a8ea8618f934448c050f06dfa9f1830b7">EMAC_ROV</a></td></tr>
+<tr class="memdesc:a8ea8618f934448c050f06dfa9f1830b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x70) Receive Overrun Errors Register  <br /></td></tr>
 <tr class="separator:a8ea8618f934448c050f06dfa9f1830b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8b4c60c1bdcb78e37258bedfbb35478"><td class="memItemLeft" align="right" valign="top"><a id="ad8b4c60c1bdcb78e37258bedfbb35478" name="ad8b4c60c1bdcb78e37258bedfbb35478"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RSE</b></td></tr>
-<tr class="memdesc:ad8b4c60c1bdcb78e37258bedfbb35478"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x74) Receive Symbol Errors Register <br /></td></tr>
+<tr class="memitem:ad8b4c60c1bdcb78e37258bedfbb35478"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#ad8b4c60c1bdcb78e37258bedfbb35478">EMAC_RSE</a></td></tr>
+<tr class="memdesc:ad8b4c60c1bdcb78e37258bedfbb35478"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x74) Receive Symbol Errors Register  <br /></td></tr>
 <tr class="separator:ad8b4c60c1bdcb78e37258bedfbb35478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9775f2f3d32b567ba5ec49cb65840404"><td class="memItemLeft" align="right" valign="top"><a id="a9775f2f3d32b567ba5ec49cb65840404" name="a9775f2f3d32b567ba5ec49cb65840404"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_ELE</b></td></tr>
-<tr class="memdesc:a9775f2f3d32b567ba5ec49cb65840404"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x78) Excessive Length Errors Register <br /></td></tr>
+<tr class="memitem:a9775f2f3d32b567ba5ec49cb65840404"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a9775f2f3d32b567ba5ec49cb65840404">EMAC_ELE</a></td></tr>
+<tr class="memdesc:a9775f2f3d32b567ba5ec49cb65840404"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x78) Excessive Length Errors Register  <br /></td></tr>
 <tr class="separator:a9775f2f3d32b567ba5ec49cb65840404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb9ef0763cf0414c725097dc5075b717"><td class="memItemLeft" align="right" valign="top"><a id="abb9ef0763cf0414c725097dc5075b717" name="abb9ef0763cf0414c725097dc5075b717"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RJA</b></td></tr>
-<tr class="memdesc:abb9ef0763cf0414c725097dc5075b717"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x7C) Receive Jabbers Register <br /></td></tr>
+<tr class="memitem:abb9ef0763cf0414c725097dc5075b717"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#abb9ef0763cf0414c725097dc5075b717">EMAC_RJA</a></td></tr>
+<tr class="memdesc:abb9ef0763cf0414c725097dc5075b717"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x7C) Receive Jabbers Register  <br /></td></tr>
 <tr class="separator:abb9ef0763cf0414c725097dc5075b717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49312dd701dd83cea3920a1e51e2b44"><td class="memItemLeft" align="right" valign="top"><a id="af49312dd701dd83cea3920a1e51e2b44" name="af49312dd701dd83cea3920a1e51e2b44"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_USF</b></td></tr>
-<tr class="memdesc:af49312dd701dd83cea3920a1e51e2b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x80) Undersize Frames Register <br /></td></tr>
+<tr class="memitem:af49312dd701dd83cea3920a1e51e2b44"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#af49312dd701dd83cea3920a1e51e2b44">EMAC_USF</a></td></tr>
+<tr class="memdesc:af49312dd701dd83cea3920a1e51e2b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x80) Undersize Frames Register  <br /></td></tr>
 <tr class="separator:af49312dd701dd83cea3920a1e51e2b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb7eddda84bf84cedf7ee476fd2e892"><td class="memItemLeft" align="right" valign="top"><a id="a6eb7eddda84bf84cedf7ee476fd2e892" name="a6eb7eddda84bf84cedf7ee476fd2e892"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_STE</b></td></tr>
-<tr class="memdesc:a6eb7eddda84bf84cedf7ee476fd2e892"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x84) SQE Test Errors Register <br /></td></tr>
+<tr class="memitem:a6eb7eddda84bf84cedf7ee476fd2e892"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a6eb7eddda84bf84cedf7ee476fd2e892">EMAC_STE</a></td></tr>
+<tr class="memdesc:a6eb7eddda84bf84cedf7ee476fd2e892"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x84) SQE Test Errors Register  <br /></td></tr>
 <tr class="separator:a6eb7eddda84bf84cedf7ee476fd2e892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e8b81506da72d6a2e399c947dff1b29"><td class="memItemLeft" align="right" valign="top"><a id="a3e8b81506da72d6a2e399c947dff1b29" name="a3e8b81506da72d6a2e399c947dff1b29"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_RLE</b></td></tr>
-<tr class="memdesc:a3e8b81506da72d6a2e399c947dff1b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x88) Received Length Field Mismatch Register <br /></td></tr>
+<tr class="memitem:a3e8b81506da72d6a2e399c947dff1b29"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a3e8b81506da72d6a2e399c947dff1b29">EMAC_RLE</a></td></tr>
+<tr class="memdesc:a3e8b81506da72d6a2e399c947dff1b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x88) Received Length Field Mismatch Register  <br /></td></tr>
 <tr class="separator:a3e8b81506da72d6a2e399c947dff1b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ea711c789759f1b1f0dac38546024a"><td class="memItemLeft" align="right" valign="top"><a id="a19ea711c789759f1b1f0dac38546024a" name="a19ea711c789759f1b1f0dac38546024a"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [1]</td></tr>
+<tr class="memitem:a19ea711c789759f1b1f0dac38546024a"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a19ea711c789759f1b1f0dac38546024a">Reserved2</a> [1]</td></tr>
 <tr class="separator:a19ea711c789759f1b1f0dac38546024a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23add79cc9f3d08ab3ce41e448f8771a"><td class="memItemLeft" align="right" valign="top"><a id="a23add79cc9f3d08ab3ce41e448f8771a" name="a23add79cc9f3d08ab3ce41e448f8771a"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_HRB</b></td></tr>
-<tr class="memdesc:a23add79cc9f3d08ab3ce41e448f8771a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x90) Hash Register Bottom [31:0] Register <br /></td></tr>
+<tr class="memitem:a23add79cc9f3d08ab3ce41e448f8771a"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a23add79cc9f3d08ab3ce41e448f8771a">EMAC_HRB</a></td></tr>
+<tr class="memdesc:a23add79cc9f3d08ab3ce41e448f8771a"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x90) Hash Register Bottom [31:0] Register  <br /></td></tr>
 <tr class="separator:a23add79cc9f3d08ab3ce41e448f8771a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5672dcb45cc0768a9b4ea91e71455fc1"><td class="memItemLeft" align="right" valign="top"><a id="a5672dcb45cc0768a9b4ea91e71455fc1" name="a5672dcb45cc0768a9b4ea91e71455fc1"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_HRT</b></td></tr>
-<tr class="memdesc:a5672dcb45cc0768a9b4ea91e71455fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x94) Hash Register Top [63:32] Register <br /></td></tr>
+<tr class="memitem:a5672dcb45cc0768a9b4ea91e71455fc1"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a5672dcb45cc0768a9b4ea91e71455fc1">EMAC_HRT</a></td></tr>
+<tr class="memdesc:a5672dcb45cc0768a9b4ea91e71455fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x94) Hash Register Top [63:32] Register  <br /></td></tr>
 <tr class="separator:a5672dcb45cc0768a9b4ea91e71455fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c128ee1721b65f6516b28108672a82d"><td class="memItemLeft" align="right" valign="top"><a id="a8c128ee1721b65f6516b28108672a82d" name="a8c128ee1721b65f6516b28108672a82d"></a>
-<a class="el" href="structEmacSa.html">EmacSa</a>&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_SA</b> [EMACSA_NUMBER]</td></tr>
-<tr class="memdesc:a8c128ee1721b65f6516b28108672a82d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x98) sa = 1 .. 4 <br /></td></tr>
+<tr class="memitem:a8c128ee1721b65f6516b28108672a82d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEmacSa.html">EmacSa</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a8c128ee1721b65f6516b28108672a82d">EMAC_SA</a> [<a class="el" href="emac_8h.html#afede4e30510241a80b8c23148ccb996a">EMACSA_NUMBER</a>]</td></tr>
+<tr class="memdesc:a8c128ee1721b65f6516b28108672a82d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0x98) sa = 1 .. 4  <br /></td></tr>
 <tr class="separator:a8c128ee1721b65f6516b28108672a82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46bfb464e2a4662224f4781f3fd5620e"><td class="memItemLeft" align="right" valign="top"><a id="a46bfb464e2a4662224f4781f3fd5620e" name="a46bfb464e2a4662224f4781f3fd5620e"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_TID</b></td></tr>
-<tr class="memdesc:a46bfb464e2a4662224f4781f3fd5620e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0xB8) Type ID Checking Register <br /></td></tr>
+<tr class="memitem:a46bfb464e2a4662224f4781f3fd5620e"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a46bfb464e2a4662224f4781f3fd5620e">EMAC_TID</a></td></tr>
+<tr class="memdesc:a46bfb464e2a4662224f4781f3fd5620e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0xB8) Type ID Checking Register  <br /></td></tr>
 <tr class="separator:a46bfb464e2a4662224f4781f3fd5620e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c2ff717494e400fe637662ba2a471f"><td class="memItemLeft" align="right" valign="top"><a id="a45c2ff717494e400fe637662ba2a471f" name="a45c2ff717494e400fe637662ba2a471f"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved3</b> [1]</td></tr>
+<tr class="memitem:a45c2ff717494e400fe637662ba2a471f"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#a45c2ff717494e400fe637662ba2a471f">Reserved3</a> [1]</td></tr>
 <tr class="separator:a45c2ff717494e400fe637662ba2a471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37f421256aad8c52cc4cfab58dc6868"><td class="memItemLeft" align="right" valign="top"><a id="af37f421256aad8c52cc4cfab58dc6868" name="af37f421256aad8c52cc4cfab58dc6868"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EMAC_USRIO</b></td></tr>
-<tr class="memdesc:af37f421256aad8c52cc4cfab58dc6868"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0xC0) User Input/Output Register <br /></td></tr>
+<tr class="memitem:af37f421256aad8c52cc4cfab58dc6868"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEmac.html#af37f421256aad8c52cc4cfab58dc6868">EMAC_USRIO</a></td></tr>
+<tr class="memdesc:af37f421256aad8c52cc4cfab58dc6868"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structEmac.html">Emac</a> Offset: 0xC0) User Input/Output Register  <br /></td></tr>
 <tr class="separator:af37f421256aad8c52cc4cfab58dc6868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00047">47</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3625251b63fe293d06982b5f19f17010" name="a3625251b63fe293d06982b5f19f17010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3625251b63fe293d06982b5f19f17010">&#9670;&#160;</a></span>EMAC_ALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_ALE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x54) Alignment Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00068">68</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="ab40727ffa54a3028c9092917db29c336" name="ab40727ffa54a3028c9092917db29c336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40727ffa54a3028c9092917db29c336">&#9670;&#160;</a></span>EMAC_CSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_CSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x68) Carrier Sense Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00073">73</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5706745eb6cded8367745918387fc5e" name="aa5706745eb6cded8367745918387fc5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5706745eb6cded8367745918387fc5e">&#9670;&#160;</a></span>EMAC_DTF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_DTF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x58) Deferred Transmission Frames Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00069">69</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a40286a90b63681632b8e0771da824815" name="a40286a90b63681632b8e0771da824815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40286a90b63681632b8e0771da824815">&#9670;&#160;</a></span>EMAC_ECOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_ECOL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x60) Excessive Collisions Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00071">71</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a9775f2f3d32b567ba5ec49cb65840404" name="a9775f2f3d32b567ba5ec49cb65840404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9775f2f3d32b567ba5ec49cb65840404">&#9670;&#160;</a></span>EMAC_ELE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_ELE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x78) Excessive Length Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00077">77</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d7b6769786f45ad592254a2da39a116" name="a6d7b6769786f45ad592254a2da39a116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7b6769786f45ad592254a2da39a116">&#9670;&#160;</a></span>EMAC_FCSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_FCSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x50) Frame Check Sequence Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00067">67</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a93388da439ec53217736d2d30a7b2acf" name="a93388da439ec53217736d2d30a7b2acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93388da439ec53217736d2d30a7b2acf">&#9670;&#160;</a></span>EMAC_FRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_FRO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x4C) Frames Received Ok Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00066">66</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a47f399fd0d4190270af718be8ffacf19" name="a47f399fd0d4190270af718be8ffacf19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f399fd0d4190270af718be8ffacf19">&#9670;&#160;</a></span>EMAC_FTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_FTO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x40) Frames Transmitted Ok Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00063">63</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a23add79cc9f3d08ab3ce41e448f8771a" name="a23add79cc9f3d08ab3ce41e448f8771a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23add79cc9f3d08ab3ce41e448f8771a">&#9670;&#160;</a></span>EMAC_HRB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_HRB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x90) Hash Register Bottom [31:0] Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00083">83</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a5672dcb45cc0768a9b4ea91e71455fc1" name="a5672dcb45cc0768a9b4ea91e71455fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5672dcb45cc0768a9b4ea91e71455fc1">&#9670;&#160;</a></span>EMAC_HRT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_HRT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x94) Hash Register Top [63:32] Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00084">84</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a1afb3c6dce4b819a63178fcbd00d33e5" name="a1afb3c6dce4b819a63178fcbd00d33e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1afb3c6dce4b819a63178fcbd00d33e5">&#9670;&#160;</a></span>EMAC_IDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Emac::EMAC_IDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x2C) Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00058">58</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1ab437773bfed7ac614c43ed8fb16c2" name="ab1ab437773bfed7ac614c43ed8fb16c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ab437773bfed7ac614c43ed8fb16c2">&#9670;&#160;</a></span>EMAC_IER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Emac::EMAC_IER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x28) Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00057">57</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a595bdb42c2413dd79d48e39e70055236" name="a595bdb42c2413dd79d48e39e70055236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595bdb42c2413dd79d48e39e70055236">&#9670;&#160;</a></span>EMAC_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Emac::EMAC_IMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x30) Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00059">59</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="ace3be90748bc33226d46b846d71c07cd" name="ace3be90748bc33226d46b846d71c07cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace3be90748bc33226d46b846d71c07cd">&#9670;&#160;</a></span>EMAC_ISR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_ISR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x24) Interrupt Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00056">56</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="adc1d8e0d1457813432e0afdda5919d77" name="adc1d8e0d1457813432e0afdda5919d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1d8e0d1457813432e0afdda5919d77">&#9670;&#160;</a></span>EMAC_LCOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_LCOL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x5C) Late Collisions Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00070">70</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a0270070e78086011697139b837a80d8c" name="a0270070e78086011697139b837a80d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0270070e78086011697139b837a80d8c">&#9670;&#160;</a></span>EMAC_MAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_MAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x34) Phy Maintenance Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00060">60</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa92678c2f7dd7fa383ca6c7c81e94880" name="aa92678c2f7dd7fa383ca6c7c81e94880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92678c2f7dd7fa383ca6c7c81e94880">&#9670;&#160;</a></span>EMAC_MCF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_MCF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x48) Multiple Collision Frames Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00065">65</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a38cb7f63a5f9679b478672fa07b910ae" name="a38cb7f63a5f9679b478672fa07b910ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cb7f63a5f9679b478672fa07b910ae">&#9670;&#160;</a></span>EMAC_NCFGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_NCFGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x04) Network Configuration Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00049">49</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="af33f09a4d3e93016cf1642f3bf535060" name="af33f09a4d3e93016cf1642f3bf535060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33f09a4d3e93016cf1642f3bf535060">&#9670;&#160;</a></span>EMAC_NCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_NCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x00) Network Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00048">48</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a25f772d9a2316fda3bff8e3814db3ec2" name="a25f772d9a2316fda3bff8e3814db3ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f772d9a2316fda3bff8e3814db3ec2">&#9670;&#160;</a></span>EMAC_NSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Emac::EMAC_NSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x08) Network Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00050">50</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a345e5a925914c9f3ce3ce9ef827e98e0" name="a345e5a925914c9f3ce3ce9ef827e98e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345e5a925914c9f3ce3ce9ef827e98e0">&#9670;&#160;</a></span>EMAC_PFR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_PFR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x3C) Pause Frames Received Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00062">62</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a33d8a25183bf037f1afd19264617982e" name="a33d8a25183bf037f1afd19264617982e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d8a25183bf037f1afd19264617982e">&#9670;&#160;</a></span>EMAC_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_PTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x38) Pause Time Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00061">61</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa966e6ce5edec3f03ef576bb54cbf7d2" name="aa966e6ce5edec3f03ef576bb54cbf7d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa966e6ce5edec3f03ef576bb54cbf7d2">&#9670;&#160;</a></span>EMAC_RBQP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RBQP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x18) Receive Buffer Queue Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00053">53</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="abb9ef0763cf0414c725097dc5075b717" name="abb9ef0763cf0414c725097dc5075b717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9ef0763cf0414c725097dc5075b717">&#9670;&#160;</a></span>EMAC_RJA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RJA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x7C) Receive Jabbers Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00078">78</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e8b81506da72d6a2e399c947dff1b29" name="a3e8b81506da72d6a2e399c947dff1b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8b81506da72d6a2e399c947dff1b29">&#9670;&#160;</a></span>EMAC_RLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x88) Received Length Field Mismatch Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00081">81</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a8ea8618f934448c050f06dfa9f1830b7" name="a8ea8618f934448c050f06dfa9f1830b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea8618f934448c050f06dfa9f1830b7">&#9670;&#160;</a></span>EMAC_ROV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_ROV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x70) Receive Overrun Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00075">75</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="acd41147622428a07a8876a79ca4b5ef8" name="acd41147622428a07a8876a79ca4b5ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd41147622428a07a8876a79ca4b5ef8">&#9670;&#160;</a></span>EMAC_RRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RRE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x6C) Receive Resource Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00074">74</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8b4c60c1bdcb78e37258bedfbb35478" name="ad8b4c60c1bdcb78e37258bedfbb35478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b4c60c1bdcb78e37258bedfbb35478">&#9670;&#160;</a></span>EMAC_RSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x74) Receive Symbol Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00076">76</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="aa7b7f871513695f50902c258debe74ea" name="aa7b7f871513695f50902c258debe74ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b7f871513695f50902c258debe74ea">&#9670;&#160;</a></span>EMAC_RSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_RSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x20) Receive Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00055">55</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c128ee1721b65f6516b28108672a82d" name="a8c128ee1721b65f6516b28108672a82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c128ee1721b65f6516b28108672a82d">&#9670;&#160;</a></span>EMAC_SA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEmacSa.html">EmacSa</a> Emac::EMAC_SA[<a class="el" href="emac_8h.html#afede4e30510241a80b8c23148ccb996a">EMACSA_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x98) sa = 1 .. 4 </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00085">85</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f7741431c31beae5b292ad5f958225a" name="a6f7741431c31beae5b292ad5f958225a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f7741431c31beae5b292ad5f958225a">&#9670;&#160;</a></span>EMAC_SCF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_SCF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x44) Single Collision Frames Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00064">64</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a6eb7eddda84bf84cedf7ee476fd2e892" name="a6eb7eddda84bf84cedf7ee476fd2e892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb7eddda84bf84cedf7ee476fd2e892">&#9670;&#160;</a></span>EMAC_STE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_STE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x84) SQE Test Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00080">80</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a304e4ee0554c92a3d8a2a3173fde734a" name="a304e4ee0554c92a3d8a2a3173fde734a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304e4ee0554c92a3d8a2a3173fde734a">&#9670;&#160;</a></span>EMAC_TBQP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_TBQP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x1C) Transmit Buffer Queue Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00054">54</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a46bfb464e2a4662224f4781f3fd5620e" name="a46bfb464e2a4662224f4781f3fd5620e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bfb464e2a4662224f4781f3fd5620e">&#9670;&#160;</a></span>EMAC_TID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_TID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0xB8) Type ID Checking Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00086">86</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a15f63e29ba02709406a1d42243351423" name="a15f63e29ba02709406a1d42243351423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f63e29ba02709406a1d42243351423">&#9670;&#160;</a></span>EMAC_TSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_TSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x14) Transmit Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00052">52</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a87b8161e7caef9baff2bc393510cb171" name="a87b8161e7caef9baff2bc393510cb171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b8161e7caef9baff2bc393510cb171">&#9670;&#160;</a></span>EMAC_TUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_TUND</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x64) Transmit Underrun Errors Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00072">72</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="af49312dd701dd83cea3920a1e51e2b44" name="af49312dd701dd83cea3920a1e51e2b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49312dd701dd83cea3920a1e51e2b44">&#9670;&#160;</a></span>EMAC_USF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_USF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0x80) Undersize Frames Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00079">79</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="af37f421256aad8c52cc4cfab58dc6868" name="af37f421256aad8c52cc4cfab58dc6868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37f421256aad8c52cc4cfab58dc6868">&#9670;&#160;</a></span>EMAC_USRIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Emac::EMAC_USRIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structEmac.html">Emac</a> Offset: 0xC0) User Input/Output Register </p>
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00088">88</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="afa02713868b52fdf1617043ae2fbbc00" name="afa02713868b52fdf1617043ae2fbbc00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa02713868b52fdf1617043ae2fbbc00">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Emac::Reserved1[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00051">51</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a19ea711c789759f1b1f0dac38546024a" name="a19ea711c789759f1b1f0dac38546024a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ea711c789759f1b1f0dac38546024a">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Emac::Reserved2[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00082">82</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
+<a id="a45c2ff717494e400fe637662ba2a471f" name="a45c2ff717494e400fe637662ba2a471f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c2ff717494e400fe637662ba2a471f">&#9670;&#160;</a></span>Reserved3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Emac::Reserved3[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emac_8h_source.html#l00087">87</a> of file <a class="el" href="emac_8h_source.html">emac.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="emac_8h_source.html">emac.h</a></li>
+<li><a class="el" href="emac_8h_source.html">emac.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structEmac.html">Emac</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

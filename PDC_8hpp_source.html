@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Shield Code: include/PDC.hpp Source File</title>
+<title>Shield Code: PDC.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('PDC_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">PDC.hpp</div></div>
 </div><!--header-->
@@ -82,48 +98,48 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Defining relevant UART registers</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define UART_BASE 0x400E0800</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define UART_PERIPH_TPR_ADDR (UART_BASE + 0x108) </span><span class="comment">// Transmit pointer register</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define UART_PERIPH_TCR_ADDR (UART_BASE + 0x10C) </span><span class="comment">// Transmit counter register</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define UART_PERIPH_TNPR_ADDR (UART_BASE + 0x118) </span><span class="comment">// Transmit next pointer register</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define UART_PERIPH_TNCR_ADDR (UART_BASE + 0x11C) </span><span class="comment">// Transmit next counter register</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define UART_PERIPH_PTCR_ADDR (UART_BASE + 0x120) </span><span class="comment">// Peripheral transfer control register</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define UART_PERIPH_PTSR_ADDR (UART_BASE + 0x124) </span><span class="comment">// Peripheral transfer status register</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define UART_SR (UART_BASE + 0x0014) </span><span class="comment">// Status register</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#aa501d94aad5260161a3f0b89ec827e92">   19</a></span><span class="preprocessor">#define UART_BASE 0x400E0800</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a543370a73b7340ed8bbf3da915ec2931">   20</a></span><span class="preprocessor">#define UART_PERIPH_TPR_ADDR (UART_BASE + 0x108) </span><span class="comment">// Transmit pointer register</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#ab75f977616485811d7bcf0e16965c1cb">   21</a></span><span class="preprocessor">#define UART_PERIPH_TCR_ADDR (UART_BASE + 0x10C) </span><span class="comment">// Transmit counter register</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a5cd2e74bafd4385c2e6c533dcc1040c0">   22</a></span><span class="preprocessor">#define UART_PERIPH_TNPR_ADDR (UART_BASE + 0x118) </span><span class="comment">// Transmit next pointer register</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a922d9e9f827fb63034c4976ead461134">   23</a></span><span class="preprocessor">#define UART_PERIPH_TNCR_ADDR (UART_BASE + 0x11C) </span><span class="comment">// Transmit next counter register</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#ab485cfd9dbef733a8a87a7509b9f3ab5">   24</a></span><span class="preprocessor">#define UART_PERIPH_PTCR_ADDR (UART_BASE + 0x120) </span><span class="comment">// Peripheral transfer control register</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#acb8ee5ada8dac05acfb8b239c3fc0ee3">   25</a></span><span class="preprocessor">#define UART_PERIPH_PTSR_ADDR (UART_BASE + 0x124) </span><span class="comment">// Peripheral transfer status register</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a88135060cd7c85ef5c49d605ea9b4cae">   26</a></span><span class="preprocessor">#define UART_SR (UART_BASE + 0x0014) </span><span class="comment">// Status register</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define TXTEN (1&lt;&lt;8) </span><span class="comment">//mask used to enable UART transmitter</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define TXBUFE (1&lt;&lt;11) </span><span class="comment">//check if UART is ready</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a1b16dc74a856234e22c5244800a005e9">   28</a></span><span class="preprocessor">#define TXTEN (1&lt;&lt;8) </span><span class="comment">//mask used to enable UART transmitter</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="PDC_8hpp.html#a43c67875088fc9d2a71788d2a1665598">   29</a></span><span class="preprocessor">#define TXBUFE (1&lt;&lt;11) </span><span class="comment">//check if UART is ready</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classPDC.html">   33</a></span><span class="comment"></span>class PDC {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// pointers to UART registers</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_TPR;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_TCR;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_TNPR;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_TNCR;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_PTCR;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_PTSR;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> p_UART_SR;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classPDC.html#af65cbc87ac4594d955c5e83ea0ea7e98">   36</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#af65cbc87ac4594d955c5e83ea0ea7e98">p_UART_TPR</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classPDC.html#aaa8c48aac89c08a87c03dd06680e9013">   37</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#aaa8c48aac89c08a87c03dd06680e9013">p_UART_TCR</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classPDC.html#a2d8646c2e82be1e9770c9ef02e08632a">   38</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#a2d8646c2e82be1e9770c9ef02e08632a">p_UART_TNPR</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classPDC.html#a04f087fc3a27462d3be3e9c06c0c151e">   39</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#a04f087fc3a27462d3be3e9c06c0c151e">p_UART_TNCR</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classPDC.html#adbbe8e74d6b762d9cd9e034997530c47">   40</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#adbbe8e74d6b762d9cd9e034997530c47">p_UART_PTCR</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classPDC.html#ae0b983b465adc84578f07c58c5e75025">   41</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#ae0b983b465adc84578f07c58c5e75025">p_UART_PTSR</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classPDC.html#aeb382c706e168263d79e5db2539fcb69">   42</a></span>    <span class="keyword">volatile</span> uint32_t* <span class="keyword">const</span> <a class="code hl_variable" href="classPDC.html#aeb382c706e168263d79e5db2539fcb69">p_UART_SR</a>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    uint8_t backup_buffer[294];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPDC.html#a40b92f11698cce1d1a1f91bf1076d0ea">   44</a></span>    uint8_t backup_buffer[294];</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classPDC.html#a86fb2cf94ee035a688d3fd36633bb8ab">   53</a></span>    <a class="code hl_function" href="classPDC.html#a86fb2cf94ee035a688d3fd36633bb8ab">PDC</a>()</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        : p_UART_TPR((uint32_t*)UART_PERIPH_TPR_ADDR),</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          p_UART_TCR((uint32_t*)UART_PERIPH_TCR_ADDR),</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          p_UART_TNPR((uint32_t*)UART_PERIPH_TNPR_ADDR),</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          p_UART_TNCR((uint32_t*)UART_PERIPH_TNCR_ADDR),</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          p_UART_PTCR((uint32_t*)UART_PERIPH_PTCR_ADDR),</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          p_UART_PTSR((uint32_t*)UART_PERIPH_PTSR_ADDR),</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          p_UART_SR((uint32_t*)UART_SR)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        : p_UART_TPR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#a543370a73b7340ed8bbf3da915ec2931">UART_PERIPH_TPR_ADDR</a>),</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          p_UART_TCR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#ab75f977616485811d7bcf0e16965c1cb">UART_PERIPH_TCR_ADDR</a>),</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          p_UART_TNPR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#a5cd2e74bafd4385c2e6c533dcc1040c0">UART_PERIPH_TNPR_ADDR</a>),</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          p_UART_TNCR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#a922d9e9f827fb63034c4976ead461134">UART_PERIPH_TNCR_ADDR</a>),</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          p_UART_PTCR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#ab485cfd9dbef733a8a87a7509b9f3ab5">UART_PERIPH_PTCR_ADDR</a>),</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          p_UART_PTSR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#acb8ee5ada8dac05acfb8b239c3fc0ee3">UART_PERIPH_PTSR_ADDR</a>),</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          p_UART_SR((uint32_t*)<a class="code hl_define" href="PDC_8hpp.html#a88135060cd7c85ef5c49d605ea9b4cae">UART_SR</a>)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {}</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classPDC.html#a2ed66e7deaedfa858740aa502139c491">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#a2ed66e7deaedfa858740aa502139c491">init</a>(){</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">//enable pdc transmitter</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    *p_UART_PTCR |= TXTEN;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    *p_UART_PTCR |= <a class="code hl_define" href="PDC_8hpp.html#a1b16dc74a856234e22c5244800a005e9">TXTEN</a>;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">//wait until ready</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">while</span>(! <a class="code hl_function" href="classPDC.html#a79db12a42416ac7dd5af8d23d84ccac3">PDC::is_on</a>()){</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        ;</div>
@@ -133,7 +149,7 @@ $(function() {
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">   96</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">send</a>(T* buffer, <span class="keywordtype">int</span> size){</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">//check if UART is ready for transmit</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">if</span>(*p_UART_SR &amp; TXBUFE){</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">if</span>(*p_UART_SR &amp; <a class="code hl_define" href="PDC_8hpp.html#a43c67875088fc9d2a71788d2a1665598">TXBUFE</a>){</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="comment">//set buffer and size</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                *(<span class="keyword">volatile</span> uint32_t*)p_UART_TPR = (uint32_t)buffer;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                *p_UART_TCR = size;</div>
@@ -156,14 +172,14 @@ $(function() {
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classPDC.html#af4653238c5caabeb5598d362f712a51a">  122</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#af4653238c5caabeb5598d362f712a51a">send_next</a>(T* buffer, <span class="keywordtype">int</span> size){</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                <span class="comment">//set buffer and size</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">if</span>(*p_UART_SR &amp; TXBUFE){</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">if</span>(*p_UART_SR &amp; <a class="code hl_define" href="PDC_8hpp.html#a43c67875088fc9d2a71788d2a1665598">TXBUFE</a>){</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                send(buffer, size);</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*p_UART_TNCR==0){</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                *(<span class="keyword">volatile</span> uint32_t*)p_UART_TNPR = (uint32_t)buffer;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                *p_UART_TNCR = size;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>           </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(*p_UART_SR &amp; TXBUFE)&amp;&amp;(*p_UART_TNCR!=1)){</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(*p_UART_SR &amp; <a class="code hl_define" href="PDC_8hpp.html#a43c67875088fc9d2a71788d2a1665598">TXBUFE</a>)&amp;&amp;(*p_UART_TNCR!=1)){</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <span class="keywordflow">while</span>(*p_UART_TNCR!=0){</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    ;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                }</div>
@@ -178,29 +194,54 @@ $(function() {
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">return</span> (*p_UART_PTSR &amp; (1&lt;&lt;8));</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> enableUARTInterrupt(){</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">  149</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">enableUARTInterrupt</a>(){</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="comment">//enable UART interrupt</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        NVIC_EnableIRQ(UART_IRQn);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        NVIC_EnableIRQ(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a>);</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">//interrupt on TXBUFE</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        UART-&gt;UART_IER = UART_IER_TXBUFE;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        UART-&gt;UART_IDR = ~UART_IER_TXBUFE;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_define" href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a>-&gt;UART_IER = <a class="code hl_define" href="uart_8h.html#a76d77269c182d6f711a41ba4cdb4358e">UART_IER_TXBUFE</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_define" href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a>-&gt;UART_IDR = ~UART_IER_TXBUFE;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> UART_Handler(){</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">  157</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">UART_Handler</a>(){</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        send(backup_buffer, <span class="keyword">sizeof</span>(backup_buffer));</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        NVIC_DisableIRQ(UART_IRQn);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        NVIC_DisableIRQ(<a class="code hl_enumvalue" href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a>);</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassPDC_html_a2ed66e7deaedfa858740aa502139c491"><div class="ttname"><a href="classPDC.html#a2ed66e7deaedfa858740aa502139c491">PDC::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Turns on PDC, waits until ready. Must be called AFTER Serial.begin() in setup().</div><div class="ttdef"><b>Definition:</b> PDC.hpp:67</div></div>
-<div class="ttc" id="aclassPDC_html_a6672f69d997c02ebf934439fb3972c4b"><div class="ttname"><a href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">PDC::send</a></div><div class="ttdeci">void send(T *buffer, int size)</div><div class="ttdoc">Adds data to the PDC buffer to be sent out through UART.</div><div class="ttdef"><b>Definition:</b> PDC.hpp:96</div></div>
-<div class="ttc" id="aclassPDC_html_a79db12a42416ac7dd5af8d23d84ccac3"><div class="ttname"><a href="classPDC.html#a79db12a42416ac7dd5af8d23d84ccac3">PDC::is_on</a></div><div class="ttdeci">bool is_on()</div><div class="ttdoc">Checks if the PDC and UART are on.</div><div class="ttdef"><b>Definition:</b> PDC.hpp:145</div></div>
-<div class="ttc" id="aclassPDC_html_a86fb2cf94ee035a688d3fd36633bb8ab"><div class="ttname"><a href="classPDC.html#a86fb2cf94ee035a688d3fd36633bb8ab">PDC::PDC</a></div><div class="ttdeci">PDC()</div><div class="ttdoc">Default constructor for the PDC class. Initializes all relevant register pointers.</div><div class="ttdef"><b>Definition:</b> PDC.hpp:53</div></div>
-<div class="ttc" id="aclassPDC_html_af4653238c5caabeb5598d362f712a51a"><div class="ttname"><a href="classPDC.html#af4653238c5caabeb5598d362f712a51a">PDC::send_next</a></div><div class="ttdeci">void send_next(T *buffer, int size)</div><div class="ttdoc">Adds data to the backup PDC buffer. Identical to send().</div><div class="ttdef"><b>Definition:</b> PDC.hpp:122</div></div>
+<div class="ttc" id="aPDC_8hpp_html_a1b16dc74a856234e22c5244800a005e9"><div class="ttname"><a href="PDC_8hpp.html#a1b16dc74a856234e22c5244800a005e9">TXTEN</a></div><div class="ttdeci">#define TXTEN</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00028">PDC.hpp:28</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_a43c67875088fc9d2a71788d2a1665598"><div class="ttname"><a href="PDC_8hpp.html#a43c67875088fc9d2a71788d2a1665598">TXBUFE</a></div><div class="ttdeci">#define TXBUFE</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00029">PDC.hpp:29</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_a543370a73b7340ed8bbf3da915ec2931"><div class="ttname"><a href="PDC_8hpp.html#a543370a73b7340ed8bbf3da915ec2931">UART_PERIPH_TPR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_TPR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00020">PDC.hpp:20</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_a5cd2e74bafd4385c2e6c533dcc1040c0"><div class="ttname"><a href="PDC_8hpp.html#a5cd2e74bafd4385c2e6c533dcc1040c0">UART_PERIPH_TNPR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_TNPR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00022">PDC.hpp:22</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_a88135060cd7c85ef5c49d605ea9b4cae"><div class="ttname"><a href="PDC_8hpp.html#a88135060cd7c85ef5c49d605ea9b4cae">UART_SR</a></div><div class="ttdeci">#define UART_SR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00026">PDC.hpp:26</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_a922d9e9f827fb63034c4976ead461134"><div class="ttname"><a href="PDC_8hpp.html#a922d9e9f827fb63034c4976ead461134">UART_PERIPH_TNCR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_TNCR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00023">PDC.hpp:23</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_ab485cfd9dbef733a8a87a7509b9f3ab5"><div class="ttname"><a href="PDC_8hpp.html#ab485cfd9dbef733a8a87a7509b9f3ab5">UART_PERIPH_PTCR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_PTCR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00024">PDC.hpp:24</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_ab75f977616485811d7bcf0e16965c1cb"><div class="ttname"><a href="PDC_8hpp.html#ab75f977616485811d7bcf0e16965c1cb">UART_PERIPH_TCR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_TCR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00021">PDC.hpp:21</a></div></div>
+<div class="ttc" id="aPDC_8hpp_html_acb8ee5ada8dac05acfb8b239c3fc0ee3"><div class="ttname"><a href="PDC_8hpp.html#acb8ee5ada8dac05acfb8b239c3fc0ee3">UART_PERIPH_PTSR_ADDR</a></div><div class="ttdeci">#define UART_PERIPH_PTSR_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00025">PDC.hpp:25</a></div></div>
+<div class="ttc" id="aclassPDC_html_a04f087fc3a27462d3be3e9c06c0c151e"><div class="ttname"><a href="classPDC.html#a04f087fc3a27462d3be3e9c06c0c151e">PDC::p_UART_TNCR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_TNCR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00039">PDC.hpp:39</a></div></div>
+<div class="ttc" id="aclassPDC_html_a2d8646c2e82be1e9770c9ef02e08632a"><div class="ttname"><a href="classPDC.html#a2d8646c2e82be1e9770c9ef02e08632a">PDC::p_UART_TNPR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_TNPR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00038">PDC.hpp:38</a></div></div>
+<div class="ttc" id="aclassPDC_html_a2ed66e7deaedfa858740aa502139c491"><div class="ttname"><a href="classPDC.html#a2ed66e7deaedfa858740aa502139c491">PDC::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Turns on PDC, waits until ready. Must be called AFTER Serial.begin() in setup().</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00067">PDC.hpp:67</a></div></div>
+<div class="ttc" id="aclassPDC_html_a6672f69d997c02ebf934439fb3972c4b"><div class="ttname"><a href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">PDC::send</a></div><div class="ttdeci">void send(T *buffer, int size)</div><div class="ttdoc">Adds data to the PDC buffer to be sent out through UART.</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00096">PDC.hpp:96</a></div></div>
+<div class="ttc" id="aclassPDC_html_a79db12a42416ac7dd5af8d23d84ccac3"><div class="ttname"><a href="classPDC.html#a79db12a42416ac7dd5af8d23d84ccac3">PDC::is_on</a></div><div class="ttdeci">bool is_on()</div><div class="ttdoc">Checks if the PDC and UART are on.</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00145">PDC.hpp:145</a></div></div>
+<div class="ttc" id="aclassPDC_html_a86fb2cf94ee035a688d3fd36633bb8ab"><div class="ttname"><a href="classPDC.html#a86fb2cf94ee035a688d3fd36633bb8ab">PDC::PDC</a></div><div class="ttdeci">PDC()</div><div class="ttdoc">Default constructor for the PDC class. Initializes all relevant register pointers.</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00053">PDC.hpp:53</a></div></div>
+<div class="ttc" id="aclassPDC_html_a9d98b673b78e5a50086ea032c8b88b57"><div class="ttname"><a href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">PDC::UART_Handler</a></div><div class="ttdeci">void UART_Handler()</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00157">PDC.hpp:157</a></div></div>
+<div class="ttc" id="aclassPDC_html_aaa8c48aac89c08a87c03dd06680e9013"><div class="ttname"><a href="classPDC.html#aaa8c48aac89c08a87c03dd06680e9013">PDC::p_UART_TCR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_TCR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00037">PDC.hpp:37</a></div></div>
+<div class="ttc" id="aclassPDC_html_adbbe8e74d6b762d9cd9e034997530c47"><div class="ttname"><a href="classPDC.html#adbbe8e74d6b762d9cd9e034997530c47">PDC::p_UART_PTCR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_PTCR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00040">PDC.hpp:40</a></div></div>
+<div class="ttc" id="aclassPDC_html_ae0b983b465adc84578f07c58c5e75025"><div class="ttname"><a href="classPDC.html#ae0b983b465adc84578f07c58c5e75025">PDC::p_UART_PTSR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_PTSR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00041">PDC.hpp:41</a></div></div>
+<div class="ttc" id="aclassPDC_html_aeb382c706e168263d79e5db2539fcb69"><div class="ttname"><a href="classPDC.html#aeb382c706e168263d79e5db2539fcb69">PDC::p_UART_SR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_SR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00042">PDC.hpp:42</a></div></div>
+<div class="ttc" id="aclassPDC_html_aebd64d170dda641c62e3f76d868ee8e7"><div class="ttname"><a href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">PDC::enableUARTInterrupt</a></div><div class="ttdeci">void enableUARTInterrupt()</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00149">PDC.hpp:149</a></div></div>
+<div class="ttc" id="aclassPDC_html_af4653238c5caabeb5598d362f712a51a"><div class="ttname"><a href="classPDC.html#af4653238c5caabeb5598d362f712a51a">PDC::send_next</a></div><div class="ttdeci">void send_next(T *buffer, int size)</div><div class="ttdoc">Adds data to the backup PDC buffer. Identical to send().</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00122">PDC.hpp:122</a></div></div>
+<div class="ttc" id="aclassPDC_html_af65cbc87ac4594d955c5e83ea0ea7e98"><div class="ttname"><a href="classPDC.html#af65cbc87ac4594d955c5e83ea0ea7e98">PDC::p_UART_TPR</a></div><div class="ttdeci">volatile uint32_t *const p_UART_TPR</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00036">PDC.hpp:36</a></div></div>
+<div class="ttc" id="asam3a4c_8h_html_a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb"><div class="ttname"><a href="sam3a4c_8h.html#a666eb0caeb12ec0e281415592ae89083a9d9be6e918c912367e393dae3480eabb">UART_IRQn</a></div><div class="ttdeci">@ UART_IRQn</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00079">sam3a4c.h:79</a></div></div>
+<div class="ttc" id="asam3a4c_8h_html_af7cb12b462b4594bd759d1b4e241ec4c"><div class="ttname"><a href="sam3a4c_8h.html#af7cb12b462b4594bd759d1b4e241ec4c">UART</a></div><div class="ttdeci">#define UART</div><div class="ttdoc">(UART ) Base Address</div><div class="ttdef"><b>Definition:</b> <a href="sam3a4c_8h_source.html#l00439">sam3a4c.h:439</a></div></div>
+<div class="ttc" id="auart_8h_html_a76d77269c182d6f711a41ba4cdb4358e"><div class="ttname"><a href="uart_8h.html#a76d77269c182d6f711a41ba4cdb4358e">UART_IER_TXBUFE</a></div><div class="ttdeci">#define UART_IER_TXBUFE</div><div class="ttdoc">(UART_IER) Enable Buffer Empty Interrupt</div><div class="ttdef"><b>Definition:</b> <a href="uart_8h_source.html#l00097">uart.h:97</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="PDC_8hpp.html">PDC.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classPipController.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,10 +88,10 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classPipController-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PipController Class Reference</div></div>
 </div><!--header-->
@@ -80,26 +101,165 @@ $(function() {
  <a href="classPipController.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for PipController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPipController__coll__graph.png" border="0" usemap="#aPipController_coll__map" alt="Collaboration graph"/></div>
+<map name="aPipController_coll__map" id="aPipController_coll__map">
+<area shape="rect" title="Manages simultaneous sweep for two Pip sensors. A bit hacky, but allows easily storing separate sweep..." alt="" coords="5,196,112,221"/>
+<area shape="rect" href="classPip.html" title="Manages the Pip sensor sweep and associated data." alt="" coords="37,93,80,119"/>
+<area shape="rect" href="classMax1148.html" title="Manages interfacing with Max1148 ADC." alt="" coords="17,5,100,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59f2ae2a87ed7dc3c6ced758f5a2dab0"><td class="memItemLeft" align="right" valign="top"><a id="a59f2ae2a87ed7dc3c6ced758f5a2dab0" name="a59f2ae2a87ed7dc3c6ced758f5a2dab0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PipController</b> (<a class="el" href="classPip.html">Pip</a> &amp;pip1, <a class="el" href="classPip.html">Pip</a> &amp;pip2)</td></tr>
+<tr class="memitem:a59f2ae2a87ed7dc3c6ced758f5a2dab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#a59f2ae2a87ed7dc3c6ced758f5a2dab0">PipController</a> (<a class="el" href="classPip.html">Pip</a> &amp;<a class="el" href="classPipController.html#af0db198058e7289c193ed5eacb2e6834">pip1</a>, <a class="el" href="classPip.html">Pip</a> &amp;<a class="el" href="classPipController.html#a4b630695b9bef5cada3e478c7ac374ea">pip2</a>)</td></tr>
 <tr class="separator:a59f2ae2a87ed7dc3c6ced758f5a2dab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2d40db8c6ae1dd412b8536a6019198"><td class="memItemLeft" align="right" valign="top"><a id="a9d2d40db8c6ae1dd412b8536a6019198" name="a9d2d40db8c6ae1dd412b8536a6019198"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sweep</b> ()</td></tr>
-<tr class="memdesc:a9d2d40db8c6ae1dd412b8536a6019198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sweeps both DACs simultaneously, reads both ADC channels. Functionally identical to the version committed by Max Roberts in 2015. <br /></td></tr>
+<tr class="memitem:a9d2d40db8c6ae1dd412b8536a6019198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198">sweep</a> ()</td></tr>
+<tr class="memdesc:a9d2d40db8c6ae1dd412b8536a6019198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sweeps both DACs simultaneously, reads both ADC channels. Functionally identical to the version committed by Max Roberts in 2015.  <br /></td></tr>
 <tr class="separator:a9d2d40db8c6ae1dd412b8536a6019198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af0db198058e7289c193ed5eacb2e6834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPip.html">Pip</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#af0db198058e7289c193ed5eacb2e6834">pip1</a></td></tr>
+<tr class="separator:af0db198058e7289c193ed5eacb2e6834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b630695b9bef5cada3e478c7ac374ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPip.html">Pip</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPipController.html#a4b630695b9bef5cada3e478c7ac374ea">pip2</a></td></tr>
+<tr class="separator:a4b630695b9bef5cada3e478c7ac374ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages simultaneous sweep for two <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> sensors. A bit hacky, but allows easily storing separate sweep data in each <a class="el" href="classPip.html" title="Manages the Pip sensor sweep and associated data.">Pip</a> object without compromising data privacy. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="PipController_8hpp_source.html">PipController.hpp</a></li>
+
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00010">10</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a59f2ae2a87ed7dc3c6ced758f5a2dab0" name="a59f2ae2a87ed7dc3c6ced758f5a2dab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f2ae2a87ed7dc3c6ced758f5a2dab0">&#9670;&#160;</a></span>PipController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PipController::PipController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPip.html">Pip</a> &amp;&#160;</td>
+          <td class="paramname"><em>pip1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPip.html">Pip</a> &amp;&#160;</td>
+          <td class="paramname"><em>pip2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00015">15</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9d2d40db8c6ae1dd412b8536a6019198" name="a9d2d40db8c6ae1dd412b8536a6019198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d2d40db8c6ae1dd412b8536a6019198">&#9670;&#160;</a></span>sweep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PipController::sweep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sweeps both DACs simultaneously, reads both ADC channels. Functionally identical to the version committed by Max Roberts in 2015. </p>
+
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00020">20</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af0db198058e7289c193ed5eacb2e6834" name="af0db198058e7289c193ed5eacb2e6834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0db198058e7289c193ed5eacb2e6834">&#9670;&#160;</a></span>pip1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPip.html">Pip</a>&amp; PipController::pip1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00012">12</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4b630695b9bef5cada3e478c7ac374ea" name="a4b630695b9bef5cada3e478c7ac374ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b630695b9bef5cada3e478c7ac374ea">&#9670;&#160;</a></span>pip2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPip.html">Pip</a>&amp; PipController::pip2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PipController_8hpp_source.html#l00013">13</a> of file <a class="el" href="PipController_8hpp_source.html">PipController.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="PipController_8hpp_source.html">PipController.hpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classPipController.html">PipController</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

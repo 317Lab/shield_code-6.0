@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structPmc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Pmc Member List</div></div>
 </div><!--header-->
@@ -101,17 +121,20 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="structPmc.html#a3005725002bde064e2f7aa5b23c8c912">PMC_USB</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structPmc.html#ac5f5fe031ba5032fdc169fe39480e886">PMC_WPMR</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="structPmc.html#a663df6bf677bfb19a7f7b12b3f805dcf">PMC_WPSR</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Reserved1</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Reserved2</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Reserved3</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Reserved4</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Reserved5</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Reserved6</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Reserved7</b> (defined in <a class="el" href="structPmc.html">Pmc</a>)</td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structPmc.html#a8435a66bc77a1dae1718642e02569a5f">Reserved1</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structPmc.html#ad6be77e29985aabeb8fab00054ab77b5">Reserved2</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structPmc.html#a905d2d0030554fe7c31c45bbda673fb8">Reserved3</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structPmc.html#a97d00f34d29af830cd0666e8184e74e7">Reserved4</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structPmc.html#a1d6193f5db0dec3d9f2c0b1c0f7788a2">Reserved5</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structPmc.html#a0ae841b66863f7a53a246938697f1664">Reserved6</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structPmc.html#a005390e1cef120764fc107eb060a2ecc">Reserved7</a></td><td class="entry"><a class="el" href="structPmc.html">Pmc</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

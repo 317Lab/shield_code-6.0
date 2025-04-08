@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structMatrix.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,118 +103,590 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad95b7929bb97d4ae2a18f25dec38a777"><td class="memItemLeft" align="right" valign="top"><a id="ad95b7929bb97d4ae2a18f25dec38a777" name="ad95b7929bb97d4ae2a18f25dec38a777"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_MCFG</b> [6]</td></tr>
-<tr class="memdesc:ad95b7929bb97d4ae2a18f25dec38a777"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0000) Master Configuration Register <br /></td></tr>
+<tr class="memitem:ad95b7929bb97d4ae2a18f25dec38a777"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ad95b7929bb97d4ae2a18f25dec38a777">MATRIX_MCFG</a> [6]</td></tr>
+<tr class="memdesc:ad95b7929bb97d4ae2a18f25dec38a777"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0000) Master Configuration Register  <br /></td></tr>
 <tr class="separator:ad95b7929bb97d4ae2a18f25dec38a777"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a78a801692e46ec6eaff88a86a8b94c"><td class="memItemLeft" align="right" valign="top"><a id="a9a78a801692e46ec6eaff88a86a8b94c" name="a9a78a801692e46ec6eaff88a86a8b94c"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [10]</td></tr>
+<tr class="memitem:a9a78a801692e46ec6eaff88a86a8b94c"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a9a78a801692e46ec6eaff88a86a8b94c">Reserved1</a> [10]</td></tr>
 <tr class="separator:a9a78a801692e46ec6eaff88a86a8b94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2820efda6d14fadb92553f450fd95f"><td class="memItemLeft" align="right" valign="top"><a id="adf2820efda6d14fadb92553f450fd95f" name="adf2820efda6d14fadb92553f450fd95f"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_SCFG</b> [9]</td></tr>
-<tr class="memdesc:adf2820efda6d14fadb92553f450fd95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0040) Slave Configuration Register <br /></td></tr>
+<tr class="memitem:adf2820efda6d14fadb92553f450fd95f"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#adf2820efda6d14fadb92553f450fd95f">MATRIX_SCFG</a> [9]</td></tr>
+<tr class="memdesc:adf2820efda6d14fadb92553f450fd95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0040) Slave Configuration Register  <br /></td></tr>
 <tr class="separator:adf2820efda6d14fadb92553f450fd95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd5485954ff3d3c49e0333bc444c1b7"><td class="memItemLeft" align="right" valign="top"><a id="a4fd5485954ff3d3c49e0333bc444c1b7" name="a4fd5485954ff3d3c49e0333bc444c1b7"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [7]</td></tr>
+<tr class="memitem:a4fd5485954ff3d3c49e0333bc444c1b7"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a4fd5485954ff3d3c49e0333bc444c1b7">Reserved2</a> [7]</td></tr>
 <tr class="separator:a4fd5485954ff3d3c49e0333bc444c1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a441a2fe146f7c3449f23efc813d5ff4f"><td class="memItemLeft" align="right" valign="top"><a id="a441a2fe146f7c3449f23efc813d5ff4f" name="a441a2fe146f7c3449f23efc813d5ff4f"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS0</b></td></tr>
-<tr class="memdesc:a441a2fe146f7c3449f23efc813d5ff4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0080) Priority Register A for Slave 0 <br /></td></tr>
+<tr class="memitem:a441a2fe146f7c3449f23efc813d5ff4f"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a441a2fe146f7c3449f23efc813d5ff4f">MATRIX_PRAS0</a></td></tr>
+<tr class="memdesc:a441a2fe146f7c3449f23efc813d5ff4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0080) Priority Register A for Slave 0  <br /></td></tr>
 <tr class="separator:a441a2fe146f7c3449f23efc813d5ff4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87f1c5d7ac8169444b7d7a323572440d"><td class="memItemLeft" align="right" valign="top"><a id="a87f1c5d7ac8169444b7d7a323572440d" name="a87f1c5d7ac8169444b7d7a323572440d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved3</b> [1]</td></tr>
+<tr class="memitem:a87f1c5d7ac8169444b7d7a323572440d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a87f1c5d7ac8169444b7d7a323572440d">Reserved3</a> [1]</td></tr>
 <tr class="separator:a87f1c5d7ac8169444b7d7a323572440d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eb512b83bdf424f87762f7277125a33"><td class="memItemLeft" align="right" valign="top"><a id="a7eb512b83bdf424f87762f7277125a33" name="a7eb512b83bdf424f87762f7277125a33"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS1</b></td></tr>
-<tr class="memdesc:a7eb512b83bdf424f87762f7277125a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0088) Priority Register A for Slave 1 <br /></td></tr>
+<tr class="memitem:a7eb512b83bdf424f87762f7277125a33"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a7eb512b83bdf424f87762f7277125a33">MATRIX_PRAS1</a></td></tr>
+<tr class="memdesc:a7eb512b83bdf424f87762f7277125a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0088) Priority Register A for Slave 1  <br /></td></tr>
 <tr class="separator:a7eb512b83bdf424f87762f7277125a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08f2975239bb44e36a01e1a252230e3d"><td class="memItemLeft" align="right" valign="top"><a id="a08f2975239bb44e36a01e1a252230e3d" name="a08f2975239bb44e36a01e1a252230e3d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved4</b> [1]</td></tr>
+<tr class="memitem:a08f2975239bb44e36a01e1a252230e3d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a08f2975239bb44e36a01e1a252230e3d">Reserved4</a> [1]</td></tr>
 <tr class="separator:a08f2975239bb44e36a01e1a252230e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04bfa6702d79698a8f5a8bb2979c942d"><td class="memItemLeft" align="right" valign="top"><a id="a04bfa6702d79698a8f5a8bb2979c942d" name="a04bfa6702d79698a8f5a8bb2979c942d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS2</b></td></tr>
-<tr class="memdesc:a04bfa6702d79698a8f5a8bb2979c942d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0090) Priority Register A for Slave 2 <br /></td></tr>
+<tr class="memitem:a04bfa6702d79698a8f5a8bb2979c942d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a04bfa6702d79698a8f5a8bb2979c942d">MATRIX_PRAS2</a></td></tr>
+<tr class="memdesc:a04bfa6702d79698a8f5a8bb2979c942d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0090) Priority Register A for Slave 2  <br /></td></tr>
 <tr class="separator:a04bfa6702d79698a8f5a8bb2979c942d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a3ea328a36f488a1335ce5b67f673c5"><td class="memItemLeft" align="right" valign="top"><a id="a0a3ea328a36f488a1335ce5b67f673c5" name="a0a3ea328a36f488a1335ce5b67f673c5"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved5</b> [1]</td></tr>
+<tr class="memitem:a0a3ea328a36f488a1335ce5b67f673c5"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a0a3ea328a36f488a1335ce5b67f673c5">Reserved5</a> [1]</td></tr>
 <tr class="separator:a0a3ea328a36f488a1335ce5b67f673c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f346c476ac33816154e907610beba1"><td class="memItemLeft" align="right" valign="top"><a id="af8f346c476ac33816154e907610beba1" name="af8f346c476ac33816154e907610beba1"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS3</b></td></tr>
-<tr class="memdesc:af8f346c476ac33816154e907610beba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0098) Priority Register A for Slave 3 <br /></td></tr>
+<tr class="memitem:af8f346c476ac33816154e907610beba1"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#af8f346c476ac33816154e907610beba1">MATRIX_PRAS3</a></td></tr>
+<tr class="memdesc:af8f346c476ac33816154e907610beba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0098) Priority Register A for Slave 3  <br /></td></tr>
 <tr class="separator:af8f346c476ac33816154e907610beba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4166daedb40d7a8d77a953d26ef7b7a0"><td class="memItemLeft" align="right" valign="top"><a id="a4166daedb40d7a8d77a953d26ef7b7a0" name="a4166daedb40d7a8d77a953d26ef7b7a0"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved6</b> [1]</td></tr>
+<tr class="memitem:a4166daedb40d7a8d77a953d26ef7b7a0"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a4166daedb40d7a8d77a953d26ef7b7a0">Reserved6</a> [1]</td></tr>
 <tr class="separator:a4166daedb40d7a8d77a953d26ef7b7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1064b9b162bd528dd61da262b7534bb"><td class="memItemLeft" align="right" valign="top"><a id="ac1064b9b162bd528dd61da262b7534bb" name="ac1064b9b162bd528dd61da262b7534bb"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS4</b></td></tr>
-<tr class="memdesc:ac1064b9b162bd528dd61da262b7534bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A0) Priority Register A for Slave 4 <br /></td></tr>
+<tr class="memitem:ac1064b9b162bd528dd61da262b7534bb"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ac1064b9b162bd528dd61da262b7534bb">MATRIX_PRAS4</a></td></tr>
+<tr class="memdesc:ac1064b9b162bd528dd61da262b7534bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A0) Priority Register A for Slave 4  <br /></td></tr>
 <tr class="separator:ac1064b9b162bd528dd61da262b7534bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac704ead2d00e129f7ce17ba676464653"><td class="memItemLeft" align="right" valign="top"><a id="ac704ead2d00e129f7ce17ba676464653" name="ac704ead2d00e129f7ce17ba676464653"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved7</b> [1]</td></tr>
+<tr class="memitem:ac704ead2d00e129f7ce17ba676464653"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ac704ead2d00e129f7ce17ba676464653">Reserved7</a> [1]</td></tr>
 <tr class="separator:ac704ead2d00e129f7ce17ba676464653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae621b78f06fd106c3460f791d13be34d"><td class="memItemLeft" align="right" valign="top"><a id="ae621b78f06fd106c3460f791d13be34d" name="ae621b78f06fd106c3460f791d13be34d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS5</b></td></tr>
-<tr class="memdesc:ae621b78f06fd106c3460f791d13be34d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A8) Priority Register A for Slave 5 <br /></td></tr>
+<tr class="memitem:ae621b78f06fd106c3460f791d13be34d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ae621b78f06fd106c3460f791d13be34d">MATRIX_PRAS5</a></td></tr>
+<tr class="memdesc:ae621b78f06fd106c3460f791d13be34d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A8) Priority Register A for Slave 5  <br /></td></tr>
 <tr class="separator:ae621b78f06fd106c3460f791d13be34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a598d068b79dd41d0aac4e6a4c030fa59"><td class="memItemLeft" align="right" valign="top"><a id="a598d068b79dd41d0aac4e6a4c030fa59" name="a598d068b79dd41d0aac4e6a4c030fa59"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved8</b> [1]</td></tr>
+<tr class="memitem:a598d068b79dd41d0aac4e6a4c030fa59"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a598d068b79dd41d0aac4e6a4c030fa59">Reserved8</a> [1]</td></tr>
 <tr class="separator:a598d068b79dd41d0aac4e6a4c030fa59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fc91bc26ed8652baadbb17486141648"><td class="memItemLeft" align="right" valign="top"><a id="a5fc91bc26ed8652baadbb17486141648" name="a5fc91bc26ed8652baadbb17486141648"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS6</b></td></tr>
-<tr class="memdesc:a5fc91bc26ed8652baadbb17486141648"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B0) Priority Register A for Slave 6 <br /></td></tr>
+<tr class="memitem:a5fc91bc26ed8652baadbb17486141648"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a5fc91bc26ed8652baadbb17486141648">MATRIX_PRAS6</a></td></tr>
+<tr class="memdesc:a5fc91bc26ed8652baadbb17486141648"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B0) Priority Register A for Slave 6  <br /></td></tr>
 <tr class="separator:a5fc91bc26ed8652baadbb17486141648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab929eeda2a20c1279e96ddf4793167fe"><td class="memItemLeft" align="right" valign="top"><a id="ab929eeda2a20c1279e96ddf4793167fe" name="ab929eeda2a20c1279e96ddf4793167fe"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved9</b> [1]</td></tr>
+<tr class="memitem:ab929eeda2a20c1279e96ddf4793167fe"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ab929eeda2a20c1279e96ddf4793167fe">Reserved9</a> [1]</td></tr>
 <tr class="separator:ab929eeda2a20c1279e96ddf4793167fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11ac126c7347648ddb64701311e36b0d"><td class="memItemLeft" align="right" valign="top"><a id="a11ac126c7347648ddb64701311e36b0d" name="a11ac126c7347648ddb64701311e36b0d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS7</b></td></tr>
-<tr class="memdesc:a11ac126c7347648ddb64701311e36b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B8) Priority Register A for Slave 7 <br /></td></tr>
+<tr class="memitem:a11ac126c7347648ddb64701311e36b0d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a11ac126c7347648ddb64701311e36b0d">MATRIX_PRAS7</a></td></tr>
+<tr class="memdesc:a11ac126c7347648ddb64701311e36b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B8) Priority Register A for Slave 7  <br /></td></tr>
 <tr class="separator:a11ac126c7347648ddb64701311e36b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a711a290bf96ced6b2365af70dd8e7141"><td class="memItemLeft" align="right" valign="top"><a id="a711a290bf96ced6b2365af70dd8e7141" name="a711a290bf96ced6b2365af70dd8e7141"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved10</b> [1]</td></tr>
+<tr class="memitem:a711a290bf96ced6b2365af70dd8e7141"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a711a290bf96ced6b2365af70dd8e7141">Reserved10</a> [1]</td></tr>
 <tr class="separator:a711a290bf96ced6b2365af70dd8e7141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0881372a0e3280b6ea0ea3b0e1fb9b1"><td class="memItemLeft" align="right" valign="top"><a id="aa0881372a0e3280b6ea0ea3b0e1fb9b1" name="aa0881372a0e3280b6ea0ea3b0e1fb9b1"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_PRAS8</b></td></tr>
-<tr class="memdesc:aa0881372a0e3280b6ea0ea3b0e1fb9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00C0) Priority Register A for Slave 8 <br /></td></tr>
+<tr class="memitem:aa0881372a0e3280b6ea0ea3b0e1fb9b1"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#aa0881372a0e3280b6ea0ea3b0e1fb9b1">MATRIX_PRAS8</a></td></tr>
+<tr class="memdesc:aa0881372a0e3280b6ea0ea3b0e1fb9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00C0) Priority Register A for Slave 8  <br /></td></tr>
 <tr class="separator:aa0881372a0e3280b6ea0ea3b0e1fb9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66fcfe42707f186807d4f728e10d7566"><td class="memItemLeft" align="right" valign="top"><a id="a66fcfe42707f186807d4f728e10d7566" name="a66fcfe42707f186807d4f728e10d7566"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved11</b> [1]</td></tr>
+<tr class="memitem:a66fcfe42707f186807d4f728e10d7566"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a66fcfe42707f186807d4f728e10d7566">Reserved11</a> [1]</td></tr>
 <tr class="separator:a66fcfe42707f186807d4f728e10d7566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a538a6bcf739b566ca99a1d5bd448c9e8"><td class="memItemLeft" align="right" valign="top"><a id="a538a6bcf739b566ca99a1d5bd448c9e8" name="a538a6bcf739b566ca99a1d5bd448c9e8"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved12</b> [14]</td></tr>
+<tr class="memitem:a538a6bcf739b566ca99a1d5bd448c9e8"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a538a6bcf739b566ca99a1d5bd448c9e8">Reserved12</a> [14]</td></tr>
 <tr class="separator:a538a6bcf739b566ca99a1d5bd448c9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ef35cfda298294505846f25e000aa2d"><td class="memItemLeft" align="right" valign="top"><a id="a9ef35cfda298294505846f25e000aa2d" name="a9ef35cfda298294505846f25e000aa2d"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_MRCR</b></td></tr>
-<tr class="memdesc:a9ef35cfda298294505846f25e000aa2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0100) Master Remap Control Register <br /></td></tr>
+<tr class="memitem:a9ef35cfda298294505846f25e000aa2d"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a9ef35cfda298294505846f25e000aa2d">MATRIX_MRCR</a></td></tr>
+<tr class="memdesc:a9ef35cfda298294505846f25e000aa2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0100) Master Remap Control Register  <br /></td></tr>
 <tr class="separator:a9ef35cfda298294505846f25e000aa2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add285f87cf4eb67b60140463bda05363"><td class="memItemLeft" align="right" valign="top"><a id="add285f87cf4eb67b60140463bda05363" name="add285f87cf4eb67b60140463bda05363"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved13</b> [4]</td></tr>
+<tr class="memitem:add285f87cf4eb67b60140463bda05363"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#add285f87cf4eb67b60140463bda05363">Reserved13</a> [4]</td></tr>
 <tr class="separator:add285f87cf4eb67b60140463bda05363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a8e2989ab1cad756bed54dd6b6345a8"><td class="memItemLeft" align="right" valign="top"><a id="a3a8e2989ab1cad756bed54dd6b6345a8" name="a3a8e2989ab1cad756bed54dd6b6345a8"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CCFG_SYSIO</b></td></tr>
-<tr class="memdesc:a3a8e2989ab1cad756bed54dd6b6345a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0114) System I/O Configuration register <br /></td></tr>
+<tr class="memitem:a3a8e2989ab1cad756bed54dd6b6345a8"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a3a8e2989ab1cad756bed54dd6b6345a8">CCFG_SYSIO</a></td></tr>
+<tr class="memdesc:a3a8e2989ab1cad756bed54dd6b6345a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0114) System I/O Configuration register  <br /></td></tr>
 <tr class="separator:a3a8e2989ab1cad756bed54dd6b6345a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41110e41177722d29050379c4dc99d99"><td class="memItemLeft" align="right" valign="top"><a id="a41110e41177722d29050379c4dc99d99" name="a41110e41177722d29050379c4dc99d99"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved14</b> [51]</td></tr>
+<tr class="memitem:a41110e41177722d29050379c4dc99d99"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#a41110e41177722d29050379c4dc99d99">Reserved14</a> [51]</td></tr>
 <tr class="separator:a41110e41177722d29050379c4dc99d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba87d5f5aa067b4aa4523b7acd2d0b8c"><td class="memItemLeft" align="right" valign="top"><a id="aba87d5f5aa067b4aa4523b7acd2d0b8c" name="aba87d5f5aa067b4aa4523b7acd2d0b8c"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_WPMR</b></td></tr>
-<tr class="memdesc:aba87d5f5aa067b4aa4523b7acd2d0b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E4) Write Protect Mode Register <br /></td></tr>
+<tr class="memitem:aba87d5f5aa067b4aa4523b7acd2d0b8c"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#aba87d5f5aa067b4aa4523b7acd2d0b8c">MATRIX_WPMR</a></td></tr>
+<tr class="memdesc:aba87d5f5aa067b4aa4523b7acd2d0b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E4) Write Protect Mode Register  <br /></td></tr>
 <tr class="separator:aba87d5f5aa067b4aa4523b7acd2d0b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae55edad0db2cea7f6fc91059ae7a4794"><td class="memItemLeft" align="right" valign="top"><a id="ae55edad0db2cea7f6fc91059ae7a4794" name="ae55edad0db2cea7f6fc91059ae7a4794"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MATRIX_WPSR</b></td></tr>
-<tr class="memdesc:ae55edad0db2cea7f6fc91059ae7a4794"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E8) Write Protect Status Register <br /></td></tr>
+<tr class="memitem:ae55edad0db2cea7f6fc91059ae7a4794"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrix.html#ae55edad0db2cea7f6fc91059ae7a4794">MATRIX_WPSR</a></td></tr>
+<tr class="memdesc:ae55edad0db2cea7f6fc91059ae7a4794"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E8) Write Protect Status Register  <br /></td></tr>
 <tr class="separator:ae55edad0db2cea7f6fc91059ae7a4794"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="matrix_8h_source.html">matrix.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00041">41</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3a8e2989ab1cad756bed54dd6b6345a8" name="a3a8e2989ab1cad756bed54dd6b6345a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8e2989ab1cad756bed54dd6b6345a8">&#9670;&#160;</a></span>CCFG_SYSIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::CCFG_SYSIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0114) System I/O Configuration register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00067">67</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ad95b7929bb97d4ae2a18f25dec38a777" name="ad95b7929bb97d4ae2a18f25dec38a777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95b7929bb97d4ae2a18f25dec38a777">&#9670;&#160;</a></span>MATRIX_MCFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_MCFG[6]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0000) Master Configuration Register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00042">42</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ef35cfda298294505846f25e000aa2d" name="a9ef35cfda298294505846f25e000aa2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef35cfda298294505846f25e000aa2d">&#9670;&#160;</a></span>MATRIX_MRCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_MRCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0100) Master Remap Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00065">65</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a441a2fe146f7c3449f23efc813d5ff4f" name="a441a2fe146f7c3449f23efc813d5ff4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441a2fe146f7c3449f23efc813d5ff4f">&#9670;&#160;</a></span>MATRIX_PRAS0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0080) Priority Register A for Slave 0 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00046">46</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a7eb512b83bdf424f87762f7277125a33" name="a7eb512b83bdf424f87762f7277125a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb512b83bdf424f87762f7277125a33">&#9670;&#160;</a></span>MATRIX_PRAS1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0088) Priority Register A for Slave 1 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00048">48</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a04bfa6702d79698a8f5a8bb2979c942d" name="a04bfa6702d79698a8f5a8bb2979c942d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bfa6702d79698a8f5a8bb2979c942d">&#9670;&#160;</a></span>MATRIX_PRAS2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0090) Priority Register A for Slave 2 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00050">50</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="af8f346c476ac33816154e907610beba1" name="af8f346c476ac33816154e907610beba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f346c476ac33816154e907610beba1">&#9670;&#160;</a></span>MATRIX_PRAS3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0098) Priority Register A for Slave 3 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00052">52</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1064b9b162bd528dd61da262b7534bb" name="ac1064b9b162bd528dd61da262b7534bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1064b9b162bd528dd61da262b7534bb">&#9670;&#160;</a></span>MATRIX_PRAS4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A0) Priority Register A for Slave 4 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00054">54</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ae621b78f06fd106c3460f791d13be34d" name="ae621b78f06fd106c3460f791d13be34d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae621b78f06fd106c3460f791d13be34d">&#9670;&#160;</a></span>MATRIX_PRAS5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00A8) Priority Register A for Slave 5 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00056">56</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a5fc91bc26ed8652baadbb17486141648" name="a5fc91bc26ed8652baadbb17486141648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc91bc26ed8652baadbb17486141648">&#9670;&#160;</a></span>MATRIX_PRAS6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B0) Priority Register A for Slave 6 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00058">58</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a11ac126c7347648ddb64701311e36b0d" name="a11ac126c7347648ddb64701311e36b0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ac126c7347648ddb64701311e36b0d">&#9670;&#160;</a></span>MATRIX_PRAS7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00B8) Priority Register A for Slave 7 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00060">60</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0881372a0e3280b6ea0ea3b0e1fb9b1" name="aa0881372a0e3280b6ea0ea3b0e1fb9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0881372a0e3280b6ea0ea3b0e1fb9b1">&#9670;&#160;</a></span>MATRIX_PRAS8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_PRAS8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x00C0) Priority Register A for Slave 8 </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00062">62</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="adf2820efda6d14fadb92553f450fd95f" name="adf2820efda6d14fadb92553f450fd95f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2820efda6d14fadb92553f450fd95f">&#9670;&#160;</a></span>MATRIX_SCFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_SCFG[9]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x0040) Slave Configuration Register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00044">44</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="aba87d5f5aa067b4aa4523b7acd2d0b8c" name="aba87d5f5aa067b4aa4523b7acd2d0b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba87d5f5aa067b4aa4523b7acd2d0b8c">&#9670;&#160;</a></span>MATRIX_WPMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Matrix::MATRIX_WPMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E4) Write Protect Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00069">69</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ae55edad0db2cea7f6fc91059ae7a4794" name="ae55edad0db2cea7f6fc91059ae7a4794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55edad0db2cea7f6fc91059ae7a4794">&#9670;&#160;</a></span>MATRIX_WPSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::MATRIX_WPSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structMatrix.html" title="Matrix hardware registers.">Matrix</a> Offset: 0x1E8) Write Protect Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00070">70</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a9a78a801692e46ec6eaff88a86a8b94c" name="a9a78a801692e46ec6eaff88a86a8b94c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a78a801692e46ec6eaff88a86a8b94c">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved1[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00043">43</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a711a290bf96ced6b2365af70dd8e7141" name="a711a290bf96ced6b2365af70dd8e7141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a711a290bf96ced6b2365af70dd8e7141">&#9670;&#160;</a></span>Reserved10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved10[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00061">61</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a66fcfe42707f186807d4f728e10d7566" name="a66fcfe42707f186807d4f728e10d7566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66fcfe42707f186807d4f728e10d7566">&#9670;&#160;</a></span>Reserved11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved11[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00063">63</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a538a6bcf739b566ca99a1d5bd448c9e8" name="a538a6bcf739b566ca99a1d5bd448c9e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538a6bcf739b566ca99a1d5bd448c9e8">&#9670;&#160;</a></span>Reserved12</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved12[14]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00064">64</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="add285f87cf4eb67b60140463bda05363" name="add285f87cf4eb67b60140463bda05363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add285f87cf4eb67b60140463bda05363">&#9670;&#160;</a></span>Reserved13</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved13[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00066">66</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a41110e41177722d29050379c4dc99d99" name="a41110e41177722d29050379c4dc99d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41110e41177722d29050379c4dc99d99">&#9670;&#160;</a></span>Reserved14</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved14[51]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00068">68</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fd5485954ff3d3c49e0333bc444c1b7" name="a4fd5485954ff3d3c49e0333bc444c1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd5485954ff3d3c49e0333bc444c1b7">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved2[7]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00045">45</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a87f1c5d7ac8169444b7d7a323572440d" name="a87f1c5d7ac8169444b7d7a323572440d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f1c5d7ac8169444b7d7a323572440d">&#9670;&#160;</a></span>Reserved3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved3[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00047">47</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a08f2975239bb44e36a01e1a252230e3d" name="a08f2975239bb44e36a01e1a252230e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f2975239bb44e36a01e1a252230e3d">&#9670;&#160;</a></span>Reserved4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved4[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00049">49</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a3ea328a36f488a1335ce5b67f673c5" name="a0a3ea328a36f488a1335ce5b67f673c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3ea328a36f488a1335ce5b67f673c5">&#9670;&#160;</a></span>Reserved5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved5[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00051">51</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a4166daedb40d7a8d77a953d26ef7b7a0" name="a4166daedb40d7a8d77a953d26ef7b7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4166daedb40d7a8d77a953d26ef7b7a0">&#9670;&#160;</a></span>Reserved6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved6[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00053">53</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ac704ead2d00e129f7ce17ba676464653" name="ac704ead2d00e129f7ce17ba676464653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac704ead2d00e129f7ce17ba676464653">&#9670;&#160;</a></span>Reserved7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved7[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00055">55</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a598d068b79dd41d0aac4e6a4c030fa59" name="a598d068b79dd41d0aac4e6a4c030fa59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598d068b79dd41d0aac4e6a4c030fa59">&#9670;&#160;</a></span>Reserved8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved8[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00057">57</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="ab929eeda2a20c1279e96ddf4793167fe" name="ab929eeda2a20c1279e96ddf4793167fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab929eeda2a20c1279e96ddf4793167fe">&#9670;&#160;</a></span>Reserved9</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Matrix::Reserved9[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8h_source.html#l00059">59</a> of file <a class="el" href="matrix_8h_source.html">matrix.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="matrix_8h_source.html">matrix.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structMatrix.html">Matrix</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

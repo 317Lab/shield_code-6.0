@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structCan.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -75,6 +95,8 @@ $(function() {
   <div class="headertitle"><div class="title">Can Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="can_8h_source.html">can.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Can:</div>
 <div class="dyncontent">
@@ -83,80 +105,356 @@ Collaboration diagram for Can:</div>
 <area shape="rect" title=" " alt="" coords="15,93,62,119"/>
 <area shape="rect" href="structCanMb.html" title="CanMb hardware registers." alt="" coords="5,5,72,31"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a23f82791512d3c2e594c26651ab18656"><td class="memItemLeft" align="right" valign="top"><a id="a23f82791512d3c2e594c26651ab18656" name="a23f82791512d3c2e594c26651ab18656"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_MR</b></td></tr>
-<tr class="memdesc:a23f82791512d3c2e594c26651ab18656"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0000) Mode Register <br /></td></tr>
+<tr class="memitem:a23f82791512d3c2e594c26651ab18656"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a23f82791512d3c2e594c26651ab18656">CAN_MR</a></td></tr>
+<tr class="memdesc:a23f82791512d3c2e594c26651ab18656"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0000) Mode Register  <br /></td></tr>
 <tr class="separator:a23f82791512d3c2e594c26651ab18656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7849736f2418e5f05f67d5531831bb3f"><td class="memItemLeft" align="right" valign="top"><a id="a7849736f2418e5f05f67d5531831bb3f" name="a7849736f2418e5f05f67d5531831bb3f"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_IER</b></td></tr>
-<tr class="memdesc:a7849736f2418e5f05f67d5531831bb3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0004) Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:a7849736f2418e5f05f67d5531831bb3f"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a7849736f2418e5f05f67d5531831bb3f">CAN_IER</a></td></tr>
+<tr class="memdesc:a7849736f2418e5f05f67d5531831bb3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0004) Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:a7849736f2418e5f05f67d5531831bb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c3b53160ee73180ce6a9a352983a369"><td class="memItemLeft" align="right" valign="top"><a id="a8c3b53160ee73180ce6a9a352983a369" name="a8c3b53160ee73180ce6a9a352983a369"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_IDR</b></td></tr>
-<tr class="memdesc:a8c3b53160ee73180ce6a9a352983a369"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0008) Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:a8c3b53160ee73180ce6a9a352983a369"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a8c3b53160ee73180ce6a9a352983a369">CAN_IDR</a></td></tr>
+<tr class="memdesc:a8c3b53160ee73180ce6a9a352983a369"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0008) Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:a8c3b53160ee73180ce6a9a352983a369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a897f4c112249b5f58877c1645121a76f"><td class="memItemLeft" align="right" valign="top"><a id="a897f4c112249b5f58877c1645121a76f" name="a897f4c112249b5f58877c1645121a76f"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_IMR</b></td></tr>
-<tr class="memdesc:a897f4c112249b5f58877c1645121a76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x000C) Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:a897f4c112249b5f58877c1645121a76f"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a897f4c112249b5f58877c1645121a76f">CAN_IMR</a></td></tr>
+<tr class="memdesc:a897f4c112249b5f58877c1645121a76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x000C) Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:a897f4c112249b5f58877c1645121a76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa34ad1f1ce3f83e4c55c6a5f48275ff4"><td class="memItemLeft" align="right" valign="top"><a id="aa34ad1f1ce3f83e4c55c6a5f48275ff4" name="aa34ad1f1ce3f83e4c55c6a5f48275ff4"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_SR</b></td></tr>
-<tr class="memdesc:aa34ad1f1ce3f83e4c55c6a5f48275ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0010) Status Register <br /></td></tr>
+<tr class="memitem:aa34ad1f1ce3f83e4c55c6a5f48275ff4"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#aa34ad1f1ce3f83e4c55c6a5f48275ff4">CAN_SR</a></td></tr>
+<tr class="memdesc:aa34ad1f1ce3f83e4c55c6a5f48275ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0010) Status Register  <br /></td></tr>
 <tr class="separator:aa34ad1f1ce3f83e4c55c6a5f48275ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d4ea65e21fb9c70dcf885cb915977e1"><td class="memItemLeft" align="right" valign="top"><a id="a4d4ea65e21fb9c70dcf885cb915977e1" name="a4d4ea65e21fb9c70dcf885cb915977e1"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_BR</b></td></tr>
-<tr class="memdesc:a4d4ea65e21fb9c70dcf885cb915977e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0014) Baudrate Register <br /></td></tr>
+<tr class="memitem:a4d4ea65e21fb9c70dcf885cb915977e1"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a4d4ea65e21fb9c70dcf885cb915977e1">CAN_BR</a></td></tr>
+<tr class="memdesc:a4d4ea65e21fb9c70dcf885cb915977e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0014) Baudrate Register  <br /></td></tr>
 <tr class="separator:a4d4ea65e21fb9c70dcf885cb915977e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b9c40a05094e22e4edaefcf37e5e6d"><td class="memItemLeft" align="right" valign="top"><a id="a11b9c40a05094e22e4edaefcf37e5e6d" name="a11b9c40a05094e22e4edaefcf37e5e6d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_TIM</b></td></tr>
-<tr class="memdesc:a11b9c40a05094e22e4edaefcf37e5e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0018) Timer Register <br /></td></tr>
+<tr class="memitem:a11b9c40a05094e22e4edaefcf37e5e6d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a11b9c40a05094e22e4edaefcf37e5e6d">CAN_TIM</a></td></tr>
+<tr class="memdesc:a11b9c40a05094e22e4edaefcf37e5e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0018) Timer Register  <br /></td></tr>
 <tr class="separator:a11b9c40a05094e22e4edaefcf37e5e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1c7d012937e2ead874be7f41cd6c4d"><td class="memItemLeft" align="right" valign="top"><a id="aff1c7d012937e2ead874be7f41cd6c4d" name="aff1c7d012937e2ead874be7f41cd6c4d"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_TIMESTP</b></td></tr>
-<tr class="memdesc:aff1c7d012937e2ead874be7f41cd6c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x001C) Timestamp Register <br /></td></tr>
+<tr class="memitem:aff1c7d012937e2ead874be7f41cd6c4d"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#aff1c7d012937e2ead874be7f41cd6c4d">CAN_TIMESTP</a></td></tr>
+<tr class="memdesc:aff1c7d012937e2ead874be7f41cd6c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x001C) Timestamp Register  <br /></td></tr>
 <tr class="separator:aff1c7d012937e2ead874be7f41cd6c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2c33612f7a825fd5167f939f030699"><td class="memItemLeft" align="right" valign="top"><a id="abf2c33612f7a825fd5167f939f030699" name="abf2c33612f7a825fd5167f939f030699"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_ECR</b></td></tr>
-<tr class="memdesc:abf2c33612f7a825fd5167f939f030699"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0020) Error Counter Register <br /></td></tr>
+<tr class="memitem:abf2c33612f7a825fd5167f939f030699"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#abf2c33612f7a825fd5167f939f030699">CAN_ECR</a></td></tr>
+<tr class="memdesc:abf2c33612f7a825fd5167f939f030699"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0020) Error Counter Register  <br /></td></tr>
 <tr class="separator:abf2c33612f7a825fd5167f939f030699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac36869dc840b06a9a77821670d22eaf6"><td class="memItemLeft" align="right" valign="top"><a id="ac36869dc840b06a9a77821670d22eaf6" name="ac36869dc840b06a9a77821670d22eaf6"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_TCR</b></td></tr>
-<tr class="memdesc:ac36869dc840b06a9a77821670d22eaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0024) Transfer Command Register <br /></td></tr>
+<tr class="memitem:ac36869dc840b06a9a77821670d22eaf6"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#ac36869dc840b06a9a77821670d22eaf6">CAN_TCR</a></td></tr>
+<tr class="memdesc:ac36869dc840b06a9a77821670d22eaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0024) Transfer Command Register  <br /></td></tr>
 <tr class="separator:ac36869dc840b06a9a77821670d22eaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7231e8b65d46ac466990d57c349290db"><td class="memItemLeft" align="right" valign="top"><a id="a7231e8b65d46ac466990d57c349290db" name="a7231e8b65d46ac466990d57c349290db"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_ACR</b></td></tr>
-<tr class="memdesc:a7231e8b65d46ac466990d57c349290db"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0028) Abort Command Register <br /></td></tr>
+<tr class="memitem:a7231e8b65d46ac466990d57c349290db"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a7231e8b65d46ac466990d57c349290db">CAN_ACR</a></td></tr>
+<tr class="memdesc:a7231e8b65d46ac466990d57c349290db"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x0028) Abort Command Register  <br /></td></tr>
 <tr class="separator:a7231e8b65d46ac466990d57c349290db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a381364e48efbabfbafc4582d51c752f6"><td class="memItemLeft" align="right" valign="top"><a id="a381364e48efbabfbafc4582d51c752f6" name="a381364e48efbabfbafc4582d51c752f6"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [46]</td></tr>
+<tr class="memitem:a381364e48efbabfbafc4582d51c752f6"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a381364e48efbabfbafc4582d51c752f6">Reserved1</a> [46]</td></tr>
 <tr class="separator:a381364e48efbabfbafc4582d51c752f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c03ab609101a7d3adb9e28315486558"><td class="memItemLeft" align="right" valign="top"><a id="a2c03ab609101a7d3adb9e28315486558" name="a2c03ab609101a7d3adb9e28315486558"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_WPMR</b></td></tr>
-<tr class="memdesc:a2c03ab609101a7d3adb9e28315486558"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x00E4) Write Protect Mode Register <br /></td></tr>
+<tr class="memitem:a2c03ab609101a7d3adb9e28315486558"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a2c03ab609101a7d3adb9e28315486558">CAN_WPMR</a></td></tr>
+<tr class="memdesc:a2c03ab609101a7d3adb9e28315486558"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x00E4) Write Protect Mode Register  <br /></td></tr>
 <tr class="separator:a2c03ab609101a7d3adb9e28315486558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17061c25c7c042b62616fb46343c58e8"><td class="memItemLeft" align="right" valign="top"><a id="a17061c25c7c042b62616fb46343c58e8" name="a17061c25c7c042b62616fb46343c58e8"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_WPSR</b></td></tr>
-<tr class="memdesc:a17061c25c7c042b62616fb46343c58e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x00E8) Write Protect Status Register <br /></td></tr>
+<tr class="memitem:a17061c25c7c042b62616fb46343c58e8"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a17061c25c7c042b62616fb46343c58e8">CAN_WPSR</a></td></tr>
+<tr class="memdesc:a17061c25c7c042b62616fb46343c58e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x00E8) Write Protect Status Register  <br /></td></tr>
 <tr class="separator:a17061c25c7c042b62616fb46343c58e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e6b13e4ec3c494066f13b5e5d49ff6"><td class="memItemLeft" align="right" valign="top"><a id="a79e6b13e4ec3c494066f13b5e5d49ff6" name="a79e6b13e4ec3c494066f13b5e5d49ff6"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved2</b> [69]</td></tr>
+<tr class="memitem:a79e6b13e4ec3c494066f13b5e5d49ff6"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a79e6b13e4ec3c494066f13b5e5d49ff6">Reserved2</a> [69]</td></tr>
 <tr class="separator:a79e6b13e4ec3c494066f13b5e5d49ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a433235190d3b88ccf53484f07edd69"><td class="memItemLeft" align="right" valign="top"><a id="a3a433235190d3b88ccf53484f07edd69" name="a3a433235190d3b88ccf53484f07edd69"></a>
-<a class="el" href="structCanMb.html">CanMb</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CAN_MB</b> [CANMB_NUMBER]</td></tr>
-<tr class="memdesc:a3a433235190d3b88ccf53484f07edd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x200) MB = 0 .. 7 <br /></td></tr>
+<tr class="memitem:a3a433235190d3b88ccf53484f07edd69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCanMb.html">CanMb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCan.html#a3a433235190d3b88ccf53484f07edd69">CAN_MB</a> [<a class="el" href="can_8h.html#a8a16c9f0b9449a6f5477e48cecf51444">CANMB_NUMBER</a>]</td></tr>
+<tr class="memdesc:a3a433235190d3b88ccf53484f07edd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structCan.html">Can</a> Offset: 0x200) MB = 0 .. 7  <br /></td></tr>
 <tr class="separator:a3a433235190d3b88ccf53484f07edd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00053">53</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7231e8b65d46ac466990d57c349290db" name="a7231e8b65d46ac466990d57c349290db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7231e8b65d46ac466990d57c349290db">&#9670;&#160;</a></span>CAN_ACR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Can::CAN_ACR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0028) Abort Command Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00064">64</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d4ea65e21fb9c70dcf885cb915977e1" name="a4d4ea65e21fb9c70dcf885cb915977e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4ea65e21fb9c70dcf885cb915977e1">&#9670;&#160;</a></span>CAN_BR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Can::CAN_BR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0014) Baudrate Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00059">59</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="abf2c33612f7a825fd5167f939f030699" name="abf2c33612f7a825fd5167f939f030699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf2c33612f7a825fd5167f939f030699">&#9670;&#160;</a></span>CAN_ECR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_ECR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0020) Error Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00062">62</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c3b53160ee73180ce6a9a352983a369" name="a8c3b53160ee73180ce6a9a352983a369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3b53160ee73180ce6a9a352983a369">&#9670;&#160;</a></span>CAN_IDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Can::CAN_IDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0008) Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00056">56</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a7849736f2418e5f05f67d5531831bb3f" name="a7849736f2418e5f05f67d5531831bb3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7849736f2418e5f05f67d5531831bb3f">&#9670;&#160;</a></span>CAN_IER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Can::CAN_IER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0004) Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00055">55</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a897f4c112249b5f58877c1645121a76f" name="a897f4c112249b5f58877c1645121a76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897f4c112249b5f58877c1645121a76f">&#9670;&#160;</a></span>CAN_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_IMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x000C) Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00057">57</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a433235190d3b88ccf53484f07edd69" name="a3a433235190d3b88ccf53484f07edd69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a433235190d3b88ccf53484f07edd69">&#9670;&#160;</a></span>CAN_MB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCanMb.html">CanMb</a> Can::CAN_MB[<a class="el" href="can_8h.html#a8a16c9f0b9449a6f5477e48cecf51444">CANMB_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x200) MB = 0 .. 7 </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00069">69</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a23f82791512d3c2e594c26651ab18656" name="a23f82791512d3c2e594c26651ab18656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f82791512d3c2e594c26651ab18656">&#9670;&#160;</a></span>CAN_MR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Can::CAN_MR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0000) Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00054">54</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="aa34ad1f1ce3f83e4c55c6a5f48275ff4" name="aa34ad1f1ce3f83e4c55c6a5f48275ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34ad1f1ce3f83e4c55c6a5f48275ff4">&#9670;&#160;</a></span>CAN_SR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_SR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0010) Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00058">58</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="ac36869dc840b06a9a77821670d22eaf6" name="ac36869dc840b06a9a77821670d22eaf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36869dc840b06a9a77821670d22eaf6">&#9670;&#160;</a></span>CAN_TCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Can::CAN_TCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0024) Transfer Command Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00063">63</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a11b9c40a05094e22e4edaefcf37e5e6d" name="a11b9c40a05094e22e4edaefcf37e5e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b9c40a05094e22e4edaefcf37e5e6d">&#9670;&#160;</a></span>CAN_TIM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_TIM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x0018) Timer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00060">60</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="aff1c7d012937e2ead874be7f41cd6c4d" name="aff1c7d012937e2ead874be7f41cd6c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1c7d012937e2ead874be7f41cd6c4d">&#9670;&#160;</a></span>CAN_TIMESTP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_TIMESTP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x001C) Timestamp Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00061">61</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c03ab609101a7d3adb9e28315486558" name="a2c03ab609101a7d3adb9e28315486558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c03ab609101a7d3adb9e28315486558">&#9670;&#160;</a></span>CAN_WPMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Can::CAN_WPMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x00E4) Write Protect Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00066">66</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a17061c25c7c042b62616fb46343c58e8" name="a17061c25c7c042b62616fb46343c58e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17061c25c7c042b62616fb46343c58e8">&#9670;&#160;</a></span>CAN_WPSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::CAN_WPSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structCan.html">Can</a> Offset: 0x00E8) Write Protect Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00067">67</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a381364e48efbabfbafc4582d51c752f6" name="a381364e48efbabfbafc4582d51c752f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381364e48efbabfbafc4582d51c752f6">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::Reserved1[46]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00065">65</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
+<a id="a79e6b13e4ec3c494066f13b5e5d49ff6" name="a79e6b13e4ec3c494066f13b5e5d49ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e6b13e4ec3c494066f13b5e5d49ff6">&#9670;&#160;</a></span>Reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Can::Reserved2[69]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="can_8h_source.html#l00068">68</a> of file <a class="el" href="can_8h_source.html">can.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="can_8h_source.html">can.h</a></li>
+<li><a class="el" href="can_8h_source.html">can.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structCan.html">Can</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structUart.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +88,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -83,95 +103,440 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae13e7a2b9f2c50ec62d1948dfd9743ad"><td class="memItemLeft" align="right" valign="top"><a id="ae13e7a2b9f2c50ec62d1948dfd9743ad" name="ae13e7a2b9f2c50ec62d1948dfd9743ad"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_CR</b></td></tr>
-<tr class="memdesc:ae13e7a2b9f2c50ec62d1948dfd9743ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0000) Control Register <br /></td></tr>
+<tr class="memitem:ae13e7a2b9f2c50ec62d1948dfd9743ad"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#ae13e7a2b9f2c50ec62d1948dfd9743ad">UART_CR</a></td></tr>
+<tr class="memdesc:ae13e7a2b9f2c50ec62d1948dfd9743ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0000) Control Register  <br /></td></tr>
 <tr class="separator:ae13e7a2b9f2c50ec62d1948dfd9743ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778961c8c6beae2f23656db4a8445368"><td class="memItemLeft" align="right" valign="top"><a id="a778961c8c6beae2f23656db4a8445368" name="a778961c8c6beae2f23656db4a8445368"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_MR</b></td></tr>
-<tr class="memdesc:a778961c8c6beae2f23656db4a8445368"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0004) Mode Register <br /></td></tr>
+<tr class="memitem:a778961c8c6beae2f23656db4a8445368"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a778961c8c6beae2f23656db4a8445368">UART_MR</a></td></tr>
+<tr class="memdesc:a778961c8c6beae2f23656db4a8445368"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0004) Mode Register  <br /></td></tr>
 <tr class="separator:a778961c8c6beae2f23656db4a8445368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac09a8a1ccce4b81e5d367d6a34999f"><td class="memItemLeft" align="right" valign="top"><a id="a2ac09a8a1ccce4b81e5d367d6a34999f" name="a2ac09a8a1ccce4b81e5d367d6a34999f"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_IER</b></td></tr>
-<tr class="memdesc:a2ac09a8a1ccce4b81e5d367d6a34999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0008) Interrupt Enable Register <br /></td></tr>
+<tr class="memitem:a2ac09a8a1ccce4b81e5d367d6a34999f"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a2ac09a8a1ccce4b81e5d367d6a34999f">UART_IER</a></td></tr>
+<tr class="memdesc:a2ac09a8a1ccce4b81e5d367d6a34999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0008) Interrupt Enable Register  <br /></td></tr>
 <tr class="separator:a2ac09a8a1ccce4b81e5d367d6a34999f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad5f91771eb2961c54f1b36b80ec9bce"><td class="memItemLeft" align="right" valign="top"><a id="aad5f91771eb2961c54f1b36b80ec9bce" name="aad5f91771eb2961c54f1b36b80ec9bce"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_IDR</b></td></tr>
-<tr class="memdesc:aad5f91771eb2961c54f1b36b80ec9bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x000C) Interrupt Disable Register <br /></td></tr>
+<tr class="memitem:aad5f91771eb2961c54f1b36b80ec9bce"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#aad5f91771eb2961c54f1b36b80ec9bce">UART_IDR</a></td></tr>
+<tr class="memdesc:aad5f91771eb2961c54f1b36b80ec9bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x000C) Interrupt Disable Register  <br /></td></tr>
 <tr class="separator:aad5f91771eb2961c54f1b36b80ec9bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09d763b9a0c63905b6e8a203088bc96e"><td class="memItemLeft" align="right" valign="top"><a id="a09d763b9a0c63905b6e8a203088bc96e" name="a09d763b9a0c63905b6e8a203088bc96e"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_IMR</b></td></tr>
-<tr class="memdesc:a09d763b9a0c63905b6e8a203088bc96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0010) Interrupt Mask Register <br /></td></tr>
+<tr class="memitem:a09d763b9a0c63905b6e8a203088bc96e"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a09d763b9a0c63905b6e8a203088bc96e">UART_IMR</a></td></tr>
+<tr class="memdesc:a09d763b9a0c63905b6e8a203088bc96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0010) Interrupt Mask Register  <br /></td></tr>
 <tr class="separator:a09d763b9a0c63905b6e8a203088bc96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32b19585b284fddc963c604b8590b408"><td class="memItemLeft" align="right" valign="top"><a id="a32b19585b284fddc963c604b8590b408" name="a32b19585b284fddc963c604b8590b408"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_SR</b></td></tr>
-<tr class="memdesc:a32b19585b284fddc963c604b8590b408"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0014) Status Register <br /></td></tr>
+<tr class="memitem:a32b19585b284fddc963c604b8590b408"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a32b19585b284fddc963c604b8590b408">UART_SR</a></td></tr>
+<tr class="memdesc:a32b19585b284fddc963c604b8590b408"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0014) Status Register  <br /></td></tr>
 <tr class="separator:a32b19585b284fddc963c604b8590b408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63031b78f018e1c9ae5c6deb5ec49b86"><td class="memItemLeft" align="right" valign="top"><a id="a63031b78f018e1c9ae5c6deb5ec49b86" name="a63031b78f018e1c9ae5c6deb5ec49b86"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RHR</b></td></tr>
-<tr class="memdesc:a63031b78f018e1c9ae5c6deb5ec49b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0018) Receive Holding Register <br /></td></tr>
+<tr class="memitem:a63031b78f018e1c9ae5c6deb5ec49b86"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a63031b78f018e1c9ae5c6deb5ec49b86">UART_RHR</a></td></tr>
+<tr class="memdesc:a63031b78f018e1c9ae5c6deb5ec49b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0018) Receive Holding Register  <br /></td></tr>
 <tr class="separator:a63031b78f018e1c9ae5c6deb5ec49b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2eb828d3440146f0cca56b8b175577"><td class="memItemLeft" align="right" valign="top"><a id="abf2eb828d3440146f0cca56b8b175577" name="abf2eb828d3440146f0cca56b8b175577"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_THR</b></td></tr>
-<tr class="memdesc:abf2eb828d3440146f0cca56b8b175577"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x001C) Transmit Holding Register <br /></td></tr>
+<tr class="memitem:abf2eb828d3440146f0cca56b8b175577"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#abf2eb828d3440146f0cca56b8b175577">UART_THR</a></td></tr>
+<tr class="memdesc:abf2eb828d3440146f0cca56b8b175577"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x001C) Transmit Holding Register  <br /></td></tr>
 <tr class="separator:abf2eb828d3440146f0cca56b8b175577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5a720941bb1d780ecae834cd16eeaa3"><td class="memItemLeft" align="right" valign="top"><a id="ae5a720941bb1d780ecae834cd16eeaa3" name="ae5a720941bb1d780ecae834cd16eeaa3"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_BRGR</b></td></tr>
-<tr class="memdesc:ae5a720941bb1d780ecae834cd16eeaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0020) Baud Rate Generator Register <br /></td></tr>
+<tr class="memitem:ae5a720941bb1d780ecae834cd16eeaa3"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#ae5a720941bb1d780ecae834cd16eeaa3">UART_BRGR</a></td></tr>
+<tr class="memdesc:ae5a720941bb1d780ecae834cd16eeaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0020) Baud Rate Generator Register  <br /></td></tr>
 <tr class="separator:ae5a720941bb1d780ecae834cd16eeaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a418b0252ec5276b78d5c97d071f0a9d7"><td class="memItemLeft" align="right" valign="top"><a id="a418b0252ec5276b78d5c97d071f0a9d7" name="a418b0252ec5276b78d5c97d071f0a9d7"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Reserved1</b> [55]</td></tr>
+<tr class="memitem:a418b0252ec5276b78d5c97d071f0a9d7"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a418b0252ec5276b78d5c97d071f0a9d7">Reserved1</a> [55]</td></tr>
 <tr class="separator:a418b0252ec5276b78d5c97d071f0a9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8069d94da18825ace8469123474e10d6"><td class="memItemLeft" align="right" valign="top"><a id="a8069d94da18825ace8469123474e10d6" name="a8069d94da18825ace8469123474e10d6"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RPR</b></td></tr>
-<tr class="memdesc:a8069d94da18825ace8469123474e10d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x100) Receive Pointer Register <br /></td></tr>
+<tr class="memitem:a8069d94da18825ace8469123474e10d6"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a8069d94da18825ace8469123474e10d6">UART_RPR</a></td></tr>
+<tr class="memdesc:a8069d94da18825ace8469123474e10d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x100) Receive Pointer Register  <br /></td></tr>
 <tr class="separator:a8069d94da18825ace8469123474e10d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab289221bd9920afd59658041cda850ef"><td class="memItemLeft" align="right" valign="top"><a id="ab289221bd9920afd59658041cda850ef" name="ab289221bd9920afd59658041cda850ef"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RCR</b></td></tr>
-<tr class="memdesc:ab289221bd9920afd59658041cda850ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x104) Receive Counter Register <br /></td></tr>
+<tr class="memitem:ab289221bd9920afd59658041cda850ef"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#ab289221bd9920afd59658041cda850ef">UART_RCR</a></td></tr>
+<tr class="memdesc:ab289221bd9920afd59658041cda850ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x104) Receive Counter Register  <br /></td></tr>
 <tr class="separator:ab289221bd9920afd59658041cda850ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a816ac008c2eadf291512d9c2ca3847aa"><td class="memItemLeft" align="right" valign="top"><a id="a816ac008c2eadf291512d9c2ca3847aa" name="a816ac008c2eadf291512d9c2ca3847aa"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_TPR</b></td></tr>
-<tr class="memdesc:a816ac008c2eadf291512d9c2ca3847aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x108) Transmit Pointer Register <br /></td></tr>
+<tr class="memitem:a816ac008c2eadf291512d9c2ca3847aa"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a816ac008c2eadf291512d9c2ca3847aa">UART_TPR</a></td></tr>
+<tr class="memdesc:a816ac008c2eadf291512d9c2ca3847aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x108) Transmit Pointer Register  <br /></td></tr>
 <tr class="separator:a816ac008c2eadf291512d9c2ca3847aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a3ab5796674311a6ab9008e16ce3cd"><td class="memItemLeft" align="right" valign="top"><a id="a53a3ab5796674311a6ab9008e16ce3cd" name="a53a3ab5796674311a6ab9008e16ce3cd"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_TCR</b></td></tr>
-<tr class="memdesc:a53a3ab5796674311a6ab9008e16ce3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x10C) Transmit Counter Register <br /></td></tr>
+<tr class="memitem:a53a3ab5796674311a6ab9008e16ce3cd"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a53a3ab5796674311a6ab9008e16ce3cd">UART_TCR</a></td></tr>
+<tr class="memdesc:a53a3ab5796674311a6ab9008e16ce3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x10C) Transmit Counter Register  <br /></td></tr>
 <tr class="separator:a53a3ab5796674311a6ab9008e16ce3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a714865821f5dc46e1843f1203a2706b7"><td class="memItemLeft" align="right" valign="top"><a id="a714865821f5dc46e1843f1203a2706b7" name="a714865821f5dc46e1843f1203a2706b7"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RNPR</b></td></tr>
-<tr class="memdesc:a714865821f5dc46e1843f1203a2706b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x110) Receive Next Pointer Register <br /></td></tr>
+<tr class="memitem:a714865821f5dc46e1843f1203a2706b7"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a714865821f5dc46e1843f1203a2706b7">UART_RNPR</a></td></tr>
+<tr class="memdesc:a714865821f5dc46e1843f1203a2706b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x110) Receive Next Pointer Register  <br /></td></tr>
 <tr class="separator:a714865821f5dc46e1843f1203a2706b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf5a2c3f9062d1673e8ffd55f95a3aab"><td class="memItemLeft" align="right" valign="top"><a id="adf5a2c3f9062d1673e8ffd55f95a3aab" name="adf5a2c3f9062d1673e8ffd55f95a3aab"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RNCR</b></td></tr>
-<tr class="memdesc:adf5a2c3f9062d1673e8ffd55f95a3aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x114) Receive Next Counter Register <br /></td></tr>
+<tr class="memitem:adf5a2c3f9062d1673e8ffd55f95a3aab"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#adf5a2c3f9062d1673e8ffd55f95a3aab">UART_RNCR</a></td></tr>
+<tr class="memdesc:adf5a2c3f9062d1673e8ffd55f95a3aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x114) Receive Next Counter Register  <br /></td></tr>
 <tr class="separator:adf5a2c3f9062d1673e8ffd55f95a3aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90d28fb864c2415f429f38e9b16a7447"><td class="memItemLeft" align="right" valign="top"><a id="a90d28fb864c2415f429f38e9b16a7447" name="a90d28fb864c2415f429f38e9b16a7447"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_TNPR</b></td></tr>
-<tr class="memdesc:a90d28fb864c2415f429f38e9b16a7447"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x118) Transmit Next Pointer Register <br /></td></tr>
+<tr class="memitem:a90d28fb864c2415f429f38e9b16a7447"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a90d28fb864c2415f429f38e9b16a7447">UART_TNPR</a></td></tr>
+<tr class="memdesc:a90d28fb864c2415f429f38e9b16a7447"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x118) Transmit Next Pointer Register  <br /></td></tr>
 <tr class="separator:a90d28fb864c2415f429f38e9b16a7447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1b68fc8b99d29df21944ecc44ae0760"><td class="memItemLeft" align="right" valign="top"><a id="ac1b68fc8b99d29df21944ecc44ae0760" name="ac1b68fc8b99d29df21944ecc44ae0760"></a>
-__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_TNCR</b></td></tr>
-<tr class="memdesc:ac1b68fc8b99d29df21944ecc44ae0760"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x11C) Transmit Next Counter Register <br /></td></tr>
+<tr class="memitem:ac1b68fc8b99d29df21944ecc44ae0760"><td class="memItemLeft" align="right" valign="top">__IO uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#ac1b68fc8b99d29df21944ecc44ae0760">UART_TNCR</a></td></tr>
+<tr class="memdesc:ac1b68fc8b99d29df21944ecc44ae0760"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x11C) Transmit Next Counter Register  <br /></td></tr>
 <tr class="separator:ac1b68fc8b99d29df21944ecc44ae0760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeeddb5c10631ca9b12bcf94aae1e627"><td class="memItemLeft" align="right" valign="top"><a id="aaeeddb5c10631ca9b12bcf94aae1e627" name="aaeeddb5c10631ca9b12bcf94aae1e627"></a>
-__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_PTCR</b></td></tr>
-<tr class="memdesc:aaeeddb5c10631ca9b12bcf94aae1e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x120) Transfer Control Register <br /></td></tr>
+<tr class="memitem:aaeeddb5c10631ca9b12bcf94aae1e627"><td class="memItemLeft" align="right" valign="top">__O uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#aaeeddb5c10631ca9b12bcf94aae1e627">UART_PTCR</a></td></tr>
+<tr class="memdesc:aaeeddb5c10631ca9b12bcf94aae1e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x120) Transfer Control Register  <br /></td></tr>
 <tr class="separator:aaeeddb5c10631ca9b12bcf94aae1e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2655f2bad63673df91766c4220ac73bf"><td class="memItemLeft" align="right" valign="top"><a id="a2655f2bad63673df91766c4220ac73bf" name="a2655f2bad63673df91766c4220ac73bf"></a>
-__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>UART_PTSR</b></td></tr>
-<tr class="memdesc:a2655f2bad63673df91766c4220ac73bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x124) Transfer Status Register <br /></td></tr>
+<tr class="memitem:a2655f2bad63673df91766c4220ac73bf"><td class="memItemLeft" align="right" valign="top">__I uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUart.html#a2655f2bad63673df91766c4220ac73bf">UART_PTSR</a></td></tr>
+<tr class="memdesc:a2655f2bad63673df91766c4220ac73bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x124) Transfer Status Register  <br /></td></tr>
 <tr class="separator:a2655f2bad63673df91766c4220ac73bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> hardware registers. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/cmsis_include/component/<a class="el" href="uart_8h_source.html">uart.h</a></li>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00041">41</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a418b0252ec5276b78d5c97d071f0a9d7" name="a418b0252ec5276b78d5c97d071f0a9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418b0252ec5276b78d5c97d071f0a9d7">&#9670;&#160;</a></span>Reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Uart::Reserved1[55]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00051">51</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5a720941bb1d780ecae834cd16eeaa3" name="ae5a720941bb1d780ecae834cd16eeaa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a720941bb1d780ecae834cd16eeaa3">&#9670;&#160;</a></span>UART_BRGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_BRGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0020) Baud Rate Generator Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00050">50</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="ae13e7a2b9f2c50ec62d1948dfd9743ad" name="ae13e7a2b9f2c50ec62d1948dfd9743ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13e7a2b9f2c50ec62d1948dfd9743ad">&#9670;&#160;</a></span>UART_CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Uart::UART_CR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0000) Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00042">42</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="aad5f91771eb2961c54f1b36b80ec9bce" name="aad5f91771eb2961c54f1b36b80ec9bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad5f91771eb2961c54f1b36b80ec9bce">&#9670;&#160;</a></span>UART_IDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Uart::UART_IDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x000C) Interrupt Disable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00045">45</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ac09a8a1ccce4b81e5d367d6a34999f" name="a2ac09a8a1ccce4b81e5d367d6a34999f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac09a8a1ccce4b81e5d367d6a34999f">&#9670;&#160;</a></span>UART_IER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Uart::UART_IER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0008) Interrupt Enable Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00044">44</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a09d763b9a0c63905b6e8a203088bc96e" name="a09d763b9a0c63905b6e8a203088bc96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d763b9a0c63905b6e8a203088bc96e">&#9670;&#160;</a></span>UART_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Uart::UART_IMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0010) Interrupt Mask Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00046">46</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a778961c8c6beae2f23656db4a8445368" name="a778961c8c6beae2f23656db4a8445368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778961c8c6beae2f23656db4a8445368">&#9670;&#160;</a></span>UART_MR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_MR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0004) Mode Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00043">43</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="aaeeddb5c10631ca9b12bcf94aae1e627" name="aaeeddb5c10631ca9b12bcf94aae1e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeeddb5c10631ca9b12bcf94aae1e627">&#9670;&#160;</a></span>UART_PTCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Uart::UART_PTCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x120) Transfer Control Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00060">60</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a2655f2bad63673df91766c4220ac73bf" name="a2655f2bad63673df91766c4220ac73bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2655f2bad63673df91766c4220ac73bf">&#9670;&#160;</a></span>UART_PTSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Uart::UART_PTSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x124) Transfer Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00061">61</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="ab289221bd9920afd59658041cda850ef" name="ab289221bd9920afd59658041cda850ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab289221bd9920afd59658041cda850ef">&#9670;&#160;</a></span>UART_RCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_RCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x104) Receive Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00053">53</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a63031b78f018e1c9ae5c6deb5ec49b86" name="a63031b78f018e1c9ae5c6deb5ec49b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63031b78f018e1c9ae5c6deb5ec49b86">&#9670;&#160;</a></span>UART_RHR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Uart::UART_RHR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0018) Receive Holding Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00048">48</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="adf5a2c3f9062d1673e8ffd55f95a3aab" name="adf5a2c3f9062d1673e8ffd55f95a3aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5a2c3f9062d1673e8ffd55f95a3aab">&#9670;&#160;</a></span>UART_RNCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_RNCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x114) Receive Next Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00057">57</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a714865821f5dc46e1843f1203a2706b7" name="a714865821f5dc46e1843f1203a2706b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714865821f5dc46e1843f1203a2706b7">&#9670;&#160;</a></span>UART_RNPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_RNPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x110) Receive Next Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00056">56</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a8069d94da18825ace8469123474e10d6" name="a8069d94da18825ace8469123474e10d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8069d94da18825ace8469123474e10d6">&#9670;&#160;</a></span>UART_RPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_RPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x100) Receive Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00052">52</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a32b19585b284fddc963c604b8590b408" name="a32b19585b284fddc963c604b8590b408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b19585b284fddc963c604b8590b408">&#9670;&#160;</a></span>UART_SR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__I uint32_t Uart::UART_SR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x0014) Status Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00047">47</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a53a3ab5796674311a6ab9008e16ce3cd" name="a53a3ab5796674311a6ab9008e16ce3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a3ab5796674311a6ab9008e16ce3cd">&#9670;&#160;</a></span>UART_TCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_TCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x10C) Transmit Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00055">55</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="abf2eb828d3440146f0cca56b8b175577" name="abf2eb828d3440146f0cca56b8b175577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf2eb828d3440146f0cca56b8b175577">&#9670;&#160;</a></span>UART_THR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__O uint32_t Uart::UART_THR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x001C) Transmit Holding Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00049">49</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1b68fc8b99d29df21944ecc44ae0760" name="ac1b68fc8b99d29df21944ecc44ae0760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1b68fc8b99d29df21944ecc44ae0760">&#9670;&#160;</a></span>UART_TNCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_TNCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x11C) Transmit Next Counter Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00059">59</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a90d28fb864c2415f429f38e9b16a7447" name="a90d28fb864c2415f429f38e9b16a7447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d28fb864c2415f429f38e9b16a7447">&#9670;&#160;</a></span>UART_TNPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_TNPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x118) Transmit Next Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00058">58</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a816ac008c2eadf291512d9c2ca3847aa" name="a816ac008c2eadf291512d9c2ca3847aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816ac008c2eadf291512d9c2ca3847aa">&#9670;&#160;</a></span>UART_TPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IO uint32_t Uart::UART_TPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(<a class="el" href="structUart.html" title="Uart hardware registers.">Uart</a> Offset: 0x108) Transmit Pointer Register </p>
+
+<p class="definition">Definition at line <a class="el" href="uart_8h_source.html#l00054">54</a> of file <a class="el" href="uart_8h_source.html">uart.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="uart_8h_source.html">uart.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structUart.html">Uart</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

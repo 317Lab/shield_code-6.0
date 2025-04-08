@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -69,20 +89,91 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>adc_read()&#160;:&#160;<a class="el" href="classMax1148.html#aae7431950ed3ff37b274524357e84f9e">Max1148</a></li>
+<li>adc_read_avg()&#160;:&#160;<a class="el" href="classMax1148.html#adc046ad04d5adef7473775b708bb69c2">Max1148</a></li>
+<li>AT25M02()&#160;:&#160;<a class="el" href="classAT25M02.html#a453bc57eced5b19eea3cbdf1ddd13572">AT25M02</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>clear_data()&#160;:&#160;<a class="el" href="classPip.html#afb6bda586a6369cd28a5e66932581612">Pip</a></li>
+<li>csh()&#160;:&#160;<a class="el" href="classAT25M02.html#ad5591f964f093107ba42bcbe1b25a747">AT25M02</a>, <a class="el" href="classMax1148.html#a2b70543fde8b535db33f31fad756bada">Max1148</a></li>
+<li>csl()&#160;:&#160;<a class="el" href="classAT25M02.html#ab4455f414a3e9bcdbdd633482745665a">AT25M02</a>, <a class="el" href="classMax1148.html#a8ac73d182cce6622c459b17cc5e03ee5">Max1148</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>enableUARTInterrupt()&#160;:&#160;<a class="el" href="classPDC.html#aebd64d170dda641c62e3f76d868ee8e7">PDC</a></li>
+</ul>
+
+
+<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>freeBufferBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#a1423450348315f3603bd05021b9a1f37">AT25M02</a></li>
+<li>freeBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#ab8a47c94b577284350ef881413217666">AT25M02</a></li>
+<li>freeMemoryBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#ad75297e8ebdd2e7246aa4e632c3d7adc">AT25M02</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>init()&#160;:&#160;<a class="el" href="classAT25M02.html#a27b38d3bdbc3e7f2e4851eef4bd599ad">AT25M02</a>, <a class="el" href="classPDC.html#a2ed66e7deaedfa858740aa502139c491">PDC</a></li>
 <li>is_on()&#160;:&#160;<a class="el" href="classPDC.html#a79db12a42416ac7dd5af8d23d84ccac3">PDC</a></li>
+<li>isReady()&#160;:&#160;<a class="el" href="classAT25M02.html#aa440e942cec35db3d916e5b52c0bcd61">AT25M02</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>Max1148()&#160;:&#160;<a class="el" href="classMax1148.html#a0650fc16b26b0f3de8c69eec354c235c">Max1148</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>PDC()&#160;:&#160;<a class="el" href="classPDC.html#a86fb2cf94ee035a688d3fd36633bb8ab">PDC</a></li>
 <li>Pip()&#160;:&#160;<a class="el" href="classPip.html#a11eafb91578a61b66a2aba2883f8f9cf">Pip</a></li>
+<li>PipController()&#160;:&#160;<a class="el" href="classPipController.html#a59f2ae2a87ed7dc3c6ced758f5a2dab0">PipController</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>read_adc()&#160;:&#160;<a class="el" href="classPip.html#a86db44288020469244b3f18a90ce5a39">Pip</a></li>
+<li>readData()&#160;:&#160;<a class="el" href="classAT25M02.html#a168c0381bff9add840001244472de416">AT25M02</a></li>
+<li>readMemory()&#160;:&#160;<a class="el" href="classAT25M02.html#a45e32edd992631d6e2ceed29e1e2e567">AT25M02</a></li>
+<li>readStatusReg()&#160;:&#160;<a class="el" href="classAT25M02.html#ad88033c98d88836557c55fc532826975">AT25M02</a></li>
+<li>readWriteBuffer()&#160;:&#160;<a class="el" href="classAT25M02.html#abaaa5359718d0addb5d7a99df71ba8a4">AT25M02</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>send()&#160;:&#160;<a class="el" href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">PDC</a></li>
 <li>send_next()&#160;:&#160;<a class="el" href="classPDC.html#af4653238c5caabeb5598d362f712a51a">PDC</a></li>
+<li>sendCommand()&#160;:&#160;<a class="el" href="classAT25M02.html#ac47e9099d07b1f219adfb5d3739e760b">AT25M02</a></li>
+<li>setWRSR()&#160;:&#160;<a class="el" href="classAT25M02.html#a04fb934ba602c7c6456e260bdc97edfd">AT25M02</a></li>
 <li>sweep()&#160;:&#160;<a class="el" href="classPip.html#a17f915d3c619b11bbf54df63ffdd73e4">Pip</a>, <a class="el" href="classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198">PipController</a></li>
 </ul>
+
+
+<h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>UART_Handler()&#160;:&#160;<a class="el" href="classPDC.html#a9d98b673b78e5a50086ea032c8b88b57">PDC</a></li>
+<li>usedBufferBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#aa09eadfc15eb5dc3986a7edc8c2d646a">AT25M02</a></li>
+<li>usedBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#ae08e3fb33579e651088f50d519a04ddb">AT25M02</a></li>
+<li>usedMemoryBytes()&#160;:&#160;<a class="el" href="classAT25M02.html#a5aeb75524a19dd7f88c7e46f13f60f4e">AT25M02</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>waitUntilReady()&#160;:&#160;<a class="el" href="classAT25M02.html#a41678aaf2a05c47767d191ef919d34f9">AT25M02</a></li>
+<li>writeData()&#160;:&#160;<a class="el" href="classAT25M02.html#a76d7be6c50a18aec76c5255db8707410">AT25M02</a></li>
+<li>writePage()&#160;:&#160;<a class="el" href="classAT25M02.html#a357eb337bc299d585ee47ea382c7e765">AT25M02</a></li>
+</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>
