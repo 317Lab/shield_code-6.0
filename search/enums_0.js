@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['anotherenum_0',['AnotherEnum',['../classEnum__Test.html#a633286511e19b996e97699d7dd2cd2a0',1,'Enum_Test']]]
+  ['channel_0',['Channel',['../Max1148_8hpp.html#a98c9a0e90b3b640f4f95ae647038d5e1',1,'Max1148.hpp']]]
 ];

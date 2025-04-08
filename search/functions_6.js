@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['fsmaction_0',['FSMAction',['../main_8cpp.html#a248cbabf5c512b0faec96f2b47ed2933',1,'main.cpp']]],
-  ['fsmupdate_1',['FSMUpdate',['../main_8cpp.html#aa8e0dc1e1a2b72c66cf527bad9598a78',1,'main.cpp']]],
-  ['func_2',['func',['../namespacedocstring.html#aec1a168f6e16b33f87fe6a37b9208957',1,'docstring.func()'],['../group__group1.html#ga24f647174760cac13d2624b5ad74b00c',1,'func():&#160;group.cpp'],['../namespacepyexample.html#a2daf35288bc9d0a1d4233ab18b553451',1,'pyexample.func()']]],
-  ['func1ingroup1_3',['func1InGroup1',['../classMemgrp__Test.html#a5052066c03efb51395b5334da4255cd2',1,'Memgrp_Test']]],
-  ['func1ingroup2_4',['func1InGroup2',['../classMemgrp__Test.html#ab0e6553ddc36ac3cef0ac229c5dd4cdb',1,'Memgrp_Test']]],
-  ['func2_5',['func2',['../group__group1.html#ga053929c0809a5f56f7548fd7d9968f31',1,'group.cpp']]],
-  ['func2ingroup2_6',['func2InGroup2',['../classMemgrp__Test.html#a9ce862049bb543596343e81ad3ddddff',1,'Memgrp_Test']]],
-  ['func3_7',['func3',['../group__group1.html#gadbf675591ff057ec48ce35b0d5cdf755',1,'group.cpp']]]
+  ['sampleimu_0',['sampleIMU',['../IMU_8cpp.html#aaa58d9f167fcae9b258200e889805300',1,'sampleIMU(LIS3MDL *mag, LSM6 *imu, int16_t *data):&#160;IMU.cpp'],['../IMU_8hpp.html#acc9ef66df0760f586ec20528da31024e',1,'sampleIMU(LIS3MDL *compass, LSM6 *gyro, int16_t *data):&#160;IMU.cpp']]],
+  ['send_1',['send',['../classPDC.html#a6672f69d997c02ebf934439fb3972c4b',1,'PDC']]],
+  ['send_5fnext_2',['send_next',['../classPDC.html#af4653238c5caabeb5598d362f712a51a',1,'PDC']]],
+  ['startsweeponshield_3',['startSweepOnShield',['../main_8cpp.html#aa7673a7ecdca5d3e2520e4dda2bc9e74',1,'main.cpp']]],
+  ['sweep_4',['sweep',['../classPip.html#a17f915d3c619b11bbf54df63ffdd73e4',1,'Pip::sweep()'],['../classPipController.html#a9d2d40db8c6ae1dd412b8536a6019198',1,'PipController::sweep()']]]
 ];

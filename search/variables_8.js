@@ -1,4 +1,23 @@
 var searchData=
 [
-  ['ieee_0',['ieee',['../classmux__using__with.html#a44d1d60c58066d98a072e90b31c9d908',1,'mux_using_with']]]
+  ['rstc_5fcr_0',['RSTC_CR',['../structRstc.html#a93addad3d19058599aeac30a19f09c0e',1,'Rstc']]],
+  ['rstc_5fmr_1',['RSTC_MR',['../structRstc.html#a2184eb0dd1da96ae11d14e0f9c8ab554',1,'Rstc']]],
+  ['rstc_5fsr_2',['RSTC_SR',['../structRstc.html#a52a8e1d8a6358b7fd40b830bc85d2544',1,'Rstc']]],
+  ['rtc_5fcalalr_3',['RTC_CALALR',['../structRtc.html#adcd938b339e30ad4bb9990d8905f05ad',1,'Rtc']]],
+  ['rtc_5fcalr_4',['RTC_CALR',['../structRtc.html#ab7a5a222639a2f970a255b4d5b79000b',1,'Rtc']]],
+  ['rtc_5fcr_5',['RTC_CR',['../structRtc.html#aff533e6c594b3aac7a5b7e286d091d93',1,'Rtc']]],
+  ['rtc_5fidr_6',['RTC_IDR',['../structRtc.html#a8da7850da1b2707c7d0448d1328329b6',1,'Rtc']]],
+  ['rtc_5fier_7',['RTC_IER',['../structRtc.html#ac5f308d0f9d0d14668fe8370922f2322',1,'Rtc']]],
+  ['rtc_5fimr_8',['RTC_IMR',['../structRtc.html#ac3adaf7fd8ca92bdabbf22f48bd94f30',1,'Rtc']]],
+  ['rtc_5fmr_9',['RTC_MR',['../structRtc.html#a32cfdc7be18f90336bff7ff41f43397b',1,'Rtc']]],
+  ['rtc_5fsccr_10',['RTC_SCCR',['../structRtc.html#a2be6272a005b1ff8830b1cd4d822c8c6',1,'Rtc']]],
+  ['rtc_5fsr_11',['RTC_SR',['../structRtc.html#a676feeb0686bca28361a14bf1b096f62',1,'Rtc']]],
+  ['rtc_5ftimalr_12',['RTC_TIMALR',['../structRtc.html#a7599865f68c953c28af4ca0d3659918f',1,'Rtc']]],
+  ['rtc_5ftimr_13',['RTC_TIMR',['../structRtc.html#a69364f32eee69e7e2d14bea6f8b49100',1,'Rtc']]],
+  ['rtc_5fver_14',['RTC_VER',['../structRtc.html#a1639912f4a594b7d2c966ab01c74c819',1,'Rtc']]],
+  ['rtc_5fwpmr_15',['RTC_WPMR',['../structRtc.html#a487efe9708969b2951d47b5a4bfb35c3',1,'Rtc']]],
+  ['rtt_5far_16',['RTT_AR',['../structRtt.html#ac8d9b69c0a5c3525e54d02f4079f8212',1,'Rtt']]],
+  ['rtt_5fmr_17',['RTT_MR',['../structRtt.html#a1aff9c8586d4d75b6266f60c3562a1fd',1,'Rtt']]],
+  ['rtt_5fsr_18',['RTT_SR',['../structRtt.html#a357aa572cae79ea8256410fc3ef00a96',1,'Rtt']]],
+  ['rtt_5fvr_19',['RTT_VR',['../structRtt.html#a7a723968e381b0865eb8e63aa9dabcaf',1,'Rtt']]]
 ];

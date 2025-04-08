@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['b_0',['B',['../classB.html',1,'B'],['../memgrp_8cpp.html#a7ddc550b157ed6f8db58e462b504ab0f',1,'B():&#160;memgrp.cpp']]],
-  ['base_1',['base',['../structVehicle.html#ad7970f528d429f6fc1725173e93a77c2',1,'Vehicle::base()'],['../structCar.html#ab8ff28306286da5a8b14fa9bdccaafaa',1,'Car::base()'],['../structTruck.html#ad0ac321609dda1a6c552488b05ec7ac8',1,'Truck::base()']]],
-  ['blink_2',['blink',['../main_8cpp.html#a5664bd38fc668253a0152e6b319aafbb',1,'main.cpp']]],
-  ['bug_20list_3',['Bug List',['../bug.html',1,'']]]
+  ['blink_0',['blink',['../main_8cpp.html#a5664bd38fc668253a0152e6b319aafbb',1,'main.cpp']]]
 ];

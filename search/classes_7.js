@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gpbr_0',['Gpbr',['../structGpbr.html',1,'']]]
+  ['matrix_0',['Matrix',['../structMatrix.html',1,'']]],
+  ['max1148_1',['Max1148',['../classMax1148.html',1,'']]]
 ];

@@ -1,4 +1,30 @@
 var searchData=
 [
-  ['n1_0',['N1',['../namespaceN1.html',1,'']]]
+  ['real_2dtime_20clock_0',['Real-time Clock',['../group__SAM3XA__RTC.html',1,'']]],
+  ['real_2dtime_20timer_1',['Real-time Timer',['../group__SAM3XA__RTT.html',1,'']]],
+  ['registers_20access_20definitions_2',['Registers Access Definitions',['../group__SAM3A4C__reg.html',1,'(Global Namespace)'],['../group__SAM3A8C__reg.html',1,'(Global Namespace)'],['../group__SAM3X4C__reg.html',1,'(Global Namespace)'],['../group__SAM3X4E__reg.html',1,'(Global Namespace)'],['../group__SAM3X8C__reg.html',1,'(Global Namespace)'],['../group__SAM3X8H__reg.html',1,'(Global Namespace)']]],
+  ['reset_20controller_3',['Reset Controller',['../group__SAM3XA__RSTC.html',1,'']]],
+  ['rstc_4',['Rstc',['../structRstc.html',1,'']]],
+  ['rstc_5fcr_5',['RSTC_CR',['../structRstc.html#a93addad3d19058599aeac30a19f09c0e',1,'Rstc']]],
+  ['rstc_5fmr_6',['RSTC_MR',['../structRstc.html#a2184eb0dd1da96ae11d14e0f9c8ab554',1,'Rstc']]],
+  ['rstc_5fsr_7',['RSTC_SR',['../structRstc.html#a52a8e1d8a6358b7fd40b830bc85d2544',1,'Rstc']]],
+  ['rtc_8',['Rtc',['../structRtc.html',1,'']]],
+  ['rtc_5fcalalr_9',['RTC_CALALR',['../structRtc.html#adcd938b339e30ad4bb9990d8905f05ad',1,'Rtc']]],
+  ['rtc_5fcalr_10',['RTC_CALR',['../structRtc.html#ab7a5a222639a2f970a255b4d5b79000b',1,'Rtc']]],
+  ['rtc_5fcr_11',['RTC_CR',['../structRtc.html#aff533e6c594b3aac7a5b7e286d091d93',1,'Rtc']]],
+  ['rtc_5fidr_12',['RTC_IDR',['../structRtc.html#a8da7850da1b2707c7d0448d1328329b6',1,'Rtc']]],
+  ['rtc_5fier_13',['RTC_IER',['../structRtc.html#ac5f308d0f9d0d14668fe8370922f2322',1,'Rtc']]],
+  ['rtc_5fimr_14',['RTC_IMR',['../structRtc.html#ac3adaf7fd8ca92bdabbf22f48bd94f30',1,'Rtc']]],
+  ['rtc_5fmr_15',['RTC_MR',['../structRtc.html#a32cfdc7be18f90336bff7ff41f43397b',1,'Rtc']]],
+  ['rtc_5fsccr_16',['RTC_SCCR',['../structRtc.html#a2be6272a005b1ff8830b1cd4d822c8c6',1,'Rtc']]],
+  ['rtc_5fsr_17',['RTC_SR',['../structRtc.html#a676feeb0686bca28361a14bf1b096f62',1,'Rtc']]],
+  ['rtc_5ftimalr_18',['RTC_TIMALR',['../structRtc.html#a7599865f68c953c28af4ca0d3659918f',1,'Rtc']]],
+  ['rtc_5ftimr_19',['RTC_TIMR',['../structRtc.html#a69364f32eee69e7e2d14bea6f8b49100',1,'Rtc']]],
+  ['rtc_5fver_20',['RTC_VER',['../structRtc.html#a1639912f4a594b7d2c966ab01c74c819',1,'Rtc']]],
+  ['rtc_5fwpmr_21',['RTC_WPMR',['../structRtc.html#a487efe9708969b2951d47b5a4bfb35c3',1,'Rtc']]],
+  ['rtt_22',['Rtt',['../structRtt.html',1,'']]],
+  ['rtt_5far_23',['RTT_AR',['../structRtt.html#ac8d9b69c0a5c3525e54d02f4079f8212',1,'Rtt']]],
+  ['rtt_5fmr_24',['RTT_MR',['../structRtt.html#a1aff9c8586d4d75b6266f60c3562a1fd',1,'Rtt']]],
+  ['rtt_5fsr_25',['RTT_SR',['../structRtt.html#a357aa572cae79ea8256410fc3ef00a96',1,'Rtt']]],
+  ['rtt_5fvr_26',['RTT_VR',['../structRtt.html#a7a723968e381b0865eb8e63aa9dabcaf',1,'Rtt']]]
 ];
