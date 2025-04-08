@@ -319,7 +319,7 @@ template&lt;typename T &gt; </div>
 <div class="line">uint8_t* p_message = (uint8_t*)message.c_str();</div>
 <div class="line"><a class="code hl_variable" href="main_8cpp.html#ab000c195a63cb38c76a088a3bb1aa3fd">pdc</a>.<a class="code hl_function" href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">send</a>(p_message, <span class="keyword">sizeof</span>(message));</div>
 <div class="ttc" id="aclassPDC_html_a6672f69d997c02ebf934439fb3972c4b"><div class="ttname"><a href="classPDC.html#a6672f69d997c02ebf934439fb3972c4b">PDC::send</a></div><div class="ttdeci">void send(T *buffer, int size)</div><div class="ttdoc">Adds data to the PDC buffer to be sent out through UART.</div><div class="ttdef"><b>Definition:</b> <a href="PDC_8hpp_source.html#l00096">PDC.hpp:96</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ab000c195a63cb38c76a088a3bb1aa3fd"><div class="ttname"><a href="main_8cpp.html#ab000c195a63cb38c76a088a3bb1aa3fd">pdc</a></div><div class="ttdeci">PDC pdc</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00075">main.cpp:75</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ab000c195a63cb38c76a088a3bb1aa3fd"><div class="ttname"><a href="main_8cpp.html#ab000c195a63cb38c76a088a3bb1aa3fd">pdc</a></div><div class="ttdeci">PDC pdc</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00079">main.cpp:79</a></div></div>
 </div><!-- fragment --><p> But, Serial.print() is recommended for any debugging application to avoid global declarations.</p>
 <p>Note for later - negative numbers are sent as two's complement. make sure Jules' parser is reading that correctly. </p>
 
