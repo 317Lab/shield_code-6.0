@@ -13,7 +13,7 @@ Members of the 317 lab can access my notes on designing the board and known prob
 
 
 ## Programming the Board
-GSE-D is configured to program the board. Simply cd into the project repository and run 
+GSE-D is configured to program the board. Simply connect to the board with USB, cd into the project repository and run 
 
    pio run
 
