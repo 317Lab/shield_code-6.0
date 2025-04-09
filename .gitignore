@@ -3,3 +3,4 @@ doxydocs
 Doxyfile
 project.checksum
 *.json
+.pio
