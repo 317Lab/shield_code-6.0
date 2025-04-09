@@ -2,3 +2,4 @@
 doxydocs
 project.checksum
 *.json
+.pio
