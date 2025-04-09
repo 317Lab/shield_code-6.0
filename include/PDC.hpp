@@ -78,7 +78,7 @@ public:
      * 
      * 
      * @tparam T - data type of buffer - either char pointer or integer array
-     * @param buffer - pointer to data buffer. Note that it doesn't like pointer casts, so global pointers to sentinels must be used.
+     * @param buffer - pointer to data buffer. Pointer casts don't work, so global pointers to sentinels must be declared in main.
      * That's not an issue with Arduino's Serial library because it's blocking - avoiding that is the whole point of this.
      * @param size - size of buffer
      * 
@@ -88,9 +88,6 @@ public:
      * uint8_t* p_message = (uint8_t*)message.c_str();
      * pdc.send(p_message, sizeof(message));
      * @endcode
-     * But, Serial.print() is recommended for any debugging application to avoid global declarations.
-     * 
-     * Note for later - negative numbers are sent as two's complement. make sure Jules' parser is reading that correctly.
      */
     template <typename T>
     void send(T* buffer, int size){
@@ -103,15 +100,6 @@ public:
         } else{
             memcpy(backup_buffer, buffer, size);
             enableUARTInterrupt();
-            /* //wait until ready
-            //digitalWrite(7, HIGH);
-            while(!(*p_UART_SR & TXBUFE)){
-                ;
-            }
-            //digitalWrite(7, LOW);
-            //same as above
-                *(volatile uint32_t*)p_UART_TPR = (uint32_t)buffer;
-                *p_UART_TCR = size; */
         }
         
     }
@@ -145,7 +133,13 @@ public:
     bool is_on(){
         return (*p_UART_PTSR & (1<<8));
     }
-
+/**
+ * @brief Checks if the UART is ready to transmit to avoid busy waiting in a non-blocking process. 
+ * 
+ * The Arduino Serial library takes the UART interrupt vector, so we commented it out in the modified Arduino framework. 
+ * The project only uses Serial to turn on the UART (frankly, we don't even need to do that - you could just yank the Serial.begin() function and put it in this
+ * file if you wanted to reduce the size of the code), so there's no risk to taking the interrupt vector.
+ */
     void enableUARTInterrupt(){
         //enable UART interrupt
         NVIC_EnableIRQ(UART_IRQn);
@@ -153,7 +147,9 @@ public:
         UART->UART_IER = UART_IER_TXBUFE;
         UART->UART_IDR = ~UART_IER_TXBUFE;
     }
-
+/**
+ * @brief Disable UART interrupt after sending an overflow buffer. Current project does not require an overflow buffer.
+ */
     void UART_Handler(){
         send(backup_buffer, sizeof(backup_buffer));
         NVIC_DisableIRQ(UART_IRQn);
